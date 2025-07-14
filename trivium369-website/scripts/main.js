@@ -14,10 +14,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // 2. FUNÇÕES GLOBAIS DE APOIO
   // =================================================================================
   const getProgresso = () =>
-    JSON.parse(localStorage.getItem("r369_curso_progresso_kairos") || "{}");
+    JSON.parse(
+      localStorage.getItem("TRIVIUM 369_curso_progresso_kairos") || "{}"
+    );
   const salvarProgresso = (progresso) =>
     localStorage.setItem(
-      "r369_curso_progresso_kairos",
+      "TRIVIUM 369_curso_progresso_kairos",
       JSON.stringify(progresso)
     );
 

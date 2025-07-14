@@ -86,7 +86,7 @@ export function inicializarGeradorDeCertificado() {
         });
 
         pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
-        pdf.save(`Certificado R369 - ${nomeAluno}.pdf`);
+        pdf.save(`Certificado TRIVIUM 369 - ${nomeAluno}.pdf`);
       } catch (error) {
         console.error("Erro ao gerar o PDF:", error);
         alert("Ocorreu um erro ao gerar o PDF. Tente novamente.");

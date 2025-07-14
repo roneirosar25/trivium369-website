@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>R369 - Painel de Conquistas (Corrigido)</title>
+    <link rel="stylesheet" href="style-curso.css" />
+
+    <style>
+      /* --- Correção para o Painel de Conquistas --- */
+
+      /* Remove o alinhamento de texto central do container do card */
+      .conquista-item {
+        text-align: left;
+      }
+
+      /* Garante que a imagem permaneça centralizada */
+      .conquista-item .selo-conquista {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="barra-progresso-container">
+      <span class="progresso-texto" id="progressoTexto">0% Concluído</span>
+      <div class="barra-progresso-preenchimento" id="barraProgresso"></div>
+    </div>
+
+    <div class="layout-curso">
+      <aside class="sidebar-navegacao">
+        <div class="sidebar-modulo">
+          <h4>MÓDULO 0: A MENTE DO ARQUITETO</h4>
+          <ul class="sidebar-lista-aulas">
+            <li>
+              <a href="aulas/0-1-a-nova-interface-humano-computador.html"
+                ><img
+                  src="assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                  style="width: 16px"
+                />
+                0.1 A Nova Interface...</a
+              >
+            </li>
+            <li>
+              <a href="aulas/0-2-a-etica-e-o-pensamento-estrategico.html"
+                ><img
+                  src="assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                  style="width: 16px"
+                />
+                0.2 A Ética e o Pensamento...</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-modulo">
+          <h4>MÓDULO 1: A GRAMÁTICA DA IA</h4>
+          <ul class="sidebar-lista-aulas">
+            <li>
+              <a href="aulas/1-1-os-4-componentes-fundamentais.html"
+                ><img
+                  src="assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                  style="width: 16px"
+                />
+                1.1 Os 4 Componentes...</a
+              >
+            </li>
+            <li>
+              <a href="aulas/1-2-a-arte-dos-verbos-de-comando.html"
+                ><img
+                  src="assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                  style="width: 16px"
+                />
+                1.2 A Arte dos Verbos...</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-modulo">
+          <h4>MÓDULO 2: ANÁLISE E SÍNTESE</h4>
+          <ul class="sidebar-lista-aulas">
+            <li>
+              <a href="aulas/2-1-extraindo-e-resumindo-inteligencia.html"
+                ><img
+                  src="assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                  style="width: 16px"
+                />
+                2.1 Extraindo e Resumindo...</a
+              >
+            </li>
+            <li>
+              <a href="aulas/2-2-analise-comparativa-e-geracao-de-insights.html"
+                ><img
+                  src="assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                  style="width: 16px"
+                />
+                2.2 Análise Comparativa...</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-modulo">
+          <h4>MÓDULO 3: CRIAÇÃO E AUTOMAÇÃO</h4>
+          <ul class="sidebar-lista-aulas">
+            <li>
+              <a href="aulas/3-1-ideacao-e-brainstorming-estruturado.html"
+                ><img
+                  src="assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                  style="width: 16px"
+                />
+                3.1 Ideação e Brainstorming...</a
+              >
+            </li>
+            <li>
+              <a href="aulas/3-2-do-esboco-ao-plano-de-acao.html"
+                ><img
+                  src="assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                  style="width: 16px"
+                />
+                3.2 Do Esboço ao Plano...</a
+              >
+            </li>
+            <li>
+              <a href="aulas/3-3-automacao-de-conteudo-em-escala.html"
+                ><img
+                  src="assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                  style="width: 16px"
+                />
+                3.3 Automação de Conteúdo...</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-modulo">
+          <h4>MÓDULO 4: SIMULAÇÃO E OPERAÇÕES</h4>
+          <ul class="sidebar-lista-aulas">
+            <li>
+              <a href="aulas/4-1-a-ia-como-seu-copiloto-estrategico.html"
+                ><img
+                  src="assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                  style="width: 16px"
+                />
+                4.1 A IA como seu Copiloto...</a
+              >
+            </li>
+            <li>
+              <a href="aulas/4-2-construindo-seu-ecossistema-de-vanguarda.html"
+                ><img
+                  src="assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                  style="width: 16px"
+                />
+                4.2 Construindo seu Ecossistema...</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-modulo">
+          <h4>RECURSOS</h4>
+          <ul class="sidebar-lista-aulas">
+            <li>
+              <a href="arsenal-r369.html"
+                ><img
+                  src="assets/img/icon-1-1-dados.png"
+                  alt="Arsenal"
+                  style="width: 16px"
+                />
+                Arsenal Completo</a
+              >
+            </li>
+            <li>
+              <a href="painel-de-conquistas.html" class="aula-atual"
+                ><img
+                  src="assets/img/conquistas/arquiteto-da-mente.png"
+                  alt="Conquistas"
+                  style="width: 16px; border-radius: 50%"
+                />
+                Painel de Conquistas</a
+              >
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="conteudo-aula">
+        <header>
+          <h1>Painel de Conquistas</h1>
+          <h2>Sua jornada de maestria na Engenharia de Prompt</h2>
+        </header>
+
+        <section class="painel-conquistas">
+          <div class="conquista-item">
+            <img
+              src="assets/img/conquistas/arquiteto-da-mente.png"
+              alt="Certificado Arquiteto da Mente"
+              class="selo-conquista bloqueado"
+              id="selo-mod-0"
+            />
+            <h3>Arquiteto da Mente</h3>
+            <p>Conclusão do Módulo 0</p>
+          </div>
+          <div class="conquista-item">
+            <img
+              src="assets/img/conquistas/mestre-da-gramatica.png"
+              alt="Certificado Mestre da Gramática"
+              class="selo-conquista bloqueado"
+              id="selo-mod-1"
+            />
+            <h3>Mestre da Gramática</h3>
+            <p>Conclusão do Módulo 1</p>
+          </div>
+          <div class="conquista-item">
+            <img
+              src="assets/img/conquistas/analista-de-elite.png"
+              alt="Certificado Analista de Elite"
+              class="selo-conquista bloqueado"
+              id="selo-mod-2"
+            />
+            <h3>Analista de Elite</h3>
+            <p>Conclusão do Módulo 2</p>
+          </div>
+          <div class="conquista-item">
+            <img
+              src="assets/img/conquistas/automato-criativo.png"
+              alt="Certificado Autômato Criativo"
+              class="selo-conquista bloqueado"
+              id="selo-mod-3"
+            />
+            <h3>Autômato Criativo</h3>
+            <p>Conclusão do Módulo 3</p>
+          </div>
+          <div class="conquista-item conquista-final">
+            <img
+              src="assets/img/conquistas/engenheiro-de-prompt.png"
+              alt="Certificado Engenheiro de Prompt R369"
+              class="selo-conquista bloqueado"
+              id="selo-final"
+            />
+            <h3>Engenheiro de Prompt Certificado</h3>
+            <p>Conclusão de 100% do Curso</p>
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar-arsenal"></aside>
+    </div>
+
+    <script type="module" src="scripts/main.js"></script>
+  </body>
+</html>

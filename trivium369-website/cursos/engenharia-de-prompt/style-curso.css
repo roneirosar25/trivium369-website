@@ -1,0 +1,785 @@
+/* --- R369-WEBSITE STYLE GUIDE V4.0 "VANGUARDA FINAL" --- */
+/* --- CONCEITO: RENASCIMENTO ELÉTRICO --- */
+
+/* =============================================== */
+/* 1. FONTES E VARIÁVEIS GLOBAIS (O DNA DO TEMA)   */
+/* =============================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;700&family=Trajan+Pro&display=swap");
+
+:root {
+  /* Paleta de Cores "Vanguarda" */
+  --cor-fundo: #0a0a0a;
+  --cor-fundo-componente: #1a1a1a;
+  --cor-borda-sutil: #333;
+  --cor-azul-tesla: #00bfff;
+  --cor-prata: #c0c0c0;
+  --cor-branco-neve: #f5f5f5;
+  --cor-purpura-quantico: #8a2be2;
+  --cor-purpura-bloqueio: #8e44ad;
+  --cor-verde-vanguarda: #39ff14;
+  --cor-alerta: #ff3333;
+
+  /* Tipografia */
+  --font-serif: "Trajan Pro", serif;
+  --font-sans-serif: "Exo 2", sans-serif;
+}
+
+/* =============================================== */
+/* 2. RESET E ESTILOS GLOBAIS                      */
+/* =============================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-branco-neve);
+  font-family: var(--font-sans-serif);
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 12px; /* Espaço para a barra de progresso fixa */
+  overflow-x: hidden;
+}
+
+/* =============================================== */
+/* 3. TIPOGRAFIA                                   */
+/* =============================================== */
+
+h1 {
+  font-family: var(--font-serif);
+  color: var(--cor-prata);
+  font-size: 42px;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-family: var(--font-sans-serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--cor-branco-neve);
+  border-bottom: 1px solid var(--cor-azul-tesla);
+  padding-bottom: 10px;
+  margin-top: 2.5rem;
+}
+
+h3 {
+  font-family: var(--font-sans-serif);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--cor-branco-neve);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+}
+
+h4 {
+  font-family: var(--font-sans-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cor-prata);
+}
+
+p,
+li {
+  font-size: 18px;
+}
+
+code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+a {
+  color: var(--cor-azul-tesla);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  filter: brightness(1.5);
+  text-decoration: underline;
+}
+
+/* =============================================== */
+/* 4. ESTRUTURA E LAYOUT PRINCIPAL                 */
+/* =============================================== */
+
+.layout-curso {
+  display: grid;
+  grid-template-columns: 280px 1fr 280px;
+  max-width: 1400px;
+  margin: 2rem auto;
+  gap: 2.5rem;
+  padding: 0 1rem;
+}
+
+.conteudo-aula {
+  min-width: 0; /* Previne overflow em grids */
+}
+
+.placeholder-imagem img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid #222;
+}
+
+/* =============================================== */
+/* 5. COMPONENTES REUTILIZÁVEIS                    */
+/* =============================================== */
+
+/* --- Barra de Progresso --- */
+.barra-progresso-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--cor-fundo-componente);
+  height: 12px;
+  z-index: 1000;
+  border-bottom: 1px solid var(--cor-borda-sutil);
+}
+
+.barra-progresso-preenchimento {
+  height: 100%;
+  width: 0%;
+  background-color: var(--cor-azul-tesla);
+  transition: width 0.5s ease-out;
+}
+
+.progresso-texto {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  line-height: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--cor-branco-neve);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  z-index: 1001;
+}
+
+/* --- Navegação entre Aulas (Rodapé) --- */
+.navegacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  border-top: 1px solid var(--cor-borda-sutil);
+}
+
+.botao-primario {
+  background-color: var(--cor-azul-tesla);
+  color: var(--cor-fundo);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 700;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.botao-primario:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 0 15px var(--cor-azul-tesla);
+  text-decoration: none;
+}
+
+.botao-primario:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(80%);
+}
+
+.botao-secundario {
+  background: none;
+  border: 1px solid var(--cor-borda-sutil);
+  color: var(--cor-prata);
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.botao-secundario:hover {
+  background-color: var(--cor-borda-sutil);
+  color: var(--cor-branco-neve);
+  text-decoration: none;
+}
+
+/* --- Estados do Botão Principal --- */
+#btnConcluir.estado-acao {
+  background-color: var(--cor-azul-tesla);
+  color: var(--cor-fundo);
+  box-shadow: 0 0 15px var(--cor-azul-tesla);
+}
+#btnConcluir.estado-acao:hover {
+  filter: brightness(1.2);
+}
+#btnConcluir.estado-concluido {
+  background-color: var(--cor-verde-vanguarda);
+  color: var(--cor-fundo);
+  box-shadow: 0 0 15px var(--cor-verde-vanguarda);
+  cursor: default;
+}
+#btnConcluir.estado-bloqueado {
+  background-color: var(--cor-purpura-bloqueio);
+  color: var(--cor-branco-neve);
+  box-shadow: 0 0 15px var(--cor-purpura-bloqueio);
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* --- Sidebars --- */
+.sidebar-navegacao,
+.sidebar-arsenal {
+  width: 280px;
+}
+.sidebar-arsenal {
+  border-left: 1px solid var(--cor-borda-sutil);
+  padding-left: 2rem;
+}
+.sidebar-modulo h4 {
+  color: var(--cor-prata);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.sidebar-lista-aulas {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+.sidebar-lista-aulas li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: var(--cor-branco-neve);
+}
+.sidebar-lista-aulas li a img {
+  width: 16px;
+  height: 16px;
+}
+.sidebar-lista-aulas li a:hover {
+  background-color: rgba(0, 191, 255, 0.1);
+  text-decoration: none;
+}
+.sidebar-lista-aulas li a.aula-atual {
+  background-color: rgba(0, 191, 255, 0.2);
+  font-weight: 700;
+}
+
+/* --- Componente Arsenal --- */
+.arsenal-box {
+  border: 1px solid var(--cor-purpura-quantico);
+  background-color: rgba(138, 43, 226, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+.arsenal-box h4 {
+  color: var(--cor-purpura-quantico);
+  margin-top: 0;
+  font-weight: 700;
+}
+.arsenal-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.arsenal-box ul li a {
+  font-size: 14px;
+}
+.arsenal-box textarea {
+  width: 100%;
+  height: 150px;
+  background: var(--cor-fundo-componente);
+  color: white;
+  border: 1px solid var(--cor-borda-sutil);
+  border-radius: 4px;
+  padding: 10px;
+  resize: vertical;
+}
+
+/* =============================================== */
+/* 6. COMPONENTES DE PÁGINAS ESPECÍFICAS           */
+/* =============================================== */
+
+/* --- Exame de Módulo (Quiz) --- */
+.quiz-container {
+  background-color: var(--cor-fundo-componente);
+  border: 1px solid var(--cor-borda-sutil);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+.quiz-progresso {
+  text-align: right;
+  font-size: 14px;
+  color: var(--cor-prata);
+  margin-bottom: 1rem;
+}
+.quiz-pergunta {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+.quiz-opcoes {
+  display: grid;
+  gap: 1rem;
+}
+.quiz-opcao {
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda-sutil);
+  color: var(--cor-prata);
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 16px;
+  width: 100%;
+}
+.quiz-opcao:hover:not(:disabled) {
+  background-color: var(--cor-borda-sutil);
+  border-color: var(--cor-azul-tesla);
+  transform: translateY(-2px);
+}
+.quiz-opcao.correta,
+.quiz-opcao.incorreta {
+  pointer-events: none;
+}
+.quiz-opcao.correta {
+  border-color: var(--cor-verde-vanguarda);
+  color: var(--cor-verde-vanguarda);
+  box-shadow: 0 0 10px var(--cor-verde-vanguarda);
+}
+.quiz-opcao.incorreta {
+  border-color: var(--cor-alerta);
+}
+#tela-resultado h3 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 28px;
+}
+#resultado-pontuacao {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  margin-bottom: 1rem;
+}
+#resultado-feedback {
+  font-size: 16px;
+  text-align: center;
+  line-height: 1.6;
+}
+.quiz-botoes-extra {
+  margin-top: 1.5rem;
+  text-align: right;
+}
+
+/* --- Painel de Conquistas --- */
+.painel-conquistas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding-top: 2rem;
+}
+.conquista-item {
+  background-color: var(--cor-fundo-componente);
+  border: 1px solid var(--cor-borda-sutil);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.conquista-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+.conquista-item .selo-conquista {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.conquista-item h3 {
+  color: var(--cor-branco-neve);
+  margin-bottom: 0.5rem;
+}
+.conquista-item p {
+  font-size: 0.9rem;
+  color: var(--cor-prata);
+  margin: 0;
+}
+.selo-conquista.bloqueado {
+  filter: grayscale(100%) opacity(0.3) blur(1px);
+  transition: filter 0.3s ease;
+}
+.conquista-item.desbloqueado {
+  border-color: var(--cor-purpura-quantico);
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+}
+.data-conquista {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--cor-verde-vanguarda);
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.conquista-icon {
+  border-radius: 50%;
+}
+
+/* --- Simuladores Interativos --- */
+.simulador-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  background-color: var(--cor-fundo-componente);
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--cor-borda-sutil);
+  margin-top: 2rem;
+}
+.coluna-inputs,
+.coluna-resultado {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.simulador-container h3 {
+  color: var(--cor-azul-tesla);
+  margin-top: 0;
+  border-bottom: 2px solid var(--cor-purpura-bloqueio);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.simulador-container label {
+  font-weight: bold;
+  color: var(--cor-prata);
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+.simulador-container input,
+.simulador-container textarea {
+  background-color: var(--cor-borda-sutil);
+  color: var(--cor-branco-neve);
+  border: 1px solid #555;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+}
+.simulador-container input:focus,
+.simulador-container textarea:focus {
+  outline: none;
+  border-color: var(--cor-azul-tesla);
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+.simulador-container .botao-simulador {
+  margin-top: 25px;
+  padding: 12px 20px;
+  border: none;
+  background-color: var(--cor-azul-tesla);
+  color: var(--cor-fundo);
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.simulador-container .botao-simulador:hover {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.simulador-container .botao-simulador:disabled {
+  background-color: var(--cor-borda-sutil);
+  cursor: not-allowed;
+  transform: translateY(0);
+  filter: grayscale(80%);
+}
+.coluna-resultado pre {
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda-sutil);
+  color: #e0e0e0;
+  padding: 15px;
+  border-radius: 5px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  height: 100%;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.95rem;
+}
+
+/* --- Arsenal --- */
+.arsenal-lista-recursos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.arsenal-lista-recursos li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--cor-borda-sutil);
+}
+.arsenal-lista-recursos li:last-child {
+  border-bottom: none;
+}
+.arsenal-lista-recursos a:hover {
+  text-decoration: none;
+  padding-left: 10px;
+  color: var(--cor-branco-neve);
+}
+
+/* --- Modal do Certificado --- */
+.modal-conquista-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none; /* Inicia oculto */
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+}
+.modal-conquista-box {
+  background-color: var(--cor-fundo-componente);
+  padding: 2rem 3rem;
+  border-radius: 8px;
+  border: 1px solid var(--cor-purpura-quantico);
+  box-shadow: 0 0 30px var(--cor-purpura-quantico);
+  text-align: center;
+  max-width: 500px;
+}
+.modal-conquista-box h2 {
+  border-bottom: none;
+  color: var(--cor-purpura-quantico);
+}
+.modal-conquista-box .campo-prompt {
+  width: 100%;
+  padding: 10px;
+  margin-top: 1rem;
+}
+/* --- Estilos para o Template do Certificado --- */
+.template-certificado-container {
+  /* Posiciona o template fora da tela para que fique invisível */
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1280px; /* Largura do PDF */
+  height: 720px; /* Altura do PDF */
+  background-color: var(--cor-fundo);
+  color: var(--cor-branco-neve);
+  font-family: var(--font-sans-serif);
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--cor-azul-tesla);
+  box-shadow: 0 0 30px var(--cor-azul-tesla);
+}
+
+.template-certificado-conteudo {
+  text-align: center;
+  border: 1px solid var(--cor-borda-sutil);
+  padding: 40px;
+  width: 100%;
+  height: 100%;
+}
+
+.template-certificado-logo {
+  max-height: 100px;
+  margin-bottom: 20px;
+}
+
+.template-certificado-container h1 {
+  font-family: var(--font-serif);
+  color: var(--cor-prata);
+  font-size: 52px;
+  margin-bottom: 30px;
+  border-bottom: none;
+}
+
+.template-certificado-nome {
+  font-family: var(--font-sans-serif);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--cor-azul-tesla);
+  margin: 10px 0 30px 0;
+  border-bottom: 1px solid var(--cor-azul-tesla);
+  padding-bottom: 20px;
+}
+
+.template-certificado-paragrafo {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  line-height: 1.5;
+}
+
+.template-certificado-footer {
+  margin-top: 50px;
+  font-size: 14px;
+  color: var(--cor-prata);
+}
+/* =============================================== */
+/* 7. MELHORIAS DE ACESSIBILIDADE (FOCO VISÍVEL)   */
+/* =============================================== */
+
+/* A pseudo-classe :focus-visible aplica estilos de foco apenas 
+  quando o navegador determina que eles são necessários (ex: navegação via teclado),
+  evitando o contorno azul em cliques de mouse, o que melhora a estética.
+*/
+
+/* Remove o outline padrão que pode ser inconsistente entre navegadores */
+a,
+button,
+input,
+textarea {
+  outline: none;
+}
+
+/* Adiciona um estilo de foco consistente para a maioria dos elementos.
+  Este será o nosso fallback principal.
+*/
+a:focus-visible,
+.botao-secundario:focus-visible {
+  outline: 2px solid var(--cor-azul-tesla);
+  outline-offset: 3px;
+  border-radius: 4px; /* Garante que o outline acompanhe a borda */
+}
+
+/* Para componentes específicos, replicamos o estilo do :hover
+  para uma experiência mais coesa e integrada.
+*/
+.botao-primario:focus-visible {
+  filter: brightness(1.2);
+  box-shadow: 0 0 15px var(--cor-azul-tesla);
+}
+
+.quiz-opcao:focus-visible:not(:disabled) {
+  background-color: var(--cor-borda-sutil);
+  border-color: var(--cor-azul-tesla);
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+
+.simulador-container .botao-simulador:focus-visible {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+}
+
+.sidebar-lista-aulas li a:focus-visible {
+  background-color: rgba(0, 191, 255, 0.1);
+  text-decoration: none;
+  outline: none; /* Remove o fallback para usar o background */
+}
+
+/* Os campos de input já tinham um bom estilo de :focus,
+  apenas garantimos que ele também se aplique com :focus-visible.
+*/
+.arsenal-box textarea:focus-visible,
+.simulador-container input:focus-visible,
+.simulador-container textarea:focus-visible {
+  border-color: var(--cor-azul-tesla);
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+/* =============================================== */
+/* 8. COMPONENTE DE NOTIFICAÇÃO (TOAST)            */
+/* =============================================== */
+
+.toast-container {
+  position: fixed;
+  top: 25px; /* Abaixo da barra de progresso */
+  right: 25px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast {
+  padding: 15px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.toast.toast-success {
+  background-color: var(--cor-verde-vanguarda);
+  color: var(--cor-fundo);
+  border-left: 5px solid #2ecc71; /* Um verde um pouco mais escuro */
+}
+
+/* Adicione mais estilos se precisar de outros tipos (erro, aviso, etc.) */
+/*
+.toast.toast-error {
+  background-color: var(--cor-alerta);
+  color: var(--cor-branco-neve);
+  border-left: 5px solid #c0392b;
+}
+*/
+/* =============================================== */
+/* 7. ESTILOS RESPONSIVOS (MOBILE)                 */
+/* =============================================== */
+
+@media (max-width: 992px) {
+  /* Um breakpoint maior para o layout de 3 colunas */
+
+  .layout-curso {
+    /* Transforma o grid de 3 colunas em um de 1 coluna */
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar-arsenal {
+    border-left: none; /* Remove a borda lateral */
+    padding-left: 0; /* Remove o espaçamento extra */
+    border-top: 1px solid var(--cor-borda-sutil); /* Adiciona um separador superior */
+    padding-top: 2rem;
+  }
+
+  .simulador-container {
+    flex-direction: column; /* Empilha as colunas do simulador */
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+}

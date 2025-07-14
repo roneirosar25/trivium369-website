@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>R369 - Aula 4.2: Construindo seu Ecossistema de Vanguarda</title>
+    <link rel="stylesheet" href="../style-curso.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <style>
+      .template-certificado-container {
+        /* Posiciona o template fora da tela para que fique invisível */
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        width: 1280px; /* Largura do PDF */
+        height: 720px; /* Altura do PDF */
+        background-color: var(--cor-fundo);
+        color: var(--cor-branco-neve);
+        font-family: var(--font-sans-serif);
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid var(--cor-azul-tesla);
+        box-shadow: 0 0 30px var(--cor-azul-tesla);
+      }
+
+      .template-certificado-conteudo {
+        text-align: center;
+        border: 1px solid var(--cor-borda-sutil);
+        padding: 40px;
+        width: 100%;
+        height: 100%;
+      }
+
+      .template-certificado-logo {
+        max-height: 100px;
+        margin-bottom: 20px;
+      }
+
+      .template-certificado-container h1 {
+        font-family: var(--font-serif);
+        color: var(--cor-prata);
+        font-size: 52px;
+        margin-bottom: 30px;
+        border-bottom: none;
+      }
+
+      .template-certificado-nome {
+        font-family: var(--font-sans-serif);
+        font-size: 48px;
+        font-weight: 700;
+        color: var(--cor-azul-tesla);
+        margin: 10px 0 30px 0;
+        border-bottom: 1px solid var(--cor-azul-tesla);
+        padding-bottom: 20px;
+      }
+
+      .template-certificado-paragrafo {
+        font-size: 18px;
+        max-width: 800px;
+        margin: 0 auto 20px auto;
+        line-height: 1.5;
+      }
+
+      .template-certificado-footer {
+        margin-top: 50px;
+        font-size: 14px;
+        color: var(--cor-prata);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="toast-container" class="toast-container"></div>
+    <div class="barra-progresso-container">
+      <span class="progresso-texto" id="progressoTexto"></span>
+      <div class="barra-progresso-preenchimento" id="barraProgresso"></div>
+    </div>
+    <div class="layout-curso">
+      <aside class="sidebar-navegacao">
+        <div class="sidebar-modulo">
+          <h4>MÓDULO 0: A MENTE DO ARQUITETO</h4>
+          <ul class="sidebar-lista-aulas">
+            <li>
+              <a href="0-1-a-nova-interface-humano-computador.html"
+                ><img
+                  src="../assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                />0.1 A Nova Interface...</a
+              >
+            </li>
+            <li>
+              <a href="0-2-a-etica-e-o-pensamento-estrategico.html"
+                ><img
+                  src="../assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                />0.2 A Ética e o Pensamento...</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-modulo">
+          <h4>MÓDULO 1: A GRAMÁTICA DA IA</h4>
+          <ul class="sidebar-lista-aulas">
+            <li>
+              <a href="1-1-os-4-componentes-fundamentais.html"
+                ><img
+                  src="../assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                />1.1 Os 4 Componentes...</a
+              >
+            </li>
+            <li>
+              <a href="1-2-a-arte-dos-verbos-de-comando.html"
+                ><img
+                  src="../assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                />1.2 A Arte dos Verbos...</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-modulo">
+          <h4>MÓDULO 2: ANÁLISE E SÍNTESE</h4>
+          <ul class="sidebar-lista-aulas">
+            <li>
+              <a href="2-1-extraindo-e-resumindo-inteligencia.html"
+                ><img
+                  src="../assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                />2.1 Extraindo e Resumindo...</a
+              >
+            </li>
+            <li>
+              <a href="2-2-analise-comparativa-e-geracao-de-insights.html"
+                ><img
+                  src="../assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                />2.2 Análise Comparativa...</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-modulo">
+          <h4>MÓDULO 3: CRIAÇÃO E AUTOMAÇÃO</h4>
+          <ul class="sidebar-lista-aulas">
+            <li>
+              <a href="3-1-ideacao-e-brainstorming-estruturado.html"
+                ><img
+                  src="../assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                />3.1 Ideação e Brainstorming...</a
+              >
+            </li>
+            <li>
+              <a href="3-2-do-esboco-ao-plano-de-acao.html"
+                ><img
+                  src="../assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                />3.2 Do Esboço ao Plano...</a
+              >
+            </li>
+            <li>
+              <a href="3-3-automacao-de-conteudo-em-escala.html"
+                ><img
+                  src="../assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                />3.3 Automação de Conteúdo...</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-modulo">
+          <h4>MÓDULO 4: SIMULAÇÃO E OPERAÇÕES</h4>
+          <ul class="sidebar-lista-aulas">
+            <li>
+              <a href="4-1-a-ia-como-seu-copiloto-estrategico.html"
+                ><img
+                  src="../assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                />4.1 A IA como seu Copiloto...</a
+              >
+            </li>
+            <li>
+              <a href="4-2-construindo-seu-ecossistema-de-vanguarda.html"
+                ><img
+                  src="../assets/img/icon-status-bloqueado.png"
+                  alt="Status"
+                />4.2 Construindo seu Ecossistema...</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-modulo">
+          <h4>RECURSOS</h4>
+          <ul class="sidebar-lista-aulas">
+            <li>
+              <a href="../arsenal-r369.html"
+                ><img
+                  src="../assets/img/icon-1-1-dados.png"
+                  alt="Arsenal"
+                />Arsenal Completo</a
+              >
+            </li>
+            <li>
+              <a href="../painel-de-conquistas.html"
+                ><img
+                  src="../assets/img/conquistas/arquiteto-da-mente.png"
+                  alt="Conquistas"
+                  class="conquista-icon"
+                />Painel de Conquistas</a
+              >
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="conteudo-aula">
+        <header>
+          <h1>4.2: Construindo seu Ecossistema de Vanguarda</h1>
+          <h3>MÓDULO 4: SIMULAÇÃO E OPERAÇÕES DE VANGUARDA</h3>
+        </header>
+        <section id="conteudo-principal">
+          <h2>O Blueprint do seu SO Pessoal</h2>
+          <p>
+            Todo sistema operacional de vanguarda se sustenta em três pilares.
+          </p>
+          <div class="placeholder-imagem">
+            <img
+              src="../assets/img/diagram-4-2-core-pilares-so.png"
+              alt="Os 3 Pilares do SO Pessoal"
+            />
+          </div>
+          <h4>Pilar 1: Os Princípios (Sua 'Carta Magna')</h4>
+          <p>Defina suas próprias regras para o trabalho e a informação.</p>
+          <h4>Pilar 2: A Pilha de Ferramentas (Sua Arquitetura)</h4>
+          <p>Escolha ferramentas para funções distintas e soberanas.</p>
+          <h4>Pilar 3: Os Fluxos de Trabalho (Seu Processo)</h4>
+          <p>
+            Conecte as habilidades do curso com suas ferramentas e princípios.
+          </p>
+        </section>
+
+        <section id="conteudo-interativo">
+          <h2>Exame Final: O Sistema do Arquiteto</h2>
+          <div class="quiz-container">
+            <div id="tela-quiz">
+              <div class="quiz-progresso">
+                <span id="quiz-progresso-texto"></span>
+              </div>
+              <div id="quiz-pergunta" class="quiz-pergunta"></div>
+              <div id="quiz-opcoes" class="quiz-opcoes"></div>
+            </div>
+            <div id="tela-resultado" hidden>
+              <h3 id="resultado-titulo"></h3>
+              <p id="resultado-pontuacao"></p>
+              <p id="resultado-feedback"></p>
+              <div class="quiz-botoes-extra">
+                <button id="btnRefazerQuiz" class="botao-secundario">
+                  Refazer o Exame
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="navegacao">
+          <a href="4-1-a-ia-como-seu-copiloto-estrategico.html"
+            >&lt;&lt; Aula Anterior</a
+          >
+          <a href="#" class="botao-primario" id="btnConcluir"
+            >Concluir o Curso</a
+          >
+        </footer>
+      </main>
+
+      <aside class="sidebar-arsenal">
+        <div class="arsenal-box">
+          <h4>Arsenal da Aula</h4>
+          <ul>
+            <li>
+              <a
+                href="../assets/docs/Guia de Campo - Construindo seu Ecossistema de Vanguarda.pdf"
+                target="_blank"
+                >Template "Minha Carta Magna" (PDF)</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="arsenal-box">
+          <h4>Anotações Pessoais</h4>
+          <textarea
+            id="anotacoesPessoais"
+            placeholder="Suas anotações sobre a aula..."
+          ></textarea>
+        </div>
+      </aside>
+    </div>
+
+    <div
+      id="modalCertificado"
+      class="modal-conquista-overlay"
+      style="--cor-borda-modal: var(--cor-purpura-quantico)"
+    >
+      <div class="modal-conquista-box">
+        <h2>Parabéns, Engenheiro!</h2>
+        <p>
+          Você completou todos os protocolos de treinamento e alcançou a
+          maestria em Engenharia de Prompt. Sua jornada está completa. Insira
+          seu nome completo para forjar seu Dossiê de Maestria e receber sua
+          certificação.
+        </p>
+        <input
+          type="text"
+          id="nomeAlunoCertificado"
+          placeholder="Digite seu nome completo aqui..."
+          class="campo-prompt"
+          style="text-align: center; margin-bottom: 1rem"
+        />
+        <button
+          id="btnGerarCertificado"
+          class="botao-primario"
+          style="background-color: var(--cor-purpura-quantico)"
+        >
+          Gerar Certificado
+        </button>
+      </div>
+    </div>
+
+    <script type="module" src="../scripts/main.js"></script>
+
+    <div id="template-certificado" class="template-certificado-container">
+      <div class="template-certificado-conteudo">
+        <img
+          src="../assets/img/R369-logo.png"
+          class="template-certificado-logo"
+          alt="Logo R369"
+        />
+        <h1>Certificado de Conclusão</h1>
+        <p class="template-certificado-paragrafo">
+          Este certificado é concedido a
+        </p>
+        <h2 id="nome-aluno" class="template-certificado-nome">
+          NOME DO ALUNO AQUI
+        </h2>
+        <p class="template-certificado-paragrafo">
+          por ter concluído com sucesso o curso de formação profissional
+          <strong>Engenharia de Prompt R369</strong>, demonstrando maestria nas
+          competências de análise, criação, automação e simulação com
+          Inteligência Artificial.
+        </p>
+        <div class="template-certificado-footer">
+          <p id="data-emissao-certificado">Emitido em: DD/MM/AAAA</p>
+          <p>Um Sistema de Treinamento R369</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

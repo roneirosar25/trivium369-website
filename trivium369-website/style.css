@@ -1,0 +1,70 @@
+body {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 2rem;
+}
+nav {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #333;
+  margin-bottom: 2rem;
+}
+nav a {
+  color: #0099ff;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+}
+h1 {
+  font-size: 4rem;
+  border-bottom: 2px solid #007acc;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+#sobre {
+  margin-top: 4rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#sobre h2 {
+  font-size: 2.5rem;
+}
+#sobre p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+#servicos {
+  width: 100%;
+  padding: 4rem 0;
+  margin-top: 2rem;
+}
+#servicos h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.servicos-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.servico-card {
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 2rem;
+  flex-basis: 400px;
+  text-align: left;
+}
+.servico-card h3 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  color: #0099ff;
+}

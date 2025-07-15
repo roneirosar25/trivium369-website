@@ -1,0 +1,515 @@
+/* --- TRIVIUM 369 - STYLE GUIDE MESTRE v7.2 "SOLUÇÃO ESTRUTURAL" --- */
+/* --- CONCEITO: RENASCIMENTO ELÉTRICO --- */
+
+/* =============================================== */
+/* 1. FONTES E VARIÁVEIS GLOBAIS (O DNA DO TEMA)   */
+/* =============================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;700&family=Trajan+Pro&display=swap");
+
+:root {
+  /* Paleta de Cores "Vanguarda" Unificada */
+  --cor-fundo: #0a0a0a;
+  --cor-fundo-componente: #1a1a1a;
+  --cor-borda-sutil: #333;
+  --cor-azul-tesla: #00bfff;
+  --cor-purpura-quantico: #8a2be2;
+  --cor-prata: #c0c0c0;
+  --cor-branco-neve: #f5f5f5;
+  --cor-verde-vanguarda: #39ff14;
+  --cor-alerta: #ff3333;
+
+  /* Tipografia */
+  --font-serif: "Trajan Pro", serif;
+  --font-sans-serif: "Exo 2", sans-serif;
+}
+
+/* =============================================== */
+/* 2. RESET E ESTILOS GLOBAIS (CORRIGIDO)          */
+/* =============================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Estilo PADRÃO para o body (usado na plataforma do curso) --- */
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-branco-neve);
+  font-family: var(--font-sans-serif);
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 0;
+  overflow-x: hidden;
+  padding-top: 12px; /* Espaço para a barra de progresso, se houver */
+}
+
+/* --- Estilo ESPECÍFICO para o body das páginas da Holding --- */
+.holding-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+  padding-top: 1rem;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =============================================== */
+/* 3. TIPOGRAFIA GERAL (COM CORREÇÃO DO PISCA-PISCA) */
+/* =============================================== */
+
+h1 {
+  font-family: var(--font-serif);
+  color: var(--cor-prata);
+  font-size: 42px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-family: var(--font-sans-serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--cor-branco-neve);
+}
+h3 {
+  font-family: var(--font-sans-serif);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--cor-branco-neve);
+}
+h4 {
+  font-family: var(--font-sans-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cor-prata);
+}
+p,
+li {
+  font-size: 18px;
+}
+
+/* Regra geral para links, SEM A TRANSIÇÃO GLOBAL */
+a {
+  color: var(--cor-azul-tesla);
+  text-decoration: none;
+}
+
+/* Efeito de hover SOMENTE para links que não são componentes especiais */
+a:not(.portal-card):not(.cta-button):not(.header-logo-link):not(
+    .botao-primario
+  ):hover {
+  filter: brightness(1.5);
+  text-decoration: underline;
+}
+
+/* ================================================== */
+/* 4. ESTILOS DA PÁGINA HOLDING (ATUALIZADO)          */
+/* ================================================== */
+
+.hero-container {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.hero-container img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  max-width: 350px;
+  height: auto;
+}
+.hero-container h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.hero-container p {
+  font-size: 1.25rem;
+  color: var(--cor-azul-tesla);
+  font-weight: 300;
+  margin-top: 0.5rem;
+}
+
+.portais-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 1rem 0;
+}
+.portal-card {
+  background-color: var(--cor-fundo-componente);
+  border: 1px solid var(--cor-borda-sutil);
+  border-radius: 8px;
+  padding: 2rem 2.5rem;
+  flex-basis: 320px;
+  text-decoration: none;
+  color: var(--cor-branco-neve);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.portal-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--cor-purpura-quantico);
+  box-shadow: 0 10px 40px rgba(138, 43, 226, 0.2);
+}
+.portal-card h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--cor-purpura-quantico);
+  margin-bottom: 1rem;
+}
+.portal-card p {
+  font-size: 1rem;
+  color: var(--cor-prata);
+}
+
+.page-header {
+  position: relative;
+  text-align: center;
+  padding: 40px 20px;
+  padding-top: 80px;
+  border-bottom: 1px solid #333;
+}
+
+/* REGRA ESTRUTURAL DEFINITIVA PARA O LOGO */
+.header-logo-link {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  width: 100px;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+.header-logo-link:hover {
+  opacity: 0.8;
+  filter: none;
+}
+
+.page-content {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: left;
+  line-height: 1.8;
+  padding: 20px;
+}
+.section-title {
+  text-align: left;
+  border-bottom: 2px solid var(--cor-azul-tesla);
+  padding-bottom: 5px;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+.features-list {
+  list-style-position: inside;
+  padding-left: 0;
+  margin-bottom: 2.5rem;
+}
+
+/* ================================================== */
+/* 5. ESTILOS DA PÁGINA DE LISTA DE CURSOS (cursos.html) */
+/* ================================================== */
+.courses-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+}
+.course-card {
+  background-color: var(--cor-fundo-componente);
+  border: 1px solid var(--cor-borda-sutil);
+  border-radius: 8px;
+  overflow: hidden;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 40px rgba(0, 191, 255, 0.2);
+}
+.course-card-image {
+  width: 100%;
+  height: 200px;
+  background-color: #000;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--cor-borda-sutil);
+}
+.course-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.course-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: left;
+}
+.course-card-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cor-azul-tesla);
+  margin: 0 0 0.5rem 0;
+  text-align: left;
+}
+.course-card-content p {
+  font-size: 1rem;
+  color: var(--cor-prata);
+  flex-grow: 1;
+}
+.cta-button {
+  display: inline-block;
+  background-color: var(--cor-purpura-quantico);
+  color: var(--cor-branco-neve);
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 1.5rem;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+.cta-button:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+}
+.return-link-section {
+  border-bottom: none;
+  padding: 20px;
+  padding-top: 0;
+  text-align: center;
+}
+
+/* =============================================== */
+/* 6. ESTILOS DA PLATAFORMA INTERNA DO CURSO       */
+/* =============================================== */
+.barra-progresso-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--cor-fundo-componente);
+  height: 12px;
+  z-index: 1000;
+  border-bottom: 1px solid var(--cor-borda-sutil);
+}
+.barra-progresso-preenchimento {
+  height: 100%;
+  width: 0%;
+  background-color: var(--cor-azul-tesla);
+  transition: width 0.5s ease-out;
+}
+.progresso-texto {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  line-height: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--cor-branco-neve);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  z-index: 1001;
+}
+.layout-curso {
+  display: grid;
+  grid-template-columns: 280px 1fr 280px;
+  max-width: 1400px;
+  margin: 2rem auto;
+  gap: 2.5rem;
+  padding: 0 1rem;
+}
+.conteudo-aula {
+  min-width: 0;
+}
+.sidebar-navegacao,
+.sidebar-arsenal {
+  width: 280px;
+}
+.sidebar-arsenal {
+  border-left: 1px solid var(--cor-borda-sutil);
+  padding-left: 2rem;
+}
+.sidebar-modulo h4 {
+  color: var(--cor-prata);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.sidebar-lista-aulas {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+.sidebar-lista-aulas li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: var(--cor-branco-neve);
+  transition: background-color 0.2s ease;
+}
+.sidebar-lista-aulas li a:hover {
+  background-color: rgba(0, 191, 255, 0.1);
+}
+.sidebar-lista-aulas li a.aula-atual {
+  background-color: rgba(0, 191, 255, 0.2);
+  font-weight: 700;
+}
+.navegacao.center {
+  justify-content: center;
+  display: flex;
+}
+.page-subtitle {
+  text-align: left;
+  margin-bottom: 2rem;
+  font-size: 28px;
+  color: var(--cor-prata);
+  border-bottom: none;
+}
+.painel-conquistas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding-top: 2rem;
+}
+.conquista-item {
+  background-color: var(--cor-fundo-componente);
+  border: 1px solid var(--cor-borda-sutil);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.conquista-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+.conquista-item h3 {
+  color: var(--cor-branco-neve);
+  margin-bottom: 0.5rem;
+}
+.conquista-item p {
+  font-size: 0.9rem;
+  color: var(--cor-prata);
+  margin: 0;
+}
+.selo-conquista.bloqueado {
+  filter: grayscale(100%) opacity(0.4) blur(3px);
+  transition: filter 0.5s ease;
+}
+.conquista-item.desbloqueado {
+  border-color: var(--cor-purpura-quantico);
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+}
+.botao-primario {
+  background-color: var(--cor-azul-tesla);
+  color: var(--cor-fundo);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 700;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+.botao-primario:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 0 15px var(--cor-azul-tesla);
+  text-decoration: none;
+  color: var(--cor-fundo);
+}
+.botao-primario:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(80%);
+}
+
+/* =============================================== */
+/* 7. AJUSTES FINOS DE IMAGEM                      */
+/* =============================================== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.instructor-section img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+.selo-conquista {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.sidebar-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+.conquista-icon {
+  border-radius: 50%;
+}
+
+/* =============================================== */
+/* 8. ESTILOS RESPONSIVOS (MOBILE)                 */
+/* =============================================== */
+@media (max-width: 992px) {
+  .layout-curso {
+    grid-template-columns: 1fr;
+  }
+  .sidebar-arsenal {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--cor-borda-sutil);
+    padding-top: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .holding-body main,
+  body main {
+    padding: 1rem;
+  }
+  .hero-container h1 {
+    font-size: 2rem;
+  }
+  .hero-container p {
+    font-size: 1rem;
+  }
+  .portais-container,
+  .courses-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .portal-card,
+  .course-card {
+    flex-basis: 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+}

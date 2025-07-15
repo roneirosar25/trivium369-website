@@ -7,10 +7,11 @@
 
     <style>
       :root {
-        --cor-primaria: #0d0d0d; /* Quase preto */
-        --cor-secundaria: #1f1f1f; /* Cinza escuro */
-        --cor-texto: #e0e0e0; /* Cinza claro */
-        --cor-destaque: #00a878; /* Verde esmeralda */
+        --cor-primaria: #0a0a0a;
+        --cor-secundaria: #1a1a1a;
+        --cor-texto: #e0e0e0;
+        --cor-destaque: #00bfff; /* Azul Tesla */
+        --cor-cta: #8a2be2; /* Púrpura Quântico */
         --cor-branca: #ffffff;
       }
 
@@ -33,9 +34,13 @@
       header,
       section,
       footer {
-        padding: 40px 20px;
+        padding: 50px 20px;
         text-align: center;
         border-bottom: 1px solid #333;
+      }
+
+      header {
+        border-top: 5px solid var(--cor-destaque);
       }
 
       h1,
@@ -74,20 +79,20 @@
 
       .cta-button {
         display: inline-block;
-        background-color: var(--cor-destaque);
+        background-color: var(--cor-cta);
         color: var(--cor-branca);
-        padding: 15px 30px;
+        padding: 18px 35px;
         font-size: 1.2em;
         font-weight: bold;
         text-decoration: none;
         border-radius: 8px;
-        transition: transform 0.2s, background-color 0.2s;
-        box-shadow: 0 4px 15px rgba(0, 168, 120, 0.3);
+        transition: transform 0.2s, filter 0.2s;
+        box-shadow: 0 5px 20px rgba(138, 43, 226, 0.4);
       }
 
       .cta-button:hover {
         transform: scale(1.05);
-        background-color: #00bf8a;
+        filter: brightness(1.2);
       }
 
       .instructor-section {
@@ -95,6 +100,8 @@
         flex-direction: column;
         align-items: center;
         gap: 20px;
+        background-color: var(--cor-secundaria);
+        padding: 50px 20px;
       }
 
       .instructor-section img {
@@ -102,7 +109,7 @@
         height: 150px;
         border-radius: 50%;
         border: 3px solid var(--cor-destaque);
-        object-fit: cover; /* Garante que a foto não fique distorcida */
+        object-fit: cover;
       }
 
       .modules ul,
@@ -141,7 +148,6 @@
         >
           TRIVIUM 369
         </h2>
-
         <h1>
           A Chave Para Desbloquear o Verdadeiro Poder da Inteligência Artificial
           Não é a Tecnologia. É a Sua Pergunta.
@@ -192,38 +198,28 @@
           Inspirados nos princípios de Da Vinci, que unia arte e ciência, e na
           visão de Tesla, que buscava as chaves do universo, nosso curso é um
           <strong>framework estruturado</strong> para você dominar a habilidade
-          mais importante da próxima década. Este não é um curso de "dicas e
-          truques". É um treinamento profundo que te transformará de um simples
-          usuário em um <strong>estrategista de IA</strong>.
+          mais importante da próxima década.
         </p>
       </section>
 
       <section class="instructor-section">
         <h2>Conheça seu Instrutor e Guia Nesta Jornada</h2>
-
         <img
           src="assets/img/ronei-rosar-instrutor.jpg"
-          alt="Foto de Ronei Rosar, fundador da TRIVIUM 39"
+          alt="Foto de Ronei Rosar, fundador da TRIVIUM 369"
         />
-
         <h3>Ronei Rosar</h3>
-
         <p>
           Olá, eu sou <strong>Ronei Rosar</strong>, fundador da TRIVIUM 369. Por
           <strong>30 anos</strong>, tenho mergulhado no universo da tecnologia e
-          de múltiplas áreas da Engenharia, como Agrícola, Mecânica, Elétrica,
-          Civil e Hidráulica. Minha jornada sempre foi guiada pela busca por
-          padrões e pela otimização de sistemas complexos. Quando a revolução da
-          IA generativa começou, percebi que não estávamos diante de uma simples
-          ferramenta, mas de um novo paradigma de criação e produtividade. A
-          TRIVIUM 369 nasceu da minha convicção de que para dominar este novo
-          paradigma, precisamos de um novo "Trivium": uma união entre a
+          de múltiplas áreas da Engenharia. Minha jornada sempre foi guiada pela
+          busca por padrões e pela otimização de sistemas complexos. Quando a
+          revolução da IA generativa começou, percebi que não estávamos diante
+          de uma simples ferramenta, mas de um novo paradigma. A TRIVIUM 369
+          nasceu da minha convicção de que para dominar este novo paradigma,
+          precisamos de um novo "Trivium": uma união entre a
           <strong>Lógica</strong> do código, a <strong>Gramática</strong> da
           linguagem e a <strong>Retórica</strong> da persuasão aplicadas à IA.
-          Minha missão com este curso é simples: entregar a você o método que
-          desenvolvi para que você não apenas acompanhe, mas lidere a
-          transformação em sua área, usando a IA como sua maior alavancada
-          estratégica.
         </p>
       </section>
 
@@ -243,14 +239,14 @@
           </li>
           <li>
             <strong>MÓDULO 3: ENGENHARIA DE PROMPT APLICADA</strong><br />Para
-            Desenvolvedores (Gerando e depurando código), Para Marketing
-            (Criando campanhas) e Para Negócios (Extraindo insights).
+            Desenvolvedores, Para Marketing e Conteúdo, e Para Análise e
+            Negócios.
           </li>
           <li>
             <strong
               >MÓDULO 4: FERRAMENTAS E O FUTURO DA COMUNICAÇÃO COM IA</strong
-            ><br />Além do ChatGPT, Automação e APIs e O que esperar para os
-            próximos anos e como se manter na vanguarda.
+            ><br />Além do ChatGPT, Automação e APIs e o que esperar para os
+            próximos anos.
           </li>
         </ul>
       </section>
@@ -263,20 +259,20 @@
         <ul>
           <li>
             <strong>BÔNUS 1: Acesso à Sala de Comando TRIVIUM</strong
-            ><br />Comunidade Exclusiva para networking, troca de descobertas e
-            para tirar dúvidas diretamente comigo.
+            ><br />Comunidade Exclusiva para networking e tirar dúvidas
+            diretamente comigo.
           </li>
           <li>
             <strong
               >BÔNUS 2: O Grimório Secreto: 100+ Prompts de Alta
               Performance</strong
             ><br />Uma biblioteca de prompts "copia e cola", testados e
-            validados para diversas áreas.
+            validados.
           </li>
           <li>
             <strong>BÔNUS 3: Sessão Estratégica de Q&A ao Vivo</strong><br />Uma
-            chamada em grupo para analisar projetos, tirar dúvidas avançadas e
-            discutir as novas fronteiras da IA.
+            chamada em grupo para analisar projetos e discutir as novas
+            fronteiras da IA.
           </li>
         </ul>
       </section>
@@ -284,17 +280,16 @@
       <section>
         <h2>O investimento para dominar a habilidade do futuro.</h2>
         <p>
-          O acesso completo ao Curso de Engenharia de Prompt, com todos os
-          módulos, materiais de apoio e os 3 bônus exclusivos está disponível
-          hoje por:
+          Acesso completo ao Curso de Engenharia de Prompt, com todos os
+          módulos, materiais e os 3 bônus exclusivos por:
         </p>
-        <h2 style="font-size: 3em; margin: 20px 0; color: var(--cor-destaque)">
+        <h2 style="font-size: 3em; margin: 20px 0; color: var(--cor-cta)">
           R$ 497,00
         </h2>
-        <p>(Ex: 12x de R$ 49,90 ou R$ 497,00 à vista)</p>
+        <p>(ou 12x de R$ 49,90)</p>
 
         <a href="[COLOQUE O LINK DE PAGAMENTO AQUI]" class="cta-button"
-          >QUERO GARANTIR MINHA VAGA E DOMINAR A IA</a
+          >QUERO GARANTIR MINHA VAGA AGORA</a
         >
 
         <p style="margin-top: 30px">
@@ -307,24 +302,25 @@
         <h2>Perguntas Frequentes</h2>
         <div style="text-align: left; max-width: 600px; margin: 0 auto">
           <p>
-            <strong>Preciso ter conhecimento prévio em programação?</strong
-            ><br />Não. O curso é desenhado para ser compreendido por qualquer
-            profissional.
+            <strong>Preciso saber programar?</strong><br />Não. O curso é
+            desenhado para qualquer profissional. O conhecimento em programação
+            será um diferencial para o módulo aplicado, mas não um
+            pré-requisito.
           </p>
           <p>
-            <strong>As aulas são ao vivo ou gravadas?</strong><br />As aulas
-            desta primeira turma serão entregues ao vivo. Todas as aulas serão
-            gravadas e disponibilizadas na área de membros para você assistir
-            quando e onde quiser.
+            <strong>As aulas são ao vivo?</strong><br />Sim, as aulas desta
+            primeira turma serão entregues ao vivo. Todas serão gravadas e
+            disponibilizadas na área de membros para você assistir quando
+            quiser.
           </p>
           <p>
-            <strong>Por quanto tempo terei acesso ao curso?</strong><br />O
-            acesso ao curso e a todas as suas atualizações é vitalício.
+            <strong>Por quanto tempo terei acesso?</strong><br />O acesso ao
+            curso e a todas as suas futuras atualizações é vitalício.
           </p>
           <p>
-            <strong>O curso oferece certificado?</strong><br />Sim. Ao concluir
-            100% do curso, você receberá um certificado de conclusão emitido
-            pela TRIVIUM 369.
+            <strong>Tem certificado?</strong><br />Sim. Ao concluir 100% do
+            curso, você receberá um certificado de conclusão emitido pela
+            TRIVIUM 369.
           </p>
         </div>
       </section>

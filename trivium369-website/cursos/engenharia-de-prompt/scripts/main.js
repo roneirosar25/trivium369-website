@@ -5,7 +5,7 @@ import { quizzes } from "./modules/quiz-logic.js";
 import { inicializarSimuladores } from "./modules/simulators.js";
 import { inicializarGeradorDeCertificado } from "./modules/certificate-generator.js";
 import { atualizarInterfaceGeral } from "./modules/ui-updater.js";
-
+import { inicializarAnotacoes } from "./modules/anotacoes.js";
 const CONSTS = {
   // IDs
   BTN_CONCLUIR: "btnConcluir",
@@ -189,6 +189,7 @@ function inicializarPainelConquistas() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  inicializarAnotacoes(); // <-- ADICIONE ESTA LINHA
   atualizarInterfaceGeral();
   inicializarPainelConquistas();
   inicializarSimuladores();
@@ -357,5 +358,34 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       carregarQuiz();
     }
+  }
+});
+// --- FUNCIONALIDADE DE ANOTAÇÕES PESSOAIS ---
+
+// Espera o documento HTML ser completamente carregado para executar o código.
+document.addEventListener("DOMContentLoaded", () => {
+  // Encontra o elemento da caixa de texto na página.
+  const textarea = document.getElementById("anotacoes-pessoais");
+
+  // Só executa o código se a caixa de anotações existir na página atual.
+  if (textarea) {
+    // 1. Cria uma "chave" única para cada página para salvar as notas.
+    // Isso garante que as anotações da aula 1 não se misturem com as da aula 2.
+    const lessonKey = "anotacoes_trivium_" + window.location.pathname;
+
+    // 2. Carrega as notas salvas quando a página abre.
+    // Ele procura no localStorage por anotações salvas com a chave desta página.
+    const savedNotes = localStorage.getItem(lessonKey);
+    if (savedNotes) {
+      textarea.value = savedNotes;
+    }
+
+    // 3. Salva as notas automaticamente enquanto o usuário digita.
+    // Adiciona um "ouvinte" que percebe cada vez que uma tecla é pressionada.
+    textarea.addEventListener("input", () => {
+      localStorage.setItem(lessonKey, textarea.value);
+    });
+
+    console.log(`Página de anotações inicializada com a chave: ${lessonKey}`);
   }
 });

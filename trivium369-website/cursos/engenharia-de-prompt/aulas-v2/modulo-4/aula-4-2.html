@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRIVIUM 369 | Aula 4.2: O Raio-X Sistêmico</title>
+
+    <link rel="stylesheet" href="../../style-main.css" />
+
+    <style>
+      .aula-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 40px;
+        background-color: var(--cor-secundaria);
+        border-radius: 8px;
+        border-left: 5px solid var(--cor-destaque);
+      }
+      .aula-header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #333;
+      }
+      .aula-header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+      .aula-header h3 {
+        font-size: 1.2em;
+        font-weight: normal;
+        color: var(--cor-texto);
+      }
+      .aula-content {
+        text-align: left;
+      }
+      .aula-content h2 {
+        font-size: 1.8em;
+        color: var(--cor-destaque);
+        margin-top: 40px;
+        border-left: 3px solid var(--cor-cta);
+        padding-left: 15px;
+      }
+      .aula-content p,
+      .aula-content li {
+        font-size: 1.15em;
+        line-height: 1.7;
+      }
+      .aula-content ul,
+      .aula-content ol {
+        list-style-position: outside;
+        padding-left: 20px;
+      }
+      .aula-content blockquote {
+        border-left: 3px solid #ccc;
+        padding-left: 20px;
+        margin: 20px 0;
+        font-family: monospace;
+        background-color: #111;
+        padding: 20px;
+        border-radius: 5px;
+        white-space: pre-wrap;
+      }
+      .navegacao-aula {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+      }
+      .navegacao-aula a {
+        color: var(--cor-destaque);
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.2s;
+      }
+      .navegacao-aula a:hover {
+        background-color: #2a2a2a;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="aula-container">
+      <header class="aula-header">
+        <h3>MÓDULO 4: O MÉTODO TESLA</h3>
+        <h1>
+          Aula 4.2: Análise de Causa e Efeito: Identificando os Elementos do seu
+          Sistema
+        </h1>
+      </header>
+
+      <article class="aula-content">
+        <h2>Introdução: Mapeando o Território</h2>
+        <p>
+          Bem-vindos à nossa primeira aula prática do Módulo 4. Na aula
+          anterior, você escolheu um universo complexo para análise. Agora,
+          vamos usar nosso parceiro de IA para iluminar esse sistema e ver seus
+          componentes de forma clara. Não estamos buscando respostas ainda;
+          estamos buscando clareza.
+        </p>
+
+        <h2>A Ferramenta Prática: O Raio-X Sistêmico</h2>
+        <p>
+          Para iniciar nossa análise, usaremos a primeira ferramenta do nosso
+          "Mapeador de Sistemas": <strong>"O Raio-X Sistêmico"</strong>. Este
+          prompt pega sua descrição narrativa de um problema e força a IA a
+          extrair os blocos de construção fundamentais de qualquer sistema: os
+          Estoques, os Fluxos e os Atores.
+        </p>
+        <blockquote>
+          <p><strong>Modelo do Prompt:</strong></p>
+          <code
+            >Atuando como um analista de sistemas, leia atentamente a descrição
+            do problema a seguir: &lt;descreva aqui o problema que você escolheu
+            na aula anterior&gt;.<br /><br />Agora, com base estrita nesta
+            descrição, identifique e liste de forma organizada:<br />1. Os
+            principais 'Estoques' (acumulações mensuráveis, como confiança,
+            dívida, motivação, número de clientes).<br />2. Os principais
+            'Fluxos' (as ações que aumentam ou diminuem os estoques).<br />3. Os
+            principais 'Atores' (as pessoas ou grupos envolvidos no
+            sistema).</code
+          >
+        </blockquote>
+
+        <h2>Estudo de Caso: Analisando a Procrastinação</h2>
+        <p>
+          Vamos aplicar o "Raio-X Sistêmico" ao nosso exemplo da dificuldade em
+          manter uma rotina de exercícios.
+        </p>
+        <p>
+          <strong>Descrição do Problema (Exemplo de input do aluno):</strong
+          ><br />
+          <em
+            >"Eu luto constantemente para manter uma rotina de exercícios.
+            Começo a semana motivado, mas depois a energia desaparece. O
+            trabalho se estende até tarde, e quando chego em casa, estou
+            exausto. Acabo adiando para 'amanhã', o que me dá um alívio
+            momentâneo, mas no dia seguinte a culpa e o estresse aumentam,
+            tornando ainda mais difícil começar. Minha família me apoia, mas meu
+            chefe exige muito. Isso afeta minha autoestima e me deixa preso em
+            um ciclo de inatividade."</em
+          >
+        </p>
+
+        <p><strong>Resultado Ideal Gerado pela IA:</strong></p>
+        <p>Com base na descrição, aqui estão os elementos do sistema:</p>
+        <h3>1. Estoques:</h3>
+        <ul>
+          <li>Motivação</li>
+          <li>Energia</li>
+          <li>Tempo Livre</li>
+          <li>Culpa</li>
+          <li>Estresse</li>
+          <li>Autoestima</li>
+        </ul>
+        <h3>2. Fluxos:</h3>
+        <ul>
+          <li>
+            Manter rotina de exercícios (aumenta Energia e Autoestima, diminui
+            Culpa)
+          </li>
+          <li>Trabalhar até tarde (diminui Energia e Tempo Livre)</li>
+          <li>
+            Adiar para "amanhã" (aumenta Culpa e Estresse, diminui Motivação)
+          </li>
+          <li>Sentir alívio momentâneo (diminui Estresse temporariamente)</li>
+          <li>
+            Ficar preso em ciclo de inatividade (reforça a diminuição de Energia
+            e Autoestima)
+          </li>
+        </ul>
+        <h3>3. Atores:</h3>
+        <ul>
+          <li>Eu</li>
+          <li>Família</li>
+          <li>Chefe</li>
+        </ul>
+        <p>
+          Observe como a IA extraiu os conceitos-chave e os organizou. Esta
+          lista é o nosso primeiro mapa.
+        </p>
+
+        <h2>Exercício Prático: O Raio-X do Seu Sistema</h2>
+        <p>Agora é a sua vez. Sua tarefa é a seguinte:</p>
+        <ol>
+          <li>
+            Pegue o parágrafo que você escreveu na Aula 4.1, descrevendo o seu
+            problema.
+          </li>
+          <li>Copie o modelo do prompt "O Raio-X Sistêmico".</li>
+          <li>Cole a sua descrição do problema no local indicado.</li>
+          <li>Execute o prompt e analise a resposta da IA.</li>
+        </ol>
+        <p>
+          O objetivo deste exercício é gerar a sua primeira lista de
+          <strong>Estoques, Fluxos e Atores</strong>. Salve essa lista. Ela é a
+          matéria-prima para a nossa próxima aula, onde aprenderemos a
+          identificar os ciclos de feedback — os motores que impulsionam o seu
+          sistema.
+        </p>
+      </article>
+
+      <footer class="navegacao-aula">
+        <a href="aula-4-1.html">&lt;&lt; Aula Anterior</a>
+
+        <a href="aula-4-3.html">Próxima Aula &gt;&gt;</a>
+      </footer>
+    </main>
+  </body>
+</html>

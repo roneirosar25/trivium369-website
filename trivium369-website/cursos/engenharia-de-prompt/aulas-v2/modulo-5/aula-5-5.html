@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRIVIUM 369 | Aula 5.5: Oficina do Projeto Capstone</title>
+
+    <link rel="stylesheet" href="../../style-main.css" />
+
+    <style>
+      .aula-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 40px;
+        background-color: var(--cor-secundaria);
+        border-radius: 8px;
+        border-left: 5px solid var(--cor-destaque);
+      }
+      .aula-header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #333;
+      }
+      .aula-header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+      .aula-header h3 {
+        font-size: 1.2em;
+        font-weight: normal;
+        color: var(--cor-texto);
+      }
+      .aula-content {
+        text-align: left;
+      }
+      .aula-content h2 {
+        font-size: 1.8em;
+        color: var(--cor-destaque);
+        margin-top: 40px;
+        border-left: 3px solid var(--cor-cta);
+        padding-left: 15px;
+      }
+      .aula-content p,
+      .aula-content li {
+        font-size: 1.15em;
+        line-height: 1.7;
+      }
+      .aula-content ul,
+      .aula-content ol {
+        list-style-position: outside;
+        padding-left: 20px;
+      }
+      .aula-content blockquote {
+        border-left: 3px solid #ccc;
+        padding-left: 20px;
+        margin: 20px 0;
+        font-family: monospace;
+        background-color: #111;
+        padding: 20px;
+        border-radius: 5px;
+        white-space: pre-wrap;
+      }
+      .aula-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 30px;
+      }
+      .aula-content th,
+      .aula-content td {
+        border: 1px solid #333;
+        padding: 12px;
+        text-align: left;
+      }
+      .aula-content th {
+        background-color: var(--cor-cta);
+        color: var(--cor-branca);
+      }
+      .navegacao-aula {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+      }
+      .navegacao-aula a {
+        color: var(--cor-destaque);
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.2s;
+      }
+      .navegacao-aula a:hover {
+        background-color: #2a2a2a;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="aula-container">
+      <header class="aula-header">
+        <h3>MÓDULO 5: ARQUITETURA AVANÇADA - DOMINANDO O JOGO INFINITO</h3>
+        <h1>Aula 5.5: Oficina do Projeto Capstone: Da Ideia ao Protótipo</h1>
+      </header>
+
+      <article class="aula-content">
+        <h2>Introdução: Da Quantidade à Qualidade</h2>
+        <p>
+          Equipe, o trabalho que fizemos na última aula foi essencial. Geramos
+          um vasto portfólio de futuros possíveis. Mas a fase de sonhar, de
+          expandir, acabou. Agora, o trabalho do inovador muda de chapéu.
+          Deixamos de ser o explorador criativo e nos tornamos o editor
+          estratégico, o fundador que precisa decidir onde alocar seu recurso
+          mais precioso: o tempo.
+        </p>
+        <p>
+          Estamos no último movimento da nossa sinfonia, a fase final de
+          convergência: <strong>Entregar (Deliver)</strong>. O objetivo aqui não
+          é mais criar opções, mas sim fazer uma escolha inteligente e colocar
+          algo no mundo. Em uma startup, ideias valem pouco; a execução é tudo.
+        </p>
+
+        <h2>A Ferramenta Prática: A "Matriz de Priorização de Impacto"</h2>
+        <p>
+          Para tomar essa decisão, não podemos confiar apenas na intuição.
+          Precisamos de um framework que nos ajude a analisar nosso portfólio de
+          ideias de forma estratégica. Para isso, usaremos nossa ferramenta
+          final: a <strong>"Matriz de Priorização de Impacto"</strong>.
+        </p>
+
+        <blockquote>
+          <p>
+            <strong>Prompt Mestre: A Matriz de Priorização de Impacto</strong>
+          </p>
+          <code
+            >Com base na lista de 20 ideias que geramos, que está colada
+            abaixo:<br /><br />---<br />[COLE AQUI A SUA LISTA DE 20 IDEIAS]<br />---<br /><br />Atue
+            como meu co-fundador estratégico e pragmático. Sua tarefa é me
+            ajudar a analisar e priorizar estas ideias. Para isso, realize as
+            seguintes ações:<br />1. **Crie uma tabela em Markdown** com as
+            colunas: "Ideia", "Impacto Potencial (1-5)", "Viabilidade (1-5)",
+            "Paixão Pessoal (1-5)", e "Pontuação Total".<br />2. **Preencha a
+            tabela**, avaliando cada ideia.<br />3. **Apresente o Top 3:** Após
+            a tabela, liste as 3 ideias com a maior pontuação e defenda cada uma
+            como um forte candidato para nosso MVP.</code
+          >
+        </blockquote>
+
+        <h2>Estudo de Caso: Escolhendo o Futuro da Mentoria</h2>
+        <p>
+          Vamos aplicar a matriz ao nosso projeto, alimentando o prompt com as
+          ideias que geramos.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Ideia</th>
+              <th>Impacto Potencial (1-5)</th>
+              <th>Viabilidade (1-5)</th>
+              <th>Paixão Pessoal (1-5)</th>
+              <th>Pontuação Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Clone de IA do Mentor</td>
+              <td>5</td>
+              <td>1</td>
+              <td>4</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>Retiros de Mentoria</td>
+              <td>5</td>
+              <td>1</td>
+              <td>3</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td><strong>Playlists de Carreira</strong></td>
+              <td><strong>4</strong></td>
+              <td><strong>5</strong></td>
+              <td><strong>4</strong></td>
+              <td><strong>13</strong></td>
+            </tr>
+            <tr>
+              <td><strong>"Speed Dating" de Mentoria</strong></td>
+              <td><strong>3</strong></td>
+              <td><strong>5</strong></td>
+              <td><strong>4</strong></td>
+              <td><strong>12</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Newsletter "Conselho do Mentor"</strong></td>
+              <td><strong>3</strong></td>
+              <td><strong>5</strong></td>
+              <td><strong>3</strong></td>
+              <td><strong>11</strong></td>
+            </tr>
+            <tr>
+              <td>Modelo Padrinho/Madrinha</td>
+              <td>4</td>
+              <td>3</td>
+              <td>3</td>
+              <td>10</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Análise do Top 3:</h3>
+        <ol>
+          <li>
+            <strong>Playlists de Carreira (Pontuação: 13):</strong> Nossa aposta
+            mais forte para um MVP. Ataca o núcleo do problema (dar uma
+            "bússola") de forma inovadora e altamente viável. Resolve a tensão
+            "escala vs. intimidade" de forma inteligente.
+          </li>
+          <li>
+            <strong>"Speed Dating" de Mentoria (Pontuação: 12):</strong>
+            Excelente para validar a necessidade de conexão ao vivo. Alta
+            viabilidade para teste, mas mais difícil de escalar. Ótimo como um
+            possível passo 2.
+          </li>
+          <li>
+            <strong>Newsletter "Conselho do Mentor" (Pontuação: 11):</strong>
+            Opção mais segura e de menor esforço. Ótima tática de marketing de
+            conteúdo para construir audiência enquanto desenvolvemos a ideia das
+            "Playlists".
+          </li>
+        </ol>
+
+        <h2>
+          Conclusão do Curso e Desafio Final: O Início do seu Jogo Infinito
+        </h2>
+        <p>
+          Chegamos ao fim. Ao longo desta jornada, você passou de consumidor de
+          respostas a <strong>Arquiteto do Pensamento</strong>. Aprendeu a
+          dançar o ritmo da criação e a usar a IA como uma parceira de treino e
+          co-fundadora.
+        </p>
+        <p>
+          Este curso não foi sobre usar ferramentas. Foi sobre aprender a pensar
+          de uma forma que permita que você continue jogando, aprendendo e
+          criando pelo resto de sua vida.
+        </p>
+
+        <h3>O Desafio Final: Seu Primeiro Movimento</h3>
+        <ol>
+          <li>
+            <strong>Execute a Matriz:</strong> Use o prompt da "Matriz de
+            Priorização de Impacto" para analisar suas 20 ideias.
+          </li>
+          <li>
+            <strong>Tome uma Decisão:</strong> Escolha
+            <strong>uma</strong> ideia. Apenas uma. Esta será sua aposta
+            inicial.
+          </li>
+          <li>
+            <strong>Defina seu Protótipo:</strong> Escreva um parágrafo
+            começando com: <strong>"Meu primeiro protótipo será..."</strong>.
+            Descreva, da forma mais concreta e simples possível, o que você vai
+            construir ou testar na próxima semana.
+          </li>
+        </ol>
+        <p>
+          Este parágrafo não é para mim. É para você. É o seu contrato consigo
+          mesmo. É a sua primeira jogada no seu próprio Jogo Infinito.
+        </p>
+        <p>
+          Obrigado por embarcar nesta jornada. O campo de jogo está à sua
+          frente, cheio de problemas que valem a pena ser resolvidos e de coisas
+          maravilhosas que esperam para serem criadas.
+        </p>
+        <p><strong>Agora, vá jogar.</strong></p>
+      </article>
+
+      <footer class="navegacao-aula">
+        <a href="aula-5-4.html">&lt;&lt; Aula Anterior</a>
+
+        <a href="#" style="visibility: hidden">Próxima Aula &gt;&gt;</a>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -513,3 +513,37 @@ img {
     max-width: 100%;
   }
 }
+/* =============================================== */
+/* 9. ESTILOS DA PÁGINA DE VENDAS (LANDING PAGE)   */
+/* =============================================== */
+
+/* Estilo para o H2 com o nome da marca no topo */
+.lp-brand-title {
+  color: var(--cor-destaque);
+  font-weight: normal;
+  margin-bottom: 40px;
+}
+
+/* Estilo para o H2 com o preço do curso */
+.lp-price {
+  font-size: 3em;
+  margin: 20px 0;
+  color: var(--cor-cta); /* Usando a cor roxa do botão para destaque */
+}
+
+/* Estilo para o parágrafo da garantia */
+.lp-guarantee {
+  margin-top: 30px;
+}
+
+/* Estilo para o container da seção de FAQ */
+.faq-container {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Classe para o body da página de vendas, para remover paddings desnecessários */
+.sales-page-body {
+  padding-top: 0;
+}

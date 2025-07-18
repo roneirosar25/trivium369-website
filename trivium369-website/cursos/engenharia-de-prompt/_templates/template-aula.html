@@ -5,82 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TRIVIUM 369 | Aula</title>
 
-    <link rel="stylesheet" href="../../style-main.css" />
-
-    <style>
-      .aula-container {
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 20px;
-        background-color: var(--cor-secundaria);
-        border-radius: 8px;
-        border-left: 5px solid var(--cor-destaque);
-      }
-      .aula-header {
-        text-align: center;
-        margin-bottom: 40px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #333;
-      }
-      .aula-header h1 {
-        font-size: 2.5em;
-        margin-bottom: 10px;
-      }
-      .aula-header h3 {
-        font-size: 1.2em;
-        font-weight: normal;
-        color: var(--cor-texto);
-      }
-      .aula-content {
-        text-align: left;
-      }
-      .aula-content h2 {
-        font-size: 1.8em;
-        color: var(--cor-destaque);
-        margin-top: 40px;
-      }
-      .aula-content p,
-      .aula-content li {
-        font-size: 1.15em;
-        line-height: 1.7;
-      }
-      .navegacao-aula {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 50px;
-        padding-top: 20px;
-        border-top: 1px solid #333;
-      }
-      .navegacao-aula a {
-        color: var(--cor-destaque);
-        text-decoration: none;
-        font-weight: bold;
-      }
-    </style>
+    <link rel="stylesheet" href="../../../../style-main.css" />
   </head>
   <body>
-    <main class="aula-container">
-      <header class="aula-header">
-        <h3>MÓDULO X: NOME DO MÓDULO</h3>
-        <h1>Título da Aula</h1>
-      </header>
+    <div class="layout-curso-v2">
+      <aside class="sidebar-navegacao">
+        <h3>Navegação do Curso</h3>
+      </aside>
 
-      <article class="aula-content">
-        <h2>Seção 1: Título da Seção</h2>
-        <p>Este é um parágrafo de exemplo do conteúdo da aula...</p>
+      <main class="conteudo-aula-container">
+        <div class="barra-progresso-container">
+          <div class="barra-progresso-preenchimento" id="barraProgresso"></div>
+          <span class="progresso-texto" id="progressoTexto">0% concluído</span>
+        </div>
 
-        <h2>Seção 2: Outro Título</h2>
-        <p>
-          Mais conteúdo aqui, explicando os conceitos da aula de forma clara e
-          didática.
-        </p>
-      </article>
+        <header class="aula-header">
+          <h3>MÓDULO X: NOME DO MÓDULO</h3>
+          <h1>Título da Aula</h1>
+        </header>
 
-      <footer class="navegacao-aula">
-        <a href="#">&lt;&lt; Aula Anterior</a>
+        <article class="aula-content">
+          <h2>Seção 1: Título da Seção</h2>
+          <p>Este é um parágrafo de exemplo do conteúdo da aula...</p>
+        </article>
 
-        <a href="#">Próxima Aula &gt;&gt;</a>
-      </footer>
-    </main>
+        <footer class="navegacao-aula">
+          <a href="#">&lt;&lt; Aula Anterior</a>
+          <a href="#" class="cta-button" id="btnMarcarConcluida"
+            >Marcar como Concluída</a
+          >
+          <a href="#">Próxima Aula &gt;&gt;</a>
+        </footer>
+      </main>
+
+      <aside class="sidebar-ferramentas">
+        <div class="ferramenta-box">
+          <h4>Anotações Pessoais</h4>
+          <textarea
+            id="anotacoesPessoais"
+            placeholder="Suas anotações sobre a aula são salvas automaticamente..."
+          ></textarea>
+        </div>
+      </aside>
+    </div>
+
+    <div id="kairos-chat-button" title="Converse com a Kairos">
+      <img src="../../../../assets/img/kairos-icon.png" alt="Ícone da Kairos" />
+    </div>
+
+    <script src="../../../../scripts/sidebar.js"></script>
+    <script src="../../../../scripts/progresso.js"></script>
+    <script src="../../../../scripts/anotacoes.js"></script>
+    <script src="../../../../scripts/kairos-chat.js"></script>
   </body>
 </html>

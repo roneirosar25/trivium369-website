@@ -547,3 +547,155 @@ img {
 .sales-page-body {
   padding-top: 0;
 }
+/* ======================================================= */
+/* == ESTILOS DA ESTRUTURA DO CURSO (AULAS) - VERSÃO FINAL == */
+/* ======================================================= */
+
+.layout-curso-v2 {
+  display: grid;
+  grid-template-columns: 300px 1fr 320px;
+  max-width: 1600px;
+  margin: 20px auto;
+  gap: 20px;
+  padding: 20px;
+  align-items: start;
+}
+
+/* COLUNA 1: NAVEGAÇÃO */
+.sidebar-navegacao {
+  background-color: var(--cor-secundaria);
+  padding: 20px;
+  border-radius: 8px;
+  position: sticky;
+  top: 20px;
+}
+
+.sidebar-navegacao h3 {
+  color: var(--cor-branca);
+  border-bottom: 2px solid var(--cor-destaque);
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+.sidebar-modulo {
+  margin-bottom: 25px;
+}
+
+.sidebar-modulo h4 {
+  color: var(--cor-destaque);
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.sidebar-lista-aulas {
+  list-style: none;
+  padding-left: 10px;
+}
+
+.sidebar-lista-aulas li a {
+  color: var(--cor-texto);
+  text-decoration: none;
+  display: flex; /* Para alinhar o ícone com o texto */
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+  font-size: 0.95em;
+}
+
+.sidebar-lista-aulas li a:hover {
+  background-color: #2a2a2a;
+}
+
+.sidebar-lista-aulas li a.aula-atual {
+  background-color: var(--cor-cta);
+  color: var(--cor-branca);
+  font-weight: bold;
+}
+
+/* Estilos para o ícone de status da aula */
+.status-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* COLUNA 2: CONTEÚDO DA AULA */
+.conteudo-aula-container {
+  background-color: var(--cor-secundaria);
+  padding: 40px;
+  border-radius: 8px;
+}
+
+/* BARRA DE PROGRESSO */
+.barra-progresso-container {
+  width: 100%;
+  background-color: #2a2a2a;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  position: relative;
+  height: 25px;
+  border: 1px solid #333;
+}
+
+.barra-progresso-preenchimento {
+  height: 100%;
+  width: 0%; /* O JS vai controlar isso */
+  background-color: var(--cor-destaque);
+  border-radius: 5px;
+  transition: width 0.5s ease-in-out;
+}
+
+.progresso-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--cor-branca);
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.aula-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #333;
+}
+
+/* ... (os outros estilos de .aula-header e .aula-content permanecem os mesmos) ... */
+
+/* NAVEGAÇÃO INFERIOR CENTRALIZADA */
+.navegacao-aula {
+  display: flex;
+  justify-content: center; /* CENTRALIZADO */
+  align-items: center;
+  gap: 20px; /* Espaçamento entre os botões */
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+}
+
+.navegacao-aula a {
+  color: var(--cor-destaque);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.navegacao-aula a:not(.cta-button):hover {
+  background-color: #2a2a2a;
+}
+
+/* COLUNA 3: FERRAMENTAS DO ALUNO */
+.sidebar-ferramentas {
+  background-color: var(--cor-secundaria);
+  padding: 20px;
+  border-radius: 8px;
+  position: sticky;
+  top: 20px;
+}
+
+/* ... (os outros estilos de .sidebar-ferramentas e do botão Kairos permanecem os mesmos) ... */

@@ -1,0 +1,35 @@
+/* ARQUIVO: /assets/css/main.css */
+/* DESCRIÇÃO: Estilos BASE para TODO o site. O DNA da marca. */
+
+/* Definição das variáveis de cor e fontes globais */
+:root {
+  --cor-primaria: #101010;
+  --cor-secundaria: #181818;
+  --cor-texto: #e0e0e0;
+  --cor-destaque: #00bfff; /* Azul Tesla */
+  --cor-cta: #8a2be2; /* Púrpura Quântico */
+  --cor-hover-borda: #00bfff;
+
+  /* Definindo a fonte principal para todo o projeto */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+/* Reset básico para garantir consistência entre navegadores */
+body {
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--cor-destaque);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introdução | TRIVIUM 369</title>
+    <link rel="stylesheet" href="../../assets/css/style-curso.css" />
+    <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
+
+    <style>
+      /* Estilo do container do botão atualizado para usar Flexbox */
+      .navegacao-aula {
+        width: 100%;
+        display: flex;
+        justify-content: center; /* <<< Mágica da centralização horizontal */
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .btn-navegacao {
+        display: inline-block;
+        padding: 12px 28px;
+        background-color: #8e44ad;
+        color: #ffffff;
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      .btn-navegacao:hover {
+        background-color: #9b59b6;
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout-curso-v2">
+      <aside class="sidebar-navegacao">
+        <div class="logo-container"><h3>TRIVIUM 369</h3></div>
+        <nav class="menu-aulas"></nav>
+      </aside>
+
+      <main class="conteudo-aula-container">
+        <header class="aula-header">
+          <h2 id="titulo-modulo">O Início da Jornada</h2>
+          <h1 id="titulo-aula">Manifesto do Arquiteto de Pensamento</h1>
+        </header>
+        <article class="aula-content">
+          <h3>O Ponto de Partida: Quem Você é Agora</h3>
+          <p>Você não chegou aqui por acaso.</p>
+          <p>
+            Você está na fronteira de uma revolução, a maior transformação
+            tecnológica desde a eletricidade. Você vê a Inteligência Artificial
+            em toda parte, mas sente um abismo entre o que todos fazem com ela –
+            o genérico, o trivial – e o seu potencial real, quase mágico.
+          </p>
+          <p>
+            Você não é um mero espectador. Você é um explorador. A sua mente
+            investigativa sabe que "escrever um prompt" é apenas a porta de
+            entrada. O que você busca não é a resposta mais rápida, mas a
+            pergunta mais poderosa. Você está aqui porque suspeita que a IA não
+            é apenas uma ferramenta a ser usada, mas uma nova dimensão do
+            pensamento a ser desvendada.
+          </p>
+          <p>
+            Hoje, você é um pioneiro curioso, segurando um mapa para um
+            continente desconhecido.
+          </p>
+          <h3>A Expedição: O Que Você Irá Aprender</h3>
+          <p>
+            Esta não é uma viagem para aprender truques. É uma expedição para
+            forjar uma nova forma de pensar. Nós não lhe daremos um peixe; nós
+            lhe ensinaremos a projetar ecossistemas inteiros.
+          </p>
+          <h3>A Metamorfose: Quem Você Se Tornará</h3>
+          <p>
+            Ao final desta jornada, a sua relação com a tecnologia – e com sua
+            própria mente – estará fundamentalmente alterada. Você deixará de
+            ser um "usuário de IA" para se tornar um
+            <strong>Arquiteto do Pensamento</strong>.
+          </p>
+          <p>
+            Onde outros veem uma caixa de texto, você verá um laboratório. Onde
+            outros buscam respostas, você construirá sistemas de descoberta.
+            Você ganhará uma vantagem cognitiva duradoura em um mundo que está
+            sendo rapidamente reescrito.
+          </p>
+        </article>
+
+        <div class="navegacao-aula">
+          <a href="aula-1-1.html" class="btn-navegacao btn-proximo"
+            >Começar a Jornada →</a
+          >
+        </div>
+      </main>
+
+      <aside class="sidebar-ferramentas">
+        <div class="ferramenta-box">
+          <h4>Anotações Pessoais</h4>
+          <p class="instrucao-anotacoes">
+            Suas anotações são salvas automaticamente no navegador.
+          </p>
+          <textarea
+            id="anotacoesPessoais"
+            placeholder="Digite suas reflexões e insights aqui..."
+          ></textarea>
+          <div class="botoes-anotacoes">
+            <button id="btn-limpar-anotacoes">Limpar</button>
+            <button id="btn-baixar-anotacoes">Baixar</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <script src="../../scripts/funcionalidades-curso.js"></script>
+  </body>
+</html>

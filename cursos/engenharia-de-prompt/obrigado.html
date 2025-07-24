@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obrigado! Sua Vaga está Confirmada | TRIVIUM 369</title>
+    <style>
+      :root {
+        --cor-fundo: #0f0f1a;
+        --cor-texto-principal: #e0e0e0;
+        --cor-texto-secundario: #a0a0b0;
+        --cor-titulo: #ffffff;
+        --cor-primaria: #8e44ad;
+        --cor-sucesso: #2ecc71;
+        --cor-borda: rgba(255, 255, 255, 0.1);
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background-color: var(--cor-fundo);
+        color: var(--cor-texto-principal);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 650px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 40px;
+        border-radius: 12px;
+        border: 1px solid var(--cor-borda);
+      }
+      .icon-sucesso {
+        font-size: 4rem;
+        color: var(--cor-sucesso);
+        margin-bottom: 20px;
+      }
+      h1 {
+        color: var(--cor-titulo);
+        font-size: 2.5rem;
+        margin: 0 0 15px 0;
+      }
+      p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--cor-texto-secundario);
+      }
+      .next-steps {
+        text-align: left;
+        margin-top: 40px;
+        border-top: 1px solid var(--cor-borda);
+        padding-top: 30px;
+      }
+      .next-steps h3 {
+        text-align: center;
+        margin-top: 0;
+        font-size: 1.5rem;
+      }
+      .next-steps ol {
+        list-style: none;
+        padding-left: 0;
+      }
+      .next-steps li {
+        position: relative;
+        padding-left: 45px;
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+      }
+      .next-steps li::before {
+        content: counter(list-item);
+        counter-increment: list-item;
+        position: absolute;
+        left: 0;
+        top: -2px;
+        width: 30px;
+        height: 30px;
+        background-color: var(--cor-primaria);
+        color: white;
+        border-radius: 50%;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .suporte {
+        margin-top: 40px;
+        font-size: 0.9rem;
+        color: var(--cor-texto-secundario);
+      }
+      .suporte a {
+        color: var(--cor-primaria);
+        text-decoration: none;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="icon-sucesso">✓</div>
+      <h1>Parabéns e boas-vindas!</h1>
+      <p>
+        Sua vaga na expedição TRIVIUM 369 está confirmada. Você tomou o primeiro
+        passo para deixar de ser um espectador e se tornar um Arquiteto do
+        Pensamento. Estamos felizes em ter você a bordo.
+      </p>
+
+      <div class="next-steps">
+        <h3>Seus Próximos Passos (Importante)</h3>
+        <ol>
+          <li>
+            <strong>Verifique seu E-mail:</strong> Em até 10 minutos, você
+            receberá um e-mail enviado pela Hotmart com o assunto "Acesso ao
+            produto TRIVIUM 369".
+          </li>
+          <li>
+            <strong>Acesse o Portal:</strong> Dentro deste e-mail, haverá um
+            link único para você acessar a nossa área de membros. Clique nele
+            para criar sua senha.
+          </li>
+          <li>
+            <strong>Comece a Jornada:</strong> Após criar sua senha, você terá
+            acesso imediato à introdução e ao primeiro módulo do curso.
+          </li>
+        </ol>
+      </div>
+
+      <p class="suporte">
+        Caso não encontre o e-mail (verifique sua caixa de spam!) ou tenha
+        qualquer problema, entre em contato conosco pelo e-mail:
+        <a href="mailto:seu-email-de-suporte@dominio.com"
+          >seu-email-de-suporte@dominio.com</a
+        >
+      </p>
+    </div>
+  </body>
+</html>

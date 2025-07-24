@@ -1,0 +1,99 @@
+/* ARQUIVO: /cursos/engenharia-de-prompt/assets/css/style-landing-curso.css */
+/* VERSÃO: CORRIGIDA E AUTÔNOMA */
+
+/* --- Importando variáveis de um caminho absoluto para segurança --- */
+@import url("/assets/css/base.css");
+
+/* --- HEADER --- */
+.main-header {
+  background-color: var(--cor-secundaria);
+  padding: 20px 0;
+  border-bottom: 1px solid #333;
+}
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-header h1 {
+  margin: 0;
+  font-size: 1.8em;
+  color: #fff;
+}
+.logo-link:hover h1 {
+  color: var(--cor-destaque);
+}
+.main-nav a {
+  color: var(--cor-texto);
+  margin-left: 30px;
+  font-weight: bold;
+}
+.main-nav a.active {
+  color: var(--cor-destaque);
+}
+
+/* --- SEÇÃO HERO --- */
+.hero-curso {
+  text-align: center;
+  padding: 100px 20px 80px 20px;
+  background: linear-gradient(rgba(16, 16, 16, 0.8), var(--cor-primaria)),
+    url("/cursos/engenharia-de-prompt/assets/img/hero-background.jpg") no-repeat
+      center center/cover;
+}
+.hero-curso h2 {
+  font-size: 3.5em;
+  color: #fff;
+  margin: 0 0 20px 0;
+}
+.hero-curso .subtitulo {
+  font-size: 1.5em;
+  color: var(--cor-destaque);
+  margin-bottom: 30px;
+}
+.hero-curso p {
+  font-size: 1.2em;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+.hero-curso .cta-button {
+  display: inline-block;
+  background-color: var(--cor-destaque);
+  color: var(--cor-primaria);
+  padding: 18px 45px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.hero-curso .cta-button:hover {
+  background-color: #fff;
+  transform: scale(1.05);
+}
+
+/* --- SEÇÃO DE CONTEÚDO --- */
+.content-section {
+  padding: 80px 0;
+}
+.content-section h3 {
+  font-size: 2.8em;
+  color: var(--cor-cta);
+  text-align: center;
+  margin-bottom: 50px;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.feature-card {
+  background-color: var(--cor-secundaria);
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+}
+.feature-card h4 {
+  color: var(--cor-destaque);
+  margin-top: 0;
+  font-size: 1.5em;
+}

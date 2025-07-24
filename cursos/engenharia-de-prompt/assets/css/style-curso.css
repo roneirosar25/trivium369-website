@@ -1,0 +1,672 @@
+/* ARQUIVO MESTRE: /cursos/engenharia-de-prompt/assets/css/style-curso.css */
+/* VERSÃO: FINAL, COM BARRA DE ROLAGEM CORRIGIDA - 22/07/2025 */
+
+/* --- Estilos Base Globais --- */
+:root {
+  --cor-primaria-fundo: #0d0c1d;
+  --cor-secundaria-fundo: #16152b;
+  --cor-texto-principal: #f0f0f0;
+  --cor-texto-secundario: #a0a0b0;
+  --cor-destaque-ciano: #00bfff;
+  --cor-destaque-purpura: #8a2be2;
+  --cor-borda-sutil: rgba(255, 255, 255, 0.1);
+}
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  background-color: var(--cor-primaria-fundo);
+  color: var(--cor-texto-principal);
+  margin: 0;
+  line-height: 1.7;
+}
+a {
+  color: var(--cor-destaque-ciano);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+a:hover {
+  color: #fff;
+}
+h3 {
+  color: var(--cor-destaque-purpura);
+  font-size: 1.6em;
+}
+h4 {
+  color: var(--cor-destaque-ciano);
+  font-size: 1.4em;
+}
+strong {
+  color: var(--cor-destaque-purpura);
+}
+em {
+  color: var(--cor-destaque-ciano);
+  font-style: italic;
+}
+
+/* === LAYOUT GERAL DA AULA === */
+.layout-curso-v2 {
+  display: grid;
+  grid-template-columns: 300px 1fr 340px;
+  max-width: 1800px;
+  margin: 20px auto;
+  gap: 25px;
+  padding: 0 20px;
+  align-items: start;
+}
+.sidebar-navegacao,
+.conteudo-aula-container,
+.sidebar-ferramentas {
+  background-color: var(--cor-secundaria-fundo);
+  border-radius: 12px;
+  border: 1px solid var(--cor-borda-sutil);
+}
+.sidebar-navegacao {
+  padding: 25px;
+  position: sticky;
+  top: 20px;
+}
+.conteudo-aula-container {
+  padding: 40px;
+}
+.sidebar-ferramentas {
+  padding: 25px;
+  position: sticky;
+  top: 20px;
+}
+
+/* === NAVEGAÇÃO (SIDEBAR ESQUERDA) === */
+.sidebar-navegacao .logo-container h3 {
+  text-align: center;
+  font-size: 1.8em;
+  margin: 0 0 25px 0;
+  color: #fff;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--cor-borda-sutil);
+}
+.modulo-titulo-clicavel {
+  cursor: pointer;
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 10px 5px;
+  border-radius: 5px;
+  color: var(--cor-destaque-purpura);
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+.modulo-titulo-clicavel::after {
+  content: "›";
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-size: 1.6em;
+  line-height: 1;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.modulo-titulo-clicavel.contraido::after {
+  transform: translateY(-50%) rotate(0deg);
+}
+.modulo-titulo-clicavel:hover {
+  color: var(--cor-destaque-ciano);
+}
+.sidebar-lista-aulas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 1000px;
+  overflow: hidden;
+  opacity: 1;
+  margin-top: 10px;
+  transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out,
+    margin-top 0.5s ease-in-out;
+}
+.sidebar-lista-aulas.contraido {
+  max-height: 0;
+  margin-top: 0;
+  opacity: 0;
+}
+.sidebar-lista-aulas li a {
+  color: var(--cor-texto-secundario);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 0.95em;
+}
+.sidebar-lista-aulas li a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+.sidebar-lista-aulas li a.ativo {
+  background-image: linear-gradient(
+    to right,
+    var(--cor-destaque-purpura),
+    var(--cor-destaque-ciano)
+  );
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 191, 255, 0.2);
+}
+.sidebar-navegacao .menu-aulas {
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+  padding-right: 5px;
+}
+.status-icon {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #444;
+  flex-shrink: 0;
+}
+.status-icon.em-andamento {
+  border-color: #fff;
+  background-color: #fff;
+}
+.status-icon.concluido {
+  background-color: var(--cor-destaque-ciano);
+  border-color: var(--cor-destaque-ciano);
+  opacity: 0.8;
+}
+
+/* === CONTEÚDO DA AULA (CENTRO) === */
+.barra-progresso-container {
+  background-color: var(--cor-primaria-fundo);
+  border-radius: 8px;
+  margin-bottom: 40px;
+  position: relative;
+  height: 12px;
+  border: 1px solid var(--cor-borda-sutil);
+  overflow: hidden;
+}
+.barra-progresso-preenchimento {
+  height: 100%;
+  width: 0%;
+  background-image: linear-gradient(
+    to right,
+    var(--cor-destaque-purpura),
+    var(--cor-destaque-ciano)
+  );
+  border-radius: 8px;
+  transition: width 0.5s ease-in-out;
+}
+.progresso-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.7em;
+  text-shadow: 1px 1px 1px #000;
+}
+.aula-header h1 {
+  font-size: 2.4em;
+  color: #fff;
+}
+.aula-header h2 {
+  font-size: 1.2em;
+  margin-top: 0;
+  color: var(--cor-destaque-purpura);
+}
+.citacao-destaque {
+  background-color: var(--cor-primaria-fundo);
+  border-left: 4px solid var(--cor-destaque-purpura);
+  margin: 2em 0;
+  padding: 1em 1.5em;
+  font-size: 1.1em;
+  font-style: italic;
+  color: #fff;
+}
+.bloco-de-prompt {
+  background-color: var(--cor-primaria-fundo);
+  border: 1px solid var(--cor-borda-sutil);
+  border-left: 4px solid var(--cor-destaque-ciano);
+  border-radius: 4px;
+  padding: 15px 20px;
+  margin: 30px 0;
+  color: var(--cor-texto-secundario);
+}
+.navegacao-aula {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid var(--cor-borda-sutil);
+}
+.botao-nav {
+  background-color: var(--cor-primaria-fundo);
+  border: 1px solid #444;
+  color: var(--cor-texto-principal);
+  padding: 12px 25px;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+  font-weight: bold;
+  text-decoration: none;
+}
+.botao-nav:hover {
+  background-color: var(--cor-destaque-purpura);
+  border-color: var(--cor-destaque-purpura);
+  color: #fff;
+}
+.botao-nav.desativado {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* === FERRAMENTAS (SIDEBAR DIREITA) === */
+.ferramenta-box {
+  margin-bottom: 30px;
+}
+.ferramenta-box h4 {
+  margin-top: 0;
+  border-bottom: 1px solid var(--cor-borda-sutil);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+#anotacoesPessoais {
+  width: 100%;
+  box-sizing: border-box;
+  height: 200px;
+  background-color: var(--cor-primaria-fundo);
+  border: 1px solid var(--cor-borda-sutil);
+  color: var(--cor-texto-principal);
+  padding: 10px;
+  border-radius: 5px;
+  resize: vertical;
+}
+.botoes-anotacoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.botoes-anotacoes button {
+  flex-grow: 1;
+  background-color: var(--cor-primaria-fundo);
+  border: 1px solid var(--cor-borda-sutil);
+  color: var(--cor-texto-principal);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.botoes-anotacoes button:hover {
+  background-color: var(--cor-destaque-purpura);
+  border-color: var(--cor-destaque-purpura);
+}
+.config-api-key {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.config-api-key label {
+  font-size: 0.9em;
+  color: var(--cor-texto-secundario);
+}
+.config-api-key input {
+  background-color: var(--cor-primaria-fundo);
+  border: 1px solid var(--cor-borda-sutil);
+  border-radius: 4px;
+  padding: 8px;
+  color: var(--cor-texto-principal);
+}
+.config-api-key button {
+  background-color: var(--cor-destaque-ciano);
+  color: var(--cor-primaria-fundo);
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.config-api-key button:hover {
+  background-color: #fff;
+}
+.api-key-status.success {
+  color: #2ecc71;
+}
+.api-key-status.error {
+  color: #e74c3c;
+}
+
+/* === SEÇÃO KAIROS CHAT (TEMA INTEGRADO) === */
+#kairos-chat-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: var(--cor-destaque-purpura);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+#kairos-chat-button:hover {
+  transform: scale(1.1);
+  background-color: var(--cor-destaque-ciano);
+}
+#kairos-chat-button svg {
+  width: 32px;
+  height: 32px;
+  fill: #fff;
+}
+#kairos-chat-container {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 370px;
+  max-height: 70vh;
+  background-color: var(--cor-secundaria-fundo);
+  border-radius: 12px;
+  border: 1px solid var(--cor-borda-sutil);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: var(--cor-texto-principal);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  transform: translateY(20px);
+  opacity: 0;
+  visibility: hidden;
+}
+#kairos-chat-container.visivel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.kairos-chat-header {
+  background-color: var(--cor-primaria-fundo);
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--cor-borda-sutil);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: grab;
+}
+.kairos-chat-header h3 {
+  color: #fff;
+  font-size: 1.2em;
+  margin: 0;
+}
+#kairos-close-button {
+  background: none;
+  border: none;
+  color: var(--cor-texto-secundario);
+  font-size: 1.8em;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 5px;
+  transition: color 0.2s ease;
+}
+#kairos-close-button:hover {
+  color: #fff;
+}
+.kairos-chat-messages {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+.message {
+  max-width: 85%;
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+.message.kairos {
+  background-color: var(--cor-primaria-fundo);
+  color: var(--cor-texto-secundario);
+  align-self: flex-start;
+}
+.message.user {
+  background-color: var(--cor-destaque-purpura);
+  color: #fff;
+  align-self: flex-end;
+  margin-left: auto;
+}
+.kairos-chat-input-area {
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid var(--cor-borda-sutil);
+}
+#kairos-user-input {
+  flex-grow: 1;
+  background-color: var(--cor-primaria-fundo);
+  border: 1px solid var(--cor-borda-sutil);
+  color: var(--cor-texto-principal);
+  padding: 12px;
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+#kairos-user-input:focus {
+  outline: none;
+  border-color: var(--cor-destaque-ciano);
+}
+#kairos-send-button {
+  background-color: var(--cor-destaque-ciano);
+  border: none;
+  color: var(--cor-primaria-fundo);
+  font-weight: bold;
+  padding: 0 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+#kairos-send-button:hover {
+  background-color: #fff;
+}
+
+/* === ESTILOS PARA BARRA DE ROLAGEM CUSTOMIZADA (MENU E CHAT) === */
+.sidebar-navegacao .menu-aulas,
+.kairos-chat-messages {
+  scrollbar-width: thin;
+  scrollbar-color: var(--cor-destaque-ciano) transparent;
+}
+.sidebar-navegacao .menu-aulas::-webkit-scrollbar,
+.kairos-chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+.sidebar-navegacao .menu-aulas::-webkit-scrollbar-track,
+.kairos-chat-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+.sidebar-navegacao .menu-aulas::-webkit-scrollbar-thumb,
+.kairos-chat-messages::-webkit-scrollbar-thumb {
+  background-color: var(--cor-borda-sutil);
+  border-radius: 4px;
+}
+.sidebar-navegacao .menu-aulas::-webkit-scrollbar-thumb:hover,
+.kairos-chat-messages::-webkit-scrollbar-thumb:hover {
+  background-color: var(--cor-destaque-ciano);
+}
+/* --- Estilos do Laboratório de Comparação de Prompts --- */
+.laboratorio-avancado h4 {
+  font-size: 1.8em;
+  color: var(--cor-destaque-ciano);
+  border-bottom: 1px solid var(--cor-borda-sutil);
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+.laboratorio-container {
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.prompt-coluna {
+  flex: 1; /* Faz as duas colunas ocuparem o mesmo espaço */
+  display: flex;
+  flex-direction: column;
+}
+
+.prompt-coluna h5 {
+  font-size: 1.2em;
+  color: #fff;
+  margin: 0 0 10px 0;
+}
+
+.prompt-coluna textarea {
+  width: 100%;
+  box-sizing: border-box;
+  height: 180px;
+  background-color: var(--cor-primaria-fundo);
+  border: 1px solid var(--cor-borda-sutil);
+  color: var(--cor-texto-principal);
+  padding: 15px;
+  border-radius: 5px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 1em;
+}
+
+.botao-laboratorio {
+  background-color: var(--cor-destaque-ciano);
+  color: var(--cor-primaria-fundo);
+  border: none;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.botao-laboratorio:hover {
+  background-color: #fff;
+}
+
+.botao-laboratorio:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.resultado-display {
+  margin-top: 20px;
+  background-color: var(--cor-primaria-fundo);
+  border: 1px solid var(--cor-borda-sutil);
+  border-radius: 5px;
+  padding: 20px;
+  min-height: 200px;
+  white-space: pre-wrap; /* Garante a quebra de linha */
+  word-wrap: break-word;
+  flex-grow: 1; /* Faz o resultado crescer para preencher o espaço */
+}
+
+.resultado-display pre {
+  margin: 0;
+  font-family: inherit;
+  color: var(--cor-texto-secundario);
+}
+/* --- Estilos do Laboratório de Comparação de Prompts --- */
+.laboratorio-avancado h4 {
+  font-size: 1.8em;
+  color: var(--cor-destaque-ciano);
+  border-bottom: 1px solid var(--cor-borda-sutil);
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+/* Adiciona um ícone de frasco ao lado do título do laboratório, usando Font Awesome */
+.laboratorio-avancado h4 .fa-flask {
+  margin-right: 12px;
+}
+
+.laboratorio-container {
+  display: flex;
+  flex-direction: row; /* Garante que as colunas fiquem lado a lado */
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.prompt-coluna {
+  flex: 1; /* Faz as duas colunas ocuparem o mesmo espaço */
+  display: flex;
+  flex-direction: column;
+}
+
+.prompt-coluna h5 {
+  font-size: 1.2em;
+  color: #fff;
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+.prompt-coluna textarea {
+  width: 100%;
+  box-sizing: border-box;
+  height: 180px;
+  background-color: var(--cor-primaria-fundo);
+  border: 1px solid var(--cor-borda-sutil);
+  color: var(--cor-texto-principal);
+  padding: 15px;
+  border-radius: 5px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prompt-coluna textarea:focus {
+  outline: none;
+  border-color: var(--cor-destaque-ciano);
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+}
+
+.botao-laboratorio {
+  background-color: var(--cor-destaque-ciano);
+  color: var(--cor-primaria-fundo);
+  border: none;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+.botao-laboratorio:hover {
+  background-color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 191, 255, 0.2);
+}
+
+.botao-laboratorio:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.resultado-display {
+  margin-top: 20px;
+  background-color: var(--cor-primaria-fundo);
+  border: 1px solid var(--cor-borda-sutil);
+  border-radius: 5px;
+  padding: 20px;
+  min-height: 200px;
+  white-space: pre-wrap; /* Garante a quebra de linha do texto */
+  word-wrap: break-word;
+  flex-grow: 1; /* Faz o resultado crescer para preencher o espaço vertical */
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+.resultado-display pre {
+  margin: 0;
+  font-family: inherit;
+  color: var(--cor-texto-secundario);
+}

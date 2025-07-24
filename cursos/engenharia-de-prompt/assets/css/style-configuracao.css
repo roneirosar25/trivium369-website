@@ -1,0 +1,116 @@
+/* ARQUIVO: /cursos/engenharia-de-prompt/assets/style-configuracao.css */
+@import url("/assets/css/main.css");
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+.config-page-container {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+.config-page-container h1 {
+  color: var(--cor-destaque);
+  font-size: 2.5em;
+}
+.config-container {
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background-color: var(--cor-secundaria);
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  margin-top: 30px;
+  align-items: center;
+}
+.config-instructions h4,
+.config-api-key-interactive h4 {
+  color: var(--cor-cta);
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.config-instructions ol {
+  padding-left: 20px;
+}
+.config-instructions li {
+  margin-bottom: 10px;
+}
+.instruction-image {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #444;
+  margin-top: 15px;
+}
+.config-api-key-interactive {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.config-api-key-interactive label {
+  font-size: 0.9em;
+  color: #ccc;
+  font-weight: bold;
+}
+.config-api-key-interactive input {
+  background-color: var(--cor-primaria);
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 12px;
+  color: var(--cor-texto);
+}
+.config-api-key-interactive button {
+  background-color: var(--cor-destaque);
+  color: var(--cor-primaria);
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.config-api-key-interactive button:hover {
+  background-color: #fff;
+}
+.api-key-status {
+  font-size: 0.85em;
+  margin: 5px 0 0 0;
+  min-height: 1.2em;
+  transition: color 0.3s;
+}
+.api-key-status.success {
+  color: #2ecc71;
+}
+.api-key-status.error {
+  color: #e74c3c;
+}
+.next-step {
+  margin-top: 40px;
+}
+.start-button {
+  display: inline-block;
+  background-color: #2ecc71;
+  color: var(--cor-primaria);
+  padding: 15px 35px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.start-button:hover {
+  background-color: #fff;
+  transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  .config-container {
+    grid-template-columns: 1fr;
+  }
+}

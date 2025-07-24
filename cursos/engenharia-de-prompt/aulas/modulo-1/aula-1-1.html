@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 1.1 | TRIVIUM 369</title>
+    <link rel="stylesheet" href="../../assets/css/style-curso.css" />
+    <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="layout-curso-v2">
+      <aside class="sidebar-navegacao">
+        <div class="logo-container"><h3>TRIVIUM 369</h3></div>
+        <nav class="menu-aulas"></nav>
+      </aside>
+
+      <main class="conteudo-aula-container">
+        <div class="barra-progresso-container">
+          <div class="barra-progresso-preenchimento"></div>
+          <span class="progresso-texto">0%</span>
+        </div>
+        <header class="aula-header">
+          <h2 id="titulo-modulo">MÓDULO 1: FUNDAÇÃO</h2>
+          <h1 id="titulo-aula">Bem-vindo ao Renascimento Elétrico</h1>
+        </header>
+        <article class="aula-content">
+          <h3>Além do Prompt, Rumo à Cognição Aumentada</h3>
+          <p>
+            Olá, e bem-vindo ao TRIVIUM 369. Bem-vindo ao Renascimento Elétrico.
+          </p>
+          <p>
+            Hoje, não começamos apenas um curso. Começamos uma expedição. Uma
+            viagem ao coração da mais poderosa ferramenta de transformação do
+            nosso tempo e, mais importante ainda, uma viagem ao coração da nossa
+            própria capacidade de pensar.
+          </p>
+
+          <h4>Ato 1: O Mundo Plano da Computação</h4>
+          <p>
+            Lembre-se, por um momento, de como era a nossa relação com os
+            computadores. No início, era um diálogo de iniciados. Falávamos com
+            as máquinas através de linhas de comando — uma linguagem críptica,
+            exigente, onde cada letra e cada espaço importavam. Era um mundo de
+            alta fricção, mas de controlo absoluto.
+          </p>
+
+          <h4>Ato 2: A Revolução Silenciosa e o Deserto do Genérico</h4>
+          <p>
+            Então, algo mudou. De forma silenciosa, quase impercetível, uma nova
+            dimensão abriu-se. A Inteligência Artificial Generativa não foi
+            apenas mais uma ferramenta; foi a introdução da profundidade neste
+            mundo plano.
+          </p>
+
+          <h4>Ato 3: O Renascimento Elétrico e o Arquiteto do Pensamento</h4>
+          <p>
+            É aqui que a nossa expedição começa verdadeiramente. A missão do
+            TRIVIUM 369 é rejeitar este jogo finito e convidá-lo para um jogo
+            infinito. A nossa filosofia é a do
+            <strong>Renascimento Elétrico</strong>.
+          </p>
+          <blockquote class="citacao-destaque">
+            "Como posso usar a IA para melhorar a qualidade do meu pensamento?"
+          </blockquote>
+          <p>
+            Esta é a mudança da Inteligência Artificial para a
+            <strong>Inteligência Aumentada</strong>. Não se trata de criar uma
+            consciência na máquina, but de expandir a nossa.
+          </p>
+          <p>
+            Bem-vindo à Aula 1.1. Bem-vindo ao jogo infinito. A expedição começa
+            agora.
+          </p>
+        </article>
+
+        <div class="navegacao-aula">
+          <a href="../../aula-0-1.html" class="btn-navegacao btn-anterior"
+            >← Início do Curso</a
+          >
+        </div>
+      </main>
+
+      <aside class="sidebar-ferramentas">
+        <div class="ferramenta-box">
+          <h4>Configurações</h4>
+          <div class="config-api-key">
+            <label for="api-key-input">Sua Chave API (Google AI Studio)</label>
+            <input
+              type="password"
+              id="api-key-input"
+              placeholder="Cole sua chave API aqui"
+            />
+            <button id="api-key-save-btn">Salvar Chave</button>
+            <p class="api-key-status"></p>
+          </div>
+        </div>
+        <div class="ferramenta-box">
+          <h4>Anotações Pessoais</h4>
+          <p class="instrucao-anotacoes">
+            Suas anotações são salvas automaticamente no navegador.
+          </p>
+          <textarea
+            id="anotacoesPessoais"
+            placeholder="Digite suas reflexões e insights aqui..."
+          ></textarea>
+          <div class="botoes-anotacoes">
+            <button id="btn-limpar-anotacoes">Limpar</button>
+            <button id="btn-baixar-anotacoes">Baixar</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div id="kairos-chat-button" title="Falar com Kairos">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M20 2H4c-1.103 0-2 .897-2 2v18l4-4h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 10h-4v4h-2v-4H8v-2h4V6h2v4h4v2z"
+        />
+      </svg>
+    </div>
+
+    <div id="kairos-chat-container">
+      <div class="kairos-chat-header">
+        <h3>Kairos AI</h3>
+        <button id="kairos-close-button">&times;</button>
+      </div>
+      <div class="kairos-chat-messages">
+        <div class="message kairos">
+          Olá! Estou analisando a Aula 1.1. Em que posso ajudar?
+        </div>
+      </div>
+      <div class="kairos-chat-input-area">
+        <input
+          type="text"
+          id="kairos-user-input"
+          placeholder="Pergunte sobre esta aula..."
+        />
+        <button id="kairos-send-button">Enviar</button>
+      </div>
+    </div>
+
+    <script src="/scripts/funcionalidades-curso.js"></script>
+  </body>
+</html>

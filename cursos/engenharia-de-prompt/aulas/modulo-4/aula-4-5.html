@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 4.5 | TRIVIUM 369</title>
+    <link rel="stylesheet" href="../../assets/css/style-curso.css" />
+    <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="layout-curso-v2">
+      <aside class="sidebar-navegacao">
+        <div class="logo-container"><h3>TRIVIUM 369</h3></div>
+        <nav class="menu-aulas"></nav>
+      </aside>
+
+      <main class="conteudo-aula-container">
+        <div class="barra-progresso-container">
+          <div class="barra-progresso-preenchimento"></div>
+          <span class="progresso-texto">0%</span>
+        </div>
+        <header class="aula-header">
+          <h2 id="titulo-modulo">Carregando...</h2>
+          <h1 id="titulo-aula">Carregando...</h1>
+        </header>
+        <article class="aula-content">
+          <h3>
+            O Laboratório do Engenheiro: Implementando e Monitorando suas
+            Intervenções
+          </h3>
+          <h4>1. Introdução: Do Plano ao Experimento</h4>
+          <p>
+            Ao longo deste módulo, você viajou da análise à estratégia. Você
+            projetou um plano de engenharia com intervenções de alta
+            alavancagem. Agora, adotamos nossa mentalidade final: a do
+            <strong>engenheiro como cientista</strong>.
+          </p>
+          <p>
+            Cada intervenção é um experimento. O mundo real é o nosso
+            laboratório. Nosso objetivo é testar hipóteses, medir resultados e
+            aprender em tempo real. Este é o ciclo da inovação: construir,
+            medir, aprender.
+          </p>
+          <h4>2. A Ferramenta Prática: O Painel de Controle do Sistema</h4>
+          <p>
+            Para conduzir nossos experimentos, precisamos de um
+            <strong>"Painel de Controle do Sistema"</strong>. Ele deve conter
+            quatro colunas:
+          </p>
+          <div class="tabela-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Intervenção Estratégica</th>
+                  <th>Métrica-Chave de Sucesso</th>
+                  <th>Frequência de Medição</th>
+                  <th>Resultados Observados</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <h4>3. Estudo de Caso: O Painel de Controle da Procrastinação</h4>
+          <p>
+            Veja como nosso exemplo se traduz em um Painel de Controle
+            preenchido.
+          </p>
+          <div class="tabela-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Intervenção Estratégica</th>
+                  <th>Métrica-Chave de Sucesso</th>
+                  <th>Frequência de Medição</th>
+                  <th>Resultados Observados (Exemplos)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <strong
+                      >1. Mudar meta para "vestir a roupa e sair por 5
+                      min".</strong
+                    >
+                  </td>
+                  <td>Número de dias consecutivos com "X" no calendário.</td>
+                  <td>Diária</td>
+                  <td>
+                    <em
+                      >Semana 1: Consegui 6/7 dias. A barreira para começar é
+                      quase zero.</em
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>
+            4. Conclusão do Módulo e Exercício Final: O Desafio do Engenheiro
+          </h4>
+          <p>
+            Chegamos ao fim da nossa jornada pelo Método Tesla. Você aprendeu a
+            ver o mundo como uma teia de sistemas interconectados.
+          </p>
+          <p><strong>O Desafio Final do Módulo 4:</strong></p>
+          <ol>
+            <li>Crie seu próprio "Painel de Controle do Sistema".</li>
+            <li>Escolha APENAS UMA das intervenções sugeridas.</li>
+            <li>
+              Comprometa-se a rodar este experimento por
+              <strong>duas semanas</strong>.
+            </li>
+            <li>Preencha seu Painel de Controle com a frequência definida.</li>
+          </ol>
+          <p>
+            Lembre-se: o objetivo é o <strong>aprendizado</strong>. Você não
+            está mais reagindo aos problemas. Você está projetando sua
+            realidade.
+          </p>
+        </article>
+        <div class="navegacao-aula"></div>
+      </main>
+
+      <aside class="sidebar-ferramentas">
+        <div class="ferramenta-box">
+          <h4>Anotações Pessoais</h4>
+          <p class="instrucao-anotacoes">
+            Suas anotações são salvas automaticamente no navegador.
+          </p>
+          <textarea
+            id="anotacoesPessoais"
+            placeholder="Qual intervenção você testará? Defina sua Métrica-Chave e Frequência..."
+          ></textarea>
+          <div class="botoes-anotacoes">
+            <button id="btn-limpar-anotacoes">Limpar</button>
+            <button id="btn-baixar-anotacoes">Baixar</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div id="kairos-chat-button" title="Falar com Kairos">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M20 2H4c-1.103 0-2 .897-2 2v18l4-4h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 10h-4v4h-2v-4H8v-2h4V6h2v4h4v2z"
+        />
+      </svg>
+    </div>
+
+    <div id="kairos-chat-container" class="oculto">
+      <div class="kairos-chat-header">
+        <h3>Kairos AI</h3>
+        <button id="kairos-close-button">&times;</button>
+      </div>
+      <div class="kairos-chat-messages">
+        <div class="message kairos">
+          Analisando a Aula 4.5. Qual será o seu primeiro experimento no mundo
+          real? Lembre-se, o objetivo é o aprendizado.
+        </div>
+      </div>
+      <div class="kairos-chat-input-area">
+        <input
+          type="text"
+          id="kairos-user-input"
+          placeholder="Pergunte sobre esta aula..."
+        />
+        <button id="kairos-send-button">Enviar</button>
+      </div>
+    </div>
+
+    <script src="/scripts/funcionalidades-curso.js"></script>
+  </body>
+</html>

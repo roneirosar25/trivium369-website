@@ -1,0 +1,22 @@
+/* ARQUIVO: /assets/css/base.css */
+:root {
+  --cor-primaria-fundo: #0d0c1d;
+  --cor-secundaria-fundo: #16152b;
+  --cor-texto-principal: #f0f0f0;
+  --cor-texto-secundario: #a0a0b0;
+  --cor-destaque-ciano: #00bfff;
+  --cor-destaque-purpura: #8a2be2;
+  --cor-borda-sutil: rgba(255, 255, 255, 0.1);
+}
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--cor-primaria-fundo);
+  color: var(--cor-texto-principal);
+  margin: 0;
+  line-height: 1.7;
+}
+a {
+  color: var(--cor-destaque-ciano);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}

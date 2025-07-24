@@ -1,0 +1,86 @@
+/* ARQUIVO: /cursos/engenharia-de-prompt/assets/style-boas-vindas.css */
+@import url("/assets/css/main.css");
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+.welcome-container {
+  max-width: 800px;
+  width: 100%;
+  background-color: var(--cor-secundaria);
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 40px 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.welcome-header {
+  text-align: center;
+  border-bottom: 1px solid #444;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+.welcome-header h1 {
+  color: var(--cor-destaque);
+  margin: 0;
+  font-size: 2.5em;
+}
+.welcome-header h2 {
+  color: var(--cor-texto);
+  margin: 10px 0 0 0;
+  font-size: 1.2em;
+  font-weight: normal;
+}
+.welcome-intro p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  text-align: center;
+}
+.course-overview,
+.api-setup-cta {
+  margin-top: 50px;
+  text-align: center;
+}
+h3 {
+  color: var(--cor-cta);
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+.course-overview ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+.course-overview li {
+  background-color: var(--cor-primaria);
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border-left: 3px solid var(--cor-cta);
+}
+.setup-button {
+  display: inline-block;
+  background-color: var(--cor-destaque);
+  color: var(--cor-primaria);
+  padding: 18px 40px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.setup-button:hover {
+  background-color: #fff;
+  transform: scale(1.05);
+}
+/* === ESTILOS PARA O GUIA VISUAL === */
+.step-divider {
+  border: none;
+  height: 1px;
+  background-color: #444;
+  margin: 40px 0;
+}

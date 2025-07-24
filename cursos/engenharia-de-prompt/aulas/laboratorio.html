@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laboratório | TRIVIUM 369</title>
+
+    <link rel="stylesheet" href="../assets/css/style-curso.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="layout-curso-v2">
+      <aside class="sidebar-navegacao">
+        <div class="logo-container"><h3>TRIVIUM 369</h3></div>
+        <nav class="menu-aulas"></nav>
+      </aside>
+
+      <main class="conteudo-aula-container">
+        <header class="aula-header">
+          <h2>Ambiente de Desenvolvimento</h2>
+          <h1>Laboratório de Ferramentas</h1>
+        </header>
+
+        <div
+          class="ferramenta-box laboratorio-avancado"
+          style="margin-top: 30px"
+        >
+          <h4>
+            <i class="fas fa-flask"></i> Laboratório de Comparação de Prompts
+          </h4>
+          <p style="color: var(--cor-texto-secundario); margin-bottom: 25px">
+            Teste duas versões de um prompt e compare os resultados lado a lado
+            para refinar sua engenharia.
+          </p>
+
+          <div class="laboratorio-container">
+            <div class="prompt-coluna">
+              <h5>Prompt A</h5>
+              <textarea
+                id="promptA"
+                placeholder="Digite a primeira versão do seu prompt..."
+              ></textarea>
+              <button id="executarA" class="botao-laboratorio">
+                Executar Prompt A
+              </button>
+              <div id="resultadoA" class="resultado-display">
+                <pre><code>O resultado do Prompt A aparecerá aqui...</code></pre>
+              </div>
+            </div>
+
+            <div class="prompt-coluna">
+              <h5>Prompt B</h5>
+              <textarea
+                id="promptB"
+                placeholder="Digite a segunda versão para comparar..."
+              ></textarea>
+              <button id="executarB" class="botao-laboratorio">
+                Executar Prompt B
+              </button>
+              <div id="resultadoB" class="resultado-display">
+                <pre><code>O resultado do Prompt B aparecerá aqui...</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <aside class="sidebar-ferramentas">
+        <div class="ferramenta-box">
+          <h4>Configurações</h4>
+          <div class="config-api-key">
+            <label for="api-key-input">Sua Chave API (Google AI Studio)</label>
+            <input
+              type="password"
+              id="api-key-input"
+              placeholder="Cole sua chave API aqui"
+            />
+            <button id="api-key-save-btn">Salvar Chave</button>
+            <p class="api-key-status"></p>
+          </div>
+        </div>
+        <div class="ferramenta-box">
+          <h4>Anotações Rápidas</h4>
+          <textarea
+            id="anotacoesPessoais"
+            placeholder="Suas anotações de laboratório..."
+          ></textarea>
+          <div class="botoes-anotacoes">
+            <button id="btn-limpar-anotacoes">Limpar</button>
+            <button id="btn-baixar-anotacoes">Baixar</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div id="kairos-chat-button" title="Falar com Kairos">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M20 2H4c-1.103 0-2 .897-2 2v18l4-4h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 10h-4v4h-2v-4H8v-2h4V6h2v4h4v2z"
+        ></path>
+      </svg>
+    </div>
+    <div id="kairos-chat-button" title="Falar com Kairos">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M20 2H4c-1.103 0-2 .897-2 2v18l4-4h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 10h-4v4h-2v-4H8v-2h4V6h2v4h4v2z"
+        ></path>
+      </svg>
+    </div>
+
+    <div id="kairos-chat-container"></div>
+
+    <script type="module" src="../../../scripts/main.js"></script>
+  </body>
+</html>

@@ -3,284 +3,184 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aula 4.3 | TRIVIUM 369</title>
+    <title>Aula 4.3: Da Peça à Rede | TRIVIUM 369</title>
     <link rel="stylesheet" href="../../assets/css/style-curso.css" />
     <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="layout-curso-v2">
-      <aside class="sidebar-navegacao">
-        <div class="logo-container"><h3>TRIVIUM 369</h3></div>
-        <nav class="menu-aulas"></nav>
-      </aside>
+    <button
+      id="btn-toggle-nav"
+      class="btn-toggle-menu"
+      aria-label="Abrir Navegação"
+    >
+      <span></span><span></span><span></span>
+    </button>
+    <button
+      id="btn-toggle-tools"
+      class="btn-toggle-menu"
+      aria-label="Abrir Ferramentas"
+    >
+      <i class="fas fa-wrench"></i>
+    </button>
 
-      <main class="conteudo-aula-container">
-        <div class="barra-progresso-container">
-          <div class="barra-progresso-preenchimento"></div>
-          <span class="progresso-texto">0%</span>
+    <aside class="sidebar-navegacao">
+      <div class="logo-container"><h3>TRIVIUM 369</h3></div>
+      <nav class="menu-aulas"></nav>
+    </aside>
+    <aside class="sidebar-ferramentas">
+      <div class="ferramenta-box">
+        <h4>Configurações</h4>
+        <div id="api-status-box"></div>
+      </div>
+      <div class="ferramenta-box">
+        <h4>Anotações Pessoais</h4>
+        <p class="instrucao-anotacoes">
+          Suas anotações são salvas automaticamente.
+        </p>
+        <textarea
+          id="anotacoesPessoais"
+          placeholder="Quais são os ciclos de feedback do meu sistema?"
+        ></textarea>
+        <div class="botoes-anotacoes">
+          <button id="btn-limpar-anotacoes">Limpar</button>
+          <button id="btn-baixar-anotacoes">Baixar</button>
         </div>
-        <header class="aula-header">
-          <h2 id="titulo-modulo">Carregando...</h2>
-          <h1 id="titulo-aula">Carregando...</h1>
-        </header>
-        <article class="aula-content">
-          <h3>Da Peça à Rede: Construindo Modelos Mentais Sistêmicos</h3>
+      </div>
+    </aside>
 
-          <h4>1. Introdução: Montando o Motor</h4>
-          <p>
-            Na aula anterior, fizemos o trabalho de um mecânico desmontando um
-            motor. Espalhamos suas peças — Estoques, Fluxos e Atores — pelo chão
-            do nosso laboratório mental. Vimos os componentes isoladamente. Mas
-            um motor parado não revela seus segredos. O poder, o movimento, o
-            ruído — tudo isso emerge apenas quando as peças se conectam e a
-            energia flui através delas.
-          </p>
-          <p>
-            Nesta aula, vamos montar esse motor. Vamos conectar as engrenagens
-            (os Fluxos) aos reservatórios (os Estoques) e observar a fiação
-            invisível que os une. Essa fiação é composta por
-            <strong>ciclos de feedback</strong>, os verdadeiros motores por trás
-            do comportamento de qualquer sistema.
-          </p>
-          <p>
-            Existem dois tipos fundamentais de ciclos que precisamos entender:
-          </p>
-          <ul>
-            <li>
-              <strong>Ciclos de Reforço (Reinforcing Loops):</strong> Pense
-              neles como uma <strong>bola de neve</strong> rolando ladeira
-              abaixo. São processos que se autoalimentam, amplificando uma
-              mudança e levando a um crescimento (ou colapso) exponencial. Juros
-              compostos ou um círculo vicioso de estresse são exemplos
-              perfeitos.
-            </li>
-            <li>
-              <strong>Ciclos de Equilíbrio (Balancing Loops):</strong> Pense
-              neles como o <strong>termostato</strong> da sua casa. São
-              mecanismos de autocorreção que buscam estabilidade e tentam manter
-              um sistema em torno de uma meta. Seu corpo suando para se resfriar
-              é um ciclo de equilíbrio em ação.
-            </li>
-          </ul>
-          <p>
-            Identificar esses ciclos é passar de ver as peças para entender a
-            máquina. É aqui que a verdadeira engenharia de sistemas começa.
-          </p>
+    <main class="conteudo-aula-container">
+      <div class="barra-progresso-container">
+        <div class="barra-progresso-preenchimento"></div>
+        <span class="progresso-texto">0%</span>
+      </div>
+      <header class="aula-header">
+        <h2 id="titulo-modulo">MÓDULO 4: O MÉTODO TESLA</h2>
+        <h1 id="titulo-aula">
+          Da Peça à Rede: Construindo Modelos Mentais Sistêmicos
+        </h1>
+      </header>
+      <article class="aula-content">
+        <h4>1. Introdução: Montando o Motor</h4>
+        <p>
+          Na aula anterior, fizemos o trabalho de um mecânico desmontando um
+          motor: espalhamos os Estoques, Fluxos e Atores. Hoje, vamos montar
+          esse motor, conectando as peças com a fiação invisível dos
+          <strong>ciclos de feedback</strong>.
+        </p>
+        <ul>
+          <li>
+            <strong>Ciclos de Reforço (Bola de Neve):</strong> Processos que se
+            autoalimentam, amplificando uma mudança (crescimento ou colapso).
+          </li>
+          <li>
+            <strong>Ciclos de Equilíbrio (Termostato):</strong> Mecanismos de
+            autocorreção que buscam estabilidade e resistem à mudança.
+          </li>
+        </ul>
+        <p>
+          Identificar esses ciclos é passar de ver as peças para entender a
+          máquina.
+        </p>
 
-          <h4>2. A Ferramenta Prática: O Detetive de Ciclos</h4>
-          <p>
-            Para nos ajudar a encontrar essas conexões ocultas, usaremos a
-            próxima ferramenta do nosso "Mapeador de Sistemas". Vamos chamá-la
-            de <strong>"O Detetive de Ciclos"</strong>.
-          </p>
-          <p>
-            Este prompt foi projetado para instruir a IA a agir como um
-            detetive, procurando por padrões e relações de causa e efeito na
-            lista de elementos que você já gerou.
-          </p>
-          <p>Aqui está o modelo do prompt:</p>
-          <div class="bloco-de-prompt">
-            <p>
-              Com base na lista de Estoques e Fluxos que identificamos
-              anteriormente: [Cole aqui a lista de Estoques e Fluxos].
-            </p>
-            <p>
-              Minha tarefa agora é identificar os ciclos de feedback ocultos.
-              Atuando como um analista de sistemas, descreva pelo menos 2 ciclos
-              de feedback (um de reforço e um de equilíbrio) que provavelmente
-              existem neste sistema.
-            </p>
-            <p>
-              Para cada ciclo, explique passo a passo, em uma sequência lógica,
-              como os elementos se influenciam para criar o padrão de
-              comportamento.
-            </p>
-          </div>
-
-          <h4>3. Estudo de Caso: O Motor da Procrastinação</h4>
-          <p>
-            Vamos continuar com nosso estudo de caso. Na aula passada, geramos
-            uma lista de peças. Agora, vamos usar o "Detetive de Ciclos" para
-            montar o motor.
-          </p>
-          <p>
-            <strong>Passo 1: Usando o Prompt "O Detetive de Ciclos"</strong>
-          </p>
-          <p>
-            Primeiro, pegamos a lista de Estoques e Fluxos gerada na Aula 4.2 e
-            a inserimos no prompt:
-          </p>
-          <div class="bloco-de-prompt">
-            <p>
-              Com base na lista de Estoques e Fluxos que identificamos
-              anteriormente:<br />
-              Estoques: Motivação, Energia, Tempo Livre, Culpa, Estresse,
-              Autoestima.<br />
-              Fluxos: Manter rotina de exercícios, Trabalhar até tarde, Adiar
-              para "amanhã", Sentir alívio momentâneo, Ficar preso em ciclo de
-              inatividade.
-            </p>
-            <p>
-              Minha tarefa agora é identificar os ciclos de feedback ocultos.
-              Atuando como um analista de sistemas, descreva pelo menos 2 ciclos
-              de feedback (um de reforço e um de equilíbrio) que provavelmente
-              existem neste sistema.
-            </p>
-            <p>
-              Para cada ciclo, explique passo a passo, em uma sequência lógica,
-              como os elementos se influenciam para criar o padrão de
-              comportamento.
-            </p>
-          </div>
-
-          <p>
-            <strong>Passo 2: Exemplo de Resultado Ideal Gerado pela IA</strong>
-          </p>
-          <hr />
-          <p>
-            Com base nos elementos fornecidos, aqui estão dois prováveis ciclos
-            de feedback que governam o sistema:
-          </p>
-          <h5>
-            1. Ciclo de Reforço (Vicioso): O Espiral da Culpa e Procrastinação
-          </h5>
-          <p>
-            Este é um ciclo de reforço que amplifica o comportamento de
-            procrastinação, tornando-o cada vez mais difícil de quebrar.
-          </p>
-          <ol>
-            <li>
-              A pessoa decide
-              <strong>Adiar o exercício para "amanhã"</strong> (Fluxo).
-            </li>
-            <li>
-              Essa ação aumenta diretamente o estoque de
-              <strong>Culpa</strong> e <strong>Estresse</strong>.
-            </li>
-            <li>
-              Níveis mais altos de Culpa e Estresse diminuem o estoque de
-              <strong>Motivação</strong>.
-            </li>
-            <li>
-              Com a Motivação mais baixa, a barreira para começar a se exercitar
-              no dia seguinte é ainda maior.
-            </li>
-            <li>
-              Isso torna mais provável que a pessoa escolha
-              <strong>Adiar o exercício para "amanhã"</strong> novamente,
-              reforçando o ciclo.
-            </li>
-          </ol>
-
-          <h5>2. Ciclo de Equilíbrio: A Regulação da Energia</h5>
-          <p>
-            Este é um ciclo de equilíbrio que tenta manter o estoque de
-            <strong>Energia</strong> em um nível estável, mesmo que isso
-            signifique sabotar a meta de se exercitar.
-          </p>
-          <ol>
-            <li>
-              O fluxo <strong>Trabalhar até tarde</strong> drena
-              significativamente o estoque de <strong>Energia</strong>.
-            </li>
-            <li>
-              O sistema detecta que o estoque de Energia está perigosamente
-              baixo.
-            </li>
-            <li>
-              Para se autocorrigir e conservar a energia restante, o sistema
-              aumenta a resistência à atividade física, o que leva à decisão de
-              <strong>Adiar o exercício</strong>.
-            </li>
-            <li>
-              Esta ação (ou inação) de adiar funciona como um freio, impedindo
-              que o estoque de Energia se esgote completamente e tentando
-              trazê-lo de volta a um nível de equilíbrio (descanso).
-            </li>
-          </ol>
-          <hr />
-
-          <h4>4. Exercício Prático: Encontrando os Motores do seu Sistema</h4>
-          <p>
-            Você já tem as peças. Agora, é sua vez de montar o motor e ver como
-            ele realmente funciona.
-          </p>
-          <ol>
-            <li>
-              <strong>Pegue a lista de Estoques e Fluxos</strong> que você gerou
-              com a IA na Aula 4.2.
-            </li>
-            <li>
-              <strong>Copie o modelo do prompt "O Detetive de Ciclos"</strong>
-              para a sua ferramenta de IA.
-            </li>
-            <li>
-              <strong>Cole a sua lista</strong> no local indicado dentro do
-              prompt.
-            </li>
-            <li>
-              <strong>Execute o prompt</strong> e estude cuidadosamente a
-              resposta da IA.
-            </li>
-          </ol>
-          <p>
-            O objetivo é que você identifique e compreenda pelo menos um ciclo
-            de reforço e um ciclo de equilíbrio que governam o seu problema.
-            Salve essa análise. Na próxima aula, vamos aprender a visualizar
-            esses ciclos e a identificar os pontos de alavancagem.
-          </p>
-        </article>
-        <div class="navegacao-aula"></div>
-      </main>
-
-      <aside class="sidebar-ferramentas">
-        <div class="ferramenta-box">
-          <h4>Anotações Pessoais</h4>
-          <p class="instrucao-anotacoes">
-            Suas anotações são salvas automaticamente no navegador.
-          </p>
-          <textarea
-            id="anotacoesPessoais"
-            placeholder="Descreva aqui os ciclos de feedback que você identificou no seu sistema..."
-          ></textarea>
-          <div class="botoes-anotacoes">
-            <button id="btn-limpar-anotacoes">Limpar</button>
-            <button id="btn-baixar-anotacoes">Baixar</button>
-          </div>
+        <h4>2. A Ferramenta Prática: O Detetive de Ciclos</h4>
+        <p>
+          Para nos ajudar a encontrar essas conexões, usaremos a ferramenta **"O
+          Detetive de Ciclos"**.
+        </p>
+        <div class="bloco-de-prompt">
+          <code
+            >Com base na lista de Estoques e Fluxos que identificamos
+            anteriormente: [Cole aqui a sua lista].<br /><br />Minha tarefa
+            agora é identificar os ciclos de feedback ocultos. Atuando como um
+            analista de sistemas, descreva pelo menos 2 ciclos de feedback (um
+            de reforço e um de equilíbrio) que provavelmente existem neste
+            sistema.<br /><br />Para cada ciclo, explique passo a passo, em uma
+            sequência lógica, como os elementos se influenciam.</code
+          >
         </div>
-      </aside>
-    </div>
+
+        <h4>3. Estudo de Caso: O Motor da Procrastinação</h4>
+        <p>
+          Aplicando o prompt ao nosso caso de estudo sobre a rotina de
+          exercícios, a IA revelou dois motores principais:
+        </p>
+        <blockquote class="citacao-destaque">
+          <p>
+            <strong>1. Ciclo de Reforço (Vicioso): O Espiral da Culpa</strong>
+          </p>
+          <p>
+            Adiar o exercício → Aumenta a Culpa e o Estresse → Diminui a
+            Motivação → Torna mais provável Adiar novamente.
+          </p>
+          <p><strong>2. Ciclo de Equilíbrio: A Regulação da Energia</strong></p>
+          <p>
+            Trabalhar até tarde → Drena a Energia → O sistema resiste a mais
+            gastos de energia → Leva à decisão de Adiar o exercício para
+            conservar a energia restante.
+          </p>
+        </blockquote>
+
+        <h4>4. Exercício Prático: Encontrando os Motores do seu Sistema</h4>
+        <p>Agora é a sua vez. Sua tarefa é a seguinte:</p>
+        <ol>
+          <li>
+            Pegue a lista de **Estoques e Fluxos** que você gerou na Aula 4.2.
+          </li>
+          <li>
+            Copie o modelo do prompt **"O Detetive de Ciclos"** para a sua
+            ferramenta de IA.
+          </li>
+          <li>Cole a sua lista no local indicado e execute o prompt.</li>
+        </ol>
+        <p>
+          O seu objetivo é compreender pelo menos um ciclo de reforço e um de
+          equilíbrio que governam o seu problema. Na próxima aula, vamos
+          aprender a visualizar esses ciclos e a identificar os pontos de
+          alavancagem para intervir no sistema.
+        </p>
+      </article>
+      <div class="navegacao-aula"></div>
+    </main>
 
     <div id="kairos-chat-button" title="Falar com Kairos">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
         <path
-          d="M20 2H4c-1.103 0-2 .897-2 2v18l4-4h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 10h-4v4h-2v-4H8v-2h4V6h2v4h4v2z"
+          d="M12 2C11.45 2 11 2.45 11 3V4.59C7.93 5.49 5.5 8.43 5.5 11.5C5.5 12.53 5.79 13.5 6.28 14.36L3.64 17L5 18.36L7.64 15.72C8.5 16.21 9.47 16.5 10.5 16.5C11 16.5 11.5 16.45 12 16.36V18.5C12 19.05 12.45 19.5 13 19.5C13.55 19.5 14 19.05 14 18.5V16.36C14.5 16.45 15 16.5 15.5 16.5C16.53 16.5 17.5 16.21 18.36 15.72L21 18.36L22.36 17L19.72 14.36C20.21 13.5 20.5 12.53 20.5 11.5C20.5 8.43 18.07 5.49 15 4.59V3C15 2.45 14.55 2 14 2H12M13 6.06V7.5C13 8.05 12.55 8.5 12 8.5C11.45 8.5 11 8.05 11 7.5V6.06C10.19 6.22 9.44 6.56 8.78 7.05L9.88 8.14C10.27 8.54 10.27 9.16 9.88 9.55C9.49 9.94 8.86 9.94 8.47 9.55L7.05 8.12C6.56 8.78 6.22 9.54 6.06 10.35H7.5C8.05 10.35 8.5 10.8 8.5 11.35C8.5 11.9 8.05 12.35 7.5 12.35H6.06C6.22 13.16 6.56 13.91 7.05 14.57L8.47 13.15C8.86 12.76 9.49 12.76 9.88 13.15C10.27 13.54 10.27 14.16 9.88 14.55L8.78 15.64C9.44 16.13 10.19 16.47 11 16.63V15.15C11 14.6 11.45 14.15 12 14.15C12.55 14.15 13 14.6 13 15.15V16.63C13.81 16.47 14.56 16.13 15.22 15.64L14.12 14.55C13.73 14.16 13.73 13.54 14.12 13.15C14.51 12.76 15.14 12.76 15.53 13.15L16.95 14.57C17.44 13.91 17.78 13.16 17.94 12.35H16.5C15.95 12.35 15.5 11.9 15.5 11.35C15.5 10.8 15.95 10.35 16.5 10.35H17.94C17.78 9.54 17.44 8.78 16.95 8.12L15.53 9.55C15.14 9.94 14.51 9.94 14.12 9.55C13.73 9.16 13.73 8.54 14.12 8.14L15.22 7.05C14.56 6.56 13.81 6.22 13 6.06Z"
         />
       </svg>
     </div>
-
-    <div id="kairos-chat-container" class="oculto">
+    <div id="kairos-chat-container">
       <div class="kairos-chat-header">
         <h3>Kairos AI</h3>
         <button id="kairos-close-button">&times;</button>
       </div>
-      <div class="kairos-chat-messages">
-        <div class="message kairos">
-          Analisando a Aula 4.3. Identificar os ciclos de feedback é como
-          encontrar a chave de um motor. Qual ciclo (de reforço ou equilíbrio)
-          foi mais revelador para você?
-        </div>
-      </div>
+      <div class="kairos-chat-messages"></div>
       <div class="kairos-chat-input-area">
-        <input
-          type="text"
+        <textarea
           id="kairos-user-input"
           placeholder="Pergunte sobre esta aula..."
-        />
-        <button id="kairos-send-button">Enviar</button>
+          rows="1"
+        ></textarea>
+        <button id="kairos-send-button" aria-label="Enviar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+          </svg>
+        </button>
       </div>
     </div>
 
-    <script src="/scripts/funcionalidades-curso.js"></script>
+    <script src="../../../../scripts/funcionalidades-curso.js"></script>
   </body>
 </html>

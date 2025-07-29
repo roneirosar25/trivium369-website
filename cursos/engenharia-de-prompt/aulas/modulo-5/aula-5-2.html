@@ -3,256 +3,191 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aula 5.2 | TRIVIUM 369</title>
+    <title>Aula 5.2: A Dialética da Máquina | TRIVIUM 369</title>
     <link rel="stylesheet" href="../../assets/css/style-curso.css" />
     <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="layout-curso-v2">
-      <aside class="sidebar-navegacao">
-        <div class="logo-container"><h3>TRIVIUM 369</h3></div>
-        <nav class="menu-aulas"></nav>
-      </aside>
+    <button
+      id="btn-toggle-nav"
+      class="btn-toggle-menu"
+      aria-label="Abrir Navegação"
+    >
+      <span></span><span></span><span></span>
+    </button>
+    <button
+      id="btn-toggle-tools"
+      class="btn-toggle-menu"
+      aria-label="Abrir Ferramentas"
+    >
+      <i class="fas fa-wrench"></i>
+    </button>
 
-      <main class="conteudo-aula-container">
-        <div class="barra-progresso-container">
-          <div class="barra-progresso-preenchimento"></div>
-          <span class="progresso-texto">0%</span>
+    <aside class="sidebar-navegacao">
+      <div class="logo-container"><h3>TRIVIUM 369</h3></div>
+      <nav class="menu-aulas"></nav>
+    </aside>
+    <aside class="sidebar-ferramentas">
+      <div class="ferramenta-box">
+        <h4>Configurações</h4>
+        <div id="api-status-box"></div>
+      </div>
+      <div class="ferramenta-box">
+        <h4>Anotações Pessoais</h4>
+        <p class="instrucao-anotacoes">
+          Suas anotações são salvas automaticamente.
+        </p>
+        <textarea
+          id="anotacoesPessoais"
+          placeholder="Quais foram os insights do Painel Dialético?"
+        ></textarea>
+        <div class="botoes-anotacoes">
+          <button id="btn-limpar-anotacoes">Limpar</button>
+          <button id="btn-baixar-anotacoes">Baixar</button>
         </div>
-        <header class="aula-header">
-          <h2 id="titulo-modulo">Carregando...</h2>
-          <h1 id="titulo-aula">Carregando...</h1>
-        </header>
-        <article class="aula-content">
-          <h3>
-            A Dialética da Máquina: Construindo Debates Avançados para
-            Exploração
-          </h3>
+      </div>
+    </aside>
 
-          <h4>1. Introdução: Do Briefing ao Território</h4>
-          <p>
-            Na aula anterior, vocês deram o primeiro passo crucial como
-            jogadores infinitos: definiram seu campo de jogo através do
-            "Briefing do Jogo Infinito". Este documento é a sua "Causa Justa", o
-            seu norte estratégico.
-          </p>
-          <p>
-            Agora, com o destino em mente, a tentação do jogador finito é correr
-            para a ação. Mas o Arquiteto do Pensamento sabe que, antes de dar o
-            primeiro passo em direção a uma solução, precisamos mapear o
-            território do problema em toda a sua complexidade.
-          </p>
-          <p>
-            Este é o primeiro movimento da nossa respiração cognitiva: a
-            <strong>Divergência</strong>, entrando na fase de
-            <strong>Descoberta</strong> do Duplo Diamante. O objetivo aqui não é
-            ter ideias para resolver o problema, mas sim expandir radicalmente a
-            nossa compreensão do próprio problema.
-          </p>
+    <main class="conteudo-aula-container">
+      <div class="barra-progresso-container">
+        <div class="barra-progresso-preenchimento"></div>
+        <span class="progresso-texto">0%</span>
+      </div>
+      <header class="aula-header">
+        <h2 id="titulo-modulo">MÓDULO 5: ARQUITETURA AVANÇADA</h2>
+        <h1 id="titulo-aula">
+          A Dialética da Máquina: Construindo Debates Avançados
+        </h1>
+      </header>
+      <article class="aula-content">
+        <h4>1. Introdução: Do Briefing ao Território</h4>
+        <p>
+          Na aula anterior, você definiu seu campo de jogo com o "Briefing do
+          Jogo Infinito". Antes de corrermos para uma solução, precisamos de
+          mapear o território do problema. Este é o primeiro movimento da nossa
+          respiração cognitiva: a <strong>Divergência</strong>, entrando na fase
+          de <strong>Descoberta</strong>. O objetivo não é ter ideias para
+          resolver o problema, mas sim expandir radicalmente a nossa compreensão
+          do próprio problema.
+        </p>
 
-          <h4>2. A Ferramenta Prática: O "Painel de Exploração Dialética"</h4>
-          <p>
-            Para realizar esta exploração, apresento a vocês o
-            <strong>"Painel de Exploração Dialética"</strong>. Em vez de pedir
-            uma única resposta, vamos instruir a IA a orquestrar um painel de
-            debate com quatro personas arquetípicas. Cada uma delas tem uma
-            lente única e essencial para mapear o território.
-          </p>
-          <p>O prompt mestre a seguir irá invocar e dirigir este painel.</p>
-
-          <div class="bloco-de-prompt">
-            <h5>PROMPT MESTRE: PAINEL DE EXPLORAÇÃO DIALÉTICA</h5>
-            <p>
-              Você atuará como um moderador de um painel de especialistas de
-              elite, encarregado de realizar a fase de "Descoberta". O seu
-              objetivo é explorar profundamente o território de um problema, não
-              propor soluções.
-            </p>
-            <p>
-              O tema central da nossa exploração é:
-              <strong>[insira aqui o tema do seu Projeto Capstone]</strong>
-            </p>
-            <p>
-              Você irá convocar e orquestrar um debate entre as seguintes 4
-              personas:
-            </p>
-            <ol>
-              <li>
-                <strong>O Historiador:</strong> Sua missão é olhar para o
-                passado (origem do problema, tentativas anteriores, sucessos e
-                fracassos).
-              </li>
-              <li>
-                <strong>O Antropólogo:</strong> Sua missão é focar no ser humano
-                (experiências, comportamentos, dores e desejos não ditos).
-              </li>
-              <li>
-                <strong>O Futurista:</strong> Sua missão é olhar para o futuro
-                (tendências emergentes que impactarão o problema).
-              </li>
-              <li>
-                <strong>O Inovador Transversal:</strong> Sua missão é olhar para
-                os lados (analogias em campos completamente diferentes).
-              </li>
-            </ol>
-            <p>
-              <strong>Formato da Resposta:</strong> Apresente a análise de cada
-              especialista sob um título claro, com insights em bullet points,
-              focando em gerar perguntas e observações provocativas.
-            </p>
-          </div>
-
-          <h4>
-            3. Estudo de Caso: Mapeando o Jogo da Mentoria Intergeracional
-          </h4>
-          <p>
-            Vamos ver o painel em ação com um Projeto Capstone hipotético:
-            "Criar uma plataforma para conectar mentores recém-aposentados com
-            jovens profissionais no início de carreira."
-          </p>
-          <hr />
-          <h5>A Perspectiva do Historiador</h5>
-          <ul>
-            <li>
-              As guildas medievais eram sistemas de mestres e aprendizes. O que
-              perdemos com o fim desse modelo?
-            </li>
-            <li>
-              Programas de mentoria corporativa nos anos 70 falharam por serem
-              excessivamente formais. A lição: a conexão precisa ser orgânica.
-            </li>
-            <li>
-              A tradição oral é milenar. Como a tecnologia pode replicar a
-              intimidade de uma conversa ao redor da fogueira?
-            </li>
-          </ul>
-
-          <h5>A Perspectiva do Antropólogo</h5>
-          <ul>
-            <li>
-              <strong>Dor Oculta (Aposentados):</strong> Muitos não sentem falta
-              do trabalho, mas da "relevância". A plataforma deve oferecer
-              "propósito".
-            </li>
-            <li>
-              <strong>Comportamento (Jovens):</strong> Buscam conselhos no
-              TikTok/YouTube, valorizando autenticidade. Um mentor que
-              compartilha fracassos é mais atraente.
-            </li>
-            <li>
-              <strong>Ritual de Passagem:</strong> O início de carreira é cheio
-              de ansiedade. A mentoria não é só tática, mas validação emocional.
-            </li>
-          </ul>
-
-          <h5>A Perspectiva do Futurista</h5>
-          <ul>
-            <li>
-              A IA automatizará tarefas juniores, tornando as
-              <em>soft skills</em> o diferencial mais valioso.
-            </li>
-            <li>
-              A "Gig Economy" exige uma "bússola" (mentoria adaptativa), não um
-              "mapa de carreira" fixo.
-            </li>
-            <li>
-              O aumento da longevidade criará uma "massa de sabedoria" ociosa
-              sem precedentes.
-            </li>
-          </ul>
-
-          <h5>A Perspectiva do Inovador Transversal</h5>
-          <ul>
-            <li>
-              <strong>Analogia (Biologia - Simbiose):</strong> Como garantir que
-              o mentor também ganhe algo tangível do jovem?
-            </li>
-            <li>
-              <strong>Analogia (Games - Matchmaking):</strong> Como podemos
-              fazer o "match" por valores e personalidade, não apenas por
-              indústria?
-            </li>
-            <li>
-              <strong>Analogia (Música - Remix):</strong> A mentoria pode ser um
-              "remix" da experiência do sênior com a energia do júnior?
-            </li>
-          </ul>
-          <hr />
-
-          <h4>4. Exercício Prático: Sua Primeira Exploração</h4>
-          <p>
-            Agora é a sua vez de se tornar o orquestrador. Sua tarefa é executar
-            a primeira exploração divergente do seu próprio Projeto Capstone.
-          </p>
-          <ol>
-            <li>Copie o prompt mestre do "Painel de Exploração Dialética".</li>
-            <li>Abra o seu "Briefing do Jogo Infinito" da aula anterior.</li>
-            <li>
-              Cole a frase que melhor resume o tema central do seu projeto no
-              campo indicado do prompt.
-            </li>
-            <li>
-              Execute o comando e analise o resultado. Não julgue. Apenas leia,
-              observe e anote as perguntas e surpresas.
-            </li>
-          </ol>
-          <p>
-            O resultado deste exercício será o seu mapa inicial do território.
-            Nas próximas aulas, aprenderemos como usar as ferramentas de
-            convergência para encontrar os "pontos quentes" neste mapa.
-          </p>
-        </article>
-        <div class="navegacao-aula"></div>
-      </main>
-
-      <aside class="sidebar-ferramentas">
-        <div class="ferramenta-box">
-          <h4>Anotações Pessoais</h4>
-          <p class="instrucao-anotacoes">
-            Suas anotações são salvas automaticamente no navegador.
-          </p>
-          <textarea
-            id="anotacoesPessoais"
-            placeholder="Cole aqui os insights mais surpreendentes do seu Painel de Exploração..."
-          ></textarea>
-          <div class="botoes-anotacoes">
-            <button id="btn-limpar-anotacoes">Limpar</button>
-            <button id="btn-baixar-anotacoes">Baixar</button>
-          </div>
+        <h4>2. A Ferramenta Prática: O "Painel de Exploração Dialética"</h4>
+        <p>
+          Para realizar esta exploração, usaremos o
+          <strong>"Painel de Exploração Dialética"</strong>. Vamos instruir a IA
+          a orquestrar um painel de debate com quatro personas arquetípicas,
+          cada uma com uma lente única para mapear o território.
+        </p>
+        <div class="bloco-de-prompt">
+          <code
+            >Você atuará como um moderador de um painel de especialistas. O tema
+            da exploração é: &lt;O tema central do seu projeto&gt;.<br /><br />Você
+            irá convocar e orquestrar um debate entre 4 personas:<br />1. **O
+            Historiador:** Focado no passado (origem, evolução, fracassos
+            anteriores).<br />2. **O Antropólogo:** Focado no ser humano (dores,
+            desejos, comportamentos).<br />3. **O Futurista:** Focado no futuro
+            (tendências emergentes que impactarão o problema).<br />4. **O
+            Inovador Transversal:** Focado em domínios análogos (onde um
+            problema semelhante já foi resolvido?).<br /><br />Organize a
+            resposta com a análise de cada especialista em bullet points,
+            focando em gerar perguntas e observações provocativas.</code
+          >
         </div>
-      </aside>
-    </div>
+
+        <h4>3. Estudo de Caso: Mapeando a Mentoria Intergeracional</h4>
+        <p>
+          Vamos ver o painel em ação com o projeto hipotético: "Criar uma
+          plataforma para conectar mentores recém-aposentados com jovens
+          profissionais."
+        </p>
+        <blockquote class="citacao-destaque">
+          <p><strong>Insights Gerados pela IA:</strong></p>
+          <ul>
+            <li>
+              <strong>Historiador:</strong> Programas de mentoria antigos
+              falharam por serem formais demais; a conexão precisa parecer
+              orgânica.
+            </li>
+            <li>
+              <strong>Antropólogo:</strong> Aposentados buscam "relevância", não
+              trabalho. Jovens valorizam mentores que partilham fracassos, não
+              um currículo perfeito.
+            </li>
+            <li>
+              <strong>Futurista:</strong> A IA automatizará tarefas juniores,
+              tornando as <em>soft skills</em> (ensinadas por mentores) o bem
+              mais valioso.
+            </li>
+            <li>
+              <strong>Inovador Transversal (Analogia da Biologia):</strong> A
+              relação precisa ser de simbiose. O que o mentor ganha de tangível
+              (ex: aprender sobre novas tecnologias com o jovem)?
+            </li>
+          </ul>
+        </blockquote>
+
+        <h4>4. Exercício Prático: Sua Primeira Exploração</h4>
+        <p>Agora é a sua vez de orquestrar.</p>
+        <ol>
+          <li>Copie o prompt mestre do "Painel de Exploração Dialética".</li>
+          <li>
+            Abra o seu "Briefing do Jogo Infinito" e identifique a frase que
+            resume o tema do seu projeto.
+          </li>
+          <li>
+            Cole essa frase no campo
+            <code>&lt;O tema central do seu projeto&gt;</code> do prompt.
+          </li>
+          <li>Execute o comando e analise as diferentes perspectivas.</li>
+        </ol>
+        <p>
+          O resultado deste exercício será um mapa rico e multifacetado do seu
+          território. Nas próximas aulas, vamos usar as ferramentas de
+          convergência para encontrar os "pontos quentes" neste mapa.
+        </p>
+      </article>
+      <div class="navegacao-aula"></div>
+    </main>
 
     <div id="kairos-chat-button" title="Falar com Kairos">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <svg
+        xmlns="http://www.w.3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
         <path
-          d="M20 2H4c-1.103 0-2 .897-2 2v18l4-4h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 10h-4v4h-2v-4H8v-2h4V6h2v4h4v2z"
+          d="M12 2C11.45 2 11 2.45 11 3V4.59C7.93 5.49 5.5 8.43 5.5 11.5C5.5 12.53 5.79 13.5 6.28 14.36L3.64 17L5 18.36L7.64 15.72C8.5 16.21 9.47 16.5 10.5 16.5C11 16.5 11.5 16.45 12 16.36V18.5C12 19.05 12.45 19.5 13 19.5C13.55 19.5 14 19.05 14 18.5V16.36C14.5 16.45 15 16.5 15.5 16.5C16.53 16.5 17.5 16.21 18.36 15.72L21 18.36L22.36 17L19.72 14.36C20.21 13.5 20.5 12.53 20.5 11.5C20.5 8.43 18.07 5.49 15 4.59V3C15 2.45 14.55 2 14 2H12M13 6.06V7.5C13 8.05 12.55 8.5 12 8.5C11.45 8.5 11 8.05 11 7.5V6.06C10.19 6.22 9.44 6.56 8.78 7.05L9.88 8.14C10.27 8.54 10.27 9.16 9.88 9.55C9.49 9.94 8.86 9.94 8.47 9.55L7.05 8.12C6.56 8.78 6.22 9.54 6.06 10.35H7.5C8.05 10.35 8.5 10.8 8.5 11.35C8.5 11.9 8.05 12.35 7.5 12.35H6.06C6.22 13.16 6.56 13.91 7.05 14.57L8.47 13.15C8.86 12.76 9.49 12.76 9.88 13.15C10.27 13.54 10.27 14.16 9.88 14.55L8.78 15.64C9.44 16.13 10.19 16.47 11 16.63V15.15C11 14.6 11.45 14.15 12 14.15C12.55 14.15 13 14.6 13 15.15V16.63C13.81 16.47 14.56 16.13 15.22 15.64L14.12 14.55C13.73 14.16 13.73 13.54 14.12 13.15C14.51 12.76 15.14 12.76 15.53 13.15L16.95 14.57C17.44 13.91 17.78 13.16 17.94 12.35H16.5C15.95 12.35 15.5 11.9 15.5 11.35C15.5 10.8 15.95 10.35 16.5 10.35H17.94C17.78 9.54 17.44 8.78 16.95 8.12L15.53 9.55C15.14 9.94 14.51 9.94 14.12 9.55C13.73 9.16 13.73 8.54 14.12 8.14L15.22 7.05C14.56 6.56 13.81 6.22 13 6.06Z"
         />
       </svg>
     </div>
-
-    <div id="kairos-chat-container" class="oculto">
+    <div id="kairos-chat-container">
       <div class="kairos-chat-header">
         <h3>Kairos AI</h3>
         <button id="kairos-close-button">&times;</button>
       </div>
-      <div class="kairos-chat-messages">
-        <div class="message kairos">
-          Analisando a Aula 5.2. Qual das 4 personas (Historiador, Antropólogo,
-          Futurista, Inovador) trouxe a perspectiva mais inesperada para o seu
-          projeto?
-        </div>
-      </div>
+      <div class="kairos-chat-messages"></div>
       <div class="kairos-chat-input-area">
-        <input
-          type="text"
+        <textarea
           id="kairos-user-input"
           placeholder="Pergunte sobre esta aula..."
-        />
-        <button id="kairos-send-button">Enviar</button>
+          rows="1"
+        ></textarea>
+        <button id="kairos-send-button" aria-label="Enviar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+          </svg>
+        </button>
       </div>
     </div>
 
-    <script src="/scripts/funcionalidades-curso.js"></script>
+    <script src="../../../../scripts/funcionalidades-curso.js"></script>
   </body>
 </html>

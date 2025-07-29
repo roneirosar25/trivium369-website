@@ -3,196 +3,182 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aula 3.4 | TRIVIUM 369</title>
+    <title>Aula 3.4: O Caderno Digital Vivo | TRIVIUM 369</title>
     <link rel="stylesheet" href="../../assets/css/style-curso.css" />
     <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="layout-curso-v2">
-      <aside class="sidebar-navegacao">
-        <div class="logo-container"><h3>TRIVIUM 369</h3></div>
-        <nav class="menu-aulas"></nav>
-      </aside>
+    <button
+      id="btn-toggle-nav"
+      class="btn-toggle-menu"
+      aria-label="Abrir Navegação"
+    >
+      <span></span><span></span><span></span>
+    </button>
+    <button
+      id="btn-toggle-tools"
+      class="btn-toggle-menu"
+      aria-label="Abrir Ferramentas"
+    >
+      <i class="fas fa-wrench"></i>
+    </button>
 
-      <main class="conteudo-aula-container">
-        <div class="barra-progresso-container">
-          <div class="barra-progresso-preenchimento"></div>
-          <span class="progresso-texto">0%</span>
+    <aside class="sidebar-navegacao">
+      <div class="logo-container"><h3>TRIVIUM 369</h3></div>
+      <nav class="menu-aulas"></nav>
+    </aside>
+    <aside class="sidebar-ferramentas">
+      <div class="ferramenta-box">
+        <h4>Configurações</h4>
+        <div id="api-status-box"></div>
+      </div>
+      <div class="ferramenta-box">
+        <h4>Anotações Pessoais</h4>
+        <p class="instrucao-anotacoes">
+          Suas anotações são salvas automaticamente.
+        </p>
+        <textarea
+          id="anotacoesPessoais"
+          placeholder="Qual o título estratégico do meu último chat?"
+        ></textarea>
+        <div class="botoes-anotacoes">
+          <button id="btn-limpar-anotacoes">Limpar</button>
+          <button id="btn-baixar-anotacoes">Baixar</button>
         </div>
-        <header class="aula-header">
-          <h2 id="titulo-modulo">Carregando...</h2>
-          <h1 id="titulo-aula">Carregando...</h1>
-        </header>
-        <article class="aula-content">
-          <h3>
-            O Caderno Digital Vivo: Transformando seu Histórico de Chat em um
-            Ecossistema de Pensamento
-          </h3>
+      </div>
+    </aside>
 
-          <h4>1. O Perigo da Memória Descartável</h4>
-          <p>
-            Imagine este cenário: você passa uma hora em uma conversa profunda e
-            brilhante com uma IA. As ideias fluem, as conexões se formam, e você
-            chega a um insight que pode mudar o rumo de um projeto. Satisfeito,
-            você fecha a aba do navegador. A conversa se perde em um histórico
-            infinito de chats.
-          </p>
-          <p>
-            Agir assim é como um artesão que, após usar uma ferramenta
-            perfeitamente afiada para criar uma obra-prima, a joga fora. Cada
-            conversa com a IA não é apenas uma resposta; é um artefato de
-            pensamento.
-          </p>
+    <main class="conteudo-aula-container">
+      <div class="barra-progresso-container">
+        <div class="barra-progresso-preenchimento"></div>
+        <span class="progresso-texto">0%</span>
+      </div>
+      <header class="aula-header">
+        <h2 id="titulo-modulo">MÓDULO 3: O MÉTODO DA VINCI</h2>
+        <h1 id="titulo-aula">O Caderno Digital Vivo</h1>
+      </header>
+      <article class="aula-content">
+        <h3>
+          Transformando seu Histórico de Chat em um Ecossistema de Pensamento
+        </h3>
+        <p>
+          Olá e parabéns por chegar à última aula do Módulo 3! Você aprendeu a
+          usar o "Motor de Analogias" para gerar insights inovadores. Mas há um
+          perigo sutil que ameaça todo esse trabalho: a memória digital
+          descartável.
+        </p>
 
-          <h4>2. A Mudança de Paradigma: O Códice Digital de Da Vinci</h4>
-          <p>
-            Precisamos parar de tratar nosso histórico de chat como um log
-            descartável e começar a vê-lo como um
-            <strong>"Códice Digital Vivo"</strong>.
-          </p>
-          <p>
-            Pense nos cadernos de anotações de Leonardo da Vinci. Eram
-            ecossistemas de pensamento onde ideias sobre arte, anatomia e
-            engenharia se conectavam e evoluíam. Seu histórico de chat pode e
-            deve ser a mesma coisa: um segundo cérebro que preserva os caminhos
-            de raciocínio.
-          </p>
+        <h4>1. O Perigo da Memória Descartável</h4>
+        <p>
+          Imagine passar uma hora em uma conversa brilhante com uma IA e, ao
+          fechar a aba, perder todo o raciocínio. Cada conversa com a IA não é
+          apenas uma resposta; é um artefato de pensamento. Descartá-lo é
+          desperdiçar um dos seus ativos mais valiosos.
+        </p>
 
-          <h4>3. Técnicas Práticas de Curadoria do Códice</h4>
-          <p>
-            Gerenciar seu Códice Digital não precisa ser complicado. Com algumas
-            técnicas simples, você pode transformar seu histórico de um arquivo
-            morto em um jardim de ideias.
-          </p>
+        <h4>2. A Mudança de Paradigma: O Códice Digital de Da Vinci</h4>
+        <p>
+          A solução é tratar nosso histórico de chat como um
+          <strong>"Códice Digital Vivo"</strong>. Assim como os cadernos de
+          Leonardo da Vinci, seu histórico de chat deve ser um ecossistema de
+          pensamento, uma extensão da sua mente onde as ideias se conectam e
+          evoluem.
+        </p>
 
-          <h5>Técnica 1: Titulação Estratégica</h5>
-          <p>
-            A prática mais simples e de maior impacto. Ao final de cada sessão,
-            renomeie o chat com um nome descritivo e pesquisável.
-          </p>
-          <ul>
-            <li><strong>Ruim:</strong> <code>Nova Conversa</code></li>
-            <li>
-              <strong>Bom:</strong>
-              <code>Brainstorm: Nomes para o Projeto Ômega</code>
-            </li>
-            <li>
-              <strong>Excelente:</strong>
+        <h4>3. Técnicas Práticas de Curadoria do Códice</h4>
+        <p>Gerenciar seu Códice Digital é simples com estas técnicas:</p>
+        <ul>
+          <li>
+            <strong>Titulação Estratégica:</strong> Renomeie seus chats com
+            nomes descritivos e pesquisáveis. Em vez de "Nova Conversa", use
+            "Motor de Analogias: Conectando Jazz e Gestão de Vendas".
+          </li>
+          <li>
+            <strong>O Prompt de Síntese:</strong> Antes de encerrar uma sessão,
+            peça à IA para criar um resumo. Use este prompt:
+            <div
+              class="bloco-de-prompt"
+              style="font-size: 0.9em; margin: 1em 0"
+            >
               <code
-                >Motor de Analogias: Conectando Jazz e Gestão de Vendas</code
+                >Com base em toda a nossa conversa até agora, sintetize os 5
+                principais insights e as 3 próximas ações recomendadas em uma
+                lista de bullet points.</code
               >
-            </li>
-          </ul>
+            </div>
+          </li>
+          <li>
+            <strong>Polinização Cruzada:</strong> Leve o contexto de uma
+            conversa antiga para uma nova. Inicie um novo chat colando o resumo
+            de uma sessão anterior e peça para a IA construir a partir daquele
+            aprendizado.
+          </li>
+        </ul>
 
-          <h5>Técnica 2: O Prompt de Síntese</h5>
-          <p>
-            Para criar um "sumário executivo" no final de uma conversa longa,
-            use este prompt:
-          </p>
-          <div class="bloco-de-prompt">
-            <p>
-              Com base em toda a nossa conversa até agora, sintetize os 5
-              principais insights e as 3 próximas ações recomendadas em uma
-              lista de bullet points.
-            </p>
-          </div>
-
-          <h5>Técnica 3: Polinização Cruzada</h5>
-          <p>
-            Esta técnica consiste em, deliberadamente, levar o contexto de uma
-            conversa antiga para uma nova. Copie o resumo gerado pelo "Prompt de
-            Síntese" e cole-o no início de um novo chat com uma instrução como:
-          </p>
-          <div class="bloco-de-prompt">
-            <p>
-              "Contexto de um projeto anterior: [cole o resumo aqui]. Agora, com
-              base nesse aprendizado, vamos começar a planejar o novo Projeto
-              Zeta."
-            </p>
-          </div>
-          <p>
-            Isso cria um ecossistema onde suas ideias não vivem isoladas, mas se
-            informam e se enriquecem mutuamente.
-          </p>
-
-          <h4>4. Exercício Prático: Curando seu Primeiro Insight</h4>
-          <p>Vamos colocar isso em prática agora mesmo.</p>
-          <ol>
-            <li>
-              <strong>Encontre a Conversa:</strong> Volte para a ferramenta de
-              IA e localize a conversa da Aula 3.3.
-            </li>
-            <li>
-              <strong>Renomeie com Estratégia:</strong> Renomeie o título
-              daquele chat. Use o formato:
-              <code>Motor de Analogias: [Domínio Fonte] + [Domínio Alvo]</code>.
-            </li>
-            <li>
-              <strong>Execute a Síntese:</strong> No final daquela mesma
-              conversa, cole e execute o <strong>"Prompt de Síntese"</strong>.
-            </li>
-          </ol>
-          <p>
-            Pronto. Você acabou de transformar uma lição de curso em um bloco de
-            construção permanente no seu Códice Digital.
-          </p>
-          <p>
-            Este é o fim do nosso módulo, mas o começo de uma nova forma de
-            pensar e criar com a IA. Cultive seu Códice. Revisite-o. Conecte
-            suas ideias. Assim como Leonardo, perceba que tudo se conecta a tudo
-            o mais.
-          </p>
-        </article>
-        <div class="navegacao-aula"></div>
-      </main>
-
-      <aside class="sidebar-ferramentas">
-        <div class="ferramenta-box">
-          <h4>Anotações Pessoais</h4>
-          <p class="instrucao-anotacoes">
-            Suas anotações são salvas automaticamente no navegador.
-          </p>
-          <textarea
-            id="anotacoesPessoais"
-            placeholder="Qual conversa importante você vai curar hoje usando essas técnicas?"
-          ></textarea>
-          <div class="botoes-anotacoes">
-            <button id="btn-limpar-anotacoes">Limpar</button>
-            <button id="btn-baixar-anotacoes">Baixar</button>
-          </div>
-        </div>
-      </aside>
-    </div>
+        <h4>4. Exercício Prático: Curando seu Primeiro Insight</h4>
+        <p>Vamos colocar isso em prática agora mesmo.</p>
+        <ol>
+          <li>
+            <strong>Encontre a Conversa:</strong> Localize a conversa da Aula
+            3.3, onde você aplicou o "Motor de Analogias".
+          </li>
+          <li>
+            <strong>Renomeie com Estratégia:</strong> Renomeie o título daquele
+            chat. Use o formato: "Motor de Analogias: [Domínio Fonte] + [Domínio
+            Alvo]".
+          </li>
+          <li>
+            <strong>Execute a Síntese:</strong> No final da mesma conversa, cole
+            e execute o "Prompt de Síntese".
+          </li>
+        </ol>
+        <p>
+          Pronto. Você acabou de transformar uma lição de curso em um bloco de
+          construção permanente no seu Códice Digital. Nos vemos no Módulo 4!
+        </p>
+      </article>
+      <div class="navegacao-aula"></div>
+    </main>
 
     <div id="kairos-chat-button" title="Falar com Kairos">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <svg
+        xmlns="http://www.w.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
         <path
-          d="M20 2H4c-1.103 0-2 .897-2 2v18l4-4h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 10h-4v4h-2v-4H8v-2h4V6h2v4h4v2z"
+          d="M12 2C11.45 2 11 2.45 11 3V4.59C7.93 5.49 5.5 8.43 5.5 11.5C5.5 12.53 5.79 13.5 6.28 14.36L3.64 17L5 18.36L7.64 15.72C8.5 16.21 9.47 16.5 10.5 16.5C11 16.5 11.5 16.45 12 16.36V18.5C12 19.05 12.45 19.5 13 19.5C13.55 19.5 14 19.05 14 18.5V16.36C14.5 16.45 15 16.5 15.5 16.5C16.53 16.5 17.5 16.21 18.36 15.72L21 18.36L22.36 17L19.72 14.36C20.21 13.5 20.5 12.53 20.5 11.5C20.5 8.43 18.07 5.49 15 4.59V3C15 2.45 14.55 2 14 2H12M13 6.06V7.5C13 8.05 12.55 8.5 12 8.5C11.45 8.5 11 8.05 11 7.5V6.06C10.19 6.22 9.44 6.56 8.78 7.05L9.88 8.14C10.27 8.54 10.27 9.16 9.88 9.55C9.49 9.94 8.86 9.94 8.47 9.55L7.05 8.12C6.56 8.78 6.22 9.54 6.06 10.35H7.5C8.05 10.35 8.5 10.8 8.5 11.35C8.5 11.9 8.05 12.35 7.5 12.35H6.06C6.22 13.16 6.56 13.91 7.05 14.57L8.47 13.15C8.86 12.76 9.49 12.76 9.88 13.15C10.27 13.54 10.27 14.16 9.88 14.55L8.78 15.64C9.44 16.13 10.19 16.47 11 16.63V15.15C11 14.6 11.45 14.15 12 14.15C12.55 14.15 13 14.6 13 15.15V16.63C13.81 16.47 14.56 16.13 15.22 15.64L14.12 14.55C13.73 14.16 13.73 13.54 14.12 13.15C14.51 12.76 15.14 12.76 15.53 13.15L16.95 14.57C17.44 13.91 17.78 13.16 17.94 12.35H16.5C15.95 12.35 15.5 11.9 15.5 11.35C15.5 10.8 15.95 10.35 16.5 10.35H17.94C17.78 9.54 17.44 8.78 16.95 8.12L15.53 9.55C15.14 9.94 14.51 9.94 14.12 9.55C13.73 9.16 13.73 8.54 14.12 8.14L15.22 7.05C14.56 6.56 13.81 6.22 13 6.06Z"
         />
       </svg>
     </div>
-
-    <div id="kairos-chat-container" class="oculto">
+    <div id="kairos-chat-container">
       <div class="kairos-chat-header">
         <h3>Kairos AI</h3>
         <button id="kairos-close-button">&times;</button>
       </div>
-      <div class="kairos-chat-messages">
-        <div class="message kairos">
-          Analisando a Aula 3.4. O 'Códice Digital' é seu segundo cérebro. Qual
-          o título estratégico que você deu para sua última conversa importante?
-        </div>
-      </div>
+      <div class="kairos-chat-messages"></div>
       <div class="kairos-chat-input-area">
-        <input
-          type="text"
+        <textarea
           id="kairos-user-input"
           placeholder="Pergunte sobre esta aula..."
-        />
-        <button id="kairos-send-button">Enviar</button>
+          rows="1"
+        ></textarea>
+        <button id="kairos-send-button" aria-label="Enviar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+          </svg>
+        </button>
       </div>
     </div>
 
-    <script src="/scripts/funcionalidades-curso.js"></script>
+    <script src="../../../../scripts/funcionalidades-curso.js"></script>
   </body>
 </html>

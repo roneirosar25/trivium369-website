@@ -4,27 +4,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Configuração de API - TRIVIUM 369</title>
-    <link
-      rel="stylesheet"
-      href="assets/css/style-curso-engenharia-de-prompt.css"
-    />
+    <link rel="stylesheet" href="assets/css/style-curso.css" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <style>
+      /* Estilos específicos para a página de configurações */
+      .config-page-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 40px;
+        background-color: var(--cor-secundaria-fundo);
+        border-radius: 12px;
+        border: 1px solid var(--cor-borda-sutil);
+      }
+      .config-page-container h1 {
+        font-size: 2.2em;
+        text-align: center;
+        color: var(--cor-destaque-ciano);
+      }
+      .config-instructions {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: var(--cor-primaria-fundo);
+        border-radius: 8px;
+      }
+      .config-instructions ol {
+        padding-left: 20px;
+      }
+      .config-instructions li {
+        margin-bottom: 10px;
+      }
+      .instruction-image {
+        max-width: 100%;
+        border-radius: 8px;
+        margin-top: 20px;
+        border: 1px solid var(--cor-borda-sutil);
+      }
+      .config-api-key-interactive {
+        margin-top: 40px;
+      }
+      .next-step {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid var(--cor-borda-sutil);
+      }
+      .start-button {
+        display: inline-block;
+        padding: 12px 28px;
+        background-color: var(--cor-destaque-purpura);
+        color: #fff;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+      .start-button:hover {
+        background-color: var(--cor-destaque-ciano);
+        transform: translateY(-2px);
+      }
+    </style>
   </head>
   <body>
     <div class="config-page-container">
       <h1>Configuração da Chave API</h1>
       <p>
         Siga os passos abaixo para ativar as funcionalidades interativas do
-        curso.
+        curso, como a IA Kairos.
       </p>
+
       <div class="config-instructions">
         <h4>Como Gerar sua Chave Gratuita:</h4>
-        <p class="help-link">
-          Precisa de mais detalhes?
-          <a href="como-gerar-api.html" target="_blank"
-            >Abra nosso guia visual passo a passo.</a
-          >
-        </p>
         <ol>
           <li>
             Abra o
@@ -42,31 +90,37 @@
         </ol>
         <img
           src="https://i.imgur.com/gA3j3h5.png"
-          alt="Instrução para criar a chave API no Google AI Studio."
+          alt="Instrução para criar a chave API"
           class="instruction-image"
         />
       </div>
+
       <div class="config-api-key-interactive">
         <h4>Sua Chave API Secreta</h4>
-        <label for="api-key-input"
-          >Cole sua chave abaixo para salvar no seu navegador:</label
-        >
-        <input
-          type="password"
-          id="api-key-input"
-          placeholder="Cole sua chave API aqui..."
-        />
-        <button id="api-key-save-btn">Salvar Chave</button>
-        <p class="api-key-status"></p>
+        <div class="config-api-key">
+          <label for="api-key-input"
+            >Cole sua chave abaixo para salvar no seu navegador:</label
+          >
+          <input
+            type="password"
+            id="api-key-input"
+            placeholder="Cole sua chave API aqui..."
+          />
+          <button id="api-key-save-btn">Salvar Chave</button>
+          <p class="api-key-status"></p>
+        </div>
       </div>
+
       <div class="next-step">
         <p>Após salvar sua chave, você está pronto!</p>
-        <a href="aulas/modulo-1/aula-1-1.html" class="start-button"
-          >Iniciar o Curso</a
+        <a
+          href="cursos/engenharia-de-prompt/aulas/modulo-1/aula-1-0.html"
+          class="start-button"
+          >Voltar para o Curso</a
         >
       </div>
     </div>
 
-    <script src="../scripts/funcionalidades-config.js"></script>
+    <script src="scripts/funcionalidades-curso.js"></script>
   </body>
 </html>

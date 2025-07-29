@@ -3,165 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aula 5.5 | TRIVIUM 369</title>
+    <title>Aula 5.5: Oficina do Projeto Capstone | TRIVIUM 369</title>
     <link rel="stylesheet" href="../../assets/css/style-curso.css" />
     <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   </head>
   <body>
-    <div class="layout-curso-v2">
-      <aside class="sidebar-navegacao">
-        <div class="logo-container"><h3>TRIVIUM 369</h3></div>
-        <nav class="menu-aulas"></nav>
-      </aside>
+    <button id="btn-toggle-nav" class="btn-toggle-menu" aria-label="Abrir Navegação">
+      <span></span><span></span><span></span>
+    </button>
+    <button id="btn-toggle-tools" class="btn-toggle-menu" aria-label="Abrir Ferramentas">
+      <i class="fas fa-wrench"></i>
+    </button>
 
-      <main class="conteudo-aula-container">
-        <div class="barra-progresso-container">
-          <div class="barra-progresso-preenchimento"></div>
-          <span class="progresso-texto">0%</span>
+    <aside class="sidebar-navegacao">
+      <div class="logo-container"><h3>TRIVIUM 369</h3></div>
+      <nav class="menu-aulas"></nav>
+    </aside>
+    <aside class="sidebar-ferramentas">
+      <div class="ferramenta-box">
+        <h4>Configurações</h4>
+        <div id="api-status-box"></div>
+      </div>
+      <div class="ferramenta-box">
+        <h4>Anotações Pessoais</h4>
+        <p class="instrucao-anotacoes">Suas anotações são salvas automaticamente.</p>
+        <textarea id="anotacoesPessoais" placeholder="Meu primeiro protótipo será..."></textarea>
+        <div class="botoes-anotacoes">
+          <button id="btn-limpar-anotacoes">Limpar</button>
+          <button id="btn-baixar-anotacoes">Baixar</button>
         </div>
-        <header class="aula-header">
-          <h2 id="titulo-modulo">Carregando...</h2>
-          <h1 id="titulo-aula">Carregando...</h1>
-        </header>
-        <article class="aula-content">
-          <h3>Oficina do Projeto Capstone: Da Ideia ao Protótipo</h3>
+      </div>
+    </aside>
 
-          <h4>1. Introdução: Da Quantidade à Qualidade</h4>
-          <p>
-            Equipe, o trabalho que fizemos na última aula foi essencial. Geramos
-            um vasto portfólio de futuros possíveis. Mas a fase de sonhar
-            acabou. Agora, nos tornamos o editor estratégico, o CEO pragmático,
-            o fundador que precisa decidir onde alocar seu recurso mais
-            precioso: o tempo.
-          </p>
-          <p>
-            Estamos no último movimento da nossa sinfonia, a fase final de
-            convergência do Duplo Diamante: <strong>Entregar (Deliver)</strong>.
-            Não estamos procurando a ideia perfeita, mas o melhor ponto de
-            partida.
-          </p>
-
-          <h4>2. A Ferramenta Prática: A "Matriz de Priorização de Impacto"</h4>
-          <p>
-            Para tomar essa decisão, precisamos de um framework que nos ajude a
-            analisar nosso portfólio de ideias de forma estratégica. Apresento a
-            vocês a <strong>"Matriz de Priorização de Impacto"</strong>.
-          </p>
-
-          <div class="bloco-de-prompt">
-            <h5>PROMPT MESTRE: A MATRIZ DE PRIORIZAÇÃO DE IMPACTO</h5>
-            <p>
-              Com base na lista de 20 ideias que geramos, atue como meu
-              co-fundador estratégico e pragmático. Sua tarefa é me ajudar a
-              analisar e priorizar estas ideias.
-            </p>
-            <p><code>[COLE AQUI SUA LISTA DE 20 IDEIAS]</code></p>
-            <p>Para isso, realize as seguintes ações:</p>
-            <ol>
-              <li>
-                <strong>Crie uma tabela</strong> com as colunas: "Ideia",
-                "Impacto Potencial (1-5)", "Viabilidade (1-5)", "Paixão Pessoal
-                (1-5)", e "Pontuação Total".
-              </li>
-              <li>
-                <strong>Preencha a tabela</strong>, avaliando cada uma das 20
-                ideias de forma honesta.
-              </li>
-              <li>
-                <strong>Apresente o Top 3:</strong> Após a tabela, liste as 3
-                ideias com a maior pontuação e defenda cada uma como um forte
-                candidato para MVP.
-              </li>
-            </ol>
-          </div>
-
-          <h4>3. Estudo de Caso: Escolhendo o Futuro da Mentoria</h4>
-          <p>Vamos aplicar a matriz ao nosso projeto de mentoria.</p>
-          <hr />
-          <p><strong>Resultado Ideal Gerado pela IA:</strong></p>
-          <p>OK, co-fundador. Aqui está a matriz de priorização.</p>
-          <div class="tabela-container">
-            <table></table>
-          </div>
-
-          <h5>Análise do Top 3:</h5>
-          <ol>
-            <li>
-              <strong>Playlists de Carreira (Pontuação: 13):</strong> Esta é a
-              nossa aposta mais forte para um MVP. É inovadora, altamente viável
-              e resolve a tensão "escala vs. intimidade" de forma inteligente.
-            </li>
-            <li>
-              <strong>"Speed Dating" de Mentoria (Pontuação: 12):</strong>
-              Excelente para validar a necessidade de conexão ao vivo.
-              Viabilidade altíssima, mas difícil de escalar.
-            </li>
-            <li>
-              <strong>Newsletter "Conselho do Mentor" (Pontuação: 11):</strong>
-              A opção mais segura. Viabilidade total, mas menos diferenciada.
-            </li>
-          </ol>
-          <hr />
-
-          <h4>
-            4. Conclusão do Curso e Desafio Final: O Início do seu Jogo Infinito
-          </h4>
-          <p>
-            Chegamos ao fim. Mas, como vocês já sabem, este não é um fim. A
-            teoria acaba aqui. A prática começa agora.
-          </p>
-          <h5>O Desafio Final: Seu Primeiro Movimento</h5>
-          <ol>
-            <li>
-              <strong>Execute a Matriz:</strong> Use o prompt da "Matriz de
-              Priorização de Impacto" para analisar sua lista de 20 ideias.
-            </li>
-            <li>
-              <strong>Tome uma Decisão:</strong> Analise o Top 3. Escolha
-              <strong>uma</strong> ideia.
-            </li>
-            <li>
-              <strong>Defina seu Protótipo:</strong> Como ato final, escreva um
-              único parágrafo. Comece com a frase:
-              <strong>"Meu primeiro protótipo será..."</strong>. Descreva o que
-              você vai construir ou testar na próxima semana.
-            </li>
-          </ol>
-          <p>
-            Este parágrafo é o seu contrato consigo mesmo. É a sua primeira
-            jogada no seu próprio Jogo Infinito.
-          </p>
-          <blockquote class="citacao-destaque">
-            Obrigado por embarcarem nesta jornada. O campo de jogo está à sua
-            frente. Este não é o fim do curso. É o começo do seu verdadeiro
-            trabalho. Agora, vão jogar.
-          </blockquote>
-        </article>
-        <div class="navegacao-aula"></div>
-      </main>
-
-      <aside class="sidebar-ferramentas">
-        <div class="ferramenta-box">
-          <h4>Anotações Pessoais</h4>
-          <p class="instrucao-anotacoes">
-            Suas anotações são salvas automaticamente no navegador.
-          </p>
-          <textarea
-            id="anotacoesPessoais"
-            placeholder="Qual será seu primeiro protótipo? Descreva seu plano de ação..."
-          ></textarea>
-          <div class="botoes-anotacoes">
-            <button id="btn-limpar-anotacoes">Limpar</button>
-            <button id="btn-baixar-anotacoes">Baixar</button>
-          </div>
+    <main class="conteudo-aula-container">
+      <div class="barra-progresso-container">
+        <div class="barra-progresso-preenchimento"></div>
+        <span class="progresso-texto">0%</span>
+      </div>
+      <header class="aula-header">
+        <h2 id="titulo-modulo">MÓDULO 5: ARQUITETURA AVANÇADA</h2>
+        <h1 id="titulo-aula">Oficina do Projeto Capstone: Da Ideia ao Protótipo</h1>
+      </header>
+      <article class="aula-content">
+        <h4>1. Introdução: Da Quantidade à Qualidade</h4>
+        <p>Na última aula, geramos um vasto portfólio de futuros possíveis. Agora, o trabalho muda. Deixamos de ser o explorador criativo e nos tornamos o editor estratégico. Estamos na fase final de convergência: <strong>Entregar (Deliver)</strong>. O objetivo é fazer uma escolha inteligente e colocar algo no mundo.</p>
+        
+        <h4>2. A Ferramenta Prática: A "Matriz de Priorização de Impacto"</h4>
+        <p>Para tomar essa decisão, precisamos de um framework para analisar nossas ideias de forma estratégica. Usaremos a <strong>"Matriz de Priorização de Impacto"</strong>.</p>
+        <div class="bloco-de-prompt">
+            <code>Com base na lista de 20 ideias que geramos, atue como meu co-fundador estratégico.<br><br>1. Crie uma tabela com as colunas: "Ideia", "Impacto Potencial (1-5)", "Viabilidade (1-5)", "Paixão Pessoal (1-5)", e "Pontuação Total".<br>2. Preencha a tabela, avaliando cada ideia.<br>3. Apresente o Top 3, defendendo cada uma como um pitch de investidor.</code>
         </div>
-      </aside>
+
+        <h4>3. Estudo de Caso: Escolhendo o Futuro da Mentoria</h4>
+        <p>Aplicando a matriz ao nosso projeto de mentoria, a IA poderia gerar o seguinte Top 3:</p>
+        <blockquote class="citacao-destaque">
+          <ol>
+              <li><strong>Playlists de Carreira (Pontuação: 13):</strong> A aposta mais forte para um MVP. Alto impacto, máxima viabilidade. Resolve a tensão "escala vs. intimidade" de forma inteligente.</li>
+              <li><strong>"Speed Dating" de Mentoria (Pontuação: 12):</strong> Excelente para validar a necessidade de conexão ao vivo. Viabilidade altíssima, mas mais difícil de escalar a longo prazo. Um ótimo experimento.</li>
+              <li><strong>Newsletter "Conselho do Mentor" (Pontuação: 11):</strong> A opção mais segura e de menor esforço. Ótima para construir uma audiência enquanto se desenvolve a ideia principal.</li>
+          </ol>
+        </blockquote>
+
+        <h4>4. Conclusão do Curso e Desafio Final</h4>
+        <p>Chegamos ao fim. Você aprendeu a dançar o ritmo da criação, a respirar o fluxo de divergência e convergência, e a usar a IA como uma parceira. Este não é o fim do curso, é o começo do seu verdadeiro trabalho.</p>
+        <p><strong>O Desafio Final: Seu Primeiro Movimento</strong></p>
+        <ol>
+            <li><strong>Execute a Matriz:</strong> Use o prompt da "Matriz de Priorização de Impacto" com a sua lista de 20 ideias.</li>
+            <li><strong>Tome uma Decisão:</strong> Analise o Top 3 e escolha **uma** ideia.</li>
+            <li><strong>Defina seu Protótipo:** Escreva um único parágrafo começando com: **"Meu primeiro protótipo será..."**. Descreva o que você vai construir ou testar na próxima semana.</li>
+        </ol>
+        <p>Este parágrafo é o seu contrato consigo mesmo. É a sua primeira jogada no seu próprio Jogo Infinito.</p>
+        <p>Agora, vá jogar.</p>
+      </article>
+      <div class="navegacao-aula">
+        </div>
+    </main>
+
+    <div id="kairos-chat-button" title="Falar com Kairos">
+      <svg xmlns="http://www.w.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C11.45 2 11 2.45 11 3V4.59C7.93 5.49 5.5 8.43 5.5 11.5C5.5 12.53 5.79 13.5 6.28 14.36L3.64 17L5 18.36L7.64 15.72C8.5 16.21 9.47 16.5 10.5 16.5C11 16.5 11.5 16.45 12 16.36V18.5C12 19.05 12.45 19.5 13 19.5C13.55 19.5 14 19.05 14 18.5V16.36C14.5 16.45 15 16.5 15.5 16.5C16.53 16.5 17.5 16.21 18.36 15.72L21 18.36L22.36 17L19.72 14.36C20.21 13.5 20.5 12.53 20.5 11.5C20.5 8.43 18.07 5.49 15 4.59V3C15 2.45 14.55 2 14 2H12M13 6.06V7.5C13 8.05 12.55 8.5 12 8.5C11.45 8.5 11 8.05 11 7.5V6.06C10.19 6.22 9.44 6.56 8.78 7.05L9.88 8.14C10.27 8.54 10.27 9.16 9.88 9.55C9.49 9.94 8.86 9.94 8.47 9.55L7.05 8.12C6.56 8.78 6.22 9.54 6.06 10.35H7.5C8.05 10.35 8.5 10.8 8.5 11.35C8.5 11.9 8.05 12.35 7.5 12.35H6.06C6.22 13.16 6.56 13.91 7.05 14.57L8.47 13.15C8.86 12.76 9.49 12.76 9.88 13.15C10.27 13.54 10.27 14.16 9.88 14.55L8.78 15.64C9.44 16.13 10.19 16.47 11 16.63V15.15C11 14.6 11.45 14.15 12 14.15C12.55 14.15 13 14.6 13 15.15V16.63C13.81 16.47 14.56 16.13 15.22 15.64L14.12 14.55C13.73 14.16 13.73 13.54 14.12 13.15C14.51 12.76 15.14 12.76 15.53 13.15L16.95 14.57C17.44 13.91 17.78 13.16 17.94 12.35H16.5C15.95 12.35 15.5 11.9 15.5 11.35C15.5 10.8 15.95 10.35 16.5 10.35H17.94C17.78 9.54 17.44 8.78 16.95 8.12L15.53 9.55C15.14 9.94 14.51 9.94 14.12 9.55C13.73 9.16 13.73 8.54 14.12 8.14L15.22 7.05C14.56 6.56 13.81 6.22 13 6.06Z" /></svg>
     </div>
-
-    <div id="kairos-chat-button" title="Falar com Kairos"></div>
-
-    <div id="kairos-chat-container" class="oculto"></div>
-
-    <script src="/scripts/funcionalidades-curso.js"></script>
+    <div id="kairos-chat-container">
+      <div class="kairos-chat-header"><h3>Kairos AI</h3><button id="kairos-close-button">&times;</button></div>
+      <div class="kairos-chat-messages"></div>
+      <div class="kairos-chat-input-area">
+        <textarea id="kairos-user-input" placeholder="Pergunte sobre esta aula..." rows="1"></textarea>
+        <button id="kairos-send-button" aria-label="Enviar"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" /></svg></button>
+      </div>
+    </div>
+    
+    <script src="../../../../scripts/funcionalidades-curso.js"></script>
   </body>
 </html>

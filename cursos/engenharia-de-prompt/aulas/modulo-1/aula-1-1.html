@@ -6,139 +6,223 @@
     <title>Aula 1.1 | TRIVIUM 369</title>
     <link rel="stylesheet" href="../../assets/css/style-curso.css" />
     <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="layout-curso-v2">
-      <aside class="sidebar-navegacao">
-        <div class="logo-container"><h3>TRIVIUM 369</h3></div>
-        <nav class="menu-aulas"></nav>
-      </aside>
+    <button
+      id="btn-toggle-nav"
+      class="btn-toggle-menu"
+      aria-label="Abrir Navegação"
+    >
+      <span></span><span></span><span></span>
+    </button>
+    <button
+      id="btn-toggle-tools"
+      class="btn-toggle-menu"
+      aria-label="Abrir Ferramentas"
+    >
+      <i class="fas fa-wrench"></i>
+    </button>
 
-      <main class="conteudo-aula-container">
-        <div class="barra-progresso-container">
-          <div class="barra-progresso-preenchimento"></div>
-          <span class="progresso-texto">0%</span>
+    <aside class="sidebar-navegacao">
+      <div class="logo-container"><h3>TRIVIUM 369</h3></div>
+      <nav class="menu-aulas"></nav>
+    </aside>
+
+    <aside class="sidebar-ferramentas">
+      <div class="ferramenta-box">
+        <h4>Configurações</h4>
+        <div id="api-status-box"></div>
+      </div>
+      <div class="ferramenta-box">
+        <h4>Anotações Pessoais</h4>
+        <p class="instrucao-anotacoes">
+          Suas anotações são salvas automaticamente.
+        </p>
+        <textarea
+          id="anotacoesPessoais"
+          placeholder="Digite suas reflexões..."
+        ></textarea>
+        <div class="botoes-anotacoes">
+          <button id="btn-limpar-anotacoes">Limpar</button>
+          <button id="btn-baixar-anotacoes">Baixar</button>
         </div>
-        <header class="aula-header">
-          <h2 id="titulo-modulo">MÓDULO 1: FUNDAÇÃO</h2>
-          <h1 id="titulo-aula">Bem-vindo ao Renascimento Elétrico</h1>
-        </header>
-        <article class="aula-content">
-          <h3>Além do Prompt, Rumo à Cognição Aumentada</h3>
-          <p>
-            Olá, e bem-vindo ao TRIVIUM 369. Bem-vindo ao Renascimento Elétrico.
-          </p>
-          <p>
-            Hoje, não começamos apenas um curso. Começamos uma expedição. Uma
-            viagem ao coração da mais poderosa ferramenta de transformação do
-            nosso tempo e, mais importante ainda, uma viagem ao coração da nossa
-            própria capacidade de pensar.
-          </p>
+      </div>
+    </aside>
 
-          <h4>Ato 1: O Mundo Plano da Computação</h4>
-          <p>
-            Lembre-se, por um momento, de como era a nossa relação com os
-            computadores. No início, era um diálogo de iniciados. Falávamos com
-            as máquinas através de linhas de comando — uma linguagem críptica,
-            exigente, onde cada letra e cada espaço importavam. Era um mundo de
-            alta fricção, mas de controlo absoluto.
-          </p>
-
-          <h4>Ato 2: A Revolução Silenciosa e o Deserto do Genérico</h4>
-          <p>
-            Então, algo mudou. De forma silenciosa, quase impercetível, uma nova
-            dimensão abriu-se. A Inteligência Artificial Generativa não foi
-            apenas mais uma ferramenta; foi a introdução da profundidade neste
-            mundo plano.
-          </p>
-
-          <h4>Ato 3: O Renascimento Elétrico e o Arquiteto do Pensamento</h4>
-          <p>
-            É aqui que a nossa expedição começa verdadeiramente. A missão do
-            TRIVIUM 369 é rejeitar este jogo finito e convidá-lo para um jogo
-            infinito. A nossa filosofia é a do
-            <strong>Renascimento Elétrico</strong>.
-          </p>
-          <blockquote class="citacao-destaque">
-            "Como posso usar a IA para melhorar a qualidade do meu pensamento?"
-          </blockquote>
-          <p>
-            Esta é a mudança da Inteligência Artificial para a
-            <strong>Inteligência Aumentada</strong>. Não se trata de criar uma
-            consciência na máquina, but de expandir a nossa.
-          </p>
-          <p>
-            Bem-vindo à Aula 1.1. Bem-vindo ao jogo infinito. A expedição começa
-            agora.
-          </p>
-        </article>
-
-        <div class="navegacao-aula">
-          <a href="../../aula-0-1.html" class="btn-navegacao btn-anterior"
-            >← Início do Curso</a
+    <main class="conteudo-aula-container">
+      <div class="barra-progresso-container">
+        <div class="barra-progresso-preenchimento"></div>
+        <span class="progresso-texto">0%</span>
+      </div>
+      <header class="aula-header">
+        <h2 id="titulo-modulo">MÓDULO 1: FUNDAÇÃO</h2>
+        <h1 id="titulo-aula">Bem-vindo ao Renascimento Elétrico</h1>
+      </header>
+      <article class="aula-content">
+        <h3>Além do Prompt, Rumo à Cognição Aumentada</h3>
+        <p>
+          Olá, e bem-vindo ao TRIVIUM 369. Bem-vindo ao Renascimento Elétrico.
+        </p>
+        <p>
+          Hoje, não começamos apenas um curso. Começamos uma expedição. Uma
+          viagem ao coração da mais poderosa ferramenta de transformação do
+          nosso tempo e, mais importante ainda, uma viagem ao coração da nossa
+          própria capacidade de pensar.
+        </p>
+        <h4>Ato 1: O Mundo Plano da Computação</h4>
+        <p>
+          Lembre-se, por um momento, de como era a nossa relação com os
+          computadores. No início, era um diálogo de iniciados. Falávamos com as
+          máquinas através de linhas de comando — uma linguagem críptica,
+          exigente, onde cada letra e cada espaço importavam. Era um mundo de
+          alta fricção, mas de controlo absoluto. A máquina fazia exatamente o
+          que lhe era ordenado, nem mais, nem menos.
+        </p>
+        <p>
+          Depois, veio a revolução gráfica. O ecrã transformou-se numa metáfora
+          do nosso mundo físico: uma secretária, pastas, um caixote do lixo. A
+          interação tornou-se intuitiva, visual, quase sem esforço. Clicar,
+          arrastar, largar. Democratizámos o acesso ao poder computacional. Mas,
+          em ambos os mundos — o da linha de comando e o do clique —, a nossa
+          interação estava confinada a uma espécie de "terra plana". Dávamos
+          ordens diretas. Operávamos na superfície do ecrã, movendo símbolos que
+          representavam ações finitas. Éramos os mestres de marionetas de um
+          espetáculo que nós próprios dirigíamos, passo a passo.
+        </p>
+        <h4>Ato 2: A Revolução Silenciosa e o Deserto do Genérico</h4>
+        <p>
+          Então, algo mudou. De forma silenciosa, quase impercetível, uma nova
+          dimensão abriu-se. A Inteligência Artificial Generativa não foi apenas
+          mais uma ferramenta; foi a introdução da profundidade neste mundo
+          plano. De repente, já não precisávamos de dar ordens passo a passo.
+          Podíamos simplesmente descrever o destino.
+        </p>
+        <p>
+          E aqui, caímos numa armadilha subtil, mas profunda. Condicionados por
+          décadas de pesquisa na internet, tratámos esta nova e espantosa
+          capacidade como um "Google melhorado". Usámos uma ferramenta capaz de
+          construir catedrais de pensamento para pedir tijolos de informação.
+          Entrámos num jogo finito: o jogo de "obter a resposta mais rápida".
+        </p>
+        <p>
+          O resultado? Estamos a assistir ao nascimento do "Deserto do
+          Genérico". Um mar de textos competentes, mas sem alma. Imagens
+          perfeitas, mas sem intenção. Respostas plausíveis, mas muitas vezes
+          perigosamente erradas. Ao procurar a conveniência máxima, corremos o
+          risco de nos tornarmos meros consumidores de resultados,
+          externalizando não apenas o trabalho, mas o próprio ato de pensar.
+          Esta é a corrida para o fundo, uma corrida onde a mediocridade se
+          torna escalável e a originalidade, um fardo.
+        </p>
+        <h4>Ato 3: O Renascimento Elétrico e o Arquiteto do Pensamento</h4>
+        <p>
+          É aqui que a nossa expedição começa verdadeiramente. A missão do
+          TRIVIUM 369 é rejeitar este jogo finito e convidá-lo para um jogo
+          infinito. A nossa filosofia é a do
+          <strong>Renascimento Elétrico</strong>.
+        </p>
+        <p>
+          O que significa isto? Significa fundir o espírito de duas figuras
+          titânicas.
+        </p>
+        <p>
+          De <strong>Leonardo da Vinci</strong>, herdamos o humanismo polímata,
+          a curiosidade insaciável que via conexões onde outros viam barreiras.
+          Os seus cadernos não eram meros repositórios de factos; eram
+          ecossistemas de pensamento, onde a arte iluminava a anatomia e a
+          observação de um pássaro inspirava a engenharia. Ele não procurava
+          respostas; ele cultivava perguntas.
+        </p>
+        <p>
+          De <strong>Nikola Tesla</strong>, herdamos a engenharia de sistemas, a
+          capacidade de pensar não em termos de componentes isolados, mas de
+          redes globais e interligadas de energia e informação. Tesla não queria
+          apenas acender uma lâmpada; ele queria eletrificar o mundo.
+        </p>
+        <p>
+          O Renascimento Elétrico é a aplicação da curiosidade interligada de Da
+          Vinci à escala sistémica de Tesla. E a IA é o nosso meio para o fazer.
+        </p>
+        <p>
+          Neste curso, você não aprenderá a ser um "engenheiro de prompts". Esse
+          é o jogo finito. Em vez disso, você será treinado para se tornar um
+          <strong>Arquiteto do Pensamento</strong>.
+        </p>
+        <p>O que faz um Arquiteto do Pensamento?</p>
+        <p>
+          Um arquiteto não pede simplesmente uma casa. Ele projeta um sistema
+          para se viver. Da mesma forma, um Arquiteto do Pensamento não pede uma
+          resposta à IA. Ele projeta um <em>processo de investigação</em> com a
+          IA. Ele usa a IA não para substituir o seu pensamento, mas para o
+          aumentar, para o levar a lugares onde não chegaria sozinho. Ele usa a
+          IA para desafiar as suas próprias premissas, para simular perspetivas
+          opostas, para descobrir padrões ocultos em vastos conjuntos de dados e
+          para sintetizar conhecimento de formas radicalmente novas.
+        </p>
+        <p>
+          O objetivo do TRIVIUM 369 é, portanto, uma inversão radical da sua
+          relação com esta tecnologia. A pergunta que o guiará não será: "Como
+          posso usar a IA para obter a resposta que quero?".
+        </p>
+        <p>
+          Será:
+          <strong
+            >"Como posso usar a IA para melhorar a qualidade do meu
+            pensamento?".</strong
           >
-        </div>
-      </main>
-
-      <aside class="sidebar-ferramentas">
-        <div class="ferramenta-box">
-          <h4>Configurações</h4>
-          <div class="config-api-key">
-            <label for="api-key-input">Sua Chave API (Google AI Studio)</label>
-            <input
-              type="password"
-              id="api-key-input"
-              placeholder="Cole sua chave API aqui"
-            />
-            <button id="api-key-save-btn">Salvar Chave</button>
-            <p class="api-key-status"></p>
-          </div>
-        </div>
-        <div class="ferramenta-box">
-          <h4>Anotações Pessoais</h4>
-          <p class="instrucao-anotacoes">
-            Suas anotações são salvas automaticamente no navegador.
-          </p>
-          <textarea
-            id="anotacoesPessoais"
-            placeholder="Digite suas reflexões e insights aqui..."
-          ></textarea>
-          <div class="botoes-anotacoes">
-            <button id="btn-limpar-anotacoes">Limpar</button>
-            <button id="btn-baixar-anotacoes">Baixar</button>
-          </div>
-        </div>
-      </aside>
-    </div>
+        </p>
+        <p>
+          Esta é a mudança da Inteligência Artificial para a
+          <strong>Inteligência Aumentada</strong>. Não se trata de criar uma
+          consciência na máquina, mas de expandir a nossa.
+        </p>
+        <p>
+          Bem-vindo à Aula 1.1. Bem-vindo ao jogo infinito. A expedição começa
+          agora.
+        </p>
+      </article>
+      <div class="navegacao-aula"></div>
+    </main>
 
     <div id="kairos-chat-button" title="Falar com Kairos">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
         <path
-          d="M20 2H4c-1.103 0-2 .897-2 2v18l4-4h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 10h-4v4h-2v-4H8v-2h4V6h2v4h4v2z"
+          d="M12 2C11.45 2 11 2.45 11 3V4.59C7.93 5.49 5.5 8.43 5.5 11.5C5.5 12.53 5.79 13.5 6.28 14.36L3.64 17L5 18.36L7.64 15.72C8.5 16.21 9.47 16.5 10.5 16.5C11 16.5 11.5 16.45 12 16.36V18.5C12 19.05 12.45 19.5 13 19.5C13.55 19.5 14 19.05 14 18.5V16.36C14.5 16.45 15 16.5 15.5 16.5C16.53 16.5 17.5 16.21 18.36 15.72L21 18.36L22.36 17L19.72 14.36C20.21 13.5 20.5 12.53 20.5 11.5C20.5 8.43 18.07 5.49 15 4.59V3C15 2.45 14.55 2 14 2H12M13 6.06V7.5C13 8.05 12.55 8.5 12 8.5C11.45 8.5 11 8.05 11 7.5V6.06C10.19 6.22 9.44 6.56 8.78 7.05L9.88 8.14C10.27 8.54 10.27 9.16 9.88 9.55C9.49 9.94 8.86 9.94 8.47 9.55L7.05 8.12C6.56 8.78 6.22 9.54 6.06 10.35H7.5C8.05 10.35 8.5 10.8 8.5 11.35C8.5 11.9 8.05 12.35 7.5 12.35H6.06C6.22 13.16 6.56 13.91 7.05 14.57L8.47 13.15C8.86 12.76 9.49 12.76 9.88 13.15C10.27 13.54 10.27 14.16 9.88 14.55L8.78 15.64C9.44 16.13 10.19 16.47 11 16.63V15.15C11 14.6 11.45 14.15 12 14.15C12.55 14.15 13 14.6 13 15.15V16.63C13.81 16.47 14.56 16.13 15.22 15.64L14.12 14.55C13.73 14.16 13.73 13.54 14.12 13.15C14.51 12.76 15.14 12.76 15.53 13.15L16.95 14.57C17.44 13.91 17.78 13.16 17.94 12.35H16.5C15.95 12.35 15.5 11.9 15.5 11.35C15.5 10.8 15.95 10.35 16.5 10.35H17.94C17.78 9.54 17.44 8.78 16.95 8.12L15.53 9.55C15.14 9.94 14.51 9.94 14.12 9.55C13.73 9.16 13.73 8.54 14.12 8.14L15.22 7.05C14.56 6.56 13.81 6.22 13 6.06Z"
         />
       </svg>
     </div>
-
     <div id="kairos-chat-container">
       <div class="kairos-chat-header">
         <h3>Kairos AI</h3>
         <button id="kairos-close-button">&times;</button>
       </div>
-      <div class="kairos-chat-messages">
-        <div class="message kairos">
-          Olá! Estou analisando a Aula 1.1. Em que posso ajudar?
-        </div>
-      </div>
+      <div class="kairos-chat-messages"></div>
       <div class="kairos-chat-input-area">
-        <input
-          type="text"
+        <textarea
           id="kairos-user-input"
           placeholder="Pergunte sobre esta aula..."
-        />
-        <button id="kairos-send-button">Enviar</button>
+          rows="1"
+        ></textarea>
+        <button id="kairos-send-button" aria-label="Enviar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+          </svg>
+        </button>
       </div>
     </div>
 
-    <script src="/scripts/funcionalidades-curso.js"></script>
+    <script src="../../../../scripts/funcionalidades-curso.js"></script>
   </body>
 </html>

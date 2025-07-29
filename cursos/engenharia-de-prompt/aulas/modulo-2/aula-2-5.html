@@ -3,193 +3,212 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aula 2.5 | TRIVIUM 369</title>
+    <title>Aula 2.5: O Simulador de Futuros | TRIVIUM 369</title>
     <link rel="stylesheet" href="../../assets/css/style-curso.css" />
     <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="layout-curso-v2">
-      <aside class="sidebar-navegacao">
-        <div class="logo-container"><h3>TRIVIUM 369</h3></div>
-        <nav class="menu-aulas"></nav>
-      </aside>
+    <button
+      id="btn-toggle-nav"
+      class="btn-toggle-menu"
+      aria-label="Abrir Navegação"
+    >
+      <span></span><span></span><span></span>
+    </button>
+    <button
+      id="btn-toggle-tools"
+      class="btn-toggle-menu"
+      aria-label="Abrir Ferramentas"
+    >
+      <i class="fas fa-wrench"></i>
+    </button>
 
-      <main class="conteudo-aula-container">
-        <div class="barra-progresso-container">
-          <div class="barra-progresso-preenchimento"></div>
-          <span class="progresso-texto">0%</span>
+    <aside class="sidebar-navegacao">
+      <div class="logo-container"><h3>TRIVIUM 369</h3></div>
+      <nav class="menu-aulas"></nav>
+    </aside>
+    <aside class="sidebar-ferramentas">
+      <div class="ferramenta-box">
+        <h4>Configurações</h4>
+        <div id="api-status-box"></div>
+      </div>
+      <div class="ferramenta-box">
+        <h4>Anotações Pessoais</h4>
+        <p class="instrucao-anotacoes">
+          Suas anotações são salvas automaticamente.
+        </p>
+        <textarea
+          id="anotacoesPessoais"
+          placeholder="Quais são os 'sinais' que devo monitorar?"
+        ></textarea>
+        <div class="botoes-anotacoes">
+          <button id="btn-limpar-anotacoes">Limpar</button>
+          <button id="btn-baixar-anotacoes">Baixar</button>
         </div>
-        <header class="aula-header">
-          <h2 id="titulo-modulo">Carregando...</h2>
-          <h1 id="titulo-aula">Carregando...</h1>
-        </header>
-        <article class="aula-content">
-          <h3>
-            O Simulador de Futuros: Usando a IA para Mapear Possibilidades
-          </h3>
+      </div>
+    </aside>
 
-          <p>
-            Olá e bem-vindo(a) à nossa última aula teórica do Módulo 2. Até
-            agora, você aprendeu a fortalecer sua ideia com o
-            <strong>Advogado do Diabo Socrático</strong> e a enriquecê-la com o
-            <strong>Conselho de Especialistas Virtuais</strong>. Sua ideia agora
-            é robusta, multifacetada e testada internamente.
-          </p>
-          <p>
-            Mas e o mundo lá fora? A resposta está no
-            <strong>Planejamento de Cenários</strong>, uma técnica usada por
-            estrategistas de ponta para desenvolver resiliência. Hoje, vamos
-            aprender a usar a IA para criar nosso próprio
-            <strong>Simulador de Futuros</strong>.
-          </p>
+    <main class="conteudo-aula-container">
+      <div class="barra-progresso-container">
+        <div class="barra-progresso-preenchimento"></div>
+        <span class="progresso-texto">0%</span>
+      </div>
+      <header class="aula-header">
+        <h2 id="titulo-modulo">MÓDULO 2: O ARSENAL DO PRATICANTE</h2>
+        <h1 id="titulo-aula">O Simulador de Futuros</h1>
+      </header>
+      <article class="aula-content">
+        <h3>Usando a IA para Mapear Possibilidades</h3>
+        <p>
+          Olá e bem-vindo(a) à nossa última aula teórica do Módulo 2. Até agora,
+          você aprendeu a fortalecer sua ideia com o
+          <strong>Advogado do Diabo Socrático</strong> e a enriquecê-la com o
+          <strong>Conselho de Especialistas Virtuais</strong>. Sua ideia agora é
+          robusta, multifacetada e testada internamente.
+        </p>
+        <p>
+          Mas e o mundo lá fora? Uma ideia, por mais brilhante que seja, ainda
+          precisa enfrentar o fator mais imprevisível de todos: o futuro. Como
+          podemos preparar nosso projeto para as incertezas do mercado, as
+          mudanças tecnológicas e o comportamento imprevisível dos consumidores?
+        </p>
+        <p>
+          A resposta está no <strong>Planejamento de Cenários</strong>, uma
+          técnica usada por estrategistas de ponta para desenvolver resiliência.
+          Hoje, vamos aprender a usar a IA para criar nosso próprio
+          <strong>Simulador de Futuros</strong>, uma ferramenta para mapear
+          possibilidades e transformar a incerteza em uma vantagem estratégica.
+        </p>
 
-          <h4>Por que esta técnica é crucial?</h4>
-          <p>
-            O maior perigo para qualquer projeto é o
-            <strong>pensamento linear</strong> – a suposição de que o futuro
-            será apenas uma extensão do presente. O Simulador de Futuros quebra
-            essa armadilha. Ele nos força a considerar múltiplos futuros
-            possíveis, permitindo-nos:
-          </p>
-          <ul>
-            <li>
-              <strong>Antecipar Oportunidades:</strong> Identificar as condições
-              que levariam ao sucesso exponencial.
-            </li>
-            <li>
-              <strong>Mapear Riscos:</strong> Entender as ameaças antes que elas
-              se materializem.
-            </li>
-            <li>
-              <strong>Desenvolver Resiliência:</strong> Construir uma estratégia
-              flexível e adaptável.
-            </li>
-          </ul>
+        <h4>Por que esta técnica é crucial?</h4>
+        <p>
+          O maior perigo para qualquer projeto é o
+          <strong>pensamento linear</strong> – a suposição de que o futuro será
+          apenas uma extensão do presente. Planejamos para um único caminho,
+          ignorando que a realidade pode se desdobrar de inúmeras maneiras.
+        </p>
+        <p>
+          O Simulador de Futuros quebra essa armadilha. Ele nos força a
+          considerar múltiplos futuros possíveis, permitindo-nos:
+        </p>
+        <ul>
+          <li>
+            <strong>Antecipar Oportunidades:</strong> Identificar as condições
+            que levariam ao sucesso exponencial.
+          </li>
+          <li>
+            <strong>Mapear Riscos:</strong> Entender as ameaças antes que elas
+            se materializem.
+          </li>
+          <li>
+            <strong>Desenvolver Resiliência:</strong> Construir uma estratégia
+            flexível e adaptável.
+          </li>
+        </ul>
+        <p>
+          Em vez de ter um único plano rígido, você terá um mapa estratégico que
+          se ajusta às mudanças do terreno.
+        </p>
 
-          <h4>A Ferramenta Prática: O Simulador de Futuros Possíveis</h4>
-          <p>
-            Para construir nosso simulador, usaremos um prompt que instrui a IA
-            a agir como um coletivo de futuristas, projetando três cenários
-            distintos para a sua ideia.
-          </p>
-          <p>Aqui está o prompt:</p>
-          <div class="bloco-de-prompt">
-            <p>
-              Aja como um coletivo de analistas de estratégia e futuristas. Sua
-              tarefa é analisar a seguinte ideia e projetar três futuros
-              possíveis para ela nos próximos 5 anos.
-            </p>
-            <p>
-              A ideia é: &lt;insira aqui sua ideia refinada pelas aulas
-              anteriores&gt;.
-            </p>
-            <p>
-              Para cada cenário, descreva o que aconteceria e quais indicadores
-              devemos monitorar no mundo real.
-            </p>
-            <p>Apresente a análise em três partes claras:</p>
-            <p>
-              <strong
-                >1. Cenário 1: O Futuro Otimista (Melhor Cenário
-                Possível):</strong
-              >
-              Descreva um futuro onde as principais variáveis se alinham a favor
-              da ideia. Quais são os resultados exponenciais? Que "Sinais
-              Precoces" devemos monitorar?
-            </p>
-            <p>
-              <strong
-                >2. Cenário 2: O Futuro Pessimista (Pior Cenário
-                Possível):</strong
-              >
-              Descreva um futuro onde as variáveis se voltam contra a ideia.
-              Quais são as maiores ameaças? Que "Sinais de Alerta" devemos
-              monitorar?
-            </p>
-            <p>
-              <strong
-                >3. Cenário 3: O Futuro Realista (Cenário Mais
-                Provável):</strong
-              >
-              Descreva o caminho mais provável. Quais serão os sucessos
-              moderados e os desafios previsíveis? Qual estratégia de adaptação
-              seria mais importante?
-            </p>
-          </div>
-
-          <h4>Exercício Prático: Mapeie o Futuro da Sua Ideia</h4>
-          <p>
-            Sua missão agora é se tornar um estrategista e usar a IA para
-            construir seu radar do futuro.
-          </p>
-          <ol>
-            <li>Pegue a sua ideia, já fortalecida pelas aulas anteriores.</li>
-            <li>
-              Copie o prompt do "Simulador de Futuros Possíveis" e insira sua
-              ideia.
-            </li>
-            <li>Execute o prompt e analise cuidadosamente os três cenários.</li>
-            <li>
-              <strong>A parte mais importante:</strong> Crie uma lista separada
-              com os <strong>"Sinais Precoces"</strong> do cenário otimista e os
-              <strong>"Sinais de Alerta"</strong> do cenário pessimista.
-            </li>
-          </ol>
-          <p>
-            Esses sinais são o seu sistema de monitoramento estratégico,
-            permitindo que você se adapte muito antes dos seus concorrentes.
-          </p>
-        </article>
-        <div class="navegacao-aula"></div>
-      </main>
-
-      <aside class="sidebar-ferramentas">
-        <div class="ferramenta-box">
-          <h4>Anotações Pessoais</h4>
-          <p class="instrucao-anotacoes">
-            Suas anotações são salvas automaticamente no navegador.
-          </p>
-          <textarea
-            id="anotacoesPessoais"
-            placeholder="Anote os 'Sinais Precoces' e 'Sinais de Alerta' mais importantes para a sua ideia..."
-          ></textarea>
-          <div class="botoes-anotacoes">
-            <button id="btn-limpar-anotacoes">Limpar</button>
-            <button id="btn-baixar-anotacoes">Baixar</button>
-          </div>
+        <h4>A Ferramenta Prática: O Simulador de Futuros Possíveis</h4>
+        <p>
+          Para construir nosso simulador, usaremos um prompt que instrui a IA a
+          agir como um coletivo de futuristas, projetando três cenários
+          distintos para a sua ideia.
+        </p>
+        <div class="bloco-de-prompt">
+          <code
+            >Aja como um coletivo de analistas de estratégia e futuristas. Sua
+            tarefa é analisar a seguinte ideia e projetar três futuros possíveis
+            para ela nos próximos 5 anos.<br /><br />A ideia é: &lt;insira aqui
+            sua ideia refinada pelas aulas anteriores&gt;.<br /><br />Para cada
+            cenário, descreva o que aconteceria e, mais importante, quais
+            indicadores devemos monitorar no mundo real.<br /><br />Apresente a
+            análise em três partes claras:<br /><br />1. **Cenário 1: O Futuro
+            Otimista (Melhor Cenário Possível):** Descreva um futuro onde todas
+            as principais variáveis se alinham a favor da ideia. Quais são os
+            "Sinais Precoces" que sugeririam que estamos caminhando para este
+            cenário?<br /><br />2. **Cenário 2: O Futuro Pessimista (Pior
+            Cenário Possível):** Descreva o oposto. Quais são as maiores ameaças
+            e os "Sinais de Alerta" que devemos monitorar para evitar este
+            cenário?<br /><br />3. **Cenário 3: O Futuro Realista (Cenário Mais
+            Provável):** Com base nos dados atuais, descreva o caminho mais
+            provável. Quais serão os sucessos moderados e os desafios
+            previsíveis?</code
+          >
         </div>
-      </aside>
-    </div>
+
+        <h4>Exercício Prático: Mapeie o Futuro da Sua Ideia</h4>
+        <p>
+          Sua missão agora é se tornar um estrategista e usar a IA para
+          construir seu radar do futuro.
+        </p>
+        <ol>
+          <li>
+            Pegue a sua ideia, já fortalecida pelo Advogado do Diabo e pelo
+            Conselho de Especialistas.
+          </li>
+          <li>
+            Copie o prompt do "Simulador de Futuros Possíveis" e insira sua
+            ideia no local indicado.
+          </li>
+          <li>
+            Execute o prompt e analise cuidadosamente os três cenários gerados
+            pela IA.
+          </li>
+          <li>
+            <strong>A parte mais importante:</strong> Crie uma lista separada
+            com os <strong>"Sinais Precoces"</strong> e os
+            <strong>"Sinais de Alerta"</strong>.
+          </li>
+        </ol>
+        <p>
+          Esses sinais são o seu sistema de monitoramento estratégico,
+          permitindo que você se adapte muito antes dos seus concorrentes.
+        </p>
+      </article>
+      <div class="navegacao-aula"></div>
+    </main>
 
     <div id="kairos-chat-button" title="Falar com Kairos">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <svg
+        xmlns="http://www.w.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
         <path
-          d="M20 2H4c-1.103 0-2 .897-2 2v18l4-4h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 10h-4v4h-2v-4H8v-2h4V6h2v4h4v2z"
+          d="M12 2C11.45 2 11 2.45 11 3V4.59C7.93 5.49 5.5 8.43 5.5 11.5C5.5 12.53 5.79 13.5 6.28 14.36L3.64 17L5 18.36L7.64 15.72C8.5 16.21 9.47 16.5 10.5 16.5C11 16.5 11.5 16.45 12 16.36V18.5C12 19.05 12.45 19.5 13 19.5C13.55 19.5 14 19.05 14 18.5V16.36C14.5 16.45 15 16.5 15.5 16.5C16.53 16.5 17.5 16.21 18.36 15.72L21 18.36L22.36 17L19.72 14.36C20.21 13.5 20.5 12.53 20.5 11.5C20.5 8.43 18.07 5.49 15 4.59V3C15 2.45 14.55 2 14 2H12M13 6.06V7.5C13 8.05 12.55 8.5 12 8.5C11.45 8.5 11 8.05 11 7.5V6.06C10.19 6.22 9.44 6.56 8.78 7.05L9.88 8.14C10.27 8.54 10.27 9.16 9.88 9.55C9.49 9.94 8.86 9.94 8.47 9.55L7.05 8.12C6.56 8.78 6.22 9.54 6.06 10.35H7.5C8.05 10.35 8.5 10.8 8.5 11.35C8.5 11.9 8.05 12.35 7.5 12.35H6.06C6.22 13.16 6.56 13.91 7.05 14.57L8.47 13.15C8.86 12.76 9.49 12.76 9.88 13.15C10.27 13.54 10.27 14.16 9.88 14.55L8.78 15.64C9.44 16.13 10.19 16.47 11 16.63V15.15C11 14.6 11.45 14.15 12 14.15C12.55 14.15 13 14.6 13 15.15V16.63C13.81 16.47 14.56 16.13 15.22 15.64L14.12 14.55C13.73 14.16 13.73 13.54 14.12 13.15C14.51 12.76 15.14 12.76 15.53 13.15L16.95 14.57C17.44 13.91 17.78 13.16 17.94 12.35H16.5C15.95 12.35 15.5 11.9 15.5 11.35C15.5 10.8 15.95 10.35 16.5 10.35H17.94C17.78 9.54 17.44 8.78 16.95 8.12L15.53 9.55C15.14 9.94 14.51 9.94 14.12 9.55C13.73 9.16 13.73 8.54 14.12 8.14L15.22 7.05C14.56 6.56 13.81 6.22 13 6.06Z"
         />
       </svg>
     </div>
-
-    <div id="kairos-chat-container" class="oculto">
+    <div id="kairos-chat-container">
       <div class="kairos-chat-header">
         <h3>Kairos AI</h3>
         <button id="kairos-close-button">&times;</button>
       </div>
-      <div class="kairos-chat-messages">
-        <div class="message kairos">
-          Analisando a Aula 2.5. Qual foi o 'Sinal de Alerta' mais inesperado
-          que o Simulador de Futuros revelou para a sua ideia?
-        </div>
-      </div>
+      <div class="kairos-chat-messages"></div>
       <div class="kairos-chat-input-area">
-        <input
-          type="text"
+        <textarea
           id="kairos-user-input"
           placeholder="Pergunte sobre esta aula..."
-        />
-        <button id="kairos-send-button">Enviar</button>
+          rows="1"
+        ></textarea>
+        <button id="kairos-send-button" aria-label="Enviar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+          </svg>
+        </button>
       </div>
     </div>
 
-    <script src="/scripts/funcionalidades-curso.js"></script>
+    <script src="../../../../scripts/funcionalidades-curso.js"></script>
   </body>
 </html>

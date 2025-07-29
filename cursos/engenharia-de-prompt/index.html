@@ -4,36 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Curso Engenharia de Prompt - TRIVIUM 369</title>
-    <link rel="stylesheet" href="assets/css/style-landing-curso.css" />
+    <link rel="stylesheet" href="assets/css/style-curso.css" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+
+    <style>
+      .navegacao-aula {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .btn-navegacao {
+        display: inline-block;
+        padding: 12px 28px;
+        background-color: #8e44ad;
+        color: #ffffff;
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      .btn-navegacao:hover {
+        background-color: #9b59b6;
+        transform: translateY(-2px);
+      }
+    </style>
   </head>
   <body>
-    <header class="main-header">
-      <div class="container">
-        <a href="/" class="logo-link"><h1>TRIVIUM 369</h1></a>
-        <nav class="main-nav">
-          <a href="/engenharia/">Engenharia</a>
-          <a href="/ia/">IA</a>
-          <a href="/cursos/" class="active">Cursos</a>
-        </nav>
-      </div>
-    </header>
+    <div class="layout-curso-v2">
+      <aside class="sidebar-navegacao">
+        <div class="logo-container"><h3>TRIVIUM 369</h3></div>
+        <nav class="menu-aulas"></nav>
+      </aside>
 
-    <main>
-      <section class="hero-curso">
-        <div class="container">
-          <h2>TRIVIUM 369</h2>
-          <p class="subtitulo">O Ultimato Definitivo de Engenharia de Prompt</p>
+      <main class="conteudo-aula-container">
+        <header class="aula-header">
+          <h2 id="titulo-modulo">TRIVIUM 369</h2>
+          <h1 id="titulo-aula">
+            O Ultimato Definitivo de Engenharia de Prompt
+          </h1>
+        </header>
+        <article class="aula-content">
           <p>
             Deixe de ser um operador de prompts. Torne-se um Arquiteto do
             Pensamento.
           </p>
-          <a href="boas-vindas.html" class="cta-button">Acessar o Curso</a>
-        </div>
-      </section>
 
-      <div class="container">
-        <section class="content-section">
           <h3>O que você vai dominar</h3>
           <div class="features-grid">
             <div class="feature-card">
@@ -61,12 +83,29 @@
               </p>
             </div>
           </div>
-        </section>
-      </div>
-    </main>
+        </article>
 
-    <footer class="main-footer">
-      <p>&copy; 2025 TRIVIUM 369. Todos os direitos reservados.</p>
-    </footer>
+        <div class="navegacao-aula">
+          <a href="pagina-de-vendas.html" class="btn-navegacao"
+            >Ver Detalhes e Inscrever-se →</a
+          >
+        </div>
+      </main>
+
+      <aside class="sidebar-ferramentas">
+        <div class="ferramenta-box">
+          <h4>Anotações Pessoais</h4>
+          <p class="instrucao-anotacoes">
+            Suas anotações são salvas automaticamente no navegador.
+          </p>
+          <textarea
+            id="anotacoesPessoais"
+            placeholder="Digite suas reflexões e anotações aqui..."
+          ></textarea>
+        </div>
+      </aside>
+    </div>
+
+    <script src="/scripts/funcionalidades-curso.js"></script>
   </body>
 </html>

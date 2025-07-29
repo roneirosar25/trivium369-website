@@ -3,268 +3,158 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aula 4.4 | TRIVIUM 369</title>
+    <title>Aula 3.3: A Ponte Analógica | TRIVIUM 369</title>
     <link rel="stylesheet" href="../../assets/css/style-curso.css" />
     <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="layout-curso-v2">
-      <aside class="sidebar-navegacao">
-        <div class="logo-container"><h3>TRIVIUM 369</h3></div>
-        <nav class="menu-aulas"></nav>
-      </aside>
+    <button
+      id="btn-toggle-nav"
+      class="btn-toggle-menu"
+      aria-label="Abrir Navegação"
+    >
+      <span></span><span></span><span></span>
+    </button>
+    <button
+      id="btn-toggle-tools"
+      class="btn-toggle-menu"
+      aria-label="Abrir Ferramentas"
+    >
+      <i class="fas fa-wrench"></i>
+    </button>
 
-      <main class="conteudo-aula-container">
-        <div class="barra-progresso-container">
-          <div class="barra-progresso-preenchimento"></div>
-          <span class="progresso-texto">0%</span>
+    <aside class="sidebar-navegacao">
+      <div class="logo-container"><h3>TRIVIUM 369</h3></div>
+      <nav class="menu-aulas"></nav>
+    </aside>
+    <aside class="sidebar-ferramentas">
+      <div class="ferramenta-box">
+        <h4>Configurações</h4>
+        <div id="api-status-box"></div>
+      </div>
+      <div class="ferramenta-box">
+        <h4>Anotações Pessoais</h4>
+        <p class="instrucao-anotacoes">
+          Suas anotações são salvas automaticamente.
+        </p>
+        <textarea
+          id="anotacoesPessoais"
+          placeholder="Quais estratégias o Construtor de Pontes gerou?"
+        ></textarea>
+        <div class="botoes-anotacoes">
+          <button id="btn-limpar-anotacoes">Limpar</button>
+          <button id="btn-baixar-anotacoes">Baixar</button>
         </div>
-        <header class="aula-header">
-          <h2 id="titulo-modulo">Carregando...</h2>
-          <h1 id="titulo-aula">Carregando...</h1>
-        </header>
-        <article class="aula-content">
-          <h3>
-            Simulação de Intervenções: Encontrando os Pontos de Alavancagem
-          </h3>
+      </div>
+    </aside>
 
-          <h4>1. Introdução: O Leme do Navio</h4>
-          <p>
-            Nas aulas anteriores, fizemos o trabalho de um cartógrafo e de um
-            mecânico. Mapeamos o território do seu problema, identificamos suas
-            peças e montamos o motor, revelando os ciclos de feedback. Agora que
-            você vê esses ciclos, a tentação é clara: lutar contra eles.
-          </p>
-          <p>
-            No entanto, um verdadeiro engenheiro de sistemas não usa a força
-            bruta; usa a inteligência. Ele procura o painel de controle. Donella
-            Meadows chamou esses pontos de controle de
-            <strong>"pontos de alavancagem"</strong> — locais dentro de um
-            sistema complexo onde "uma pequena mudança em uma coisa pode
-            produzir grandes mudanças em tudo".<sup>1</sup>
-          </p>
-          <p>
-            Pense em um navio imenso. Tentar empurrá-lo é inútil. Mas um pequeno
-            leme, movido com precisão, pode virar toda a embarcação. Nesta aula,
-            vamos usar nosso parceiro de IA para encontrar os lemes do seu
-            sistema.<sup>3</sup>
-          </p>
-
-          <h4>2. A Ferramenta Prática: O Simulador de Intervenção</h4>
-          <p>
-            Para identificar esses pontos estratégicos, vamos utilizar a próxima
-            evolução do nosso "Mapeador de Sistemas". Vamos chamá-la de
-            <strong>"O Simulador de Intervenção"</strong>.
-          </p>
-          <p>
-            Este prompt instrui a IA a ir além da análise e assumir o papel de
-            um estrategista experiente, avaliando onde uma intervenção teria o
-            maior impacto com o menor esforço.
-          </p>
-          <p>Aqui está o modelo do prompt:</p>
-          <div class="bloco-de-prompt">
-            <p>
-              Com base na análise do sistema e nos ciclos de feedback que
-              identificamos anteriormente: [Cole aqui o resumo dos ciclos de
-              feedback].
-            </p>
-            <p>
-              Atuando como um estrategista de sistemas altamente experiente, sua
-              tarefa é identificar os 3 pontos de alavancagem mais eficazes para
-              intervir neste sistema.
-            </p>
-            <p>
-              Para cada ponto de alavancagem, explique:<br />
-              1. Qual é a intervenção específica e prática.<br />
-              2. Por que ela é eficaz, explicando qual ciclo de feedback ela
-              fortalece ou enfraquece.<br />
-              3. Qual é o resultado esperado no comportamento do sistema a longo
-              prazo.
-            </p>
-          </div>
-
-          <h4>3. Estudo de Caso: Intervindo na Procrastinação</h4>
-          <p>
-            Vamos voltar ao nosso sistema de procrastinação. Já identificamos a
-            "Espiral da Culpa" (reforço) e a "Regulação da Energia"
-            (equilíbrio). Agora, vamos pedir à IA que encontre os pontos de
-            alavancagem.
-          </p>
-          <p>
-            <strong
-              >Passo 1: Usando o Prompt "O Simulador de Intervenção"</strong
-            >
-          </p>
-          <div class="bloco-de-prompt">
-            <p>
-              Com base na análise do sistema e nos ciclos de feedback que
-              identificamos anteriormente:<br />
-              - Ciclo de Reforço (Vicioso): A "Espiral da Culpa", onde adiar o
-              exercício aumenta a culpa e o estresse, o que diminui a motivação
-              e torna mais fácil adiar novamente.<br />
-              - Ciclo de Equilíbrio: A "Regulação da Energia", onde o sistema
-              tenta conservar a energia baixa (especialmente à noite) resistindo
-              à atividade física, o que leva à decisão de adiar o exercício para
-              evitar a exaustão.
-            </p>
-            <p>
-              Atuando como um estrategista de sistemas altamente experiente, sua
-              tarefa é identificar os 3 pontos de alavancagem mais eficazes para
-              intervir neste sistema. Para cada ponto de alavancagem, explique:
-              1. A intervenção específica. 2. Por que é eficaz. 3. O resultado
-              esperado.
-            </p>
-          </div>
-
-          <p>
-            <strong>Passo 2: Exemplo de Resultado Ideal Gerado pela IA</strong>
-          </p>
-          <hr />
-          <p>
-            Com base na análise, aqui estão 3 intervenções de alta alavancagem:
-          </p>
-
-          <h5>Intervenção 1 (Ponto de Alavancagem: A Meta do Sistema)</h5>
-          <ol>
-            <li>
-              <strong>Intervenção Específica:</strong> Mudar a meta de "ir à
-              academia por 1 hora" para "vestir a roupa de ginástica e sair de
-              casa por 5 minutos".<sup>5</sup>
-            </li>
-            <li>
-              <strong>Por que é Eficaz:</strong> Ataca diretamente a
-              <strong>"Espiral da Culpa"</strong>. Ao tornar a meta
-              ridiculamente fácil, a probabilidade de "falha" despenca. Cumprir
-              a meta inverte o fluxo: aumenta a Autoestima e a Motivação,
-              enfraquecendo o ciclo negativo.<sup>6</sup>
-            </li>
-            <li>
-              <strong>Resultado Esperado:</strong> A longo prazo, o sistema se
-              reconstrói em torno de um novo ciclo de reforço positivo: pequenas
-              vitórias geram mais motivação.
-            </li>
-          </ol>
-
-          <h5>
-            Intervenção 2 (Ponto de Alavancagem: A Estrutura do Fluxo de
-            Energia)
-          </h5>
-          <ol>
-            <li>
-              <strong>Intervenção Específica:</strong> Realizar um exercício de
-              10 minutos pela manhã, em vez de tentar um exercício longo à
-              noite.
-            </li>
-            <li>
-              <strong>Por que é Eficaz:</strong> Não luta contra o
-              <strong>"Ciclo de Regulação da Energia"</strong>, ela o contorna.
-              O ciclo é mais forte à noite, quando o estoque de Energia está
-              baixo. Ao mover a atividade para a manhã, a barreira para a ação
-              diminui.
-            </li>
-            <li>
-              <strong>Resultado Esperado:</strong> O sistema deixa de ver o
-              exercício como uma ameaça. O exercício passa de um "custo" a ser
-              evitado para um "investimento" que gera retornos de energia ao
-              longo do dia.
-            </li>
-          </ol>
-
-          <h5>Intervenção 3 (Ponto de Alavancagem: O Fluxo de Informação)</h5>
-          <ol>
-            <li>
-              <strong>Intervenção Específica:</strong> Criar um calendário
-              físico e visível e marcar um "X" a cada dia em que a meta de 5
-              minutos foi cumprida.
-            </li>
-            <li>
-              <strong>Por que é Eficaz:</strong> Introduz um novo fluxo de
-              informação: o progresso visível. A corrente visual de "X"s cria um
-              novo <strong>Ciclo de Reforço positivo</strong>. Ver a cadeia de
-              sucessos aumenta a Motivação para "não quebrar a corrente".<sup
-                >6</sup
-              >
-            </li>
-            <li>
-              <strong>Resultado Esperado:</strong> A identidade da pessoa muda
-              de "alguém que tenta se exercitar" para "alguém que não quebra a
-              corrente", tornando o comportamento mais automático.
-            </li>
-          </ol>
-          <hr />
-
-          <h4>4. Exercício Prático: Projetando Suas Intervenções</h4>
-          <p>
-            Você já conhece a dinâmica do seu sistema. Agora, é hora de assumir
-            o papel de engenheiro e projetar as mudanças.
-          </p>
-          <ol>
-            <li>Pegue a sua análise dos ciclos de feedback da Aula 4.3.</li>
-            <li>Copie o modelo do prompt "O Simulador de Intervenção".</li>
-            <li>Cole o resumo dos seus ciclos no local indicado.</li>
-            <li>
-              Execute o prompt e analise as 3 intervenções estratégicas que a IA
-              sugere.
-            </li>
-          </ol>
-          <p>
-            O objetivo é entender <em>por que</em> elas são poderosas. Qual leme
-            elas movem? Salve essas intervenções. Elas são o seu plano de
-            engenharia. Na próxima e última aula deste módulo, discutiremos como
-            transformar esses planos em experimentos do mundo real.
-          </p>
-        </article>
-        <div class="navegacao-aula"></div>
-      </main>
-
-      <aside class="sidebar-ferramentas">
-        <div class="ferramenta-box">
-          <h4>Anotações Pessoais</h4>
-          <p class="instrucao-anotacoes">
-            Suas anotações são salvas automaticamente no navegador.
-          </p>
-          <textarea
-            id="anotacoesPessoais"
-            placeholder="Quais as 3 intervenções que a IA sugeriu para o seu sistema?"
-          ></textarea>
-          <div class="botoes-anotacoes">
-            <button id="btn-limpar-anotacoes">Limpar</button>
-            <button id="btn-baixar-anotacoes">Baixar</button>
-          </div>
+    <main class="conteudo-aula-container">
+      <div class="barra-progresso-container">
+        <div class="barra-progresso-preenchimento"></div>
+        <span class="progresso-texto">0%</span>
+      </div>
+      <header class="aula-header">
+        <h2 id="titulo-modulo">MÓDULO 3: O MÉTODO DA VINCI</h2>
+        <h1 id="titulo-aula">A Ponte Analógica</h1>
+      </header>
+      <article class="aula-content">
+        <h3>Aplicando os Princípios em um Novo Domínio</h3>
+        <p>
+          Seja muito bem-vindo(a) à nossa terceira aula prática deste módulo! Na
+          aula anterior, você usou o "Extrator de Essência" para criar um "mapa
+          de princípios" do seu Domínio Fonte.
+        </p>
+        <p>
+          Hoje, vamos usar esse mapa. Esta é a aula onde construímos a ponte.
+        </p>
+        <h4>1. O Passo Final do Motor: A "Tradução Criativa"</h4>
+        <p>
+          Chegamos ao coração do nosso "Motor de Analogias". A lógica deste
+          passo final é o que chamamos de <strong>"Tradução Criativa"</strong>.
+        </p>
+        <h4>2. A Ferramenta Prática: O Construtor de Pontes</h4>
+        <p>
+          Para executar essa tradução criativa, usaremos a segunda e última peça
+          do nosso prompt mestre, o <strong>"Construtor de Pontes"</strong>.
+        </p>
+        <div class="bloco-de-prompt">
+          <code
+            >Com base estrita no tutorial sobre os princípios de [SEU HOBBY] que
+            você gerou, atue como um consultor de inovação. Aplique esses 4
+            princípios para gerar 3 estratégias novas para [SUA ÁREA
+            PROFISSIONAL].</code
+          >
         </div>
-      </aside>
-    </div>
+        <h4>3. Estudo de Caso: A Ponte Construída</h4>
+        <p>
+          Vamos ao nosso exemplo: Gestão de Vendas (Alvo) e Improvisação no Jazz
+          (Fonte).
+        </p>
+        <blockquote class="citacao-destaque">
+          <p><strong>Exemplo de Estratégias Geradas pela IA:</strong></p>
+          <p>
+            <strong>1. A "Sessão de Escuta" Semanal:</strong> Onde a equipa ouve
+            gravações de chamadas de vendas para treinar a escuta.
+          </p>
+          <p>
+            <strong>2. O "Playbook de Acordes" Trimestral:</strong> Em vez de
+            guiões rígidos, a equipa recebe 5-7 "acordes" (pontos-chave) para
+            improvisar a conversa.
+          </p>
+          <p>
+            <strong>3. O Ritual da "Nota Errada":</strong> Um canal para postar
+            objeções inesperadas e fazer um brainstorm sobre como as usar a seu
+            favor.
+          </p>
+        </blockquote>
+        <h4>4. Exercício Prático: Sua Própria Inovação</h4>
+        <p>
+          Agora, a tarefa final é sua. É hora de construir sua própria ponte e
+          gerar suas próprias inovações.
+        </p>
+      </article>
+      <div class="navegacao-aula"></div>
+    </main>
 
     <div id="kairos-chat-button" title="Falar com Kairos">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
         <path
-          d="M20 2H4c-1.103 0-2 .897-2 2v18l4-4h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 10h-4v4h-2v-4H8v-2h4V6h2v4h4v2z"
+          d="M12 2C11.45 2 11 2.45 11 3V4.59C7.93 5.49 5.5 8.43 5.5 11.5C5.5 12.53 5.79 13.5 6.28 14.36L3.64 17L5 18.36L7.64 15.72C8.5 16.21 9.47 16.5 10.5 16.5C11 16.5 11.5 16.45 12 16.36V18.5C12 19.05 12.45 19.5 13 19.5C13.55 19.5 14 19.05 14 18.5V16.36C14.5 16.45 15 16.5 15.5 16.5C16.53 16.5 17.5 16.21 18.36 15.72L21 18.36L22.36 17L19.72 14.36C20.21 13.5 20.5 12.53 20.5 11.5C20.5 8.43 18.07 5.49 15 4.59V3C15 2.45 14.55 2 14 2H12M13 6.06V7.5C13 8.05 12.55 8.5 12 8.5C11.45 8.5 11 8.05 11 7.5V6.06C10.19 6.22 9.44 6.56 8.78 7.05L9.88 8.14C10.27 8.54 10.27 9.16 9.88 9.55C9.49 9.94 8.86 9.94 8.47 9.55L7.05 8.12C6.56 8.78 6.22 9.54 6.06 10.35H7.5C8.05 10.35 8.5 10.8 8.5 11.35C8.5 11.9 8.05 12.35 7.5 12.35H6.06C6.22 13.16 6.56 13.91 7.05 14.57L8.47 13.15C8.86 12.76 9.49 12.76 9.88 13.15C10.27 13.54 10.27 14.16 9.88 14.55L8.78 15.64C9.44 16.13 10.19 16.47 11 16.63V15.15C11 14.6 11.45 14.15 12 14.15C12.55 14.15 13 14.6 13 15.15V16.63C13.81 16.47 14.56 16.13 15.22 15.64L14.12 14.55C13.73 14.16 13.73 13.54 14.12 13.15C14.51 12.76 15.14 12.76 15.53 13.15L16.95 14.57C17.44 13.91 17.78 13.16 17.94 12.35H16.5C15.95 12.35 15.5 11.9 15.5 11.35C15.5 10.8 15.95 10.35 16.5 10.35H17.94C17.78 9.54 17.44 8.78 16.95 8.12L15.53 9.55C15.14 9.94 14.51 9.94 14.12 9.55C13.73 9.16 13.73 8.54 14.12 8.14L15.22 7.05C14.56 6.56 13.81 6.22 13 6.06Z"
         />
       </svg>
     </div>
-
-    <div id="kairos-chat-container" class="oculto">
+    <div id="kairos-chat-container">
       <div class="kairos-chat-header">
         <h3>Kairos AI</h3>
         <button id="kairos-close-button">&times;</button>
       </div>
-      <div class="kairos-chat-messages">
-        <div class="message kairos">
-          Analisando a Aula 4.4. Pontos de alavancagem são fascinantes. Qual das
-          3 intervenções sugeridas para o caso da procrastinação lhe pareceu
-          mais inteligente e contraintuitiva?
-        </div>
-      </div>
+      <div class="kairos-chat-messages"></div>
       <div class="kairos-chat-input-area">
-        <input
-          type="text"
+        <textarea
           id="kairos-user-input"
           placeholder="Pergunte sobre esta aula..."
-        />
-        <button id="kairos-send-button">Enviar</button>
+          rows="1"
+        ></textarea>
+        <button id="kairos-send-button" aria-label="Enviar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+          </svg>
+        </button>
       </div>
     </div>
 
-    <script src="/scripts/funcionalidades-curso.js"></script>
+    <script src="../../../../scripts/funcionalidades-curso.js"></script>
   </body>
 </html>

@@ -3,234 +3,182 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aula 5.3 | TRIVIUM 369</title>
+    <title>Aula 5.3: A Arte da Convergência | TRIVIUM 369</title>
     <link rel="stylesheet" href="../../assets/css/style-curso.css" />
     <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="layout-curso-v2">
-      <aside class="sidebar-navegacao">
-        <div class="logo-container"><h3>TRIVIUM 369</h3></div>
-        <nav class="menu-aulas"></nav>
-      </aside>
+    <button
+      id="btn-toggle-nav"
+      class="btn-toggle-menu"
+      aria-label="Abrir Navegação"
+    >
+      <span></span><span></span><span></span>
+    </button>
+    <button
+      id="btn-toggle-tools"
+      class="btn-toggle-menu"
+      aria-label="Abrir Ferramentas"
+    >
+      <i class="fas fa-wrench"></i>
+    </button>
 
-      <main class="conteudo-aula-container">
-        <div class="barra-progresso-container">
-          <div class="barra-progresso-preenchimento"></div>
-          <span class="progresso-texto">0%</span>
+    <aside class="sidebar-navegacao">
+      <div class="logo-container"><h3>TRIVIUM 369</h3></div>
+      <nav class="menu-aulas"></nav>
+    </aside>
+    <aside class="sidebar-ferramentas">
+      <div class="ferramenta-box">
+        <h4>Configurações</h4>
+        <div id="api-status-box"></div>
+      </div>
+      <div class="ferramenta-box">
+        <h4>Anotações Pessoais</h4>
+        <p class="instrucao-anotacoes">
+          Suas anotações são salvas automaticamente.
+        </p>
+        <textarea
+          id="anotacoesPessoais"
+          placeholder="Qual é a minha Pergunta de Oportunidade?"
+        ></textarea>
+        <div class="botoes-anotacoes">
+          <button id="btn-limpar-anotacoes">Limpar</button>
+          <button id="btn-baixar-anotacoes">Baixar</button>
         </div>
-        <header class="aula-header">
-          <h2 id="titulo-modulo">Carregando...</h2>
-          <h1 id="titulo-aula">Carregando...</h1>
-        </header>
-        <article class="aula-content">
-          <h3>
-            A Arte da Convergência: Sintetizando o Caos em um Problema Poderoso
-          </h3>
+      </div>
+    </aside>
 
-          <h4>1. Introdução: Do Mapa ao Tesouro</h4>
-          <p>
-            Na aula anterior, com o "Painel de Exploração Dialética", nós
-            geramos um mapa incrivelmente rico e detalhado do seu campo de jogo.
-            Temos as ruínas do passado, as dores ocultas do presente, os ventos
-            do futuro e as paisagens de mundos análogos.
-          </p>
-          <p>
-            A tarefa do Arquiteto do Pensamento agora muda drasticamente. É hora
-            de interpretar, conectar os pontos e encontrar o "X" exato que marca
-            onde devemos cavar. Este é o movimento de expiração da nossa
-            respiração cognitiva: a <strong>Convergência</strong>.
-          </p>
-          <p>
-            Estamos entrando na fase de <strong>Definição</strong> (Define) do
-            Duplo Diamante. O objetivo é transformar o caos da descoberta em uma
-            clareza cortante, sintetizando a vasta quantidade de informações em
-            uma única e poderosa pergunta. Um problema bem definido é um
-            problema 50% resolvido.
-          </p>
+    <main class="conteudo-aula-container">
+      <div class="barra-progresso-container">
+        <div class="barra-progresso-preenchimento"></div>
+        <span class="progresso-texto">0%</span>
+      </div>
+      <header class="aula-header">
+        <h2 id="titulo-modulo">MÓDULO 5: ARQUITETURA AVANÇADA</h2>
+        <h1 id="titulo-aula">A Arte da Convergência: Sintetizando o Caos</h1>
+      </header>
+      <article class="aula-content">
+        <h4>1. Introdução: Do Mapa ao Tesouro</h4>
+        <p>
+          Na aula anterior, geramos um mapa rico do seu campo de jogo. Agora, a
+          tarefa muda: não se trata mais de explorar, mas de interpretar e
+          encontrar o "X" que marca onde devemos cavar. Este é o movimento da
+          <strong>Convergência</strong>.
+        </p>
+        <p>
+          O objetivo é transformar o caos da descoberta numa única e poderosa
+          pergunta que guiará o nosso esforço criativo. Um problema bem definido
+          é um problema 50% resolvido.
+        </p>
 
-          <h4>2. A Ferramenta Prática: O "Sintetizador de Insights"</h4>
-          <p>
-            Para realizar essa transição, usaremos um novo prompt projetado para
-            atuar como nosso parceiro de convergência:
-            <strong>"O Sintetizador de Insights"</strong>. Sua função é pegar a
-            análise completa do seu Painel Dialético e destilá-la em sua
-            essência.
-          </p>
-
-          <div class="bloco-de-prompt">
-            <h5>PROMPT MESTRE: O SINTETIZADOR DE INSIGHTS</h5>
-            <p>
-              Com base na análise completa do 'Painel de Exploração Dialética'
-              que geramos sobre o tema, que está colada abaixo, sua tarefa é
-              atuar como um pesquisador e estrategista sênior de inovação.
-            </p>
-            <p>
-              <code
-                >[COLE AQUI A ANÁLISE COMPLETA DO SEU PAINEL DA AULA
-                ANTERIOR]</code
-              >
-            </p>
-            <p>Agora, realize as seguintes três ações em sequência:</p>
-            <ol>
-              <li>
-                <strong>Síntese de Temas:</strong> Analise as 4 perspectivas e
-                identifique os 3 a 5 temas, tensões ou paradoxos mais
-                recorrentes que emergiram do debate.
-              </li>
-              <li>
-                <strong>Identificação da Dor Central:</strong> Com base nesses
-                temas, identifique qual é a "dor" ou o "desejo" mais profundo e
-                não atendido do público-alvo. Articule isso em uma única frase.
-              </li>
-              <li>
-                <strong>Formulação da Pergunta de Oportunidade:</strong> Usando
-                os temas e a dor central, formule uma única e poderosa "Pergunta
-                de Oportunidade" que comece com "Como poderíamos...?".
-              </li>
-            </ol>
-          </div>
-
-          <h4>3. Estudo de Caso: Encontrando o 'X' no Mapa da Mentoria</h4>
-          <p>
-            Vamos continuar com nosso Projeto Capstone hipotético. Alimentamos a
-            análise da aula anterior no "Sintetizador de Insights".
-          </p>
-          <hr />
-          <p><strong>Resultado Ideal Gerado pela IA:</strong></p>
-          <h5>1. Temas-Chave Emergentes</h5>
-          <ul>
-            <li>
-              <strong>Relevância vs. Trabalho:</strong> A motivação do mentor
-              não é sobre "trabalhar", mas sobre encontrar um novo tipo de
-              relevância e propósito.
-            </li>
-            <li>
-              <strong>Autenticidade vs. Formalidade:</strong> A nova geração
-              desconfia de estruturas rígidas e busca conexões genuínas e
-              vulneráveis.
-            </li>
-            <li>
-              <strong>Escala Digital vs. Intimidade Humana:</strong> A
-              tecnologia conecta milhares, mas o valor da mentoria está em uma
-              intimidade que a escala tende a destruir.
-            </li>
-            <li>
-              <strong>Sabedoria Atemporal vs. Habilidades Atuais:</strong> A
-              relação não é unilateral; mentores oferecem soft skills,
-              mentorados oferecem conhecimento de tendências atuais.
-            </li>
-          </ul>
-
-          <h5>2. Dor Central Identificada</h5>
-          <p>
-            A dor mais profunda dos jovens profissionais não é a falta de
-            informação, mas sim a
-            <strong
-              >falta de validação emocional e de uma bússola humana para navegar
-              na ansiedade e na incerteza do início de carreira.</strong
-            >
-          </p>
-
-          <h5>3. Pergunta de Oportunidade</h5>
-          <blockquote class="citacao-destaque">
-            <strong
-              >Como poderíamos criar uma experiência de mentoria que se sinta
-              tão íntima e autêntica quanto uma conversa ao redor da fogueira,
-              mas que seja escalável e acessível digitalmente para a nova
-              geração de profissionais?</strong
-            >
-          </blockquote>
-          <hr />
-          <p>
-            Veja a beleza deste resultado. Passamos de dezenas de pontos de
-            dados para uma única pergunta. E que pergunta! Ela não diz "crie um
-            app". Ela estabelece as restrições criativas perfeitas: tem que ser
-            <strong>íntima e autêntica</strong>, mas também
-            <strong>escalável e acessível</strong>. Essa tensão é o terreno
-            fértil onde a inovação acontece.
-          </p>
-
-          <h4>4. Exercício Prático: Sua Pergunta de Oportunidade</h4>
-          <p>
-            Sua missão agora é encontrar o seu "X" no mapa. Você irá convergir.
-          </p>
-          <ol>
-            <li>
-              Reúna seu material: Pegue a análise completa gerada pelo "Painel
-              de Exploração Dialética" na aula anterior.
-            </li>
-            <li>
-              Prepare a ferramenta: Copie o prompt mestre do "O Sintetizador de
-              Insights".
-            </li>
-            <li>
-              Execute a Síntese: Cole seu tema e a análise do seu painel no
-              prompt e execute-o.
-            </li>
-            <li>
-              Analise e Refine: A "Pergunta de Oportunidade" gerada é o seu
-              artefato mais importante. Sinta-se à vontade para refinar a
-              pergunta com suas próprias palavras.
-            </li>
-          </ol>
-          <p>
-            A "Pergunta de Oportunidade" que você irá forjar hoje não é apenas o
-            final desta aula. É o <em>briefing</em> criativo que usaremos para
-            começar a divergir novamente, desta vez no espaço da solução.
-          </p>
-          <p>Bom trabalho, estrategistas.</p>
-        </article>
-        <div class="navegacao-aula"></div>
-      </main>
-
-      <aside class="sidebar-ferramentas">
-        <div class="ferramenta-box">
-          <h4>Anotações Pessoais</h4>
-          <p class="instrucao-anotacoes">
-            Suas anotações são salvas automaticamente no navegador.
-          </p>
-          <textarea
-            id="anotacoesPessoais"
-            placeholder="Cole aqui a sua 'Pergunta de Oportunidade' final..."
-          ></textarea>
-          <div class="botoes-anotacoes">
-            <button id="btn-limpar-anotacoes">Limpar</button>
-            <button id="btn-baixar-anotacoes">Baixar</button>
-          </div>
+        <h4>2. A Ferramenta Prática: O "Sintetizador de Insights"</h4>
+        <p>
+          Para nos ajudar a encontrar o sinal no ruído, usaremos o
+          <strong>"Sintetizador de Insights"</strong>. A sua função é pegar na
+          análise completa do seu Painel Dialético e destilá-la na sua essência.
+        </p>
+        <div class="bloco-de-prompt">
+          <code
+            >Com base na análise completa do 'Painel de Exploração Dialética'
+            que geramos, atue como um estrategista sênior.<br /><br />Agora,
+            realize as seguintes três ações:<br />1. **Síntese de Temas:**
+            Identifique os 3 a 5 temas ou tensões mais recorrentes que emergiram
+            do debate.<br />2. **Identificação da Dor Central:** Identifique
+            qual é a "dor" ou o "desejo" mais profundo do público-alvo numa
+            única frase.<br />3. **Formulação da Pergunta de Oportunidade:**
+            Usando os temas e a dor central, formule uma única e poderosa
+            pergunta que comece com "Como poderíamos...?"</code
+          >
         </div>
-      </aside>
-    </div>
+
+        <h4>3. Estudo de Caso: Encontrando o 'X' na Mentoria</h4>
+        <p>
+          Aplicando o "Sintetizador de Insights" ao nosso projeto de mentoria, a
+          IA poderia gerar o seguinte:
+        </p>
+        <blockquote class="citacao-destaque">
+          <p>
+            <strong>1. Temas-Chave:</strong> Relevância vs. Trabalho;
+            Autenticidade vs. Formalidade; Escala Digital vs. Intimidade Humana;
+            Sabedoria Atemporal vs. Habilidades Atuais.
+          </p>
+          <p>
+            <strong>2. Dor Central:</strong> A falta de validação emocional e de
+            uma bússola humana para navegar na incerteza do início de carreira.
+          </p>
+          <p>
+            <strong>3. Pergunta de Oportunidade:</strong> Como poderíamos criar
+            uma experiência de mentoria que se sinta tão íntima e autêntica
+            quanto uma conversa ao redor da fogueira, mas que seja escalável e
+            acessível digitalmente para a nova geração?
+          </p>
+        </blockquote>
+        <p>
+          Esta pergunta final não dá a solução, mas estabelece as restrições
+          criativas perfeitas para encontrá-la.
+        </p>
+
+        <h4>4. Exercício Prático: Sua Pergunta de Oportunidade</h4>
+        <p>Sua missão agora é encontrar o seu "X" no mapa.</p>
+        <ol>
+          <li>
+            Reúna o material gerado pelo "Painel de Exploração Dialética" na
+            aula anterior.
+          </li>
+          <li>
+            Use o prompt do "Sintetizador de Insights", colando a sua análise no
+            local indicado.
+          </li>
+          <li>Execute o comando e analise os 3 resultados.</li>
+          <li>
+            Refine a "Pergunta de Oportunidade". Ela é o seu artefacto mais
+            importante e será o briefing para a próxima fase da nossa jornada.
+          </li>
+        </ol>
+        <p>Bom trabalho, estrategistas.</p>
+      </article>
+      <div class="navegacao-aula"></div>
+    </main>
 
     <div id="kairos-chat-button" title="Falar com Kairos">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <svg
+        xmlns="http://www.w.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
         <path
-          d="M20 2H4c-1.103 0-2 .897-2 2v18l4-4h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 10h-4v4h-2v-4H8v-2h4V6h2v4h4v2z"
+          d="M12 2C11.45 2 11 2.45 11 3V4.59C7.93 5.49 5.5 8.43 5.5 11.5C5.5 12.53 5.79 13.5 6.28 14.36L3.64 17L5 18.36L7.64 15.72C8.5 16.21 9.47 16.5 10.5 16.5C11 16.5 11.5 16.45 12 16.36V18.5C12 19.05 12.45 19.5 13 19.5C13.55 19.5 14 19.05 14 18.5V16.36C14.5 16.45 15 16.5 15.5 16.5C16.53 16.5 17.5 16.21 18.36 15.72L21 18.36L22.36 17L19.72 14.36C20.21 13.5 20.5 12.53 20.5 11.5C20.5 8.43 18.07 5.49 15 4.59V3C15 2.45 14.55 2 14 2H12M13 6.06V7.5C13 8.05 12.55 8.5 12 8.5C11.45 8.5 11 8.05 11 7.5V6.06C10.19 6.22 9.44 6.56 8.78 7.05L9.88 8.14C10.27 8.54 10.27 9.16 9.88 9.55C9.49 9.94 8.86 9.94 8.47 9.55L7.05 8.12C6.56 8.78 6.22 9.54 6.06 10.35H7.5C8.05 10.35 8.5 10.8 8.5 11.35C8.5 11.9 8.05 12.35 7.5 12.35H6.06C6.22 13.16 6.56 13.91 7.05 14.57L8.47 13.15C8.86 12.76 9.49 12.76 9.88 13.15C10.27 13.54 10.27 14.16 9.88 14.55L8.78 15.64C9.44 16.13 10.19 16.47 11 16.63V15.15C11 14.6 11.45 14.15 12 14.15C12.55 14.15 13 14.6 13 15.15V16.63C13.81 16.47 14.56 16.13 15.22 15.64L14.12 14.55C13.73 14.16 13.73 13.54 14.12 13.15C14.51 12.76 15.14 12.76 15.53 13.15L16.95 14.57C17.44 13.91 17.78 13.16 17.94 12.35H16.5C15.95 12.35 15.5 11.9 15.5 11.35C15.5 10.8 15.95 10.35 16.5 10.35H17.94C17.78 9.54 17.44 8.78 16.95 8.12L15.53 9.55C15.14 9.94 14.51 9.94 14.12 9.55C13.73 9.16 13.73 8.54 14.12 8.14L15.22 7.05C14.56 6.56 13.81 6.22 13 6.06Z"
         />
       </svg>
     </div>
-
-    <div id="kairos-chat-container" class="oculto">
+    <div id="kairos-chat-container">
       <div class="kairos-chat-header">
         <h3>Kairos AI</h3>
         <button id="kairos-close-button">&times;</button>
       </div>
-      <div class="kairos-chat-messages">
-        <div class="message kairos">
-          Analisando a Aula 5.3. A 'Pergunta de Oportunidade' é a ferramenta
-          mais poderosa de um estrategista. Qual foi a sua?
-        </div>
-      </div>
+      <div class="kairos-chat-messages"></div>
       <div class="kairos-chat-input-area">
-        <input
-          type="text"
+        <textarea
           id="kairos-user-input"
           placeholder="Pergunte sobre esta aula..."
-        />
-        <button id="kairos-send-button">Enviar</button>
+          rows="1"
+        ></textarea>
+        <button id="kairos-send-button" aria-label="Enviar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+          </svg>
+        </button>
       </div>
     </div>
 
-    <script src="/scripts/funcionalidades-curso.js"></script>
+    <script src="../../../../scripts/funcionalidades-curso.js"></script>
   </body>
 </html>

@@ -3,211 +3,223 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aula 3.1 | TRIVIUM 369</title>
+    <title>Aula 3.1: Pensamento Conectivo | TRIVIUM 369</title>
     <link rel="stylesheet" href="../../assets/css/style-curso.css" />
     <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="layout-curso-v2">
-      <aside class="sidebar-navegacao">
-        <div class="logo-container"><h3>TRIVIUM 369</h3></div>
-        <nav class="menu-aulas"></nav>
-      </aside>
+    <button
+      id="btn-toggle-nav"
+      class="btn-toggle-menu"
+      aria-label="Abrir Navegação"
+    >
+      <span></span><span></span><span></span>
+    </button>
+    <button
+      id="btn-toggle-tools"
+      class="btn-toggle-menu"
+      aria-label="Abrir Ferramentas"
+    >
+      <i class="fas fa-wrench"></i>
+    </button>
 
-      <main class="conteudo-aula-container">
-        <div class="barra-progresso-container">
-          <div class="barra-progresso-preenchimento"></div>
-          <span class="progresso-texto">0%</span>
+    <aside class="sidebar-navegacao">
+      <div class="logo-container"><h3>TRIVIUM 369</h3></div>
+      <nav class="menu-aulas"></nav>
+    </aside>
+    <aside class="sidebar-ferramentas">
+      <div class="ferramenta-box">
+        <h4>Configurações</h4>
+        <div id="api-status-box"></div>
+      </div>
+      <div class="ferramenta-box">
+        <h4>Anotações Pessoais</h4>
+        <p class="instrucao-anotacoes">
+          Suas anotações são salvas automaticamente.
+        </p>
+        <textarea
+          id="anotacoesPessoais"
+          placeholder="Domínio Alvo: ...&#10;Domínio Fonte: ..."
+        ></textarea>
+        <div class="botoes-anotacoes">
+          <button id="btn-limpar-anotacoes">Limpar</button>
+          <button id="btn-baixar-anotacoes">Baixar</button>
         </div>
-        <header class="aula-header">
-          <h2 id="titulo-modulo">Carregando...</h2>
-          <h1 id="titulo-aula">Carregando...</h1>
-        </header>
-        <article class="aula-content">
-          <h3>
-            Pensamento Conectivo: Usando a IA para Criar Pontes Entre
-            Disciplinas
-          </h3>
-          <p>
-            Ola! Bem-vindo(a) a primeira aula do Modulo 3. Nas proximas semanas,
-            vamos mergulhar em uma das habilidades mais poderosas para a
-            inovacao no seculo XXI: o pensamento conectivo. E vamos aprender a
-            usar a Inteligencia Artificial nao como uma simples ferramenta de
-            busca, mas como uma parceira para expandir nossa propria
-            criatividade.
-          </p>
-          <p>Vamos comecar com uma viagem no tempo.</p>
+      </div>
+    </aside>
 
-          <h4>
-            1. A Genialidade de Ver Conexoes: O Segredo de Leonardo da Vinci
-          </h4>
-          <p>
-            Voce ja se perguntou o que tornava Leonardo da Vinci um genio tao
-            extraordinario? Ele foi um pintor, escultor, arquiteto, musico,
-            cientista, matematico, engenheiro, inventor, anatomista, geologo,
-            cartografo, botanico e escritor. Como uma unica pessoa conseguiu
-            dominar tantos campos?
-          </p>
-          <p>
-            A resposta nao esta em um poder sobrenatural, mas em uma filosofia
-            de vida e um metodo de pensamento que ele chamava de
-            <em>Saper Vedere</em> - em italiano, "Saber Ver".
-          </p>
-          <blockquote class="citacao-destaque">
-            "Perceba que tudo se conecta a tudo."<br />- Atribuido a Leonardo da
-            Vinci
-          </blockquote>
-          <p>
-            Ele nao via fronteiras entre arte e ciencia. Para ele, eram apenas
-            duas linguagens diferentes para descrever o mesmo universo.
-          </p>
-          <ul>
-            <li>
-              Para pintar o sorriso enigmatico da Mona Lisa, ele dissecou
-              cadaveres para entender a fundo a musculatura dos labios. A arte
-              exigia a ciencia.
-            </li>
-            <li>
-              Para projetar suas maquinas voadoras, ele passou horas estudando a
-              anatomia das asas dos passaros. A engenharia exigia a biologia.
-            </li>
-            <li>
-              Ele via os mesmos padroes de espirais nos redemoinhos da agua, nos
-              cachos de cabelo e na forma como as plantas cresciam.
-            </li>
-          </ul>
-          <p>
-            A genialidade de Leonardo nao vinha de ter todas as respostas, mas
-            de sua capacidade de fazer perguntas que cruzavam fronteiras. Ele
-            construia pontes mentais entre dominios que, para todos os outros,
-            pareciam completamente separados. Essa habilidade de conectar o
-            desconectado era o motor de sua criatividade infinita.
-          </p>
+    <main class="conteudo-aula-container">
+      <div class="barra-progresso-container">
+        <div class="barra-progresso-preenchimento"></div>
+        <span class="progresso-texto">0%</span>
+      </div>
+      <header class="aula-header">
+        <h2 id="titulo-modulo">MÓDULO 3: O MÉTODO DA VINCI</h2>
+        <h1 id="titulo-aula">Pensamento Conectivo</h1>
+      </header>
+      <article class="aula-content">
+        <h3>Usando a IA para Criar Pontes Entre Disciplinas</h3>
+        <p>
+          Olá! Bem-vindo(a) à primeira aula do Módulo 3. Nas próximas semanas,
+          vamos mergulhar em uma das habilidades mais poderosas para a inovação
+          no século XXI: o pensamento conectivo. E vamos aprender a usar a
+          Inteligência Artificial não como uma simples ferramenta de busca, mas
+          como uma parceira para expandir nossa própria criatividade.
+        </p>
+        <p>Vamos começar com uma viagem no tempo.</p>
 
-          <h4>2. A Ponte para a IA: As Novas Maquinas de Analogia</h4>
-          <p>
-            Hoje, nos nao temos os cadernos de anotacoes de Leonardo, mas temos
-            algo que funciona de maneira surpreendentemente semelhante: os
-            Grandes Modelos de Linguagem (LLMs). Eles sao, em sua essencia,
-            verdadeiras <strong>Maquinas de Analogia</strong>.
-          </p>
-          <p>
-            Eles sao a ferramenta definitiva para praticar o
-            <em>Saper Vedere</em> na era digital. Podemos usa-los para,
-            deliberadamente, forcar conexoes entre campos distintos e descobrir
-            insights que seriam quase impossiveis de encontrar de outra forma.
-          </p>
+        <h4>
+          1. A Genialidade de Ver Conexões: O Segredo de Leonardo da Vinci
+        </h4>
+        <p>
+          Você já se perguntou o que tornava Leonardo da Vinci um gênio tão
+          extraordinário? Ele foi um pintor, escultor, arquiteto, músico,
+          cientista, matemático, engenheiro, inventor, anatomista, geólogo,
+          cartógrafo, botânico e escritor. Como uma única pessoa conseguiu
+          dominar tantos campos?
+        </p>
+        <p>
+          A resposta não está em um poder sobrenatural, mas em uma filosofia de
+          vida e um método de pensamento que ele chamava de
+          <em>Saper Vedere</em> — em italiano, "Saber Ver".
+        </p>
+        <p>
+          Para Leonardo, <em>Saper Vedere</em> não era apenas olhar para o
+          mundo, mas percebê-lo em sua profundidade, em suas conexões ocultas.
+          Ele operava sob um princípio fundamental:
+          <em>"Perceba que tudo se conecta a tudo."</em>.
+        </p>
+        <ul>
+          <li>
+            Para pintar o sorriso enigmático da Mona Lisa, ele dissecou
+            cadáveres para entender a fundo a musculatura dos lábios. A arte
+            exigia a ciência.
+          </li>
+          <li>
+            Para projetar suas máquinas voadoras, ele passou horas estudando a
+            anatomia das asas dos pássaros. A engenharia exigia a biologia.
+          </li>
+        </ul>
+        <p>
+          A genialidade de Leonardo não vinha de ter todas as respostas, mas de
+          sua capacidade de fazer perguntas que cruzavam fronteiras. Ele
+          construía pontes mentais entre domínios que, para todos os outros,
+          pareciam completamente separados.
+        </p>
 
-          <h4>3. Uma Visao Geral da Tecnica: O Motor de Analogias</h4>
-          <p>
-            Ao longo das proximas aulas, vamos construir, passo a passo, uma
-            ferramenta de prompt avancada que chamaremos de
-            <strong>"Motor de Analogias"</strong>. O processo se parecera com
-            isto:
-          </p>
-          <ol>
-            <li>
-              <strong>Definir Dominios:</strong> Escolhemos dois campos que
-              queremos conectar.
-            </li>
-            <li>
-              <strong>Decompor o Dominio Fonte:</strong> Forcamos a IA a
-              "dissecar" o primeiro dominio.
-            </li>
-            <li>
-              <strong>Analisar o Dominio Alvo:</strong> Pedimos a IA para
-              analisar o segundo dominio atraves das lentes do primeiro.
-            </li>
-            <li>
-              <strong>Construir a Ponte:</strong> Instruimos a IA a criar uma
-              tabela de mapeamento explicito.
-            </li>
-            <li>
-              <strong>Gerar a Sintese:</strong> A IA gera solucoes inovadoras
-              para o nosso problema.
-            </li>
-          </ol>
-          <p>
-            O importante hoje e entender a visao: estamos transformando a IA de
-            um oraculo passivo em um parceiro ativo na exploracao criativa.
-          </p>
+        <h4>2. A Ponte para a IA: As Novas Máquinas de Analogia</h4>
+        <p>
+          Hoje, temos algo que funciona de maneira surpreendentemente semelhante
+          aos cadernos de Leonardo: os Grandes Modelos de Linguagem (LLMs). Por
+          causa de sua arquitetura, os LLMs modernos desenvolveram uma
+          capacidade emergente para o que os cientistas cognitivos chamam de
+          <strong>raciocínio analógico</strong>. Eles são, em sua essência,
+          verdadeiras <strong>Máquinas de Analogia</strong>.
+        </p>
+        <p>
+          Eles são a ferramenta definitiva para praticar o
+          <em>Saper Vedere</em> na era digital.
+        </p>
 
-          <h4>4. Exercicio Preparatorio: Escolha Seus Mundos</h4>
-          <p>
-            Para se preparar para a nossa proxima aula, sua tarefa e simples.
-            Anote duas coisas:
-          </p>
-          <ol>
-            <li>
-              <strong>Um dominio profissional que voce conhece bem.</strong>
-              Este sera o seu "Dominio Alvo".
-            </li>
-            <li>
-              <strong
-                >Um hobby ou interesse pessoal sem relacao aparente.</strong
-              >
-              Este sera o seu "Dominio Fonte".
-            </li>
-          </ol>
-          <p>
-            <strong>Exemplo:</strong> Dominio Alvo: Gestao de equipes de vendas.
-            | Dominio Fonte: Os principios da improvisacao no Jazz.
-          </p>
-          <p>
-            Voce esta prestes a aprender a construir pontes entre os seus
-            proprios mundos. Nos vemos na proxima aula!
-          </p>
-        </article>
-        <div class="navegacao-aula"></div>
-      </main>
+        <h4>3. Uma Visão Geral da Técnica: O Motor de Analogias</h4>
+        <p>
+          Ao longo das próximas aulas, vamos construir, passo a passo, uma
+          ferramenta de prompt avançada que chamaremos de
+          <strong>"Motor de Analogias"</strong>. O processo se parecerá com
+          isto:
+        </p>
+        <ol>
+          <li>
+            <strong>Definir Domínios:</strong> Escolhemos dois campos que
+            queremos conectar.
+          </li>
+          <li>
+            <strong>Decompor o Domínio Fonte:</strong> Forçamos a IA a
+            "dissecar" o primeiro domínio.
+          </li>
+          <li>
+            <strong>Analisar o Domínio Alvo:</strong> Pedimos à IA para analisar
+            o segundo domínio através das lentes do primeiro.
+          </li>
+          <li>
+            <strong>Construir a Ponte:</strong> Instruímos a IA a criar um
+            mapeamento explícito.
+          </li>
+          <li>
+            <strong>Gerar a Síntese:</strong> A IA gera soluções inovadoras.
+          </li>
+        </ol>
 
-      <aside class="sidebar-ferramentas">
-        <div class="ferramenta-box">
-          <h4>Anotacoes Pessoais</h4>
-          <p class="instrucao-anotacoes">
-            Suas anotacoes sao salvas automaticamente no navegador.
-          </p>
-          <textarea
-            id="anotacoesPessoais"
-            placeholder="Anote aqui seu Dominio Alvo e seu Dominio Fonte..."
-          ></textarea>
-          <div class="botoes-anotacoes">
-            <button id="btn-limpar-anotacoes">Limpar</button>
-            <button id="btn-baixar-anotacoes">Baixar</button>
-          </div>
-        </div>
-      </aside>
-    </div>
+        <h4>4. Exercício Preparatório: Escolha Seus Mundos</h4>
+        <p>
+          Para se preparar para a nossa próxima aula, sua tarefa é simples.
+          Anote duas coisas:
+        </p>
+        <ol>
+          <li>
+            <strong
+              >Um domínio profissional ou de estudo que você conhece
+              bem.</strong
+            >
+            (Ex: marketing digital, engenharia de software). Este será o seu
+            "Domínio Alvo".
+          </li>
+          <li>
+            <strong
+              >Um hobby, paixão ou interesse pessoal que não tenha relação
+              aparente.</strong
+            >
+            (Ex: jardinagem, astronomia, culinária francesa). Este será o seu
+            "Domínio Fonte".
+          </li>
+        </ol>
+        <p>
+          Você está prestes a aprender a construir pontes entre os seus próprios
+          mundos. Nos vemos na próxima aula!
+        </p>
+      </article>
+      <div class="navegacao-aula"></div>
+    </main>
 
     <div id="kairos-chat-button" title="Falar com Kairos">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
         <path
-          d="M20 2H4c-1.103 0-2 .897-2 2v18l4-4h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 10h-4v4h-2v-4H8v-2h4V6h2v4h4v2z"
+          d="M12 2C11.45 2 11 2.45 11 3V4.59C7.93 5.49 5.5 8.43 5.5 11.5C5.5 12.53 5.79 13.5 6.28 14.36L3.64 17L5 18.36L7.64 15.72C8.5 16.21 9.47 16.5 10.5 16.5C11 16.5 11.5 16.45 12 16.36V18.5C12 19.05 12.45 19.5 13 19.5C13.55 19.5 14 19.05 14 18.5V16.36C14.5 16.45 15 16.5 15.5 16.5C16.53 16.5 17.5 16.21 18.36 15.72L21 18.36L22.36 17L19.72 14.36C20.21 13.5 20.5 12.53 20.5 11.5C20.5 8.43 18.07 5.49 15 4.59V3C15 2.45 14.55 2 14 2H12M13 6.06V7.5C13 8.05 12.55 8.5 12 8.5C11.45 8.5 11 8.05 11 7.5V6.06C10.19 6.22 9.44 6.56 8.78 7.05L9.88 8.14C10.27 8.54 10.27 9.16 9.88 9.55C9.49 9.94 8.86 9.94 8.47 9.55L7.05 8.12C6.56 8.78 6.22 9.54 6.06 10.35H7.5C8.05 10.35 8.5 10.8 8.5 11.35C8.5 11.9 8.05 12.35 7.5 12.35H6.06C6.22 13.16 6.56 13.91 7.05 14.57L8.47 13.15C8.86 12.76 9.49 12.76 9.88 13.15C10.27 13.54 10.27 14.16 9.88 14.55L8.78 15.64C9.44 16.13 10.19 16.47 11 16.63V15.15C11 14.6 11.45 14.15 12 14.15C12.55 14.15 13 14.6 13 15.15V16.63C13.81 16.47 14.56 16.13 15.22 15.64L14.12 14.55C13.73 14.16 13.73 13.54 14.12 13.15C14.51 12.76 15.14 12.76 15.53 13.15L16.95 14.57C17.44 13.91 17.78 13.16 17.94 12.35H16.5C15.95 12.35 15.5 11.9 15.5 11.35C15.5 10.8 15.95 10.35 16.5 10.35H17.94C17.78 9.54 17.44 8.78 16.95 8.12L15.53 9.55C15.14 9.94 14.51 9.94 14.12 9.55C13.73 9.16 13.73 8.54 14.12 8.14L15.22 7.05C14.56 6.56 13.81 6.22 13 6.06Z"
         />
       </svg>
     </div>
-
-    <div id="kairos-chat-container" class="oculto">
+    <div id="kairos-chat-container">
       <div class="kairos-chat-header">
         <h3>Kairos AI</h3>
         <button id="kairos-close-button">&times;</button>
       </div>
-      <div class="kairos-chat-messages">
-        <div class="message kairos">
-          Analisando a Aula 3.1. Qual Dominio Fonte inusitado voce escolheu para
-          combinar com seu Dominio Alvo?
-        </div>
-      </div>
+      <div class="kairos-chat-messages"></div>
       <div class="kairos-chat-input-area">
-        <input
-          type="text"
+        <textarea
           id="kairos-user-input"
           placeholder="Pergunte sobre esta aula..."
-        />
-        <button id="kairos-send-button">Enviar</button>
+          rows="1"
+        ></textarea>
+        <button id="kairos-send-button" aria-label="Enviar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+          </svg>
+        </button>
       </div>
     </div>
 
-    <script src="/scripts/funcionalidades-curso.js"></script>
+    <script src="../../../../scripts/funcionalidades-curso.js"></script>
   </body>
 </html>

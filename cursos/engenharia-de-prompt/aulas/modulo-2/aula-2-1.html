@@ -3,293 +3,210 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aula 2.1 | TRIVIUM 369</title>
+    <title>Aula 2.1: O Princípio do Andaime Socrático | TRIVIUM 369</title>
     <link rel="stylesheet" href="../../assets/css/style-curso.css" />
     <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="layout-curso-v2">
-      <aside class="sidebar-navegacao">
-        <div class="logo-container"><h3>TRIVIUM 369</h3></div>
-        <nav class="menu-aulas"></nav>
-      </aside>
+    <button
+      id="btn-toggle-nav"
+      class="btn-toggle-menu"
+      aria-label="Abrir Navegação"
+    >
+      <span></span><span></span><span></span>
+    </button>
+    <button
+      id="btn-toggle-tools"
+      class="btn-toggle-menu"
+      aria-label="Abrir Ferramentas"
+    >
+      <i class="fas fa-wrench"></i>
+    </button>
 
-      <main class="conteudo-aula-container">
-        <div class="barra-progresso-container">
-          <div class="barra-progresso-preenchimento"></div>
-          <span class="progresso-texto">0%</span>
+    <aside class="sidebar-navegacao">
+      <div class="logo-container"><h3>TRIVIUM 369</h3></div>
+      <nav class="menu-aulas"></nav>
+    </aside>
+    <aside class="sidebar-ferramentas">
+      <div class="ferramenta-box">
+        <h4>Configurações</h4>
+        <div id="api-status-box"></div>
+      </div>
+      <div class="ferramenta-box">
+        <h4>Anotações Pessoais</h4>
+        <p class="instrucao-anotacoes">
+          Suas anotações são salvas automaticamente.
+        </p>
+        <textarea
+          id="anotacoesPessoais"
+          placeholder="Digite suas reflexões..."
+        ></textarea>
+        <div class="botoes-anotacoes">
+          <button id="btn-limpar-anotacoes">Limpar</button>
+          <button id="btn-baixar-anotacoes">Baixar</button>
         </div>
-        <header class="aula-header">
-          <h2 id="titulo-modulo">Carregando...</h2>
-          <h1 id="titulo-aula">Carregando...</h1>
-        </header>
-        <article class="aula-content">
-          <h3>O Princípio do Andaime Socrático</h3>
+      </div>
+    </aside>
 
-          <h4>
-            Introdução: Da Psicologia Soviética à Engenharia de Prompt – A
-            Arquitetura da Co-Inteligência
-          </h4>
-          <p>
-            O conceito de "andaime" (scaffolding), embora enraizado na
-            psicologia do desenvolvimento do século XX, emergiu como um dos
-            princípios mais potentes e relevantes na era da inteligência
-            artificial generativa. A sua jornada, desde as observações de Lev
-            Vygotsky sobre a aprendizagem social na União Soviética até à sua
-            aplicação na arquitetura de prompts complexos para Grandes Modelos
-            de Linguagem (LLMs), revela uma verdade fundamental sobre a
-            cognição: a aprendizagem e a resolução de problemas complexos
-            raramente são atos solitários. São, na sua essência, processos de
-            colaboração assistida, onde um guia mais experiente fornece uma
-            estrutura temporária para que um aprendiz possa alcançar novos
-            patamares de competência.
-          </p>
-          <p>
-            Este relatório explora o "Princípio do Andaime Socrático", uma
-            evolução sofisticada do conceito original. Apresenta-se o andaime
-            não como uma mera técnica de "ajuda", mas como um princípio
-            cognitivo universal para gerir a complexidade e facilitar a
-            aprendizagem, que encontra a sua expressão mais refinada na arte do
-            diálogo e do questionamento crítico. Argumenta-se que, ao interagir
-            com uma IA, o utilizador assume o papel de um arquiteto cognitivo,
-            construindo andaimes de prompts que não apenas extraem respostas,
-            mas moldam o próprio processo de raciocínio do modelo. Esta
-            abordagem transforma a interação humano-máquina de uma simples
-            transação para uma forma de co-inteligência.
-          </p>
-          <p>
-            Para construir uma compreensão holística, este documento está
-            estruturado em quatro secções interligadas. A primeira secção
-            disseca a definição fundamental do andaime, traçando as suas origens
-            teóricas e os seus mecanismos cognitivos. A segunda detalha como
-            este princípio se traduz diretamente na prática da engenharia de
-            prompt, movendo-se de instruções simples para estruturas de
-            raciocínio complexas. A terceira secção fornecerá exemplos práticos
-            e detalhados que ilustram a construção de andaimes camada por
-            camada. Finalmente, a quarta secção analisará os erros comuns na
-            aplicação desta técnica, oferecendo uma perspetiva crítica sobre as
-            suas armadilhas e implicações éticas. Juntas, estas secções formarão
-            a base de conhecimento para dominar o Andaime Socrático como uma
-            ferramenta essencial para a aprendizagem e criação no século XXI.
-          </p>
+    <main class="conteudo-aula-container">
+      <div class="barra-progresso-container">
+        <div class="barra-progresso-preenchimento"></div>
+        <span class="progresso-texto">0%</span>
+      </div>
+      <header class="aula-header">
+        <h2 id="titulo-modulo">MÓDULO 2: O ARSENAL DO PRATICANTE</h2>
+        <h1 id="titulo-aula">O Princípio do Andaime Socrático</h1>
+      </header>
+      <article class="aula-content">
+        <h2>
+          Introdução: Da Psicologia Soviética à Engenharia de Prompt – A
+          Arquitetura da Co-Inteligência
+        </h2>
+        <p>
+          O conceito de "andaime" (scaffolding), embora enraizado na psicologia
+          do desenvolvimento do século XX, emergiu como um dos princípios mais
+          potentes e relevantes na era da inteligência artificial generativa. A
+          sua jornada, desde as observações de Lev Vygotsky sobre a aprendizagem
+          social na União Soviética até à sua aplicação na arquitetura de
+          prompts complexos para Grandes Modelos de Linguagem (LLMs), revela uma
+          verdade fundamental sobre a cognição: a aprendizagem e a resolução de
+          problemas complexos raramente são atos solitários. São, na sua
+          essência, processos de colaboração assistida, onde um guia mais
+          experiente fornece uma estrutura temporária para que um aprendiz possa
+          alcançar novos patamares de competência.
+        </p>
+        <p>
+          Este relatório explora o "Princípio do Andaime Socrático", uma
+          evolução sofisticada do conceito original. Apresenta-se o andaime não
+          como uma mera técnica de "ajuda", mas como um princípio cognitivo
+          universal para gerir a complexidade e facilitar a aprendizagem, que
+          encontra a sua expressão mais refinada na arte do diálogo e do
+          questionamento crítico. Argumenta-se que, ao interagir com uma IA, o
+          utilizador assume o papel de um arquiteto cognitivo, construindo
+          andaimes de prompts que não apenas extraem respostas, mas moldam o
+          próprio processo de raciocínio do modelo. Esta abordagem transforma a
+          interação humano-máquina de uma simples transação para uma forma de
+          co-inteligência.
+        </p>
 
-          <h4>
-            1. A Definição Fundamental: A Arquitetura da Aprendizagem Assistida
-          </h4>
-          <p>
-            Para compreender a aplicação moderna do andaime na interação com a
-            IA, é imperativo primeiro dissecar as suas fundações teóricas na
-            pedagogia e na ciência cognitiva. O conceito não é uma mera
-            metáfora, mas um modelo robusto que descreve um mecanismo
-            fundamental da aprendizagem humana. Esta secção explora as suas
-            origens, a sua base mecanicista e a sua evolução para uma forma mais
-            sofisticada e crítica: o Andaime Socrático.
-          </p>
+        <h2>
+          1. A Definição Fundamental: A Arquitetura da Aprendizagem Assistida
+        </h2>
+        <p>
+          Para compreender a aplicação moderna do andaime na interação com a IA,
+          é imperativo primeiro dissecar as suas fundações teóricas na pedagogia
+          e na ciência cognitiva. O conceito não é uma mera metáfora, mas um
+          modelo robusto que descreve um mecanismo fundamental da aprendizagem
+          humana. Esta secção explora as suas origens, a sua base mecanicista e
+          a sua evolução para uma forma mais sofisticada e crítica: o Andaime
+          Socrático.
+        </p>
 
-          <h5>
-            1.1. As Origens: Vygotsky e a Zona de Desenvolvimento Proximal (ZDP)
-          </h5>
-          <p>
-            A pedra angular teórica sobre a qual todo o conceito de andaime é
-            construído é a
-            <strong>Zona de Desenvolvimento Proximal (ZDP)</strong>, formulada
-            pelo psicólogo soviético Lev Vygotsky. A ZDP é formalmente definida
-            como "a distância entre o nível de desenvolvimento real, determinado
-            pela resolução independente de problemas, e o nível de
-            desenvolvimento potencial, determinado através da resolução de
-            problemas sob a orientação de um adulto ou em colaboração com pares
-            mais capazes".<sup>1</sup> Esta definição encerra várias ideias
-            radicais que transformaram a psicologia educacional.
-          </p>
-          <p>
-            Primeiramente, Vygotsky postulou que a aprendizagem não é um ato
-            puramente individual e internalizado, mas um processo
-            fundamentalmente social e cultural.<sup>1</sup> O desenvolvimento
-            cognitivo é impulsionado pela interação com um
-            <strong>"Outro Mais Competente" (OMC)</strong>, ou "More
-            Knowledgeable Other" (MKO), que pode ser um professor, um colega
-            mais avançado, ou mesmo uma ferramenta cultural.<sup>3</sup> É
-            através desta colaboração que o aprendiz internaliza novas
-            competências e estratégias de pensamento.
-          </p>
+        <h3>
+          1.1. As Origens: Vygotsky e a Zona de Desenvolvimento Proximal (ZDP)
+        </h3>
+        <p>
+          A pedra angular teórica sobre a qual todo o conceito de andaime é
+          construído é a
+          <strong>Zona de Desenvolvimento Proximal (ZDP)</strong>, formulada
+          pelo psicólogo soviético Lev Vygotsky. A ZDP é formalmente definida
+          como "a distância entre o nível de desenvolvimento real, determinado
+          pela resolução independente de problemas, e o nível de desenvolvimento
+          potencial, determinado através da resolução de problemas sob a
+          orientação de um adulto ou em colaboração com pares mais capazes".
+        </p>
 
-          <h5>1.2. A Metáfora de Bruner: O Andaime Instrucional</h5>
-          <p>
-            Embora Vygotsky tenha fornecido a estrutura teórica com a ZDP, foram
-            os psicólogos Jerome Bruner, David Wood e Gail Ross que, nas décadas
-            de 1960 e 1970, cunharam o termo "andaime" (<em>scaffolding</em>)
-            para descrever a aplicação prática destes princípios no ensino.<sup
-              >5</sup
-            >
-            A metáfora, retirada da construção civil, é intencionalmente
-            poderosa: um andaime é uma estrutura de suporte externa e temporária
-            que permite aos construtores realizar tarefas que seriam impossíveis
-            sem ele.
-          </p>
-          <p>
-            O andaime instrucional partilha características essenciais com o seu
-            homólogo físico. É, por definição, <strong>temporário</strong> e
-            <strong>ajustável</strong>.<sup>7</sup> A sua função principal é
-            permitir que o aprendiz se concentre nos elementos da tarefa que
-            estão dentro do seu alcance cognitivo atual, enquanto o especialista
-            "controla" os aspetos da tarefa que estão inicialmente para além da
-            capacidade do aprendiz.<sup>1</sup> Este processo é frequentemente
-            encapsulado no modelo "Eu faço. Nós fazemos. Tu fazes" (<em
-              >I do. We do. You do.</em
-            >).<sup>9</sup>
-          </p>
-          <p>
-            A característica que distingue o andaime de outras formas de
-            assistência é o processo de
-            <strong><em>fading</em></strong> (desvanecimento ou remoção
-            gradual).<sup>9</sup> À medida que a proficiência do aluno aumenta,
-            o suporte é progressivamente retirado em etapas, forçando o aluno a
-            assumir cada vez mais responsabilidade pela tarefa.<sup>10</sup>
-          </p>
+        <h3>1.2. A Metáfora de Bruner: O Andaime Instrucional</h3>
+        <p>
+          Embora Vygotsky tenha fornecido a estrutura teórica com a ZDP, foram
+          os psicólogos Jerome Bruner, David Wood e Gail Ross que, nas décadas
+          de 1960 e 1970, cunharam o termo "andaime" (<em>scaffolding</em>) para
+          descrever a aplicação prática destes princípios no ensino. A metáfora,
+          retirada da construção civil, é intencionalmente poderosa: um andaime
+          é uma estrutura de suporte externa e temporária que permite aos
+          construtores realizar tarefas que seriam impossíveis sem ele.
+        </p>
 
-          <h5>
-            1.3. A Ciência Cognitiva por Detrás do Andaime: Gestão da Carga
-            Cognitiva
-          </h5>
-          <p>
-            A eficácia do andaime está profundamente alinhada com a forma como a
-            arquitetura cognitiva humana processa a informação, explicada pela
-            <strong>Teoria da Carga Cognitiva</strong> (Cognitive Load Theory -
-            CLT).
-          </p>
-          <p>
-            A CLT postula que a nossa memória de trabalho tem uma capacidade
-            muito limitada.<sup>11</sup> Tarefas com muitos elementos novos
-            impõem uma elevada "carga cognitiva intrínseca".<sup>12</sup> O
-            andaime funciona precisamente como um mecanismo para gerir e reduzir
-            esta carga.<sup>13</sup> Ao decompor uma tarefa complexa, o andaime
-            permite que o aprendiz se concentre em dominar um aspeto de cada
-            vez, sem ser sobrecarregado pela complexidade do todo.<sup>11</sup>
-          </p>
+        <h3>
+          1.3. A Ciência Cognitiva por Detrás do Andaime: Gestão da Carga
+          Cognitiva
+        </h3>
+        <p>
+          A eficácia do andaime não é apenas uma observação pedagógica; está
+          profundamente alinhada com a forma como a arquitetura cognitiva humana
+          processa a informação. A sua função pode ser explicada de forma
+          mecanicista através da
+          <strong>Teoria da Carga Cognitiva</strong> (Cognitive Load Theory -
+          CLT).
+        </p>
 
-          <h5>1.4. O Andaime Socrático: O Diálogo como Ferramenta Crítica</h5>
-          <p>
-            Se o andaime tradicional visa a aquisição de competências, o
-            <strong>Andaime Socrático</strong> representa uma evolução para o
-            desenvolvimento do pensamento crítico. Esta abordagem funde o
-            suporte estrutural de Bruner com o método dialético de Sócrates.
-          </p>
-          <p>
-            Enquanto o andaime diretivo oferece modelos e respostas ("mostra-me
-            como fazer"), o Andaime Socrático fornece
-            <strong>perguntas</strong>.<sup>10</sup> Em vez de corrigir um erro,
-            o guia socrático pode perguntar: "Que suposições estás a fazer para
-            chegar a essa conclusão?"<sup>22</sup>, ou "Podes fornecer
-            evidências para apoiar essa afirmação?".<sup>23</sup>
-          </p>
+        <h3>1.4. O Andaime Socrático: O Diálogo como Ferramenta Crítica</h3>
+        <p>
+          Se o andaime tradicional visa a aquisição de competências, o
+          <strong>Andaime Socrático</strong> representa uma evolução para um
+          objetivo mais elevado: o desenvolvimento do pensamento crítico e da
+          autonomia intelectual. Esta abordagem funde o suporte estrutural de
+          Bruner com o método dialético de Sócrates.
+        </p>
 
-          <h4>
-            2. A Aplicação na Engenharia de Prompt: Construindo Diálogos
-            Inteligentes
-          </h4>
-          <p>
-            A transição do conceito de andaime, de uma teoria pedagógica para
-            uma prática de engenharia de prompt, não é apenas uma analogia; é
-            uma implementação computacional direta dos seus princípios
-            fundamentais. A interação entre um utilizador humano e um Grande
-            Modelo de Linguagem (LLM) espelha a dinâmica entre um aprendiz e um
-            "Outro Mais Competente". O LLM, com o seu vasto conhecimento
-            latente, é o aprendiz; o utilizador, com a sua intenção específica e
-            conhecimento de contexto, é o guia. O prompt, nesse cenário,
-            torna-se o andaime – a estrutura que orienta a cognição artificial.
-          </p>
-
-          <h4>3. Exemplos Práticos: O Andaime Socrático em Ação</h4>
-          <p>
-            A teoria do andaime de prompt ganha vida quando aplicada a cenários
-            práticos. Os exemplos a seguir demonstram a progressão camada por
-            camada, desde um pedido inicial simples até uma interação socrática
-            complexa, ilustrando como cada camada de andaime refina e aprofunda
-            a capacidade do LLM.
-          </p>
-
-          <h4>
-            4. Erros Comuns e Como Evitá-los: Armadilhas na Construção de
-            Andaimes
-          </h4>
-          <p>
-            A aplicação do princípio do andaime na engenharia de prompt é uma
-            técnica poderosa, mas, como qualquer ferramenta sofisticada, está
-            sujeita a erros de aplicação. Estes erros não são falhas inerentes
-            ao LLM, mas sim falhas no design pedagógico e na arquitetura do
-            prompt criados pelo utilizador. Compreender estas armadilhas é
-            crucial para construir interações eficazes e robustas com a IA.
-          </p>
-
-          <h4>Conclusão: O Futuro da Co-Inteligência Humano-IA</h4>
-          <p>
-            O Princípio do Andaime Socrático, traçado desde as suas raízes na
-            psicologia do desenvolvimento até à sua implementação sofisticada na
-            engenharia de prompt, oferece mais do que um conjunto de técnicas;
-            fornece um modelo mental poderoso para a colaboração produtiva e
-            crítica com a inteligência artificial. A sua jornada demonstra que
-            os princípios fundamentais da aprendizagem – apoio estruturado,
-            decomposição da complexidade e remoção gradual da ajuda – são
-            universais, aplicando-se tanto à cognição humana como à artificial.
-          </p>
-          <p>
-            O futuro da co-inteligência humano-IA não reside em criar sistemas
-            que pensem por nós, mas em dominar a arte de pensar
-            <em>com</em> eles. O Princípio do Andaime Socrático é, talvez, a
-            nossa ferramenta mais promissora para construir essa parceria de
-            forma eficaz, crítica e consciente.
-          </p>
-        </article>
-        <div class="navegacao-aula"></div>
-      </main>
-
-      <aside class="sidebar-ferramentas">
-        <div class="ferramenta-box">
-          <h4>Anotações Pessoais</h4>
-          <p class="instrucao-anotacoes">
-            Suas anotações são salvas automaticamente no navegador.
-          </p>
-          <textarea
-            id="anotacoesPessoais"
-            placeholder="Como você pode usar 'andaimes' no seu próprio processo de aprendizado ou trabalho?"
-          ></textarea>
-          <div class="botoes-anotacoes">
-            <button id="btn-limpar-anotacoes">Limpar</button>
-            <button id="btn-baixar-anotacoes">Baixar</button>
-          </div>
-        </div>
-      </aside>
-    </div>
+        <h2>
+          2. A Aplicação na Engenharia de Prompt: Construindo Diálogos
+          Inteligentes
+        </h2>
+        <p>
+          A transição do conceito de andaime, de uma teoria pedagógica para uma
+          prática de engenharia de prompt, não é apenas uma analogia; é uma
+          implementação computacional direta dos seus princípios fundamentais. A
+          interação entre um utilizador humano e um Grande Modelo de Linguagem
+          (LLM) espelha a dinâmica entre um aprendiz e um "Outro Mais
+          Competente". O LLM, com o seu vasto conhecimento latente, é o
+          aprendiz; o utilizador, com a sua intenção específica e conhecimento
+          de contexto, é o guia. O prompt, nesse cenário, torna-se o andaime – a
+          estrutura que orienta a cognição artificial.
+        </p>
+      </article>
+      <div class="navegacao-aula"></div>
+    </main>
 
     <div id="kairos-chat-button" title="Falar com Kairos">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
         <path
-          d="M20 2H4c-1.103 0-2 .897-2 2v18l4-4h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 10h-4v4h-2v-4H8v-2h4V6h2v4h4v2z"
+          d="M12 2C11.45 2 11 2.45 11 3V4.59C7.93 5.49 5.5 8.43 5.5 11.5C5.5 12.53 5.79 13.5 6.28 14.36L3.64 17L5 18.36L7.64 15.72C8.5 16.21 9.47 16.5 10.5 16.5C11 16.5 11.5 16.45 12 16.36V18.5C12 19.05 12.45 19.5 13 19.5C13.55 19.5 14 19.05 14 18.5V16.36C14.5 16.45 15 16.5 15.5 16.5C16.53 16.5 17.5 16.21 18.36 15.72L21 18.36L22.36 17L19.72 14.36C20.21 13.5 20.5 12.53 20.5 11.5C20.5 8.43 18.07 5.49 15 4.59V3C15 2.45 14.55 2 14 2H12M13 6.06V7.5C13 8.05 12.55 8.5 12 8.5C11.45 8.5 11 8.05 11 7.5V6.06C10.19 6.22 9.44 6.56 8.78 7.05L9.88 8.14C10.27 8.54 10.27 9.16 9.88 9.55C9.49 9.94 8.86 9.94 8.47 9.55L7.05 8.12C6.56 8.78 6.22 9.54 6.06 10.35H7.5C8.05 10.35 8.5 10.8 8.5 11.35C8.5 11.9 8.05 12.35 7.5 12.35H6.06C6.22 13.16 6.56 13.91 7.05 14.57L8.47 13.15C8.86 12.76 9.49 12.76 9.88 13.15C10.27 13.54 10.27 14.16 9.88 14.55L8.78 15.64C9.44 16.13 10.19 16.47 11 16.63V15.15C11 14.6 11.45 14.15 12 14.15C12.55 14.15 13 14.6 13 15.15V16.63C13.81 16.47 14.56 16.13 15.22 15.64L14.12 14.55C13.73 14.16 13.73 13.54 14.12 13.15C14.51 12.76 15.14 12.76 15.53 13.15L16.95 14.57C17.44 13.91 17.78 13.16 17.94 12.35H16.5C15.95 12.35 15.5 11.9 15.5 11.35C15.5 10.8 15.95 10.35 16.5 10.35H17.94C17.78 9.54 17.44 8.78 16.95 8.12L15.53 9.55C15.14 9.94 14.51 9.94 14.12 9.55C13.73 9.16 13.73 8.54 14.12 8.14L15.22 7.05C14.56 6.56 13.81 6.22 13 6.06Z"
         />
       </svg>
     </div>
-
-    <div id="kairos-chat-container" class="oculto">
+    <div id="kairos-chat-container">
       <div class="kairos-chat-header">
         <h3>Kairos AI</h3>
         <button id="kairos-close-button">&times;</button>
       </div>
-      <div class="kairos-chat-messages">
-        <div class="message kairos">
-          Analisando a Aula 2.1. O 'Andaime Socrático' é uma ferramenta
-          poderosa. Qual conceito você gostaria de aprofundar?
-        </div>
-      </div>
+      <div class="kairos-chat-messages"></div>
       <div class="kairos-chat-input-area">
-        <input
-          type="text"
+        <textarea
           id="kairos-user-input"
           placeholder="Pergunte sobre esta aula..."
-        />
-        <button id="kairos-send-button">Enviar</button>
+          rows="1"
+        ></textarea>
+        <button id="kairos-send-button" aria-label="Enviar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+          </svg>
+        </button>
       </div>
     </div>
 
-    <script src="/scripts/funcionalidades-curso.js"></script>
+    <script src="../../../../scripts/funcionalidades-curso.js"></script>
   </body>
 </html>

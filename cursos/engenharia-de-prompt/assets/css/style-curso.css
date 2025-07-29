@@ -1,7 +1,6 @@
-/* ARQUIVO MESTRE: /cursos/engenharia-de-prompt/assets/css/style-curso.css */
-/* VERSÃO: FINAL, COM BARRA DE ROLAGEM CORRIGIDA - 22/07/2025 */
+/* ARQUIVO MESTRE: /assets/css/style-curso.css */
+/* VERSÃO: 12.1 - FINAL COM ESTILOS COMPLETOS */
 
-/* --- Estilos Base Globais --- */
 :root {
   --cor-primaria-fundo: #0d0c1d;
   --cor-secundaria-fundo: #16152b;
@@ -10,10 +9,16 @@
   --cor-destaque-ciano: #00bfff;
   --cor-destaque-purpura: #8a2be2;
   --cor-borda-sutil: rgba(255, 255, 255, 0.1);
+  --largura-nav-esquerda: 300px;
+  --largura-nav-direita: 340px;
+  --duracao-transicao: 0.4s;
+}
+* {
+  box-sizing: border-box;
 }
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
   background-color: var(--cor-primaria-fundo);
   color: var(--cor-texto-principal);
   margin: 0;
@@ -35,47 +40,115 @@ h4 {
   color: var(--cor-destaque-ciano);
   font-size: 1.4em;
 }
-strong {
-  color: var(--cor-destaque-purpura);
+
+/* LAYOUT UNIFICADO E ÍCONES DE MENU */
+.btn-toggle-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 20px;
+  z-index: 1010;
+  background-color: var(--cor-destaque-purpura);
+  border: none;
+  border-radius: 8px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
-em {
-  color: var(--cor-destaque-ciano);
-  font-style: italic;
+.btn-toggle-menu:hover {
+  background-color: var(--cor-destaque-ciano);
+  transform: scale(1.1);
+}
+#btn-toggle-nav {
+  left: 20px;
+  flex-direction: column;
+}
+#btn-toggle-tools {
+  right: 20px;
+}
+#btn-toggle-nav span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: white;
+  margin: 2.5px 0;
+  border-radius: 2px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  transform-origin: center;
+}
+#btn-toggle-tools i {
+  color: white;
+  font-size: 24px;
+  transition: transform 0.4s ease;
+}
+.btn-toggle-menu.aberto {
+  transform: rotate(180deg);
+}
+.btn-toggle-menu.aberto #btn-toggle-nav span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.btn-toggle-menu.aberto #btn-toggle-nav span:nth-child(2) {
+  opacity: 0;
+}
+.btn-toggle-menu.aberto #btn-toggle-nav span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+.btn-toggle-menu.aberto #btn-toggle-tools i {
+  transform: rotate(-180deg);
 }
 
-/* === LAYOUT GERAL DA AULA === */
-.layout-curso-v2 {
-  display: grid;
-  grid-template-columns: 300px 1fr 340px;
-  max-width: 1800px;
-  margin: 20px auto;
-  gap: 25px;
-  padding: 0 20px;
-  align-items: start;
-}
 .sidebar-navegacao,
-.conteudo-aula-container,
 .sidebar-ferramentas {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  z-index: 1005;
+  background-color: var(--cor-secundaria-fundo);
+  border: 1px solid var(--cor-borda-sutil);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  transition: transform var(--duracao-transicao) ease;
+  overflow-y: auto;
+  padding: 25px;
+  border-radius: 0;
+}
+.sidebar-navegacao {
+  left: 0;
+  width: var(--largura-nav-esquerda);
+  transform: translateX(-100%);
+}
+.sidebar-ferramentas {
+  right: 0;
+  width: var(--largura-nav-direita);
+  transform: translateX(100%);
+}
+.sidebar-navegacao.aberto,
+.sidebar-ferramentas.aberto {
+  transform: translateX(0);
+}
+
+.conteudo-aula-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
   background-color: var(--cor-secundaria-fundo);
   border-radius: 12px;
   border: 1px solid var(--cor-borda-sutil);
+  position: relative;
+  z-index: 1;
+  transition: margin var(--duracao-transicao) ease;
 }
-.sidebar-navegacao {
-  padding: 25px;
-  position: sticky;
-  top: 20px;
+body.nav-esquerda-aberta .conteudo-aula-container {
+  margin-left: calc(var(--largura-nav-esquerda) + 40px);
 }
-.conteudo-aula-container {
-  padding: 40px;
-}
-.sidebar-ferramentas {
-  padding: 25px;
-  position: sticky;
-  top: 20px;
+body.nav-direita-aberta .conteudo-aula-container {
+  margin-right: calc(var(--largura-nav-direita) + 40px);
 }
 
-/* === NAVEGAÇÃO (SIDEBAR ESQUERDA) === */
-.sidebar-navegacao .logo-container h3 {
+/* ESTILOS DE COMPONENTES DO CURSO */
+.sidebar-navegacao .logo-container h3,
+.ferramenta-box h4 {
   text-align: center;
   font-size: 1.8em;
   margin: 0 0 25px 0;
@@ -83,9 +156,12 @@ em {
   padding-bottom: 20px;
   border-bottom: 1px solid var(--cor-borda-sutil);
 }
+.ferramenta-box h4 {
+  font-size: 1.4em;
+  text-align: left;
+}
 .modulo-titulo-clicavel {
   cursor: pointer;
-  transition: color 0.2s ease;
   position: relative;
   padding: 10px 5px;
   border-radius: 5px;
@@ -100,25 +176,18 @@ em {
   top: 50%;
   transform: translateY(-50%) rotate(90deg);
   font-size: 1.6em;
-  line-height: 1;
-  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: transform 0.4s ease;
 }
 .modulo-titulo-clicavel.contraido::after {
   transform: translateY(-50%) rotate(0deg);
 }
-.modulo-titulo-clicavel:hover {
-  color: var(--cor-destaque-ciano);
-}
 .sidebar-lista-aulas {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 10px 0 0 0;
   max-height: 1000px;
   overflow: hidden;
-  opacity: 1;
-  margin-top: 10px;
-  transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out,
-    margin-top 0.5s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
 }
 .sidebar-lista-aulas.contraido {
   max-height: 0;
@@ -132,7 +201,6 @@ em {
   gap: 12px;
   padding: 12px 15px;
   border-radius: 8px;
-  font-size: 0.95em;
 }
 .sidebar-lista-aulas li a:hover {
   background-color: rgba(255, 255, 255, 0.05);
@@ -146,12 +214,6 @@ em {
   );
   color: #fff;
   font-weight: bold;
-  box-shadow: 0 4px 15px rgba(0, 191, 255, 0.2);
-}
-.sidebar-navegacao .menu-aulas {
-  max-height: calc(100vh - 150px);
-  overflow-y: auto;
-  padding-right: 5px;
 }
 .status-icon {
   display: inline-block;
@@ -168,17 +230,14 @@ em {
 .status-icon.concluido {
   background-color: var(--cor-destaque-ciano);
   border-color: var(--cor-destaque-ciano);
-  opacity: 0.8;
 }
-
-/* === CONTEÚDO DA AULA (CENTRO) === */
 .barra-progresso-container {
-  background-color: var(--cor-primaria-fundo);
-  border-radius: 8px;
   margin-bottom: 40px;
   position: relative;
   height: 12px;
+  background-color: var(--cor-primaria-fundo);
   border: 1px solid var(--cor-borda-sutil);
+  border-radius: 8px;
   overflow: hidden;
 }
 .barra-progresso-preenchimento {
@@ -200,34 +259,12 @@ em {
   color: #fff;
   font-weight: bold;
   font-size: 0.7em;
-  text-shadow: 1px 1px 1px #000;
 }
 .aula-header h1 {
   font-size: 2.4em;
-  color: #fff;
 }
 .aula-header h2 {
   font-size: 1.2em;
-  margin-top: 0;
-  color: var(--cor-destaque-purpura);
-}
-.citacao-destaque {
-  background-color: var(--cor-primaria-fundo);
-  border-left: 4px solid var(--cor-destaque-purpura);
-  margin: 2em 0;
-  padding: 1em 1.5em;
-  font-size: 1.1em;
-  font-style: italic;
-  color: #fff;
-}
-.bloco-de-prompt {
-  background-color: var(--cor-primaria-fundo);
-  border: 1px solid var(--cor-borda-sutil);
-  border-left: 4px solid var(--cor-destaque-ciano);
-  border-radius: 4px;
-  padding: 15px 20px;
-  margin: 30px 0;
-  color: var(--cor-texto-secundario);
 }
 .navegacao-aula {
   display: flex;
@@ -243,29 +280,19 @@ em {
   color: var(--cor-texto-principal);
   padding: 12px 25px;
   border-radius: 5px;
-  transition: all 0.2s ease;
   font-weight: bold;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 .botao-nav:hover {
   background-color: var(--cor-destaque-purpura);
   border-color: var(--cor-destaque-purpura);
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
 }
-.botao-nav.desativado {
-  opacity: 0.4;
-  pointer-events: none;
-}
-
-/* === FERRAMENTAS (SIDEBAR DIREITA) === */
 .ferramenta-box {
   margin-bottom: 30px;
-}
-.ferramenta-box h4 {
-  margin-top: 0;
-  border-bottom: 1px solid var(--cor-borda-sutil);
-  padding-bottom: 10px;
-  margin-bottom: 15px;
 }
 #anotacoesPessoais {
   width: 100%;
@@ -277,6 +304,13 @@ em {
   padding: 10px;
   border-radius: 5px;
   resize: vertical;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+#anotacoesPessoais:focus {
+  outline: none;
+  border-color: var(--cor-destaque-ciano);
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
 }
 .botoes-anotacoes {
   display: flex;
@@ -297,43 +331,8 @@ em {
   background-color: var(--cor-destaque-purpura);
   border-color: var(--cor-destaque-purpura);
 }
-.config-api-key {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.config-api-key label {
-  font-size: 0.9em;
-  color: var(--cor-texto-secundario);
-}
-.config-api-key input {
-  background-color: var(--cor-primaria-fundo);
-  border: 1px solid var(--cor-borda-sutil);
-  border-radius: 4px;
-  padding: 8px;
-  color: var(--cor-texto-principal);
-}
-.config-api-key button {
-  background-color: var(--cor-destaque-ciano);
-  color: var(--cor-primaria-fundo);
-  border: none;
-  padding: 10px;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-.config-api-key button:hover {
-  background-color: #fff;
-}
-.api-key-status.success {
-  color: #2ecc71;
-}
-.api-key-status.error {
-  color: #e74c3c;
-}
 
-/* === SEÇÃO KAIROS CHAT (TEMA INTEGRADO) === */
+/* CHAT KAIROS (SEMPRE NO TOPO E ESTILIZADO) */
 #kairos-chat-button {
   position: fixed;
   bottom: 30px;
@@ -347,17 +346,18 @@ em {
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-  z-index: 1000;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  z-index: 2000;
+  transition: all 0.3s ease;
 }
 #kairos-chat-button:hover {
-  transform: scale(1.1);
   background-color: var(--cor-destaque-ciano);
+  transform: scale(1.1);
 }
 #kairos-chat-button svg {
   width: 32px;
   height: 32px;
   fill: #fff;
+  transition: transform 0.4s ease;
 }
 #kairos-chat-container {
   position: fixed;
@@ -369,11 +369,10 @@ em {
   border-radius: 12px;
   border: 1px solid var(--cor-borda-sutil);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-  z-index: 1001;
+  z-index: 2001;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  color: var(--cor-texto-principal);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
   transform: translateY(20px);
   opacity: 0;
@@ -384,6 +383,9 @@ em {
   visibility: visible;
   transform: translateY(0);
 }
+#kairos-chat-container.visivel + #kairos-chat-button svg {
+  transform: rotate(225deg);
+}
 .kairos-chat-header {
   background-color: var(--cor-primaria-fundo);
   padding: 12px 15px;
@@ -391,21 +393,13 @@ em {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: grab;
-}
-.kairos-chat-header h3 {
-  color: #fff;
-  font-size: 1.2em;
-  margin: 0;
 }
 #kairos-close-button {
   background: none;
   border: none;
   color: var(--cor-texto-secundario);
   font-size: 1.8em;
-  line-height: 1;
   cursor: pointer;
-  padding: 0 5px;
   transition: color 0.2s ease;
 }
 #kairos-close-button:hover {
@@ -414,12 +408,11 @@ em {
 .kairos-chat-messages {
   flex-grow: 1;
   padding: 15px;
-  overflow-y: auto;
 }
 .message {
   max-width: 85%;
   padding: 10px 15px;
-  border-radius: 10px;
+  border-radius: 18px;
   margin-bottom: 12px;
   line-height: 1.5;
   word-wrap: break-word;
@@ -440,233 +433,149 @@ em {
   display: flex;
   gap: 10px;
   border-top: 1px solid var(--cor-borda-sutil);
+  background-color: var(--cor-primaria-fundo);
+  align-items: flex-end;
 }
 #kairos-user-input {
   flex-grow: 1;
-  background-color: var(--cor-primaria-fundo);
+  background-color: var(--cor-secundaria-fundo);
   border: 1px solid var(--cor-borda-sutil);
   color: var(--cor-texto-principal);
-  padding: 12px;
-  border-radius: 8px;
-  transition: border-color 0.2s ease;
+  padding: 12px 18px;
+  border-radius: 22px;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  font-size: 0.95em;
+  resize: vertical;
+  height: 44px;
+  line-height: 1.4;
+  overflow-y: auto;
 }
 #kairos-user-input:focus {
   outline: none;
   border-color: var(--cor-destaque-ciano);
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
 }
 #kairos-send-button {
   background-color: var(--cor-destaque-ciano);
   border: none;
   color: var(--cor-primaria-fundo);
   font-weight: bold;
-  padding: 0 20px;
-  border-radius: 8px;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #kairos-send-button:hover {
   background-color: #fff;
+  transform: scale(1.1);
+}
+#kairos-send-button svg {
+  width: 20px;
+  height: 20px;
+  margin-left: 2px;
 }
 
-/* === ESTILOS PARA BARRA DE ROLAGEM CUSTOMIZADA (MENU E CHAT) === */
-.sidebar-navegacao .menu-aulas,
+/* RESPONSIVO */
+@media (max-width: 1200px) {
+  body.nav-esquerda-aberta .conteudo-aula-container,
+  body.nav-direita-aberta .conteudo-aula-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  body.nav-esquerda-aberta.nav-direita-aberta .conteudo-aula-container {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+@media (max-width: 768px) {
+  .sidebar-navegacao,
+  .sidebar-ferramentas {
+    width: 85%;
+  }
+  .conteudo-aula-container {
+    margin-top: 90px;
+    padding: 20px;
+    border-radius: 0;
+  }
+}
+/* =================================================================
+   CORREÇÃO FINAL: ROLAGEM DA KAIROS E ESTILO GLOBAL DE SCROLLBAR
+   ================================================================= */
+
+/* --- 1. Ativa a rolagem na janela da Kairos --- */
 .kairos-chat-messages {
+  flex-grow: 1; /* Faz esta área crescer para ocupar o espaço */
+  overflow-y: auto; /* Adiciona a rolagem vertical quando necessário */
+  padding: 0 15px;
+}
+
+/* --- 2. Estilo global "Totalmente Escuro" para todas as barras de rolagem --- */
+/* Para navegadores como Firefox */
+html {
   scrollbar-width: thin;
-  scrollbar-color: var(--cor-destaque-ciano) transparent;
-}
-.sidebar-navegacao .menu-aulas::-webkit-scrollbar,
-.kairos-chat-messages::-webkit-scrollbar {
-  width: 8px;
-}
-.sidebar-navegacao .menu-aulas::-webkit-scrollbar-track,
-.kairos-chat-messages::-webkit-scrollbar-track {
-  background: transparent;
-}
-.sidebar-navegacao .menu-aulas::-webkit-scrollbar-thumb,
-.kairos-chat-messages::-webkit-scrollbar-thumb {
-  background-color: var(--cor-borda-sutil);
-  border-radius: 4px;
-}
-.sidebar-navegacao .menu-aulas::-webkit-scrollbar-thumb:hover,
-.kairos-chat-messages::-webkit-scrollbar-thumb:hover {
-  background-color: var(--cor-destaque-ciano);
-}
-/* --- Estilos do Laboratório de Comparação de Prompts --- */
-.laboratorio-avancado h4 {
-  font-size: 1.8em;
-  color: var(--cor-destaque-ciano);
-  border-bottom: 1px solid var(--cor-borda-sutil);
-  padding-bottom: 15px;
-  margin-bottom: 10px;
+  /* Cor da barra (thumb) e do fundo (track) */
+  scrollbar-color: var(--cor-secundaria-fundo) var(--cor-primaria-fundo);
 }
 
-.laboratorio-container {
-  display: flex;
-  gap: 25px;
-  margin-top: 20px;
+/* Para navegadores como Chrome, Edge, Safari (baseados em WebKit) */
+::-webkit-scrollbar {
+  width: 12px;
 }
 
-.prompt-coluna {
-  flex: 1; /* Faz as duas colunas ocuparem o mesmo espaço */
-  display: flex;
-  flex-direction: column;
+/* A "calha" por onde a barra corre (fundo mais escuro) */
+::-webkit-scrollbar-track {
+  background: var(--cor-primaria-fundo);
 }
 
-.prompt-coluna h5 {
-  font-size: 1.2em;
-  color: #fff;
-  margin: 0 0 10px 0;
+/* A barra que você arrasta (fundo secundário, sem efeito hover) */
+::-webkit-scrollbar-thumb {
+  background-color: var(--cor-secundaria-fundo);
+  border-radius: 20px;
+  border: 3px solid var(--cor-primaria-fundo);
 }
-
-.prompt-coluna textarea {
-  width: 100%;
-  box-sizing: border-box;
-  height: 180px;
-  background-color: var(--cor-primaria-fundo);
-  border: 1px solid var(--cor-borda-sutil);
-  color: var(--cor-texto-principal);
-  padding: 15px;
-  border-radius: 5px;
-  resize: vertical;
-  font-family: inherit;
-  font-size: 1em;
-}
-
-.botao-laboratorio {
-  background-color: var(--cor-destaque-ciano);
-  color: var(--cor-primaria-fundo);
-  border: none;
-  padding: 12px;
-  margin-top: 15px;
-  border-radius: 5px;
+/* =================================================================
+   ESTILOS PARA A NOTIFICAÇÃO DA API KEY
+   ================================================================= */
+.api-key-status {
+  font-size: 0.9em;
   font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.botao-laboratorio:hover {
-  background-color: #fff;
-}
-
-.botao-laboratorio:disabled {
-  background-color: #555;
-  cursor: not-allowed;
-}
-
-.resultado-display {
-  margin-top: 20px;
-  background-color: var(--cor-primaria-fundo);
-  border: 1px solid var(--cor-borda-sutil);
-  border-radius: 5px;
-  padding: 20px;
-  min-height: 200px;
-  white-space: pre-wrap; /* Garante a quebra de linha */
-  word-wrap: break-word;
-  flex-grow: 1; /* Faz o resultado crescer para preencher o espaço */
-}
-
-.resultado-display pre {
-  margin: 0;
-  font-family: inherit;
-  color: var(--cor-texto-secundario);
-}
-/* --- Estilos do Laboratório de Comparação de Prompts --- */
-.laboratorio-avancado h4 {
-  font-size: 1.8em;
-  color: var(--cor-destaque-ciano);
-  border-bottom: 1px solid var(--cor-borda-sutil);
-  padding-bottom: 15px;
-  margin-bottom: 10px;
-}
-
-/* Adiciona um ícone de frasco ao lado do título do laboratório, usando Font Awesome */
-.laboratorio-avancado h4 .fa-flask {
-  margin-right: 12px;
-}
-
-.laboratorio-container {
-  display: flex;
-  flex-direction: row; /* Garante que as colunas fiquem lado a lado */
-  gap: 25px;
-  margin-top: 20px;
-}
-
-.prompt-coluna {
-  flex: 1; /* Faz as duas colunas ocuparem o mesmo espaço */
-  display: flex;
-  flex-direction: column;
-}
-
-.prompt-coluna h5 {
-  font-size: 1.2em;
-  color: #fff;
-  margin: 0 0 10px 0;
   text-align: center;
-}
-
-.prompt-coluna textarea {
-  width: 100%;
-  box-sizing: border-box;
-  height: 180px;
-  background-color: var(--cor-primaria-fundo);
-  border: 1px solid var(--cor-borda-sutil);
-  color: var(--cor-texto-principal);
-  padding: 15px;
-  border-radius: 5px;
-  resize: vertical;
-  font-family: inherit;
-  font-size: 1em;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.prompt-coluna textarea:focus {
-  outline: none;
-  border-color: var(--cor-destaque-ciano);
-  box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
-}
-
-.botao-laboratorio {
-  background-color: var(--cor-destaque-ciano);
-  color: var(--cor-primaria-fundo);
-  border: none;
-  padding: 12px;
   margin-top: 15px;
+  padding: 10px;
   border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-transform: uppercase;
+
+  /* Estado inicial: invisível */
+  opacity: 0;
+  transform: translateY(10px);
+
+  /* Transição suave */
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.botao-laboratorio:hover {
-  background-color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 191, 255, 0.2);
-}
-
-.botao-laboratorio:disabled {
-  background-color: #555;
-  cursor: not-allowed;
+/* Classe que o JavaScript vai adicionar para mostrar a mensagem */
+.api-key-status.ativo {
+  opacity: 1;
   transform: translateY(0);
-  box-shadow: none;
 }
 
-.resultado-display {
-  margin-top: 20px;
-  background-color: var(--cor-primaria-fundo);
-  border: 1px solid var(--cor-borda-sutil);
-  border-radius: 5px;
-  padding: 20px;
-  min-height: 200px;
-  white-space: pre-wrap; /* Garante a quebra de linha do texto */
-  word-wrap: break-word;
-  flex-grow: 1; /* Faz o resultado crescer para preencher o espaço vertical */
-  font-size: 0.95em;
-  line-height: 1.6;
+/* Cor para sucesso */
+.api-key-status.success {
+  color: #2ecc71;
+  background-color: rgba(46, 204, 113, 0.1);
 }
 
-.resultado-display pre {
-  margin: 0;
-  font-family: inherit;
-  color: var(--cor-texto-secundario);
+/* Cor para erro/removido */
+.api-key-status.error {
+  color: #e74c3c;
+  background-color: rgba(231, 76, 60, 0.1);
+}
+/* Adiciona a centralização para o botão único de navegação */
+.navegacao-aula.so-proxima {
+  justify-content: center;
 }

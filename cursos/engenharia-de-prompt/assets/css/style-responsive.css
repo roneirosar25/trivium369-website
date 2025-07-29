@@ -1,0 +1,56 @@
+/* ARQUIVO RESPONSIVO: /assets/css/style-responsive.css */
+/* VERSÃO: 10.0 - FINAL UNIFICADO */
+
+/* Para telas de tablet e laptops menores */
+@media (max-width: 1200px) {
+  /* Muda o efeito de "empurrar" para "sobrepor" para economizar espaço */
+  body.nav-esquerda-aberta .conteudo-aula-container,
+  body.nav-direita-aberta .conteudo-aula-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Adiciona padding para o conteúdo não ficar embaixo dos botões quando ambos os menus estão abertos */
+  body.nav-esquerda-aberta.nav-direita-aberta .conteudo-aula-container {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+
+/* Para telas de celular */
+@media (max-width: 768px) {
+  /* Menus laterais ocupam mais espaço na tela */
+  .sidebar-navegacao,
+  .sidebar-ferramentas {
+    width: 85%;
+  }
+  /* Ajusta o conteúdo principal para a tela de celular */
+  .conteudo-aula-container {
+    margin-top: 90px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  /* SEUS AJUSTES FINOS ORIGINAIS (MANTIDOS) */
+  .navegacao-aula {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .btn-navegacao {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .laboratorio-container {
+    flex-direction: column;
+  }
+  .aula-header h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+  .aula-header h2 {
+    font-size: 1rem;
+  }
+}

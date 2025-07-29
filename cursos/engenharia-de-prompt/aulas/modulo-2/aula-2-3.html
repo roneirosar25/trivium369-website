@@ -3,191 +3,233 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aula 2.3 | TRIVIUM 369</title>
+    <title>Aula 2.3: O Motor de Perspectivas | TRIVIUM 369</title>
     <link rel="stylesheet" href="../../assets/css/style-curso.css" />
     <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="layout-curso-v2">
-      <aside class="sidebar-navegacao">
-        <div class="logo-container"><h3>TRIVIUM 369</h3></div>
-        <nav class="menu-aulas"></nav>
-      </aside>
+    <button
+      id="btn-toggle-nav"
+      class="btn-toggle-menu"
+      aria-label="Abrir Navegação"
+    >
+      <span></span><span></span><span></span>
+    </button>
+    <button
+      id="btn-toggle-tools"
+      class="btn-toggle-menu"
+      aria-label="Abrir Ferramentas"
+    >
+      <i class="fas fa-wrench"></i>
+    </button>
 
-      <main class="conteudo-aula-container">
-        <div class="barra-progresso-container">
-          <div class="barra-progresso-preenchimento"></div>
-          <span class="progresso-texto">0%</span>
+    <aside class="sidebar-navegacao">
+      <div class="logo-container"><h3>TRIVIUM 369</h3></div>
+      <nav class="menu-aulas"></nav>
+    </aside>
+    <aside class="sidebar-ferramentas">
+      <div class="ferramenta-box">
+        <h4>Configurações</h4>
+        <div id="api-status-box"></div>
+      </div>
+      <div class="ferramenta-box">
+        <h4>Anotações Pessoais</h4>
+        <p class="instrucao-anotacoes">
+          Suas anotações são salvas automaticamente.
+        </p>
+        <textarea
+          id="anotacoesPessoais"
+          placeholder="Digite suas reflexões..."
+        ></textarea>
+        <div class="botoes-anotacoes">
+          <button id="btn-limpar-anotacoes">Limpar</button>
+          <button id="btn-baixar-anotacoes">Baixar</button>
         </div>
-        <header class="aula-header">
-          <h2 id="titulo-modulo">Carregando...</h2>
-          <h1 id="titulo-aula">Carregando...</h1>
-        </header>
-        <article class="aula-content">
-          <h3>
-            O Motor de Perspectivas: Simulando Debates para Revelar Pontos Cegos
-          </h3>
+      </div>
+    </aside>
 
-          <p>
-            Olá e bem-vindo(a) à Aula 2.3! Na lição anterior, você aprendeu a
-            forjar sua ideia no fogo, usando o
-            <strong>Advogado do Diabo Socrático</strong> para encontrar e
-            corrigir as fraquezas. Foi um passo crucial para tornar seu conceito
-            mais forte e resiliente.
-          </p>
-          <p>
-            Agora, vamos para o próximo nível. E se, em vez de um único crítico,
-            você pudesse convocar um conselho de especialistas para debater sua
-            ideia? É exatamente isso que o
-            <strong>Motor de Perspectivas</strong> faz.
-          </p>
+    <main class="conteudo-aula-container">
+      <div class="barra-progresso-container">
+        <div class="barra-progresso-preenchimento"></div>
+        <span class="progresso-texto">0%</span>
+      </div>
+      <header class="aula-header">
+        <h2 id="titulo-modulo">MÓDULO 2: O ARSENAL DO PRATICANTE</h2>
+        <h1 id="titulo-aula">O Motor de Perspectivas</h1>
+      </header>
+      <article class="aula-content">
+        <h3>Simulando Debates para Revelar Pontos Cegos</h3>
+        <p>
+          Olá e bem-vindo(a) à Aula 2.3! Na lição anterior, você aprendeu a
+          forjar sua ideia no fogo, usando o
+          <strong>Advogado do Diabo Socrático</strong> para encontrar e corrigir
+          as fraquezas. Foi um passo crucial para tornar seu conceito mais forte
+          e resiliente.
+        </p>
+        <p>
+          Agora, vamos para o próximo nível. E se, em vez de um único crítico,
+          você pudesse convocar um conselho de especialistas para debater sua
+          ideia? E se pudesse simular um "focus group" ou um "conselho de
+          administração" virtual para analisar seu projeto de todos os ângulos
+          possíveis?
+        </p>
+        <p>
+          É exatamente isso que o <strong>Motor de Perspectivas</strong> faz.
+          Esta técnica transforma a IA em uma equipe de especialistas com
+          diferentes pontos de vista, criando um debate rico que revela pontos
+          cegos que um único crítico jamais encontraria.
+        </p>
 
-          <h4>Por que esta técnica é crucial?</h4>
-          <p>
-            Todos nós sofremos de <strong>viés de confirmação</strong>. A
-            verdadeira vulnerabilidade de uma ideia muitas vezes não está no
-            argumento oposto, mas nos ângulos que nem sequer consideramos.
-          </p>
-          <p>
-            É aqui que o Motor de Perspectivas brilha. Ao forçar a IA a adotar
-            múltiplas personas especialistas, você cria um debate estruturado
-            que ilumina esses pontos cegos.
-          </p>
-          <ul>
-            <li>
-              O <strong>analista financeiro</strong> verá riscos de custo que o
-              especialista em marketing ignora.
-            </li>
-            <li>
-              O <strong>estrategista de mercado</strong> verá oportunidades de
-              longo prazo que o analista focado em riscos não percebe.
-            </li>
-            <li>
-              O <strong>advogado do cliente</strong> apontará falhas de
-              usabilidade que ambos podem ter negligenciado.
-            </li>
-          </ul>
+        <h4>Por que esta técnica é crucial?</h4>
+        <p>
+          Todos nós sofremos de <strong>viés de confirmação</strong>: a
+          tendência de procurar e favorecer informações que confirmam nossas
+          crenças existentes. O Advogado do Diabo é uma excelente ferramenta
+          para combater isso, mas a verdadeira vulnerabilidade de uma ideia
+          muitas vezes não está no argumento oposto, mas nos ângulos que nem
+          sequer consideramos.
+        </p>
+        <p>
+          É aqui que o Motor de Perspectivas brilha. Ao forçar a IA a adotar
+          múltiplas personas especialistas, você cria um debate estruturado que
+          ilumina esses pontos cegos.
+        </p>
+        <ul>
+          <li>
+            O <strong>analista financeiro</strong> verá riscos de custo que o
+            especialista em marketing ignora.
+          </li>
+          <li>
+            O <strong>estrategista de mercado</strong> verá oportunidades de
+            longo prazo que o analista focado em riscos não percebe.
+          </li>
+          <li>
+            O <strong>advogado do cliente</strong> apontará falhas de
+            usabilidade que ambos podem ter negligenciado.
+          </li>
+        </ul>
+        <p>
+          Esta simulação de debate força uma análise 360 graus, garantindo que
+          sua ideia não seja apenas forte, mas também completa e consciente do
+          seu ecossistema.
+        </p>
 
-          <h4>A Ferramenta Prática: O Conselho de Especialistas Virtuais</h4>
-          <p>
-            Para implementar o Motor de Perspectivas, usaremos um prompt que
-            instrui a IA a simular um conselho com três especialistas distintos.
-          </p>
-          <p>Aqui está o prompt:</p>
-          <div class="bloco-de-prompt">
-            <p>
-              Aja como um moderador de um conselho de especialistas virtuais.
-              Minha ideia a ser analisada é a seguinte: [INSIRA SUA IDEIA AQUI].
-            </p>
-            <p>
-              Sua tarefa é simular um debate crítico e construtivo sobre esta
-              ideia entre as três personas a seguir. Cada especialista deve
-              analisar a ideia estritamente a partir de sua perspectiva única.
-            </p>
-            <p>
-              As personas são:<br />
-              1. <strong>O Analista Cético:</strong> Focado em dados, riscos e
-              viabilidade.<br />
-              2. <strong>O Estrategista Visionário:</strong> Focado no potencial
-              de longo prazo, inovação e oportunidades de mercado.<br />
-              3. <strong>O Advogado do Cliente:</strong> Focado 100% na
-              experiência do usuário final.
-            </p>
-            <p>
-              Apresente a análise como uma transcrição de diálogo. Comece com o
-              Analista Cético, seguido pelo Estrategista Visionário e, por fim,
-              pelo Advogado do Cliente. Após a primeira rodada, eles devem
-              reagir uns aos outros, criando um debate real. Continue o debate
-              por pelo menos duas rodadas.
-            </p>
-          </div>
-
-          <h4>Exercício Prático: Submeta sua Ideia ao Conselho</h4>
-          <p>Agora é sua vez de colocar seu conselho para trabalhar.</p>
-          <ol>
-            <li>Pegue a mesma ideia que você fortaleceu na aula anterior.</li>
-            <li>
-              Copie o prompt do "Conselho de Especialistas Virtuais" acima.
-            </li>
-            <li>
-              Cole-o na sua ferramenta de IA e insira sua ideia no lugar de
-              <code>[INSIRA SUA IDEIA AQUI]</code>.
-            </li>
-            <li>
-              Execute o prompt e leia atentamente a transcrição do debate.
-            </li>
-          </ol>
-          <p>Observe com atenção:</p>
-          <ul>
-            <li>
-              Que novos riscos o <strong>Analista Cético</strong> revelou?
-            </li>
-            <li>
-              Que oportunidades o
-              <strong>Estrategista Visionário</strong> identificou?
-            </li>
-            <li>
-              Que frustrações do usuário o
-              <strong>Advogado do Cliente</strong> antecipou?
-            </li>
-          </ul>
-          <p>
-            Ao dominar esta técnica, você não está apenas testando ideias; está
-            construindo uma visão 360 graus, preparando seus projetos para os
-            desafios e oportunidades do mundo real.
-          </p>
-        </article>
-        <div class="navegacao-aula"></div>
-      </main>
-
-      <aside class="sidebar-ferramentas">
-        <div class="ferramenta-box">
-          <h4>Anotações Pessoais</h4>
-          <p class="instrucao-anotacoes">
-            Suas anotações são salvas automaticamente no navegador.
-          </p>
-          <textarea
-            id="anotacoesPessoais"
-            placeholder="Quais novos pontos cegos o 'Conselho de Especialistas' revelou sobre sua ideia?"
-          ></textarea>
-          <div class="botoes-anotacoes">
-            <button id="btn-limpar-anotacoes">Limpar</button>
-            <button id="btn-baixar-anotacoes">Baixar</button>
-          </div>
+        <h4>A Ferramenta Prática: O Conselho de Especialistas Virtuais</h4>
+        <p>
+          Para implementar o Motor de Perspectivas, usaremos um prompt que
+          instrui a IA a simular um conselho com três especialistas distintos.
+          Cada um tem uma missão clara, garantindo uma análise diversificada e
+          profunda.
+        </p>
+        <p>Aqui está o prompt:</p>
+        <div class="bloco-de-prompt">
+          <code
+            >Aja como um moderador de um conselho de especialistas virtuais.
+            Minha ideia a ser analisada é a seguinte: [SUA IDEIA AQUI].<br /><br />Sua
+            tarefa é simular um debate crítico e construtivo sobre esta ideia
+            entre as três personas a seguir. Cada especialista deve analisar a
+            ideia estritamente a partir de sua perspectiva única.<br /><br />As
+            personas são:<br />1. **O Analista Cético:** Focado em dados, riscos
+            e viabilidade. Sua principal preocupação é com os custos, os
+            obstáculos operacionais e as razões pelas quais a ideia pode falhar.
+            Ele exige provas e desconfia de otimismo sem fundamento.<br />2. **O
+            Estrategista Visionário:** Focado no potencial de longo prazo,
+            inovação e oportunidades de mercado. Ele pensa em como a ideia pode
+            crescer, evoluir e se diferenciar. Ele enxerga tendências e o
+            "quadro geral".<br />3. **O Advogado do Cliente:** Focado 100% na
+            experiência do usuário final. Sua única preocupação é se o cliente
+            realmente quer, precisa e amará usar isso. Ele antecipa frustrações,
+            questiona a usabilidade e defende as necessidades e desejos do
+            cliente acima de tudo.<br /><br />Apresente a análise como uma
+            transcrição de diálogo. Comece com o Analista Cético, seguido pelo
+            Estrategista Visionário e, por fim, pelo Advogado do Cliente. Após a
+            primeira rodada, eles devem responder não apenas à ideia original,
+            mas também aos pontos levantados pelos outros especialistas, criando
+            um debate real. Continue o debate por pelo menos duas rodadas.</code
+          >
         </div>
-      </aside>
-    </div>
+
+        <h4>Exercício Prático: Submeta sua Ideia ao Conselho</h4>
+        <p>Agora é sua vez de colocar seu conselho para trabalhar.</p>
+        <ol>
+          <li>
+            Pegue a mesma ideia que você fortaleceu na aula anterior com o
+            "Advogado do Diabo".
+          </li>
+          <li>Copie o prompt do "Conselho de Especialistas Virtuais" acima.</li>
+          <li>
+            Cole-o na sua ferramenta de IA e insira sua ideia no lugar de
+            <code>[SUA IDEIA AQUI]</code>.
+          </li>
+          <li>Execute o prompt e leia atentamente a transcrição do debate.</li>
+        </ol>
+        <p>Observe com atenção:</p>
+        <ul>
+          <li>
+            Que novos riscos financeiros ou operacionais o
+            <strong>Analista Cético</strong> revelou?
+          </li>
+          <li>
+            Que oportunidades de crescimento ou diferenciação o
+            <strong>Estrategista Visionário</strong> identificou?
+          </li>
+          <li>
+            Que possíveis frustrações ou desejos do usuário o
+            <strong>Advogado do Cliente</strong> antecipou?
+          </li>
+        </ul>
+        <p>
+          Compare os insights desta sessão com os da sessão anterior. O que este
+          debate revelou que o interrogatório socrático um-a-um não conseguiu?
+        </p>
+        <p>
+          Ao dominar esta técnica, você não está apenas testando ideias; está
+          construindo uma visão 360 graus, preparando seus projetos para os
+          desafios e oportunidades do mundo real.
+        </p>
+      </article>
+      <div class="navegacao-aula"></div>
+    </main>
 
     <div id="kairos-chat-button" title="Falar com Kairos">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
         <path
-          d="M20 2H4c-1.103 0-2 .897-2 2v18l4-4h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 10h-4v4h-2v-4H8v-2h4V6h2v4h4v2z"
+          d="M12 2C11.45 2 11 2.45 11 3V4.59C7.93 5.49 5.5 8.43 5.5 11.5C5.5 12.53 5.79 13.5 6.28 14.36L3.64 17L5 18.36L7.64 15.72C8.5 16.21 9.47 16.5 10.5 16.5C11 16.5 11.5 16.45 12 16.36V18.5C12 19.05 12.45 19.5 13 19.5C13.55 19.5 14 19.05 14 18.5V16.36C14.5 16.45 15 16.5 15.5 16.5C16.53 16.5 17.5 16.21 18.36 15.72L21 18.36L22.36 17L19.72 14.36C20.21 13.5 20.5 12.53 20.5 11.5C20.5 8.43 18.07 5.49 15 4.59V3C15 2.45 14.55 2 14 2H12M13 6.06V7.5C13 8.05 12.55 8.5 12 8.5C11.45 8.5 11 8.05 11 7.5V6.06C10.19 6.22 9.44 6.56 8.78 7.05L9.88 8.14C10.27 8.54 10.27 9.16 9.88 9.55C9.49 9.94 8.86 9.94 8.47 9.55L7.05 8.12C6.56 8.78 6.22 9.54 6.06 10.35H7.5C8.05 10.35 8.5 10.8 8.5 11.35C8.5 11.9 8.05 12.35 7.5 12.35H6.06C6.22 13.16 6.56 13.91 7.05 14.57L8.47 13.15C8.86 12.76 9.49 12.76 9.88 13.15C10.27 13.54 10.27 14.16 9.88 14.55L8.78 15.64C9.44 16.13 10.19 16.47 11 16.63V15.15C11 14.6 11.45 14.15 12 14.15C12.55 14.15 13 14.6 13 15.15V16.63C13.81 16.47 14.56 16.13 15.22 15.64L14.12 14.55C13.73 14.16 13.73 13.54 14.12 13.15C14.51 12.76 15.14 12.76 15.53 13.15L16.95 14.57C17.44 13.91 17.78 13.16 17.94 12.35H16.5C15.95 12.35 15.5 11.9 15.5 11.35C15.5 10.8 15.95 10.35 16.5 10.35H17.94C17.78 9.54 17.44 8.78 16.95 8.12L15.53 9.55C15.14 9.94 14.51 9.94 14.12 9.55C13.73 9.16 13.73 8.54 14.12 8.14L15.22 7.05C14.56 6.56 13.81 6.22 13 6.06Z"
         />
       </svg>
     </div>
-
-    <div id="kairos-chat-container" class="oculto">
+    <div id="kairos-chat-container">
       <div class="kairos-chat-header">
         <h3>Kairos AI</h3>
         <button id="kairos-close-button">&times;</button>
       </div>
-      <div class="kairos-chat-messages">
-        <div class="message kairos">
-          Analisando a Aula 2.3. Qual das três personas especialistas (Cético,
-          Visionário, Cliente) trouxe a perspectiva mais surpreendente para
-          você?
-        </div>
-      </div>
+      <div class="kairos-chat-messages"></div>
       <div class="kairos-chat-input-area">
-        <input
-          type="text"
+        <textarea
           id="kairos-user-input"
           placeholder="Pergunte sobre esta aula..."
-        />
-        <button id="kairos-send-button">Enviar</button>
+          rows="1"
+        ></textarea>
+        <button id="kairos-send-button" aria-label="Enviar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+          </svg>
+        </button>
       </div>
     </div>
 
-    <script src="/scripts/funcionalidades-curso.js"></script>
+    <script src="../../../../scripts/funcionalidades-curso.js"></script>
   </body>
 </html>

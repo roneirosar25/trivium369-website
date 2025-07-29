@@ -3,275 +3,218 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aula 3.3 | TRIVIUM 369</title>
+    <title>Aula 3.4: O Caderno Digital Vivo | TRIVIUM 369</title>
     <link rel="stylesheet" href="../../assets/css/style-curso.css" />
     <link rel="icon" href="../../assets/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
-    <div class="layout-curso-v2">
-      <aside class="sidebar-navegacao">
-        <div class="logo-container"><h3>TRIVIUM 369</h3></div>
-        <nav class="menu-aulas"></nav>
-      </aside>
+    <button
+      id="btn-toggle-nav"
+      class="btn-toggle-menu"
+      aria-label="Abrir Navegação"
+    >
+      <span></span><span></span><span></span>
+    </button>
+    <button
+      id="btn-toggle-tools"
+      class="btn-toggle-menu"
+      aria-label="Abrir Ferramentas"
+    >
+      <i class="fas fa-wrench"></i>
+    </button>
 
-      <main class="conteudo-aula-container">
-        <div class="barra-progresso-container">
-          <div class="barra-progresso-preenchimento"></div>
-          <span class="progresso-texto">0%</span>
+    <aside class="sidebar-navegacao">
+      <div class="logo-container"><h3>TRIVIUM 369</h3></div>
+      <nav class="menu-aulas"></nav>
+    </aside>
+    <aside class="sidebar-ferramentas">
+      <div class="ferramenta-box">
+        <h4>Configurações</h4>
+        <div id="api-status-box"></div>
+      </div>
+      <div class="ferramenta-box">
+        <h4>Anotações Pessoais</h4>
+        <p class="instrucao-anotacoes">
+          Suas anotações são salvas automaticamente.
+        </p>
+        <textarea
+          id="anotacoesPessoais"
+          placeholder="Qual será o meu superpoder?"
+        ></textarea>
+        <div class="botoes-anotacoes">
+          <button id="btn-limpar-anotacoes">Limpar</button>
+          <button id="btn-baixar-anotacoes">Baixar</button>
         </div>
-        <header class="aula-header">
-          <h2 id="titulo-modulo">Carregando...</h2>
-          <h1 id="titulo-aula">Carregando...</h1>
-        </header>
-        <article class="aula-content">
-          <h3>A Ponte Analógica: Aplicando os Princípios em um Novo Domínio</h3>
+      </div>
+    </aside>
 
-          <p>
-            Seja muito bem-vindo(a) à nossa terceira e última aula prática deste
-            módulo! Na aula anterior, você usou o "Extrator de Essência" para
-            criar um "mapa de princípios" do seu Domínio Fonte. Você agora tem
-            em mãos não apenas fatos sobre seu hobby, mas as regras sistêmicas e
-            as estratégias profundas que o governam.
-          </p>
-          <p>
-            Hoje, vamos usar esse mapa. Esta é a aula onde construímos a ponte.
-            Vamos pegar a sabedoria oculta do seu Domínio Fonte e usá-la para
-            desenhar soluções e estratégias radicalmente novas para os desafios
-            do seu Domínio Alvo.
-          </p>
+    <main class="conteudo-aula-container">
+      <div class="barra-progresso-container">
+        <div class="barra-progresso-preenchimento"></div>
+        <span class="progresso-texto">0%</span>
+      </div>
+      <header class="aula-header">
+        <h2 id="titulo-modulo">MÓDULO 3: O MÉTODO DA VINCI</h2>
+        <h1 id="titulo-aula">O Caderno Digital Vivo</h1>
+      </header>
+      <article class="aula-content">
+        <h3>
+          O "Códice Digital Vivo": Transformando o Chat em um Ecossistema de
+          Pensamento
+        </h3>
+        <p>
+          Olá! Nas últimas aulas, você aprendeu a usar a IA para "dissecar" um
+          Domínio Fonte e a usar esses princípios para construir uma "ponte
+          analógica" para inovar no seu Domínio Alvo. Você já tem em mãos um
+          método poderoso para o pensamento criativo.
+        </p>
+        <p>
+          Hoje, vamos dar um passo além. Vamos falar sobre a ferramenta que
+          torna tudo isso possível: a própria janela de chat. A maioria das
+          pessoas a vê como um campo de perguntas e respostas descartável. O
+          Arquiteto do Pensamento, no entanto, a enxerga de uma forma
+          radicalmente diferente: como um
+          <strong>"Códice Digital Vivo"</strong>.
+        </p>
 
-          <h4>1. O Passo Final do Motor: A "Tradução Criativa"</h4>
-          <p>
-            Chegamos ao coração do nosso "Motor de Analogias". A lógica deste
-            passo final é o que chamamos de
-            <strong>"Tradução Criativa"</strong>.
-          </p>
-          <p>
-            Em vez de pedir à IA uma solução genérica para um problema, nós
-            vamos alimentá-la com um novo conjunto de regras, um novo "sistema
-            operacional" para pensar: os princípios do seu Domínio Fonte.
-          </p>
-          <p>
-            O processo é o seguinte: apresentamos à IA o mapa de princípios que
-            ela mesma gerou e, em seguida, apresentamos o nosso desafio
-            profissional (o Domínio Alvo). A tarefa dela não será resolver o
-            problema da maneira usual, mas sim <strong>traduzir</strong> as
-            estratégias de um mundo para o outro. Ela será forçada a se
-            perguntar: "Como um mestre de Jazz resolveria um problema de vendas?
-            Como um jardineiro otimizaria um software? Como um filósofo estoico
-            gerenciaria um projeto?".
-          </p>
+        <h4>1. O Legado dos Códices de Leonardo</h4>
+        <p>
+          Leonardo da Vinci não escrevia livros. Ele mantinha códices — cadernos
+          de anotações onde texto e imagem se misturavam. Não eram lineares. Uma
+          página podia conter um esboço anatômico ao lado de um cálculo de
+          engenharia e uma observação filosófica. Seus códices não eram arquivos
+          de conhecimento morto; eram **ecossistemas de pensamento**, onde as
+          ideias se conectavam, se polinizavam e evoluíam com o tempo. Eram um
+          registo vivo da sua mente em ação.
+        </p>
 
-          <h4>2. A Ferramenta Prática: O Construtor de Pontes</h4>
-          <p>
-            Para executar essa tradução criativa, usaremos a segunda e última
-            peça do nosso prompt mestre. Vamos chamá-la de
-            <strong>"O Construtor de Pontes"</strong>.
-          </p>
-          <p>
-            Este prompt é a continuação direta da conversa que você iniciou com
-            a IA na aula anterior. Ele usa o contexto já estabelecido (o mapa de
-            princípios) para gerar as novas estratégias.
-          </p>
-          <p>Aqui está o modelo:</p>
-          <div class="bloco-de-prompt">
-            <p>
-              Com base estrita no tutorial sobre os princípios de &lt;seu
-              Domínio Fonte aqui&gt; que você gerou anteriormente, atue como um
-              consultor de inovação radical. Aplique esses 4 princípios para
-              gerar 3 estratégias radicalmente novas e acionáveis para &lt;seu
-              Domínio Alvo aqui&gt;. Para cada estratégia, explique
-              explicitamente qual princípio está sendo aplicado e como a
-              analogia funciona.
-            </p>
-          </div>
+        <h4>2. A Interface de Chat como um Códice Moderno</h4>
+        <p>
+          A janela de chat com um LLM moderno é o herdeiro digital direto desta
+          filosofia. Cada conversa é um códice em potencial. A sua principal
+          característica é a **memória contextual**: a capacidade do modelo de
+          se "lembrar" do que foi dito anteriormente na mesma sessão. É esta
+          memória que nos permite construir andaimes, refinar ideias e
+          aprofundar uma linha de investigação.
+        </p>
+        <p>
+          O usuário comum ignora isso. Ele faz uma pergunta, obtém uma resposta
+          e fecha a janela, descartando o códice. O Arquiteto do Pensamento
+          cultiva-o.
+        </p>
 
-          <h4>3. Estudo de Caso: A Ponte Construída</h4>
-          <p>
-            Vamos, mais uma vez, ao nosso exemplo para ver a mágica acontecer.
-          </p>
-          <ul>
-            <li>
-              <strong>Domínio Fonte:</strong> Improvisação no Jazz (cujos
-              princípios já foram extraídos na aula anterior).
-            </li>
-            <li><strong>Domínio Alvo:</strong> Gestão de equipes de vendas.</li>
-          </ul>
-          <p>
-            Continuando a mesma conversa com a IA, o usuário agora inseriria o
-            seguinte prompt:
-          </p>
-          <div class="bloco-de-prompt">
-            <p>
-              Com base estrita no tutorial sobre os princípios de Improvisação
-              no Jazz que você gerou anteriormente, atue como um consultor de
-              inovação radical. Aplique esses 4 princípios para gerar 3
-              estratégias radicalmente novas e acionáveis para Gestão de equipes
-              de vendas. Para cada estratégia, explique explicitamente qual
-              princípio está sendo aplicado e como a analogia funciona.
-            </p>
-          </div>
-          <p>
-            Eis um exemplo do resultado ideal que a IA geraria, conectando os
-            dois mundos:
-          </p>
-          <hr />
-          <p><strong>Resultado Exemplo da IA:</strong></p>
-          <p>
-            Excelente. Como consultor de inovação, aplicando os princípios da
-            Improvisação no Jazz à Gestão de equipes de vendas, aqui estão 3
-            estratégias acionáveis:
-          </p>
+        <h4>3. Estratégias para Construir seu Códice Digital Vivo</h4>
+        <p>
+          Transformar um simples chat em um Códice Vivo requer um conjunto de
+          estratégias deliberadas:
+        </p>
+        <ul>
+          <li>
+            <strong>Sessões Temáticas (Um Códice por Projeto):</strong> Em vez
+            de ter uma única conversa longa e caótica com a IA, crie sessões
+            separadas para cada projeto ou linha de investigação. Uma sessão
+            para o "Projeto X", outra para "aprender sobre Filosofia Estoica",
+            outra para "brainstorming de nomes para o meu produto".
+          </li>
+          <li>
+            <strong>O "Sumário Executivo" Contínuo:</strong> A cada 5-10
+            interações, peça à IA para "sumarizar os pontos-chave e as
+            conclusões da nossa conversa até agora". Isso força o modelo a
+            revisitar e a consolidar o contexto, reforçando a memória da sessão
+            e garantindo que vocês continuem na mesma página.
+          </li>
+          <li>
+            <strong>Refinar em Vez de Recomeçar:</strong> Se a IA der uma
+            resposta que não é exatamente o que você queria, o seu instinto de
+            "consumidor de respostas" é tentar uma nova pergunta do zero. O
+            Arquiteto do Pensamento refina. Use frases como: "Isso é um bom
+            começo, mas podes refazer a resposta anterior com um tom mais
+            formal?", ou "Gostei da estrutura, mas podes substituir o exemplo 3
+            por um que seja mais relevante para a indústria financeira?".
+          </li>
+        </ul>
 
-          <h5>Estratégia 1: A "Sessão de Escuta" Semanal</h5>
-          <ul>
-            <li>
-              <strong>Princípio Aplicado:</strong> Escuta Ativa e Resposta
-              (Listen and Respond).
-            </li>
-            <li>
-              <strong>Como a Analogia Funciona:</strong> No Jazz, um músico não
-              pode brilhar sem ouvir atentamente o que os outros estão tocando.
-              Da mesma forma, uma equipe de vendas muitas vezes falha por não
-              ouvir o cliente ou os colegas.
-            </li>
-            <li>
-              <strong>Ação:</strong> Institua uma reunião semanal de 30 minutos
-              chamada "Sessão de Escuta". O formato é rígido: um vendedor
-              apresenta o áudio de uma ligação de vendas desafiadora. A equipe
-              não pode criticar. A única tarefa é ouvir e apontar um momento em
-              que o cliente "disse algo" que não foi totalmente "ouvido". O
-              objetivo é treinar a equipe para ouvir as "notas" sutis que os
-              clientes tocam.
-            </li>
-          </ul>
-
-          <h5>Estratégia 2: O "Playbook de Acordes" Trimestral</h5>
-          <ul>
-            <li>
-              <strong>Princípio Aplicado:</strong> Estrutura como Plataforma
-              para a Liberdade (Structure as Freedom).
-            </li>
-            <li>
-              <strong>Como a Analogia Funciona:</strong> Músicos de Jazz
-              improvisam sobre uma estrutura de acordes conhecida por todos.
-              Isso lhes dá segurança para explorar. Vendedores precisam de uma
-              estrutura similar.
-            </li>
-            <li>
-              <strong>Ação:</strong> Abandone os scripts rígidos. Crie um
-              "Playbook de Acordes" trimestral com os 5-7 "acordes"
-              (pontos-chave de valor, objeções comuns) que devem aparecer em
-              qualquer conversa. A equipe tem total liberdade para "improvisar"
-              a conversa em torno deles.
-            </li>
-          </ul>
-
-          <h5>Estratégia 3: O Ritual da "Nota Errada"</h5>
-          <ul>
-            <li>
-              <strong>Princípio Aplicado:</strong> Abraçar o "Erro" como
-              Oportunidade.
-            </li>
-            <li>
-              <strong>Como a Analogia Funciona:</strong> No Jazz, uma nota
-              errada pode se tornar o início de um solo brilhante. Em vendas, um
-              "não" é frequentemente visto como um fracasso, quando deveria ser
-              uma oportunidade.
-            </li>
-            <li>
-              <strong>Ação:</strong> Crie um canal no Slack chamado
-              `#NotaErrada`. Toda vez que um vendedor perder uma venda de forma
-              inesperada, ele deve postar ali. A equipe faz um brainstorming de
-              como aquela "nota errada" poderia ter sido usada como um gancho
-              para uma nova abordagem.
-            </li>
-          </ul>
-          <hr />
-
-          <h4>4. Exercício Prático: Sua Própria Inovação</h4>
-          <p>
-            Você viu o poder do método. Agora, a tarefa final é sua. É hora de
-            construir sua própria ponte e gerar suas próprias inovações.
-          </p>
-          <ol>
-            <li>
-              Abra a conversa com a IA onde você gerou seu
-              <strong>mapa de princípios</strong> na aula anterior.
-            </li>
-            <li>
-              Copie o prompt do <strong>"O Construtor de Pontes"</strong>.
-            </li>
-            <li>
-              Substitua <code>&lt;seu Domínio Fonte aqui&gt;</code> pelo seu
-              hobby e <code>&lt;seu Domínio Alvo aqui&gt;</code> pela sua área
-              profissional.
-            </li>
-            <li>Execute o comando.</li>
-          </ol>
-          <p>
-            Analise as 3 estratégias que a IA gerou para você. Elas são o
-            resultado direto da sua curiosidade, da sua paixão e de um método
-            estruturado para o pensamento criativo.
-          </p>
-          <p>
-            Parabéns! Você não apenas aprendeu sobre o pensamento conectivo, mas
-            o praticou. Você transformou a IA em uma verdadeira parceira de
-            inovação. Use essa técnica sempre que precisar de uma nova
-            perspectiva. As possibilidades são infinitas.
-          </p>
-        </article>
-        <div class="navegacao-aula"></div>
-      </main>
-
-      <aside class="sidebar-ferramentas">
-        <div class="ferramenta-box">
-          <h4>Anotações Pessoais</h4>
-          <p class="instrucao-anotacoes">
-            Suas anotações são salvas automaticamente no navegador.
-          </p>
-          <textarea
-            id="anotacoesPessoais"
-            placeholder="Anote as estratégias que a IA gerou para você..."
-          ></textarea>
-          <div class="botoes-anotacoes">
-            <button id="btn-limpar-anotacoes">Limpar</button>
-            <button id="btn-baixar-anotacoes">Baixar</button>
-          </div>
+        <h4>4. O Superpoder: Exportar e Integrar</h4>
+        <p>
+          O verdadeiro poder do Códice Digital Vivo revela-se quando ele sai da
+          janela de chat e se integra no seu "segundo cérebro" – seja ele o
+          Notion, Obsidian, Evernote ou qualquer outra ferramenta.
+        </p>
+        <p>
+          Ao final de uma sessão de investigação produtiva, use um prompt final
+          para consolidar o conhecimento:
+        </p>
+        <div class="bloco-de-prompt">
+          <code
+            >Excelente. Com base em toda a nossa conversa, gere uma nota
+            estruturada em formato Markdown para o meu caderno de conhecimento.
+            A nota deve ter um título, um resumo de 3 frases dos principais
+            insights, e uma lista de ações ou perguntas em aberto que esta
+            conversa gerou.</code
+          >
         </div>
-      </aside>
-    </div>
+        <p>
+          Isto transforma uma conversa efémera num ativo de conhecimento
+          permanente e pesquisável. A sua interação com a IA deixa de ser uma
+          série de transações isoladas e passa a ser a construção contínua de
+          uma base de conhecimento pessoal.
+        </p>
+
+        <h4>Conclusão</h4>
+        <p>
+          Parabéns por completar o Módulo 3. Você aprendeu a ver e a construir
+          pontes onde outros veem muros. E, mais importante, aprendeu a ver a
+          sua ferramenta de IA não como uma máquina de respostas, mas como o seu
+          próprio Códice Digital Vivo.
+        </p>
+        <p>
+          No próximo módulo, vamos mudar de perspetiva. Deixaremos o mundo
+          criativo e analógico de Da Vinci para entrar no mundo sistémico e
+          estruturado de Nikola Tesla. Prepare-se para pensar em redes.
+        </p>
+      </article>
+      <div class="navegacao-aula"></div>
+    </main>
 
     <div id="kairos-chat-button" title="Falar com Kairos">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
         <path
-          d="M20 2H4c-1.103 0-2 .897-2 2v18l4-4h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 10h-4v4h-2v-4H8v-2h4V6h2v4h4v2z"
+          d="M12 2C11.45 2 11 2.45 11 3V4.59C7.93 5.49 5.5 8.43 5.5 11.5C5.5 12.53 5.79 13.5 6.28 14.36L3.64 17L5 18.36L7.64 15.72C8.5 16.21 9.47 16.5 10.5 16.5C11 16.5 11.5 16.45 12 16.36V18.5C12 19.05 12.45 19.5 13 19.5C13.55 19.5 14 19.05 14 18.5V16.36C14.5 16.45 15 16.5 15.5 16.5C16.53 16.5 17.5 16.21 18.36 15.72L21 18.36L22.36 17L19.72 14.36C20.21 13.5 20.5 12.53 20.5 11.5C20.5 8.43 18.07 5.49 15 4.59V3C15 2.45 14.55 2 14 2H12M13 6.06V7.5C13 8.05 12.55 8.5 12 8.5C11.45 8.5 11 8.05 11 7.5V6.06C10.19 6.22 9.44 6.56 8.78 7.05L9.88 8.14C10.27 8.54 10.27 9.16 9.88 9.55C9.49 9.94 8.86 9.94 8.47 9.55L7.05 8.12C6.56 8.78 6.22 9.54 6.06 10.35H7.5C8.05 10.35 8.5 10.8 8.5 11.35C8.5 11.9 8.05 12.35 7.5 12.35H6.06C6.22 13.16 6.56 13.91 7.05 14.57L8.47 13.15C8.86 12.76 9.49 12.76 9.88 13.15C10.27 13.54 10.27 14.16 9.88 14.55L8.78 15.64C9.44 16.13 10.19 16.47 11 16.63V15.15C11 14.6 11.45 14.15 12 14.15C12.55 14.15 13 14.6 13 15.15V16.63C13.81 16.47 14.56 16.13 15.22 15.64L14.12 14.55C13.73 14.16 13.73 13.54 14.12 13.15C14.51 12.76 15.14 12.76 15.53 13.15L16.95 14.57C17.44 13.91 17.78 13.16 17.94 12.35H16.5C15.95 12.35 15.5 11.9 15.5 11.35C15.5 10.8 15.95 10.35 16.5 10.35H17.94C17.78 9.54 17.44 8.78 16.95 8.12L15.53 9.55C15.14 9.94 14.51 9.94 14.12 9.55C13.73 9.16 13.73 8.54 14.12 8.14L15.22 7.05C14.56 6.56 13.81 6.22 13 6.06Z"
         />
       </svg>
     </div>
-
-    <div id="kairos-chat-container" class="oculto">
+    <div id="kairos-chat-container">
       <div class="kairos-chat-header">
         <h3>Kairos AI</h3>
         <button id="kairos-close-button">&times;</button>
       </div>
-      <div class="kairos-chat-messages">
-        <div class="message kairos">
-          Analisando a Aula 3.3. Esta é a minha função favorita: atuar como uma
-          ponte entre mundos. Qual foi a conexão mais inesperada que você
-          descobriu?
-        </div>
-      </div>
+      <div class="kairos-chat-messages"></div>
       <div class="kairos-chat-input-area">
-        <input
-          type="text"
+        <textarea
           id="kairos-user-input"
           placeholder="Pergunte sobre esta aula..."
-        />
-        <button id="kairos-send-button">Enviar</button>
+          rows="1"
+        ></textarea>
+        <button id="kairos-send-button" aria-label="Enviar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+          </svg>
+        </button>
       </div>
     </div>
 
-    <script src="/scripts/funcionalidades-curso.js"></script>
+    <script src="../../../../scripts/funcionalidades-curso.js"></script>
   </body>
 </html>

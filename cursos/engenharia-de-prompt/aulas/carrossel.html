@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pré-visualização do Carrossel - TRIVIUM 369</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Estilos personalizados e configuração do Tailwind */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #0c0b13;
+        color: #e8e8e8;
+      }
+      .carousel-slide {
+        background-color: #1a1a2e; /* Um pouco mais claro para diferenciar */
+        color: #e8e8e8;
+        width: 320px;
+        height: 320px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #2a2a4a;
+      }
+      /* Cor de destaque personalizada */
+      .text-trivium-purple {
+        color: #8e44ad;
+      }
+      .bg-trivium-purple {
+        background-color: #8e44ad;
+      }
+      .border-trivium-purple {
+        border-color: #8e44ad;
+      }
+      /* Tamanho do logo ajustado */
+      .logo {
+        max-width: 80px;
+        position: absolute;
+        bottom: 24px;
+      }
+      .logo-mid {
+        max-width: 100px;
+        margin-bottom: 16px;
+      }
+      .bg-textured {
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231f1f3d' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+      /* Animação de carregamento */
+      .loader {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #8e44ad;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="flex flex-col items-center justify-center min-h-screen p-4 sm:p-8"
+  >
+    <div class="mb-8 text-center">
+      <h1 class="text-3xl font-bold text-white">
+        Pré-visualização do Carrossel
+      </h1>
+      <p class="text-gray-400">Role para ver todos os posts.</p>
+    </div>
+
+    <!-- Container para os slides do carrossel -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Imagem 1: Capa -->
+      <div class="carousel-slide bg-textured">
+        <!-- LAYOUT CORRIGIDO PARA EVITAR SOBREPOSIÇÃO -->
+        <div class="flex flex-col items-center justify-center flex-grow pb-20">
+          <h1 class="text-5xl font-black tracking-wider uppercase">
+            A ESCOLHA
+          </h1>
+          <h2 class="mt-2 text-lg font-light">
+            Operador de IA vs. Arquiteto da Cognição
+          </h2>
+        </div>
+        <!-- LOGO COM CAMINHO CORRIGIDO -->
+        <img
+          src="../../../assets/img/TRIVIUM-369.png"
+          alt="Logo TRIVIUM 369"
+          class="logo"
+        />
+      </div>
+
+      <!-- Imagem 2: O Problema -->
+      <div class="carousel-slide">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="48"
+          height="48"
+          viewBox="0 0 256 256"
+          class="mb-4 text-trivium-purple"
+        >
+          <path
+            fill="currentColor"
+            d="M128 24a96 96 0 0 0-96 96v32a8 8 0 0 0 16 0v-32a80 80 0 0 1 160 0v32a8 8 0 0 0 16 0v-32a96 96 0 0 0-96-96m-48 136H48a8 8 0 0 0-8 8v32a8 8 0 0 0 8 8h32a8 8 0 0 0 8-8v-32a8 8 0 0 0-8-8m-8 32v-16h16v16Zm120-32h-32a8 8 0 0 0-8 8v32a8 8 0 0 0 8 8h32a8 8 0 0 0 8-8v-32a8 8 0 0 0-8-8m-8 32v-16h16v16Zm-56-32h-16v16h16Zm0 24h-16v16h16Zm-24-24h-16v16h16Zm0 24h-16v16h16Z"
+          />
+        </svg>
+        <p class="text-xl font-bold leading-tight">
+          99% dos profissionais usam a IA como um Google melhorado.
+        </p>
+        <p class="mt-4 text-base">
+          O resultado?
+          <span class="font-bold text-trivium-purple"
+            >A Comoditização do Pensamento Superficial.</span
+          >
+        </p>
+      </div>
+
+      <!-- Imagem 3: Comparação - Lado A -->
+      <div class="carousel-slide">
+        <div class="flex w-full h-full">
+          <div
+            class="w-1/2 flex flex-col justify-center items-start text-left pr-3"
+          >
+            <h3 class="text-2xl font-bold">O OPERADOR</h3>
+            <p class="text-sm opacity-80 mb-4">(Os 99%)</p>
+            <ul class="space-y-3 text-sm">
+              <li>● Busca a resposta <span class="font-bold">RÁPIDA</span>.</li>
+              <li>
+                ● Obtém resultados <span class="font-bold">PREVISÍVEIS</span>.
+              </li>
+              <li>● <span class="font-bold">REAGE</span> ao futuro.</li>
+            </ul>
+          </div>
+          <div
+            class="w-1/2 border-l border-gray-700 opacity-20 blur-sm flex justify-center items-center"
+          >
+            <h3 class="text-2xl font-bold text-trivium-purple">O ARQUITETO</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Imagem 4: Comparação - Lado B -->
+      <div class="carousel-slide">
+        <div class="flex w-full h-full">
+          <div
+            class="w-1/2 border-r border-gray-700 opacity-20 blur-sm flex justify-center items-center"
+          >
+            <h3 class="text-2xl font-bold">O OPERADOR</h3>
+          </div>
+          <div
+            class="w-1/2 flex flex-col justify-center items-start text-left pl-4"
+          >
+            <h3 class="text-2xl font-bold text-trivium-purple">O ARQUITETO</h3>
+            <p class="text-sm text-trivium-purple mb-4">(O 1%)</p>
+            <ul class="space-y-3 text-sm">
+              <li class="flex items-center">
+                ● Constrói a pergunta <span class="font-bold">PODEROSA</span>.
+              </li>
+              <li class="flex items-center">
+                ● Gera insights <span class="font-bold">IMPREVISÍVEIS</span>.
+              </li>
+              <li class="flex items-center">
+                ● <span class="font-bold">CONSTRÓI</span> o futuro.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Imagem 5: A Nossa Visão -->
+      <div class="carousel-slide">
+        <!-- LOGO COM CAMINHO CORRIGIDO -->
+        <img
+          src="../../../assets/img/TRIVIUM-369.png"
+          alt="Logo TRIVIUM 369"
+          class="logo-mid"
+        />
+        <p class="text-lg leading-snug">
+          Nossa missão na TRIVIUM 369:<br />Transformar operadores em
+          arquitetos.
+        </p>
+        <p class="text-xl font-bold text-trivium-purple mt-6">
+          Não ensinamos a pedir.<br />Ensinamos a PENSAR.
+        </p>
+      </div>
+
+      <!-- Imagem 6: Chamada para Ação (CTA) -->
+      <div class="carousel-slide">
+        <div class="flex flex-col items-center justify-center flex-grow pb-20">
+          <h2 class="text-4xl font-black leading-tight">
+            A revolução silenciosa começou.
+          </h2>
+          <p class="mt-4 text-lg">
+            Siga <span class="font-bold">@trivium369</span> para dominar a nova
+            forma de pensar.
+          </p>
+        </div>
+        <!-- LOGO COM CAMINHO CORRIGIDO -->
+        <img
+          src="../../../assets/img/TRIVIUM-369.png"
+          alt="Logo TRIVIUM 369"
+          class="logo"
+        />
+      </div>
+    </div>
+
+    <!-- Seção Interativa com Gemini API -->
+    <div
+      id="gemini-lab"
+      class="w-full max-w-2xl mt-16 p-8 bg-[#1a1a2e] rounded-xl border border-[#2a2a4a] shadow-2xl"
+    >
+      <h2 class="text-3xl font-bold text-center">
+        ✨ Laboratório do Arquiteto
+      </h2>
+      <p class="text-center text-gray-400 mt-2">
+        Transforme uma pergunta de Operador em uma pergunta de Arquiteto.
+      </p>
+
+      <div class="mt-6">
+        <label
+          for="user-prompt"
+          class="block mb-2 text-sm font-medium text-gray-300"
+          >Sua pergunta de "Operador":</label
+        >
+        <textarea
+          id="user-prompt"
+          rows="3"
+          class="w-full p-3 bg-[#0c0b13] border border-gray-600 rounded-lg text-white focus:ring-trivium-purple focus:border-trivium-purple"
+          placeholder="Ex: Liste os benefícios da IA para o marketing."
+        ></textarea>
+      </div>
+
+      <div class="mt-4 text-center">
+        <button
+          id="transform-button"
+          class="bg-trivium-purple text-white font-bold py-3 px-8 rounded-lg hover:bg-purple-700 transition-all duration-300 shadow-lg"
+        >
+          Transformar em Pergunta de Arquiteto
+        </button>
+      </div>
+
+      <div id="result-container" class="mt-6 hidden">
+        <h3 class="text-lg font-semibold text-trivium-purple">
+          Pergunta de Arquiteto Gerada:
+        </h3>
+        <div id="loader" class="loader mt-4 mx-auto hidden"></div>
+        <div
+          id="gemini-output"
+          class="mt-2 p-4 bg-[#0c0b13] rounded-lg border border-gray-600 text-gray-200 whitespace-pre-wrap"
+        ></div>
+      </div>
+      <div id="error-message" class="mt-4 text-center text-red-400"></div>
+    </div>
+
+    <script type="module">
+      // Elementos da UI
+      const transformButton = document.getElementById("transform-button");
+      const userPromptTextarea = document.getElementById("user-prompt");
+      const resultContainer = document.getElementById("result-container");
+      const geminiOutputDiv = document.getElementById("gemini-output");
+      const loader = document.getElementById("loader");
+      const errorMessageDiv = document.getElementById("error-message");
+
+      // Função para chamar a API do Gemini com retry e backoff exponencial
+      async function callGemini(prompt, retries = 3, delay = 1000) {
+        const apiKey = ""; // A chave da API será injetada pelo ambiente
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+        // O prompt para a IA, instruindo-a a agir como um "Arquiteto da Cognição"
+        const metaPrompt = `Aja como um "Arquiteto da Cognição". Sua tarefa é transformar uma pergunta simples de "Operador de IA" em uma pergunta poderosa, estratégica e contraintuitiva que um "Arquiteto" faria. A nova pergunta deve buscar insights mais profundos, conexões inesperadas, implicações de segunda ordem e resultados imprevisíveis. Não responda à pergunta do usuário, apenas a reformule com profundidade e criatividade. A resposta deve ser apenas a pergunta reformulada.
+            
+            Pergunta do Operador: "${prompt}"
+            
+            Pergunta de Arquiteto:`;
+
+        const payload = {
+          contents: [
+            {
+              parts: [{ text: metaPrompt }],
+            },
+          ],
+        };
+
+        try {
+          const response = await fetch(apiUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const result = await response.json();
+
+          if (
+            result.candidates &&
+            result.candidates.length > 0 &&
+            result.candidates[0].content &&
+            result.candidates[0].content.parts &&
+            result.candidates[0].content.parts.length > 0
+          ) {
+            return result.candidates[0].content.parts[0].text;
+          } else {
+            // Se a resposta não tiver o formato esperado, trata como um erro para tentar novamente.
+            throw new Error("Resposta da API inválida ou vazia.");
+          }
+        } catch (error) {
+          console.error(`Tentativa ${4 - retries} falhou:`, error);
+          if (retries > 1) {
+            await new Promise((resolve) => setTimeout(resolve, delay));
+            return callGemini(prompt, retries - 1, delay * 2); // Tenta novamente com delay maior
+          } else {
+            throw error; // Lança o erro final após todas as tentativas falharem
+          }
+        }
+      }
+
+      // Event listener para o botão
+      transformButton.addEventListener("click", async () => {
+        const userPrompt = userPromptTextarea.value.trim();
+        if (!userPrompt) {
+          errorMessageDiv.textContent =
+            "Por favor, insira uma pergunta antes de transformar.";
+          return;
+        }
+
+        // Resetar UI
+        errorMessageDiv.textContent = "";
+        resultContainer.classList.remove("hidden");
+        geminiOutputDiv.classList.add("hidden");
+        loader.classList.remove("hidden");
+
+        try {
+          const architectQuestion = await callGemini(userPrompt);
+
+          // Exibir o resultado
+          geminiOutputDiv.textContent = architectQuestion.trim();
+          geminiOutputDiv.classList.remove("hidden");
+        } catch (error) {
+          console.error("Falha ao contatar a API do Gemini:", error);
+          errorMessageDiv.textContent =
+            "Não foi possível gerar a pergunta. Tente novamente mais tarde.";
+        } finally {
+          // Esconder o loader
+          loader.classList.add("hidden");
+        }
+      });
+    </script>
+  </body>
+</html>

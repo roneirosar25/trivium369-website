@@ -72,6 +72,16 @@
         color: #b0b0c0;
         width: 120px;
       }
+      /* ANIMAÇÃO DE FADE-IN AO ROLAR */
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
     </style>
   </head>
   <body class="text-white">
@@ -136,9 +146,9 @@
       </div>
     </header>
 
-    <main class="text-center">
+    <main id="main-content" class="text-center">
       <div class="max-w-4xl mx-auto px-6 py-12">
-        <header>
+        <header class="fade-in-section">
           <h1 class="text-4xl md:text-5xl font-black leading-tight">
             A ESCOLHA: Torne-se um Arquiteto da Cognição ou Desapareça na Era da
             IA
@@ -150,7 +160,7 @@
           </p>
         </header>
 
-        <section class="py-16 border-b border-gray-800">
+        <section class="py-16 border-b border-gray-800 fade-in-section">
           <h2 class="text-3xl md:text-4xl font-bold">O Alarme Silencioso</h2>
           <p class="text-lg text-gray-400 max-w-2xl mx-auto mt-6">
             Enquanto o mundo se distrai, uma mudança tectônica está acontecendo.
@@ -212,7 +222,9 @@
           </table>
         </section>
 
-        <section class="py-16 border-b border-gray-800 text-left">
+        <section
+          class="py-16 border-b border-gray-800 text-left fade-in-section"
+        >
           <h2 class="text-3xl md:text-4xl font-bold text-center">
             Para quem é esta Formação?
           </h2>
@@ -253,7 +265,7 @@
           </ul>
         </section>
 
-        <section class="py-16 border-b border-gray-800">
+        <section class="py-16 border-b border-gray-800 fade-in-section">
           <h2 class="text-3xl md:text-4xl font-bold">
             Os 5 Módulos da Sua Transformação
           </h2>
@@ -313,7 +325,7 @@
           </table>
         </section>
 
-        <section class="py-16 border-b border-gray-800">
+        <section class="py-16 border-b border-gray-800 fade-in-section">
           <div class="max-w-3xl mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold">
               Mais que Aulas: Seu Arsenal de Ferramentas Cognitivas
@@ -367,7 +379,7 @@
           </div>
         </section>
 
-        <section class="py-16 final-cta">
+        <section class="py-16 final-cta fade-in-section">
           <h2 class="text-3xl md:text-4xl font-bold">
             A Escolha que Define uma Década está à sua Frente.
           </h2>
@@ -492,5 +504,22 @@
       </div>
     </footer>
     <script src="/scripts/site.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        document.querySelectorAll(".fade-in-section").forEach((section) => {
+          observer.observe(section);
+        });
+      });
+    </script>
   </body>
 </html>

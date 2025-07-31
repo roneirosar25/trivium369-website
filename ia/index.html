@@ -47,6 +47,15 @@
         color: #8e44ad;
         transform: translateY(-2px);
       }
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
     </style>
   </head>
   <body class="text-white">
@@ -109,16 +118,19 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="text-center py-24 md:py-36 px-6 bg-gray-900">
         <div class="container mx-auto">
           <h1
-            class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight"
+            class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight fade-in-section"
           >
             Construindo a <span class="text-trivium-purple">Inteligência</span
             ><br />do Seu Negócio, Sob Medida.
           </h1>
-          <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+          <p
+            class="mt-6 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto fade-in-section"
+            style="transition-delay: 150ms"
+          >
             Inteligência Artificial genérica gera resultados genéricos. Na
             TRIVIUM 369, nós arquitetamos e implementamos soluções de IA de
             vanguarda, treinadas para os seus dados e focadas nos seus desafios.
@@ -128,16 +140,22 @@
       <section class="py-20 md:py-24 px-6">
         <div class="container mx-auto">
           <div class="text-center max-w-3xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold">
+            <h2 class="text-3xl md:text-4xl font-bold fade-in-section">
               Nossas Capacidades em IA
             </h2>
-            <p class="mt-4 text-lg text-gray-400">
+            <p
+              class="mt-4 text-lg text-gray-400 fade-in-section"
+              style="transition-delay: 150ms"
+            >
               Desenvolvemos três níveis de soluções de Inteligência Artificial
               para dar à sua empresa uma vantagem competitiva definitiva.
             </p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <div class="feature-card p-8 rounded-lg">
+            <div
+              class="feature-card p-8 rounded-lg fade-in-section"
+              style="transition-delay: 300ms"
+            >
               <h4 class="text-xl font-bold text-white mb-2">
                 Modelos de Linguagem Customizados
               </h4>
@@ -147,7 +165,10 @@
                 entende seu contexto e protege suas informações.
               </p>
             </div>
-            <div class="feature-card p-8 rounded-lg">
+            <div
+              class="feature-card p-8 rounded-lg fade-in-section"
+              style="transition-delay: 400ms"
+            >
               <h4 class="text-xl font-bold text-white mb-2">
                 Agentes Autônomos de Negócio
               </h4>
@@ -157,7 +178,10 @@
                 auxiliam na tomada de decisão estratégica.
               </p>
             </div>
-            <div class="feature-card p-8 rounded-lg">
+            <div
+              class="feature-card p-8 rounded-lg fade-in-section"
+              style="transition-delay: 500ms"
+            >
               <h4 class="text-xl font-bold text-white mb-2">
                 Consultoria e Ecossistemas de IA
               </h4>
@@ -172,7 +196,7 @@
         </div>
       </section>
       <section class="text-center py-20 px-6">
-        <div class="container mx-auto">
+        <div class="container mx-auto fade-in-section">
           <h2 class="text-3xl md:text-4xl font-bold">
             Pronto para a Próxima Fronteira?
           </h2>
@@ -287,5 +311,22 @@
       </div>
     </footer>
     <script src="/scripts/site.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        document.querySelectorAll(".fade-in-section").forEach((section) => {
+          observer.observe(section);
+        });
+      });
+    </script>
   </body>
 </html>

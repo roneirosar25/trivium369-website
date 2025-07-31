@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TRIVIUM 369 - Arquitetando a Cognição na Era da IA</title>
+    <title>TRIVIUM 369 - Arquitetando a Próxima Era da Inteligência</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,6 +37,44 @@
       .social-link:hover {
         color: #8e44ad;
         transform: translateY(-2px);
+      }
+      .pillar-card {
+        background-color: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .pillar-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(142, 68, 173, 0.1);
+      }
+
+      /* ANIMAÇÃO DE FADE-IN AO ROLAR */
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* NOVA ANIMAÇÃO DE GRADIENTE PARA O HERO SECTION */
+      .animated-gradient-hero {
+        background: linear-gradient(270deg, #0c0b13, #1a1a2e, #0c0b13);
+        background-size: 400% 400%;
+        animation: gradientAnimation 15s ease infinite;
+      }
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
     </style>
   </head>
@@ -100,28 +138,123 @@
       </div>
     </header>
 
-    <main class="text-center py-20 md:py-32 px-6">
-      <div class="container mx-auto">
-        <h1
-          class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight"
-        >
-          Domine a Inteligência Artificial como um
-          <span class="text-trivium-purple">Arquiteto da Cognição</span>
-        </h1>
-        <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
-          Deixe de ser um mero "operador" de IA e desbloqueie o poder de pensar
-          estrategicamente na nova era. Nosso programa de formação avançado é o
-          seu portal para a maestria.
-        </p>
-        <div class="mt-10">
-          <a
-            href="/cursos/engenharia-de-prompt/vendas.html"
-            class="cta-button bg-trivium-purple text-white font-bold py-4 px-10 rounded-full text-lg md:text-xl"
+    <main id="main-content">
+      <section class="text-center py-24 md:py-40 px-6 animated-gradient-hero">
+        <div class="container mx-auto">
+          <h1
+            class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight fade-in-section"
           >
-            Conheça a Formação
-          </a>
+            Arquitetando a Próxima Era da
+            <span class="text-trivium-purple">Inteligência</span>
+          </h1>
+          <p
+            class="mt-6 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto fade-in-section"
+            style="transition-delay: 150ms"
+          >
+            A TRIVIUM 369 é uma holding de tecnologia e educação que opera na
+            fronteira da simbiose Humano-IA para construir o futuro dos negócios
+            e da cognição.
+          </p>
         </div>
-      </div>
+      </section>
+
+      <section class="py-20 md:py-24 px-6 bg-gray-900">
+        <div class="container mx-auto text-center">
+          <div class="fade-in-section">
+            <h2
+              class="text-base font-semibold text-trivium-purple uppercase tracking-widest"
+            >
+              Ponto de Partida
+            </h2>
+            <p
+              class="mt-4 text-3xl md:text-4xl font-bold text-white max-w-3xl mx-auto"
+            >
+              A Formação Arquitetura da Cognição
+            </p>
+            <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+              Nosso programa de formação de vanguarda e a porta de entrada para
+              o nosso ecossistema. Aprenda a pensar, não apenas a operar.
+              Torne-se o estrategista que comanda a IA, e não o contrário.
+            </p>
+            <div class="mt-8">
+              <a
+                href="/cursos/engenharia-de-prompt/vendas.html"
+                class="cta-button bg-trivium-purple text-white font-bold py-4 px-10 rounded-full text-lg md:text-xl"
+              >
+                Conheça a Formação de Fundadores
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-20 md:py-24 px-6">
+        <div class="container mx-auto">
+          <div class="text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold fade-in-section">
+              Nossos Pilares de Atuação
+            </h2>
+            <p
+              class="mt-4 text-lg text-gray-400 fade-in-section"
+              style="transition-delay: 150ms"
+            >
+              Três frentes de negócio unidas pela mesma filosofia de vanguarda.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            <a
+              href="/engenharia/"
+              class="pillar-card p-8 rounded-lg text-left fade-in-section"
+              style="transition-delay: 300ms"
+            >
+              <h3 class="text-xl font-bold text-white mb-2">
+                TRIVIUM 369 Engenharia
+              </h3>
+              <p class="text-gray-400">
+                Desenvolvimento de projetos complexos de engenharia, gerenciados
+                por um ecossistema de agentes de IA para resultados de ordem
+                superior.
+              </p>
+              <span class="mt-4 inline-block font-semibold text-trivium-purple"
+                >Saber mais &rarr;</span
+              >
+            </a>
+            <a
+              href="/ia/"
+              class="pillar-card p-8 rounded-lg text-left fade-in-section"
+              style="transition-delay: 450ms"
+            >
+              <h3 class="text-xl font-bold text-white mb-2">TRIVIUM 369 IA</h3>
+              <p class="text-gray-400">
+                Construção de soluções de Inteligência Artificial sob medida,
+                incluindo modelos de linguagem customizados e agentes autônomos
+                de negócio.
+              </p>
+              <span class="mt-4 inline-block font-semibold text-trivium-purple"
+                >Saber mais &rarr;</span
+              >
+            </a>
+            <a
+              href="/cursos/engenharia-de-prompt/vendas.html"
+              class="pillar-card p-8 rounded-lg text-left fade-in-section"
+              style="transition-delay: 600ms"
+            >
+              <h3 class="text-xl font-bold text-white mb-2">
+                TRIVIUM 369 Cursos
+              </h3>
+              <p class="text-gray-400">
+                Nossa plataforma de educação, focada em criar a próxima geração
+                de líderes e pensadores estratégicos na era da Inteligência
+                Aumentada.
+              </p>
+              <span class="mt-4 inline-block font-semibold text-trivium-purple"
+                >Saber mais &rarr;</span
+              >
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="bg-gray-900 text-gray-400 py-12 px-6">
@@ -219,6 +352,7 @@
         &copy; 2025 TRIVIUM 369. Todos os direitos reservados.
       </div>
     </footer>
+
     <script src="/scripts/site.js"></script>
   </body>
 </html>

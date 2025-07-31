@@ -30,6 +30,20 @@
       .philosophy-card {
         background-color: rgba(255, 255, 255, 0.03);
         border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .philosophy-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(142, 68, 173, 0.1);
+      }
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
   </head>
@@ -95,15 +109,18 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="text-center py-24 md:py-36 px-6 bg-gray-900">
         <div class="container mx-auto">
           <h1
-            class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight"
+            class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight fade-in-section"
           >
             O Renascimento <span class="text-trivium-purple">Elétrico</span>
           </h1>
-          <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+          <p
+            class="mt-6 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto fade-in-section"
+            style="transition-delay: 150ms"
+          >
             Nossa filosofia não é sobre tecnologia. É sobre a expansão do
             potencial humano. Fundimos a curiosidade polímata de Da Vinci com a
             visão sistêmica de Tesla, potencializados pela aliança entre a
@@ -114,7 +131,9 @@
 
       <section class="py-20 md:py-24 px-6">
         <div class="container mx-auto">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in-section"
+          >
             <div class="text-center md:text-left">
               <h2 class="text-3xl md:text-4xl font-bold">
                 A Aliança: Humano + IA
@@ -147,16 +166,22 @@
       <section class="py-20 md:py-24 px-6 bg-gray-900">
         <div class="container mx-auto">
           <div class="text-center max-w-3xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold">
+            <h2 class="text-3xl md:text-4xl font-bold fade-in-section">
               Os Pilares do Nosso Pensamento
             </h2>
-            <p class="mt-4 text-lg text-gray-400">
+            <p
+              class="mt-4 text-lg text-gray-400 fade-in-section"
+              style="transition-delay: 150ms"
+            >
               Nossa metodologia se apoia nos ombros de dois gigantes que
               moldaram o futuro ao pensar de forma diferente.
             </p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-            <div class="philosophy-card p-8 rounded-lg">
+            <div
+              class="philosophy-card p-8 rounded-lg fade-in-section"
+              style="transition-delay: 300ms"
+            >
               <h3 class="text-2xl font-bold text-trivium-purple mb-4">
                 O Método Da Vinci
               </h3>
@@ -168,7 +193,10 @@
                 inovação na intersecção das ideias.
               </p>
             </div>
-            <div class="philosophy-card p-8 rounded-lg">
+            <div
+              class="philosophy-card p-8 rounded-lg fade-in-section"
+              style="transition-delay: 450ms"
+            >
               <h3 class="text-2xl font-bold text-trivium-purple mb-4">
                 O Método Tesla
               </h3>
@@ -281,5 +309,22 @@
       </div>
     </footer>
     <script src="/scripts/site.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        document.querySelectorAll(".fade-in-section").forEach((section) => {
+          observer.observe(section);
+        });
+      });
+    </script>
   </body>
 </html>

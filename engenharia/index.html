@@ -47,6 +47,15 @@
         color: #8e44ad;
         transform: translateY(-2px);
       }
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
     </style>
   </head>
   <body class="text-white">
@@ -111,17 +120,20 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="text-center py-24 md:py-36 px-6 bg-gray-900">
         <div class="container mx-auto">
           <h1
-            class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight"
+            class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight fade-in-section"
           >
             Engenharia
             <span class="text-trivium-purple">Gerenciada por IAs.</span
             ><br />Resultados de Ordem Superior.
           </h1>
-          <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+          <p
+            class="mt-6 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto fade-in-section"
+            style="transition-delay: 150ms"
+          >
             Na TRIVIUM 369, não usamos IA para auxiliar a engenharia
             tradicional. Nós a usamos para criar um novo paradigma: um
             ecossistema de Agentes Autônomos que orquestram projetos com uma
@@ -132,10 +144,13 @@
       <section class="py-20 md:py-24 px-6">
         <div class="container mx-auto">
           <div class="text-center max-w-3xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold">
+            <h2 class="text-3xl md:text-4xl font-bold fade-in-section">
               Um Agente Especialista para Cada Disciplina
             </h2>
-            <p class="mt-4 text-lg text-gray-400">
+            <p
+              class="mt-4 text-lg text-gray-400 fade-in-section"
+              style="transition-delay: 150ms"
+            >
               Nossos Agentes de IA são treinados para gerenciar, otimizar e
               inovar em ramos específicos da engenharia, trabalhando em simbiose
               com nossos estrategistas humanos.
@@ -144,7 +159,10 @@
           <div
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16"
           >
-            <div class="feature-card p-8 rounded-lg">
+            <div
+              class="feature-card p-8 rounded-lg fade-in-section"
+              style="transition-delay: 300ms"
+            >
               <h4 class="text-xl font-bold text-white mb-2">
                 Engenharia Civil Aumentada
               </h4>
@@ -155,7 +173,10 @@
                 eficiência.
               </p>
             </div>
-            <div class="feature-card p-8 rounded-lg">
+            <div
+              class="feature-card p-8 rounded-lg fade-in-section"
+              style="transition-delay: 400ms"
+            >
               <h4 class="text-xl font-bold text-white mb-2">
                 Engenharia Mecânica Preditiva
               </h4>
@@ -165,7 +186,10 @@
                 energética de sistemas inteiros.
               </p>
             </div>
-            <div class="feature-card p-8 rounded-lg">
+            <div
+              class="feature-card p-8 rounded-lg fade-in-section"
+              style="transition-delay: 500ms"
+            >
               <h4 class="text-xl font-bold text-white mb-2">
                 Engenharia Elétrica Inteligente
               </h4>
@@ -175,7 +199,10 @@
                 otimizados por algoritmos genéticos para performance de ponta.
               </p>
             </div>
-            <div class="feature-card p-8 rounded-lg">
+            <div
+              class="feature-card p-8 rounded-lg fade-in-section"
+              style="transition-delay: 300ms"
+            >
               <h4 class="text-xl font-bold text-white mb-2">
                 Engenharia Hidráulica e Hídrica
               </h4>
@@ -186,7 +213,10 @@
                 resilientes.
               </p>
             </div>
-            <div class="feature-card p-8 rounded-lg">
+            <div
+              class="feature-card p-8 rounded-lg fade-in-section"
+              style="transition-delay: 400ms"
+            >
               <h4 class="text-xl font-bold text-white mb-2">
                 Engenharia Agrícola de Precisão
               </h4>
@@ -197,7 +227,8 @@
               </p>
             </div>
             <div
-              class="feature-card p-8 rounded-lg border-2 border-trivium-purple"
+              class="feature-card p-8 rounded-lg border-2 border-trivium-purple fade-in-section"
+              style="transition-delay: 500ms"
             >
               <h4 class="text-xl font-bold text-trivium-purple mb-2">
                 Seu Desafio, Nossa Próxima Missão
@@ -212,7 +243,7 @@
         </div>
       </section>
       <section class="text-center py-20 px-6">
-        <div class="container mx-auto">
+        <div class="container mx-auto fade-in-section">
           <h2 class="text-3xl md:text-4xl font-bold">
             Pronto para Construir o Futuro?
           </h2>
@@ -327,5 +358,22 @@
       </div>
     </footer>
     <script src="/scripts/site.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        document.querySelectorAll(".fade-in-section").forEach((section) => {
+          observer.observe(section);
+        });
+      });
+    </script>
   </body>
 </html>

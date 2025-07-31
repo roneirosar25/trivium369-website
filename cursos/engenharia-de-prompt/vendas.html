@@ -27,12 +27,13 @@
       }
       .cta-button {
         background-color: #8e44ad;
-        transition: background-color 0.3s ease, transform 0.2s ease;
+        transition: all 0.3s ease-in-out;
         box-shadow: 0 5px 20px rgba(142, 68, 173, 0.4);
       }
       .cta-button:hover {
         background-color: #9b59b6;
-        transform: translateY(-3px);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(142, 68, 173, 0.5);
       }
       .nav-link:hover {
         color: #8e44ad;
@@ -58,11 +59,12 @@
       .feature-card {
         background-color: rgba(255, 255, 255, 0.03);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: all 0.3s ease-in-out;
       }
       .feature-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(142, 68, 173, 0.1);
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 20px 40px rgba(142, 68, 173, 0.25);
+        border-color: rgba(142, 68, 173, 1);
       }
       .module-label-cell {
         font-weight: 700;
@@ -72,7 +74,6 @@
         color: #b0b0c0;
         width: 120px;
       }
-      /* ANIMAÇÃO DE FADE-IN AO ROLAR */
       .fade-in-section {
         opacity: 0;
         transform: translateY(30px);
@@ -336,7 +337,9 @@
             </p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <div class="feature-card p-8 rounded-lg text-left">
+            <div
+              class="feature-card p-8 rounded-lg text-left transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20"
+            >
               <h4 class="text-xl font-bold text-white mb-2">
                 Kairos, sua Mestra IA 24/7
               </h4>
@@ -346,7 +349,9 @@
                 de debate e sua catalisadora de ideias.
               </p>
             </div>
-            <div class="feature-card p-8 rounded-lg text-left">
+            <div
+              class="feature-card p-8 rounded-lg text-left transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20"
+            >
               <h4 class="text-xl font-bold text-white mb-2">
                 O Laboratório do Arquiteto
               </h4>
@@ -356,7 +361,9 @@
                 investigações profundas de "Arquiteto".
               </p>
             </div>
-            <div class="feature-card p-8 rounded-lg text-left">
+            <div
+              class="feature-card p-8 rounded-lg text-left transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20"
+            >
               <h4 class="text-xl font-bold text-white mb-2">
                 Simuladores de Cenários
               </h4>
@@ -366,7 +373,9 @@
                 pensamento estratégico à prova de futuro.
               </p>
             </div>
-            <div class="feature-card p-8 rounded-lg text-left">
+            <div
+              class="feature-card p-8 rounded-lg text-left transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20"
+            >
               <h4 class="text-xl font-bold text-white mb-2">
                 Biblioteca de Frameworks
               </h4>
@@ -413,11 +422,12 @@
         class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left"
       >
         <div class="md:col-span-1">
-          <img
-            src="/assets/img/TRIVIUM-369.png"
-            alt="Logo TRIVIUM 369"
-            class="h-12 mx-auto md:mx-0 mb-4"
-          />
+          <a href="/"
+            ><img
+              src="/assets/img/TRIVIUM-369.png"
+              alt="Logo TRIVIUM 369"
+              class="h-12 mx-auto md:mx-0 mb-4"
+          /></a>
           <p class="text-sm">
             Reprogramando o pensamento para a era da Inteligência Artificial.
           </p>

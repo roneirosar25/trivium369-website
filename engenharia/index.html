@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <style>
       body {
         font-family: "Inter", sans-serif;
@@ -23,29 +23,31 @@
       .bg-trivium-purple {
         background-color: #8e44ad;
       }
-      .nav-link:hover {
-        color: #8e44ad;
-      }
       .cta-button {
-        transition: background-color 0.3s ease, transform 0.2s ease;
+        transition: all 0.3s ease-in-out;
         box-shadow: 0 5px 20px rgba(142, 68, 173, 0.4);
       }
       .cta-button:hover {
         background-color: #9b59b6;
-        transform: translateY(-3px);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(142, 68, 173, 0.5);
       }
-      .feature-card {
-        background-color: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      .feature-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(142, 68, 173, 0.1);
+      .nav-link:hover {
+        color: #8e44ad;
       }
       .social-link:hover {
         color: #8e44ad;
         transform: translateY(-2px);
+      }
+      .feature-card {
+        background-color: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease-in-out;
+      }
+      .feature-card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 20px 40px rgba(142, 68, 173, 0.25);
+        border-color: rgba(142, 68, 173, 1);
       }
       .fade-in-section {
         opacity: 0;
@@ -55,6 +57,22 @@
       .fade-in-section.is-visible {
         opacity: 1;
         transform: translateY(0);
+      }
+      .animated-gradient-hero {
+        background: linear-gradient(270deg, #0c0b13, #1a1a2e, #0c0b13);
+        background-size: 400% 400%;
+        animation: gradientAnimation 15s ease infinite;
+      }
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
     </style>
   </head>
@@ -121,7 +139,7 @@
     </header>
 
     <main id="main-content">
-      <section class="text-center py-24 md:py-36 px-6 bg-gray-900">
+      <section class="text-center py-24 md:py-36 px-6 animated-gradient-hero">
         <div class="container mx-auto">
           <h1
             class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight fade-in-section"
@@ -160,7 +178,7 @@
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16"
           >
             <div
-              class="feature-card p-8 rounded-lg fade-in-section"
+              class="feature-card p-8 rounded-lg fade-in-section transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20"
               style="transition-delay: 300ms"
             >
               <h4 class="text-xl font-bold text-white mb-2">
@@ -174,7 +192,7 @@
               </p>
             </div>
             <div
-              class="feature-card p-8 rounded-lg fade-in-section"
+              class="feature-card p-8 rounded-lg fade-in-section transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20"
               style="transition-delay: 400ms"
             >
               <h4 class="text-xl font-bold text-white mb-2">
@@ -187,7 +205,7 @@
               </p>
             </div>
             <div
-              class="feature-card p-8 rounded-lg fade-in-section"
+              class="feature-card p-8 rounded-lg fade-in-section transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20"
               style="transition-delay: 500ms"
             >
               <h4 class="text-xl font-bold text-white mb-2">
@@ -200,7 +218,7 @@
               </p>
             </div>
             <div
-              class="feature-card p-8 rounded-lg fade-in-section"
+              class="feature-card p-8 rounded-lg fade-in-section transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20"
               style="transition-delay: 300ms"
             >
               <h4 class="text-xl font-bold text-white mb-2">
@@ -214,7 +232,7 @@
               </p>
             </div>
             <div
-              class="feature-card p-8 rounded-lg fade-in-section"
+              class="feature-card p-8 rounded-lg fade-in-section transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20"
               style="transition-delay: 400ms"
             >
               <h4 class="text-xl font-bold text-white mb-2">
@@ -227,7 +245,7 @@
               </p>
             </div>
             <div
-              class="feature-card p-8 rounded-lg border-2 border-trivium-purple fade-in-section"
+              class="feature-card p-8 rounded-lg border-2 border-trivium-purple fade-in-section transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
               style="transition-delay: 500ms"
             >
               <h4 class="text-xl font-bold text-trivium-purple mb-2">
@@ -267,11 +285,12 @@
         class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left"
       >
         <div class="md:col-span-1">
-          <img
-            src="/assets/img/TRIVIUM-369.png"
-            alt="Logo TRIVIUM 369"
-            class="h-12 mx-auto md:mx-0 mb-4"
-          />
+          <a href="/"
+            ><img
+              src="/assets/img/TRIVIUM-369.png"
+              alt="Logo TRIVIUM 369"
+              class="h-12 mx-auto md:mx-0 mb-4"
+          /></a>
           <p class="text-sm">
             Reprogramando o pensamento para a era da Inteligência Artificial.
           </p>
@@ -357,23 +376,7 @@
         &copy; 2025 TRIVIUM 369. Todos os direitos reservados.
       </div>
     </footer>
+
     <script src="/scripts/site.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-              }
-            });
-          },
-          { threshold: 0.1 }
-        );
-        document.querySelectorAll(".fade-in-section").forEach((section) => {
-          observer.observe(section);
-        });
-      });
-    </script>
   </body>
 </html>

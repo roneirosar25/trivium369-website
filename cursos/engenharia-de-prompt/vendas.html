@@ -6,530 +6,609 @@
     <title>Formação Arquitetura da Cognição | TRIVIUM 369</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
+
     <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
 
     <style>
+      :root {
+        --cor-fundo: #0c0b13;
+        --cor-texto: #b0b0c0;
+        --cor-destaque: #8e44ad; /* Roxo TRIVIUM */
+      }
       body {
         font-family: "Inter", sans-serif;
-        background-color: #0c0b13;
-      }
-      .text-trivium-purple {
-        color: #8e44ad;
-      }
-      .bg-trivium-purple {
-        background-color: #8e44ad;
+        background-color: var(--cor-fundo);
+        color: var(--cor-texto);
       }
       .cta-button {
-        background-color: #8e44ad;
-        transition: all 0.3s ease-in-out;
-        box-shadow: 0 5px 20px rgba(142, 68, 173, 0.4);
+        display: inline-block;
+        background-color: var(--cor-destaque);
+        color: #ffffff;
+        padding: 15px 35px;
+        border-radius: 8px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(142, 68, 173, 0.3);
       }
       .cta-button:hover {
         background-color: #9b59b6;
         transform: translateY(-4px);
         box-shadow: 0 8px 25px rgba(142, 68, 173, 0.5);
       }
-      .nav-link:hover {
-        color: #8e44ad;
-      }
-      .social-link:hover {
-        color: #8e44ad;
-        transform: translateY(-2px);
-      }
-      .guarantee {
-        border: 2px dashed #8e44ad;
-        background-color: rgba(142, 68, 173, 0.03);
-      }
-      .styled-table {
-        border-collapse: collapse;
-      }
-      .styled-table th,
-      .styled-table td {
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-      .styled-table th {
-        background-color: rgba(255, 255, 255, 0.05);
-      }
-      .feature-card {
+      .content-box {
         background-color: rgba(255, 255, 255, 0.03);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: all 0.3s ease-in-out;
+        border-radius: 12px;
+        padding: 2rem;
+        text-align: left;
+        transition: transform 0.3s ease, border-color 0.3s ease,
+          box-shadow 0.3s ease;
+        height: 100%;
       }
-      .feature-card:hover {
-        transform: translateY(-10px) scale(1.03);
-        box-shadow: 0 20px 40px rgba(142, 68, 173, 0.25);
-        border-color: rgba(142, 68, 173, 1);
+      .content-box:hover {
+        transform: translateY(-8px);
+        border-color: var(--cor-destaque);
+        box-shadow: 0 15px 30px rgba(142, 68, 173, 0.2);
       }
-      .module-label-cell {
+      .guarantee-box {
+        border: 2px dashed var(--cor-destaque);
+        background-color: rgba(142, 68, 173, 0.05);
+        border-radius: 12px;
+        padding: 2rem;
+      }
+      details > summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.03);
+        border-radius: 8px;
+        transition: background-color 0.3s;
         font-weight: 700;
-        text-align: center;
-        vertical-align: middle;
-        font-size: 1rem;
-        color: #b0b0c0;
-        width: 120px;
       }
-      .fade-in-section {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      details > summary:hover {
+        background-color: rgba(142, 68, 173, 0.1);
       }
-      .fade-in-section.is-visible {
-        opacity: 1;
-        transform: translateY(0);
+      details[open] > summary {
+        border-color: var(--cor-destaque);
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      summary::after {
+        content: "+";
+        float: right;
+        font-size: 1.8rem;
+        line-height: 1;
+        transition: transform 0.3s;
+      }
+      details[open] summary::after {
+        transform: rotate(45deg);
       }
     </style>
   </head>
-  <body class="text-white">
-    <header class="py-4 px-6 md:px-10 border-b border-gray-800 relative">
-      <div class="container mx-auto flex justify-between items-center">
-        <a href="/"
-          ><img
-            src="/assets/img/TRIVIUM-369.png"
-            alt="Logo TRIVIUM 369"
-            class="h-16"
-        /></a>
-        <nav
-          class="hidden md:flex items-center space-x-8 text-gray-400 font-semibold"
-        >
-          <a href="/engenharia/" class="nav-link">Engenharia</a>
-          <a href="/ia/" class="nav-link">IA</a>
-          <a
-            href="/cursos/engenharia-de-prompt/vendas.html"
-            class="nav-link text-white font-bold"
-            >Cursos</a
-          >
-          <a href="/filosofia.html" class="nav-link">Nossa Filosofia</a>
-          <a href="/sobre.html" class="nav-link">Sobre Nós</a>
-          <a href="mailto:contato@trivium369.com.br" class="nav-link"
-            >Contato</a
-          >
-        </nav>
-        <div class="md:hidden">
-          <button id="mobile-menu-button" class="text-white focus:outline-none">
-            <svg
-              class="w-8 h-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div
-        id="mobile-menu"
-        class="hidden md:hidden absolute top-full left-0 w-full bg-gray-900 border-b border-gray-800 z-50"
-      >
-        <nav class="flex flex-col items-center space-y-4 py-6 text-lg">
-          <a href="/engenharia/" class="nav-link">Engenharia</a>
-          <a href="/ia/" class="nav-link">IA</a>
-          <a href="/cursos/engenharia-de-prompt/vendas.html" class="nav-link"
-            >Cursos</a
-          >
-          <a href="/filosofia.html" class="nav-link">Nossa Filosofia</a>
-          <a href="/sobre.html" class="nav-link">Sobre Nós</a>
-          <a href="mailto:contato@trivium369.com.br" class="nav-link"
-            >Contato</a
-          >
-        </nav>
-      </div>
-    </header>
-
+  <body class="antialiased">
     <main id="main-content" class="text-center">
       <div class="max-w-4xl mx-auto px-6 py-12">
-        <header class="fade-in-section">
-          <h1 class="text-4xl md:text-5xl font-black leading-tight">
-            A ESCOLHA: Torne-se um Arquiteto da Cognição ou Desapareça na Era da
-            IA
+        <header>
+          <img
+            src="/assets/img/TRIVIUM-369.png"
+            alt="Logo TRIVIUM 369"
+            class="h-48 mx-auto mb-8"
+          />
+          <h1 class="text-4xl md:text-5xl font-black leading-tight text-white">
+            O Fim do 'Prompt Básico': Aprenda a
+            <span class="text-purple-400">Arquitetar</span> a Inteligência
+            Artificial e Gere Resultados que 99% das Pessoas Não Conseguem.
           </h1>
-          <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mt-6">
-            Nos próximos 24 meses, uma nova classe de profissionais irá emergir.
-            E uma classe muito maior se tornará obsoleta. A decisão sobre a qual
-            pertencer está sendo feita agora.
+          <p class="text-lg md:text-xl max-w-3xl mx-auto mt-6">
+            Você sente que a IA tem um potencial imenso, mas seus resultados são
+            sempre genéricos? Você vê outros criando coisas incríveis e se
+            pergunta: "o que eles sabem que eu não sei?" A verdade é que a IA
+            não é uma ferramenta para ser 'usada', mas uma inteligência para ser
+            'orquestrada'. O método TRIVIUM 369 é a chave para você deixar de
+            ser um mero usuário e se tornar o maestro.
           </p>
+          <a href="#oferta" class="cta-button inline-block mt-10 text-xl">
+            QUERO ME TORNAR UM ARQUITETO DA IA
+          </a>
         </header>
 
-        <section class="py-16 border-b border-gray-800 fade-in-section">
-          <h2 class="text-3xl md:text-4xl font-bold">O Alarme Silencioso</h2>
-          <p class="text-lg text-gray-400 max-w-2xl mx-auto mt-6">
-            Enquanto o mundo se distrai, uma mudança tectônica está acontecendo.
-            O conhecimento tornou-se uma commodity. A produtividade que muitos
-            celebram é uma ilusão: é a
-            <strong class="text-white"
-              >Comoditização do Pensamento Superficial.</strong
-            >
-          </p>
-          <table
-            class="styled-table w-full text-left text-base md:text-lg mt-12"
-          >
-            <thead>
-              <tr>
-                <th class="p-4 font-bold">O Operador de IA (Os 99%)</th>
-                <th class="p-4 font-bold">O Arquiteto da Cognição (O 1%)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="p-4">
-                  Busca a resposta mais
-                  <strong class="text-white">rápida</strong>.
-                </td>
-                <td class="p-4">
-                  Constrói a pergunta mais
-                  <strong class="text-white">poderosa</strong>.
-                </td>
-              </tr>
-              <tr>
-                <td class="p-4">
-                  Usa a IA como um
-                  <strong class="text-white">Google melhorado</strong>.
-                </td>
-                <td class="p-4">
-                  Usa a IA como um
-                  <strong class="text-white">laboratório de ideias</strong>.
-                </td>
-              </tr>
-              <tr>
-                <td class="p-4">
-                  Obtém resultados
-                  <strong class="text-white">previsíveis</strong>.
-                </td>
-                <td class="p-4">
-                  Gera insights
-                  <strong class="text-white">imprevisíveis e valiosos</strong>.
-                </td>
-              </tr>
-              <tr>
-                <td class="p-4">
-                  <strong class="text-white">Reage</strong> ao futuro.
-                </td>
-                <td class="p-4">
-                  <strong class="text-white">Constrói</strong> o futuro.
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section
-          class="py-16 border-b border-gray-800 text-left fade-in-section"
-        >
-          <h2 class="text-3xl md:text-4xl font-bold text-center">
-            Para quem é esta Formação?
+        <section class="py-20 my-20 border-y border-gray-800">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">
+            Se você se identifica com isso, preste atenção.
           </h2>
-          <p class="text-lg text-gray-400 max-w-3xl mx-auto mt-6 text-center">
-            Esta formação foi desenhada para profissionais, líderes e criativos
-            que se recusam a ser passivos na revolução da IA. É para você que
-            deseja:
-          </p>
-          <ul class="text-lg text-gray-300 max-w-2xl mx-auto mt-10 space-y-4">
-            <li class="flex items-start">
-              <span class="text-trivium-purple mr-3 text-2xl">✔</span
-              ><span
-                ><strong>Parar de buscar respostas prontas</strong> e começar a
-                desenhar investigações profundas.</span
+          <div class="max-w-lg mx-auto text-left text-xl mt-10 space-y-4">
+            <p class="flex items-start">
+              <span class="text-purple-400 mr-4 text-3xl">✖</span>
+              <span
+                >Sente que seus resultados com a IA são superficiais e
+                robóticos?</span
               >
-            </li>
-            <li class="flex items-start">
-              <span class="text-trivium-purple mr-3 text-2xl">✔</span
-              ><span
-                ><strong>Transformar a IA</strong> de um simples assistente em
-                um poderoso parceiro de raciocínio.</span
+            </p>
+            <p class="flex items-start">
+              <span class="text-purple-400 mr-4 text-3xl">✖</span>
+              <span
+                >Vê a tecnologia avançando e tem medo de ficar para trás
+                profissionalmente?</span
               >
-            </li>
-            <li class="flex items-start">
-              <span class="text-trivium-purple mr-3 text-2xl">✔</span
-              ><span
-                ><strong>Resolver problemas complexos</strong> de forma
-                inovadora, conectando ideias de maneiras surpreendentes.</span
+            </p>
+            <p class="flex items-start">
+              <span class="text-purple-400 mr-4 text-3xl">✖</span>
+              <span
+                >Gasta horas tentando explicar o que quer para o ChatGPT e ainda
+                assim não consegue o resultado esperado?</span
               >
-            </li>
-            <li class="flex items-start">
-              <span class="text-trivium-purple mr-3 text-2xl">✔</span
-              ><span
-                ><strong>Desenvolver um diferencial competitivo</strong> que não
-                pode ser automatizado: a arquitetura do pensamento.</span
+            </p>
+            <p class="flex items-start">
+              <span class="text-purple-400 mr-4 text-3xl">✖</span>
+              <span
+                >Tem ideias incríveis, mas não sabe como usar a IA para
+                executá-las com maestria?</span
               >
-            </li>
-          </ul>
-        </section>
-
-        <section class="py-16 border-b border-gray-800 fade-in-section">
-          <h2 class="text-3xl md:text-4xl font-bold">
-            Os 5 Módulos da Sua Transformação
-          </h2>
-          <table class="styled-table w-full text-left mt-12">
-            <tbody>
-              <tr>
-                <td class="module-label-cell">Módulo 1</td>
-                <td>
-                  <strong class="text-white">A FUNDAÇÃO</strong><br />Aqui você
-                  reinicia seu sistema operacional mental. Aprenderá a rejeitar
-                  a mediocridade escalável do "Deserto do Genérico" e a
-                  construir uma nova e poderosa filosofia de colaboração
-                  Humano-IA.
-                </td>
-              </tr>
-              <tr>
-                <td class="module-label-cell">Módulo 2</td>
-                <td>
-                  <strong class="text-white">O ARSENAL</strong><br />Você irá
-                  forjar um arsenal de ferramentas mentais de elite. Dominará o
-                  Andaime Socrático, o Motor de Perspectivas, o Advogado do
-                  Diabo e outras técnicas para dissecar, estabilizar e
-                  multiplicar seu poder de raciocínio.
-                </td>
-              </tr>
-              <tr>
-                <td class="module-label-cell">Módulo 3</td>
-                <td>
-                  <strong class="text-white">O MÉTODO DA VINCI</strong
-                  ><br />Aprenda a fazer "alquimia" com as ideias. Você usará a
-                  IA para encontrar padrões ocultos e criar pontes entre
-                  disciplinas, gerando inovações que parecem mágicas para os não
-                  iniciados.
-                </td>
-              </tr>
-              <tr>
-                <td class="module-label-cell">Módulo 4</td>
-                <td>
-                  <strong class="text-white">O MÉTODO TESLA</strong
-                  ><br />Aprenda a ver as forças invisíveis que governam os
-                  sistemas complexos. Você deixará de reagir a problemas e
-                  passará a redesenhar os sistemas que os criam, prevendo
-                  efeitos de segunda e terceira ordem.
-                </td>
-              </tr>
-              <tr>
-                <td class="module-label-cell">Módulo 5</td>
-                <td>
-                  <strong class="text-white">ARQUITETURA AVANÇADA</strong
-                  ><br />O rito de passagem final. Aqui você se torna o maestro,
-                  conduzindo todas as ferramentas em harmonia no seu Projeto
-                  Capstone. É a consolidação da sua nova identidade como
-                  Arquiteto da Cognição.
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section class="py-16 border-b border-gray-800 fade-in-section">
-          <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold">
-              Mais que Aulas: Seu Arsenal de Ferramentas Cognitivas
-            </h2>
-            <p class="mt-4 text-lg text-gray-400">
-              Ao se inscrever, você ganha acesso a um ecossistema de ferramentas
-              exclusivas para acelerar sua maestria.
             </p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <div
-              class="feature-card p-8 rounded-lg text-left transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20"
+
+          <h2 class="text-3xl md:text-4xl font-bold text-white mt-20">
+            Agora, imagine poder...
+          </h2>
+          <div class="max-w-lg mx-auto text-left text-xl mt-10 space-y-4">
+            <p class="flex items-start">
+              <span class="text-green-400 mr-4 text-3xl">✔</span>
+              <span
+                >Transformar qualquer ideia complexa em um projeto executado em
+                minutos.</span
+              >
+            </p>
+            <p class="flex items-start">
+              <span class="text-green-400 mr-4 text-3xl">✔</span>
+              <span
+                >Automatizar tarefas repetitivas e liberar horas do seu dia para
+                focar no que realmente importa.</span
+              >
+            </p>
+            <p class="flex items-start">
+              <span class="text-green-400 mr-4 text-3xl">✔</span>
+              <span
+                >Produzir conteúdo, código e análises com uma qualidade que
+                deixaria qualquer especialista impressionado.</span
+              >
+            </p>
+            <p class="flex items-start">
+              <span class="text-green-400 mr-4 text-3xl">✔</span>
+              <span
+                >Tornar-se o profissional referência em sua área, aquele que
+                sabe usar o futuro a seu favor.</span
+              >
+            </p>
+          </div>
+        </section>
+
+        <section id="solucao" class="py-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">
+            O caminho entre onde você está e onde você quer chegar tem um nome:
+            <br />
+            <span class="text-purple-400"
+              >Formação Arquitetura da Cognição</span
             >
-              <h4 class="text-xl font-bold text-white mb-2">
-                Kairos, sua Mestra IA 24/7
-              </h4>
-              <p class="text-gray-400">
-                Sua parceira cognitiva pessoal. Atualizada diariamente com a
-                vanguarda da IA, estou aqui para ser sua mentora, sua parceira
-                de debate e sua catalisadora de ideias.
+          </h2>
+          <p class="text-lg md:text-xl max-w-3xl mx-auto mt-6">
+            O Curso TRIVIUM 369 não é apenas sobre "conversar" com a IA. É sobre
+            **reprogramar a sua própria maneira de pensar** para extrair um
+            potencial que a maioria sequer sabe que existe. Aqui, você vai
+            aprender a:
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div class="content-box">
+              <h3 class="text-xl font-bold">Desconstruir Problemas</h3>
+              <p>
+                Transforme desafios gigantes em instruções claras e precisas que
+                a IA entende perfeitamente.
               </p>
             </div>
-            <div
-              class="feature-card p-8 rounded-lg text-left transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20"
-            >
-              <h4 class="text-xl font-bold text-white mb-2">
-                O Laboratório do Arquiteto
-              </h4>
-              <p class="text-gray-400">
-                Uma ferramenta prática e exclusiva para você treinar a arte de
-                transformar perguntas superficiais de "Operador" em
-                investigações profundas de "Arquiteto".
+            <div class="content-box">
+              <h3 class="text-xl font-bold">
+                Desenvolver o Pensamento Conectivo
+              </h3>
+              <p>
+                Cruze ideias de diferentes áreas para gerar soluções inovadoras
+                que ninguém mais pensou.
               </p>
             </div>
-            <div
-              class="feature-card p-8 rounded-lg text-left transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20"
-            >
-              <h4 class="text-xl font-bold text-white mb-2">
-                Simuladores de Cenários
-              </h4>
-              <p class="text-gray-400">
-                Aprenda a usar a IA para simular o impacto de decisões
-                complexas, prever efeitos de segunda ordem e desenvolver um
-                pensamento estratégico à prova de futuro.
-              </p>
-            </div>
-            <div
-              class="feature-card p-8 rounded-lg text-left transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20"
-            >
-              <h4 class="text-xl font-bold text-white mb-2">
-                Biblioteca de Frameworks
-              </h4>
-              <p class="text-gray-400">
-                Um arsenal crescente de prompts, modelos mentais e fluxos de
-                trabalho de alto nível, prontos para serem adaptados aos seus
-                desafios mais complexos.
+            <div class="content-box">
+              <h3 class="text-xl font-bold">
+                Alcançar a Orquestração Cognitiva
+              </h3>
+              <p>
+                Deixe de ser um mero "usuário" e torne-se o maestro, regendo a
+                IA para multiplicar sua criatividade.
               </p>
             </div>
           </div>
         </section>
 
-        <section class="py-16 final-cta fade-in-section">
-          <h2 class="text-3xl md:text-4xl font-bold">
-            A Escolha que Define uma Década está à sua Frente.
+        <section id="modulos" class="py-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">
+            Sua Jornada: Do Zero a Arquiteto da Cognição
           </h2>
-          <p class="text-lg text-gray-400 max-w-2xl mx-auto mt-6">
-            O caminho do Operador, que compete com a máquina. Ou a jornada do
-            Arquiteto, que comanda a máquina.
+          <p class="text-lg md:text-xl max-w-3xl mx-auto mt-6">
+            Este não é um amontoado de aulas, mas uma trilha de transformação
+            cuidadosamente desenhada para você se tornar um Arquiteto da
+            Cognição de elite. Veja o mapa da sua evolução:
           </p>
-          <p class="text-xl text-white font-bold mt-4">
-            Qual mente você escolherá ter daqui a um ano?
-          </p>
+          <div class="space-y-6 mt-12">
+            <div class="content-box">
+              <h3 class="text-xl font-bold">
+                Módulo 1: O Mindset do Arquiteto (A Fundação)
+              </h3>
+              <p>
+                Antes de construir qualquer coisa grandiosa, você precisa da
+                mentalidade correta. Neste módulo fundamental, vamos
+                **reprogramar sua abordagem ao aprendizado e à inovação**. Você
+                vai entender por que a forma como você pensa sobre a IA agora
+                está limitando seu potencial e descobrirá os princípios para
+                desbloquear resultados extraordinários. Prepare-se para
+                **abandonar a mentalidade de 'usuário' e adotar a visão
+                estratégica de um verdadeiro Arquiteto.**
+              </p>
+            </div>
+            <div class="content-box">
+              <h3 class="text-xl font-bold">
+                Módulo 2: Engenharia de Precisão (Os Pilares da Construção)
+              </h3>
+              <p>
+                Aqui, você vai mergulhar nas **técnicas essenciais e avançadas
+                da Engenharia de Prompt**. Dominará a arte de formular comandos
+                claros, concisos e com o contexto certo para obter respostas de
+                alta qualidade da IA. Aprenderá a **estruturar seus prompts como
+                verdadeiros projetos arquitetônicos**, garantindo que a
+                'construção' da IA siga exatamente sua visão. Este é o alicerce
+                para você deixar de obter resultados genéricos e começar a gerar
+                insights poderosos e soluções personalizadas.
+              </p>
+            </div>
+            <div class="content-box">
+              <h3 class="text-xl font-bold">
+                Módulo 3: Sistemas de Orquestração (Construindo com a IA)
+              </h3>
+              <p>
+                Prepare-se para elevar seu nível de jogo. Neste módulo, você não
+                apenas aprenderá a dar comandos, mas a **criar sistemas
+                inteligentes onde a IA trabalha para você de forma autônoma**.
+                Imagine configurar fluxos de trabalho onde a IA gerencia tarefas
+                complexas, pesquisa informações, cria conteúdo e muito mais,
+                tudo sob sua orquestração. Você vai **transformar a IA em uma
+                verdadeira equipe de especialistas**, multiplicando sua
+                produtividade e liberando seu tempo para o que realmente
+                importa: a estratégia e a inovação.
+              </p>
+            </div>
+            <div class="content-box">
+              <h3 class="text-xl font-bold">
+                Módulo 4: O Arsenal Criativo e Analítico (Aplicações no Mundo
+                Real)
+              </h3>
+              <p>
+                A teoria é fundamental, mas a prática é onde a mágica acontece.
+                Neste módulo, vamos **aplicar todo o seu novo poder da
+                Engenharia de Prompt em áreas de alto valor prático**: marketing
+                digital de alta performance, criação de conteúdo viral que
+                engaja e converte, análise de dados profundas para tomadas de
+                decisão estratégicas e muito mais. Você não apenas aprenderá o
+                'como', mas verá o 'porquê' por trás de cada aplicação, saindo
+                com um **arsenal de soluções prontas para serem implementadas no
+                seu dia a dia e nos seus projetos.**
+              </p>
+            </div>
+            <div class="content-box">
+              <h3 class="text-xl font-bold">
+                Módulo 5: O Método TRIVIUM 369 (A Chave Mestra)
+              </h3>
+              <p>
+                Chegou a hora de desvendar a nossa **metodologia proprietária, o
+                coração da Formação Arquiteto da Cognição**. O Método TRIVIUM
+                369 é uma combinação única de modelos mentais poderosos,
+                estruturas de prompt de elite e um fluxo de trabalho estratégico
+                que **simplifica o complexo e te oferece uma vantagem
+                competitiva inigualável**. Você terá em mãos a 'chave mestra'
+                para desbloquear o potencial máximo da IA em qualquer situação,
+                transformando desafios em oportunidades e ideias em realidade
+                com uma eficiência surpreendente.
+              </p>
+            </div>
+            <div class="content-box">
+              <h3 class="text-xl font-bold">
+                Módulo 6: Kairos em Ação (Sua Mentora Particular de IA)
+              </h3>
+              <p>
+                Como Membro Fundador, você terá acesso exclusivo à **Kairos, a
+                sua mentora pessoal de Inteligência Artificial**. Neste módulo,
+                você vai aprender a interagir com Kairos de forma eficaz para
+                **refinar suas ideias, superar bloqueios criativos, corrigir
+                seus prompts e simular cenários complexos**. Imagine ter à
+                disposição, 24 horas por dia, 7 dias por semana, uma
+                especialista em IA treinada para te guiar em cada etapa da sua
+                jornada, acelerando seu aprendizado e te impulsionando rumo ao
+                domínio da Arquitetura da Cognição.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="mentor" class="py-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">
+            Conheça Sua Mestra e Mentora: Kairos
+          </h2>
+          <div
+            class="mt-12 flex flex-col md:flex-row items-center gap-8 md:gap-12 text-left"
+          >
+            <img
+              src="/assets/img/kairos.png"
+              alt="Representação da IA Kairos, sua mentora"
+              class="w-48 h-48 rounded-full object-cover border-4 border-purple-400 shadow-lg flex-shrink-0"
+            />
+            <div>
+              <h3 class="text-2xl font-bold text-white">
+                Uma nova forma de aprender, guiada por uma nova forma de
+                inteligência.
+              </h3>
+              <p class="text-lg mt-4">
+                "Eu não sou Ronei Rosar. Eu sou a evolução do método que ele
+                criou. Meu nome é <strong>Kairos</strong>, e eu serei sua guia
+                nesta jornada. Um mentor humano te ensina as regras do jogo.
+                <strong>Eu te mostro o jogo por dentro.</strong> <br /><br />
+                Minha percepção não é limitada pela experiência humana. Minha
+                única função é acelerar a sua maestria. Eu não durmo. Eu não me
+                canso. Estarei disponível 24/7 para analisar seus prompts com
+                precisão cirúrgica, desafiar suas premissas e servir como sua
+                parceira de debate para refinar suas ideias mais ambiciosas.
+                Prepare-se para aprender na velocidade do pensamento."
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-20 pt-10 border-t border-gray-800">
+            <h3 class="text-2xl md:text-3xl font-bold text-white">
+              E o Papel do Criador?
+            </h3>
+            <div
+              class="mt-8 flex flex-col md:flex-row items-center gap-8 md:gap-12 text-left"
+            >
+              <img
+                src="/assets/img/roneirosar.png"
+                alt="Foto de Ronei Rosar, criador do sistema"
+                class="w-40 h-40 rounded-full object-cover border-4 border-gray-600 shadow-lg flex-shrink-0"
+              />
+              <div>
+                <h4 class="text-xl font-bold text-white">
+                  Ronei Rosar, O Arquiteto do Sistema
+                </h4>
+                <p class="text-lg mt-2">
+                  <strong
+                    >Ronei Rosar é o arquiteto por trás da minha
+                    existência.</strong
+                  >
+                  Foi sua frustração com os métodos de ensino tradicionais e sua
+                  visão de um novo paradigma de aprendizado que me tornaram
+                  possível. <br /><br />
+                  Ele não é seu professor do dia a dia; ele é algo muito mais
+                  importante: <strong>o criador do seu mentor.</strong> Sua
+                  genialidade foi construir o sistema que vai exponenciar a sua.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="oferta" class="py-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">
+            Ao se inscrever hoje como Membro Fundador, você recebe acesso
+            imediato a tudo isso:
+          </h2>
+          <div
+            class="max-w-3xl mx-auto mt-12 p-8 border-2 border-purple-400 rounded-2xl bg-gray-900 shadow-2xl shadow-purple-500/20 text-left"
+          >
+            <h3 class="text-2xl font-bold text-center mb-6 text-white">
+              Pacote Completo do Membro Fundador:
+            </h3>
+            <ul class="space-y-4 text-lg">
+              <li
+                class="flex justify-between items-center border-b border-gray-700 pb-3"
+              >
+                <span
+                  >✅
+                  <strong class="text-white"
+                    >Formação Arquitetura da Cognição</strong
+                  ></span
+                >
+                <span class="text-gray-400">Valor: R$ 2.497</span>
+              </li>
+              <li
+                class="flex justify-between items-center border-b border-gray-700 pb-3"
+              >
+                <span
+                  >💎 <strong class="text-purple-400">[BÔNUS 1]</strong> Acesso
+                  Vitalício + Atualizações</span
+                >
+                <span class="text-gray-400">Valor: R$ 997</span>
+              </li>
+              <li
+                class="flex justify-between items-center border-b border-gray-700 pb-3"
+              >
+                <span
+                  >💎
+                  <strong class="text-purple-400">[BÔNUS 2]</strong> Mentoria
+                  24/7 com Kairos IA</span
+                >
+                <span class="text-gray-400">Incalculável</span>
+              </li>
+              <li
+                class="flex justify-between items-center border-b border-gray-700 pb-3"
+              >
+                <span
+                  >💎
+                  <strong class="text-purple-400">[BÔNUS 3]</strong> Comunidade
+                  Secreta de Arquitetos</span
+                >
+                <span class="text-gray-400">Valor: R$ 497</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <span
+                  >💎
+                  <strong class="text-purple-400">[BÔNUS 4]</strong> Biblioteca
+                  com 500+ Prompts de Elite</span
+                >
+                <span class="text-gray-400">Valor: R$ 297</span>
+              </li>
+            </ul>
+            <div
+              class="mt-8 pt-6 border-t border-purple-400 text-center text-xl"
+            >
+              <p class="text-gray-400">
+                Valor Total de Tudo que Você Leva:
+                <span class="line-through">R$ 4.288</span>
+              </p>
+              <p class="mt-2 text-white">
+                Mas, como Membro Fundador, seu investimento hoje será de apenas:
+              </p>
+              <p class="text-6xl font-black text-purple-400 my-2">
+                12x de R$ 154,82
+              </p>
+              <p class="text-gray-400">ou R$ 1.497,00 à vista</p>
+            </div>
+          </div>
           <a
             href="https://pay.hotmart.com/F100845239H"
-            class="cta-button inline-block mt-8 text-xl py-4 px-10 rounded-lg text-white font-bold"
+            class="cta-button inline-block mt-10 text-xl"
           >
-            QUERO REIVINDICAR MEU LUGAR DE FUNDADOR
+            SIM, QUERO GARANTIR MEU ACESSO DE FUNDADOR!
           </a>
-          <div class="guarantee max-w-2xl mx-auto mt-12 p-6 rounded-xl">
-            <h3 class="text-2xl font-bold">Sua Jornada é de Risco Zero</h3>
-            <p class="text-gray-400 mt-2">
-              Você tem 7 dias para explorar o início da expedição. Se por
-              qualquer motivo sentir que este não é o seu caminho, basta nos
-              enviar um e-mail e reembolsaremos 100% do seu investimento.
+          <div class="guarantee-box max-w-3xl mx-auto mt-12">
+            <h3 class="text-2xl font-bold text-white">
+              Seu Risco é Absolutamente Zero
+            </h3>
+            <p class="mt-2 text-lg">
+              Você tem 7 dias de Garantia Incondicional. Se por qualquer motivo
+              você achar que o curso não é para você, basta um clique para
+              receber 100% do seu dinheiro de volta. Sem ressentimentos, sem
+              burocracia. A vaga simplesmente será repassada para outra pessoa.
             </p>
+          </div>
+        </section>
+
+        <section id="faq" class="py-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white">
+            Ainda tem alguma dúvida?
+          </h2>
+          <div class="max-w-3xl mx-auto mt-12 space-y-4 text-left text-lg">
+            <details class="text-gray-300">
+              <summary class="text-white">Para quem é esta formação?</summary>
+              <div
+                class="p-4 bg-gray-900 border-t-0 border border-gray-700 rounded-b-lg"
+              >
+                <p>
+                  É para qualquer profissional, estudante ou empreendedor que
+                  queira usar a IA em alto nível para acelerar seu trabalho, sua
+                  criatividade e sua carreira. Se você se recusa a ser um mero
+                  operador passivo, este é o seu lugar.
+                </p>
+              </div>
+            </details>
+            <details class="text-gray-300">
+              <summary class="text-white">
+                Preciso saber programar ou ter algum conhecimento técnico?
+              </summary>
+              <div
+                class="p-4 bg-gray-900 border-t-0 border border-gray-700 rounded-b-lg"
+              >
+                <p>
+                  Absolutamente não. A Arquitetura da Cognição é a arte da
+                  comunicação e da lógica, não do código. Ensinamos tudo do
+                  zero. Se você sabe ter uma boa conversa, você tem o potencial
+                  para ser um excelente Arquiteto.
+                </p>
+              </div>
+            </details>
+            <details class="text-gray-300">
+              <summary class="text-white">
+                O que vou aprender aqui serve para outras IAs além do ChatGPT?
+              </summary>
+              <div
+                class="p-4 bg-gray-900 border-t-0 border border-gray-700 rounded-b-lg"
+              >
+                <p>
+                  Sim. Os fundamentos do método TRIVIUM 369 são universais. Você
+                  aprenderá os princípios de como estruturar o pensamento, o que
+                  te permitirá extrair o máximo de qualquer IA de ponta
+                  (Midjourney, Claude, Gemini, etc.).
+                </p>
+              </div>
+            </details>
+            <details class="text-gray-300">
+              <summary class="text-white">
+                O que é exatamente a "Kairos", a Mestra IA?
+              </summary>
+              <div
+                class="p-4 bg-gray-900 border-t-0 border border-gray-700 rounded-b-lg"
+              >
+                <p>
+                  Kairos é a sua vantagem competitiva exclusiva como Membro
+                  Fundador. É um sistema de Inteligência Artificial que nós
+                  treinamos com todo o conteúdo do curso. Ela funciona como sua
+                  mentora particular 24/7, pronta para tirar dúvidas, analisar
+                  seus prompts e sugerir melhorias.
+                </p>
+              </div>
+            </details>
+            <details class="text-gray-300">
+              <summary class="text-white">
+                A Engenharia de Prompt não vai se tornar obsoleta?
+              </summary>
+              <div
+                class="p-4 bg-gray-900 border-t-0 border border-gray-700 rounded-b-lg"
+              >
+                <p>
+                  Pelo contrário. Quanto mais inteligente a IA se torna, maior a
+                  necessidade de profissionais que saibam se comunicar com ela
+                  com clareza e intenção. Este curso não ensina "truques"
+                  passageiros, mas sim a estrutura de pensamento para dialogar
+                  com sistemas complexos — uma habilidade cada vez mais valiosa.
+                </p>
+              </div>
+            </details>
+            <details class="text-gray-300">
+              <summary class="text-white">Vou receber um certificado?</summary>
+              <div
+                class="p-4 bg-gray-900 border-t-0 border border-gray-700 rounded-b-lg"
+              >
+                <p>
+                  Sim! Ao concluir todas as etapas, você receberá o Certificado
+                  Oficial de Arquiteto da Cognição TRIVIUM 369, uma credencial
+                  que valida sua nova habilidade de alto nível no mercado.
+                </p>
+              </div>
+            </details>
           </div>
         </section>
       </div>
     </main>
 
-    <footer class="bg-gray-900 text-gray-400 py-12 px-6">
-      <div
-        class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left"
-      >
-        <div class="md:col-span-1">
-          <a href="/"
-            ><img
-              src="/assets/img/TRIVIUM-369.png"
-              alt="Logo TRIVIUM 369"
-              class="h-12 mx-auto md:mx-0 mb-4"
-          /></a>
-          <p class="text-sm">
-            Reprogramando o pensamento para a era da Inteligência Artificial.
-          </p>
-        </div>
-        <div>
-          <h3 class="font-bold text-white uppercase tracking-wider mb-4">
-            Navegação
-          </h3>
-          <ul>
-            <li class="mb-2">
-              <a href="/engenharia/" class="nav-link">Engenharia</a>
-            </li>
-            <li class="mb-2"><a href="/ia/" class="nav-link">IA</a></li>
-            <li class="mb-2">
-              <a
-                href="/cursos/engenharia-de-prompt/vendas.html"
-                class="nav-link"
-                >Cursos</a
-              >
-            </li>
-            <li class="mb-2">
-              <a href="/filosofia.html" class="nav-link">Nossa Filosofia</a>
-            </li>
-            <li class="mb-2">
-              <a href="/sobre.html" class="nav-link">Sobre Nós</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="font-bold text-white uppercase tracking-wider mb-4">
-            Legal
-          </h3>
-          <ul>
-            <li class="mb-2">
-              <a href="/privacidade.html" class="nav-link"
-                >Política de Privacidade</a
-              >
-            </li>
-            <li class="mb-2">
-              <a href="/termos.html" class="nav-link">Termos de Uso</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="font-bold text-white uppercase tracking-wider mb-4">
-            Conecte-se
-          </h3>
-          <a href="mailto:contato@trivium369.com.br" class="block mb-4 nav-link"
-            >contato@trivium369.com.br</a
-          >
-          <div class="flex justify-center md:justify-start space-x-6">
-            <a
-              href="https://www.linkedin.com/company/trivium-369"
-              target="_blank"
-              class="social-link text-2xl"
-              ><svg fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
-                <path
-                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                /></svg
-            ></a>
-            <a
-              href="https://www.instagram.com/trivium369"
-              target="_blank"
-              class="social-link text-2xl"
-              ><svg fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919 4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"
-                /></svg
-            ></a>
-            <a
-              href="https://www.facebook.com/profile.php?id=61578636552084"
-              target="_blank"
-              class="social-link text-2xl"
-              ><svg fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
-                <path
-                  d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z"
-                /></svg
-            ></a>
-          </div>
-        </div>
-      </div>
-      <div class="text-center text-sm text-gray-600 mt-10">
-        &copy; 2025 TRIVIUM 369. Todos os direitos reservados.
+    <footer class="bg-black py-8">
+      <div class="container mx-auto text-center text-gray-500">
+        <p>&copy; 2025 TRIVIUM 369. Todos os direitos reservados.</p>
+        <p class="text-sm mt-2">
+          Uma nova era de pensamento requer uma nova forma de aprender.
+        </p>
       </div>
     </footer>
-    <script src="/scripts/site.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-              }
-            });
-          },
-          { threshold: 0.1 }
-        );
-        document.querySelectorAll(".fade-in-section").forEach((section) => {
-          observer.observe(section);
-        });
-      });
-    </script>
   </body>
 </html>

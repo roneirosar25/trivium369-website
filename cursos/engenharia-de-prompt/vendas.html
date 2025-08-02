@@ -14,9 +14,60 @@
       rel="stylesheet"
     />
 
-    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
     <style>
+      /* Estilos da página original (index) para garantir a funcionalidade do header/footer */
+      .text-trivium-purple {
+        color: #8e44ad;
+      }
+      .bg-trivium-purple {
+        background-color: #8e44ad;
+      }
+      .nav-link:hover {
+        color: #8e44ad;
+      }
+      .social-link:hover {
+        color: #8e44ad;
+        transform: translateY(-2px);
+      }
+      .pillar-card {
+        background-color: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease-in-out;
+      }
+      .pillar-card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 20px 40px rgba(142, 68, 173, 0.25);
+        border-color: rgba(142, 68, 173, 1);
+      }
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .animated-gradient-hero {
+        background: linear-gradient(270deg, #0c0b13, #1a1a2e, #0c0b13);
+        background-size: 400% 400%;
+        animation: gradientAnimation 15s ease infinite;
+      }
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Estilos originais da página de vendas (preservados) */
       :root {
         --cor-fundo: #0c0b13;
         --cor-texto: #b0b0c0;
@@ -96,7 +147,66 @@
       }
     </style>
   </head>
-  <body class="antialiased">
+  <body class="text-white antialiased">
+    <header class="py-4 px-6 md:px-10 border-b border-gray-800 relative">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="/"
+          ><img
+            src="/assets/img/TRIVIUM-369.png"
+            alt="Logo TRIVIUM 369"
+            class="h-16"
+        /></a>
+        <nav
+          class="hidden md:flex items-center space-x-8 text-gray-400 font-semibold"
+        >
+          <a href="/engenharia/" class="nav-link">Engenharia</a>
+          <a href="/ia/" class="nav-link">IA</a>
+          <a href="/cursos/engenharia-de-prompt/vendas.html" class="nav-link"
+            >Cursos</a
+          >
+          <a href="/filosofia.html" class="nav-link">Nossa Filosofia</a>
+          <a href="/sobre.html" class="nav-link">Sobre Nós</a>
+          <a href="mailto:contato@trivium369.com.br" class="nav-link"
+            >Contato</a
+          >
+        </nav>
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="text-white focus:outline-none">
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-full left-0 w-full bg-gray-900 border-b border-gray-800 z-50"
+      >
+        <nav class="flex flex-col items-center space-y-4 py-6 text-lg">
+          <a href="/engenharia/" class="nav-link">Engenharia</a>
+          <a href="/ia/" class="nav-link">IA</a>
+          <a href="/cursos/engenharia-de-prompt/vendas.html" class="nav-link"
+            >Cursos</a
+          >
+          <a href="/filosofia.html" class="nav-link">Nossa Filosofia</a>
+          <a href="/sobre.html" class="nav-link">Sobre Nós</a>
+          <a href="mailto:contato@trivium369.com.br" class="nav-link"
+            >Contato</a
+          >
+        </nav>
+      </div>
+    </header>
+
     <main id="main-content" class="text-center">
       <div class="max-w-4xl mx-auto px-6 py-12">
         <header>
@@ -602,13 +712,104 @@
       </div>
     </main>
 
-    <footer class="bg-black py-8">
-      <div class="container mx-auto text-center text-gray-500">
-        <p>&copy; 2025 TRIVIUM 369. Todos os direitos reservados.</p>
-        <p class="text-sm mt-2">
-          Uma nova era de pensamento requer uma nova forma de aprender.
-        </p>
+    <footer class="bg-gray-900 text-gray-400 py-12 px-6">
+      <div
+        class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left"
+      >
+        <div class="md:col-span-1">
+          <a href="/">
+            <img
+              src="/assets/img/TRIVIUM-369.png"
+              alt="Logo TRIVIUM 369"
+              class="h-12 mx-auto md:mx-0 mb-4"
+            />
+          </a>
+          <p class="text-sm">
+            Reprogramando o pensamento para a era da Inteligência Artificial.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-bold text-white uppercase tracking-wider mb-4">
+            Navegação
+          </h3>
+          <ul>
+            <li class="mb-2">
+              <a href="/engenharia/" class="nav-link">Engenharia</a>
+            </li>
+            <li class="mb-2"><a href="/ia/" class="nav-link">IA</a></li>
+            <li class="mb-2">
+              <a
+                href="/cursos/engenharia-de-prompt/vendas.html"
+                class="nav-link"
+                >Cursos</a
+              >
+            </li>
+            <li class="mb-2">
+              <a href="/filosofia.html" class="nav-link">Nossa Filosofia</a>
+            </li>
+            <li class="mb-2">
+              <a href="/sobre.html" class="nav-link">Sobre Nós</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-white uppercase tracking-wider mb-4">
+            Legal
+          </h3>
+          <ul>
+            <li class="mb-2">
+              <a href="/privacidade.html" class="nav-link"
+                >Política de Privacidade</a
+              >
+            </li>
+            <li class="mb-2">
+              <a href="/termos.html" class="nav-link">Termos de Uso</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-white uppercase tracking-wider mb-4">
+            Conecte-se
+          </h3>
+          <a href="mailto:contato@trivium369.com.br" class="block mb-4 nav-link"
+            >contato@trivium369.com.br</a
+          >
+          <div class="flex justify-center md:justify-start space-x-6">
+            <a
+              href="https://www.linkedin.com/company/trivium-369"
+              target="_blank"
+              class="social-link text-2xl"
+              ><svg fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                /></svg
+            ></a>
+            <a
+              href="https://www.instagram.com/trivium369"
+              target="_blank"
+              class="social-link text-2xl"
+              ><svg fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919 4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"
+                /></svg
+            ></a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61578636552084"
+              target="_blank"
+              class="social-link text-2xl"
+              ><svg fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
+                <path
+                  d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z"
+                /></svg
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-sm text-gray-600 mt-10">
+        &copy; 2025 TRIVIUM 369. Todos os direitos reservados.
       </div>
     </footer>
+
+    <script src="/scripts/site.js"></script>
   </body>
 </html>
